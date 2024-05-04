@@ -25,6 +25,8 @@ export type ClassPropertyStructure = {
 };
 
 export type SourceFileStructure = {
+  overwrite?: boolean;
+  disableEslint?: boolean;
   imports: ImportDeclarationStructure[];
   statements: StatementStructure[];
 };

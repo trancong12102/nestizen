@@ -6,7 +6,7 @@ import {
 import { SourceFileStructure } from '../types/ts-morph';
 import {
   ESLINT_DISABLE_COMMENT,
-  GENERATED_WARNING_COMMENT,
+  OVERWRITE_WARNING_COMMENT,
 } from '../contants/comments';
 
 export class ProjectStructure {
@@ -20,14 +20,17 @@ export class ProjectStructure {
     this.project = new Project();
   }
 
-  setSourceFile(path: string, structure: SourceFileStructure) {
+  setSourceFile(
+    path: string,
+    { imports, statements, overwrite, disableEslint }: SourceFileStructure,
+  ) {
     this._projectStructure[path] = {
       kind: StructureKind.SourceFile,
       statements: [
-        GENERATED_WARNING_COMMENT,
-        ESLINT_DISABLE_COMMENT,
-        ...structure.imports,
-        ...structure.statements,
+        ...(overwrite ? [OVERWRITE_WARNING_COMMENT] : []),
+        ...(disableEslint ? [ESLINT_DISABLE_COMMENT] : []),
+        ...imports,
+        ...statements,
       ],
     };
   }
