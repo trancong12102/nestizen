@@ -81,7 +81,7 @@ model Tag {
 model Category extends Base {
     name      String            @unique
     /// Many to many relation with Post
-    posts     Post[]            @gql.hideResolveField
+    posts     Post[]            @graphql.hideResolveField
     /// One to one relation with CategoryMetadata
     metadata  CategoryMetadata?
 }
@@ -101,16 +101,16 @@ model MiscModel extends Base {
     decimalField  Decimal
     decimalList   Decimal[]
     floatField    Float
-    bytesField    Bytes      @gql.hideOutputField
-    bytesList     Bytes[]    @gql.hideField(match: '*@(Create|Update)*Input')
-    bigIntField   BigInt     @gql.hideField
+    bytesField    Bytes      @graphql.hideOutputField
+    bytesList     Bytes[]    @graphql.hideField(match: '*@(Create|Update)*Input')
+    bigIntField   BigInt     @graphql.hideField
     bigIntList    BigInt[]
     dateTimeField DateTime
-    dateTimeList  DateTime[] @gql.hideInputField
+    dateTimeList  DateTime[] @graphql.hideInputField
 }
 
 model HiddenModel extends Base {
     data Json
 
-    @@gql.hide
+    @@graphql.hide
 }

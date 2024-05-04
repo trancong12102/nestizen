@@ -1,25 +1,25 @@
 /**
  * Hide field from input type.
  */
-attribute @gql.hideInputField()
+attribute @graphql.hideInputField()
 
 /**
  * Hide field from output type.
  */
-attribute @gql.hideOutputField()
+attribute @graphql.hideOutputField()
 
 /**
  * Hide field from type matching a glob pattern. Default is to hide all fields.
  * @param match A glob pattern to match the type name. See https://github.com/axtgr/outmatch for more information.
  */
-attribute @gql.hideField(match: String?)
+attribute @graphql.hideField(match: String?)
 
 /**
  * Hide resolve field from model object.
  */
-attribute @gql.hideResolveField() @@@targetField([ModelField])
+attribute @graphql.hideResolveField() @@@targetField([ModelField])
 
 /**
  * Hide all graphql operations
  */
-attribute @@gql.hide()
+attribute @@graphql.hide()

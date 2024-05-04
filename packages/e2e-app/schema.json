@@ -28725,7 +28725,7 @@
             "relationToFields": [],
             "isGenerated": false,
             "isUpdatedAt": false,
-            "documentation": "@gql.hideResolveField\nMany to many relation with Post"
+            "documentation": "@graphql.hideResolveField\nMany to many relation with Post"
           },
           {
             "name": "metadata",
@@ -29235,7 +29235,7 @@
             "type": "Bytes",
             "isGenerated": false,
             "isUpdatedAt": false,
-            "documentation": "@gql.hideOutputField"
+            "documentation": "@graphql.hideOutputField"
           },
           {
             "name": "bytesList",
@@ -29249,7 +29249,7 @@
             "type": "Bytes",
             "isGenerated": false,
             "isUpdatedAt": false,
-            "documentation": "@gql.hideField(match: '*@(Create|Update)*Input')"
+            "documentation": "@graphql.hideField(match: '*@(Create|Update)*Input')"
           },
           {
             "name": "bigIntField",
@@ -29263,7 +29263,7 @@
             "type": "BigInt",
             "isGenerated": false,
             "isUpdatedAt": false,
-            "documentation": "@gql.hideField"
+            "documentation": "@graphql.hideField"
           },
           {
             "name": "bigIntList",
@@ -29303,7 +29303,7 @@
             "type": "DateTime",
             "isGenerated": false,
             "isUpdatedAt": false,
-            "documentation": "@gql.hideInputField"
+            "documentation": "@graphql.hideInputField"
           }
         ],
         "primaryKey": null,
@@ -29425,7 +29425,7 @@
         "uniqueFields": [],
         "uniqueIndexes": [],
         "isGenerated": false,
-        "documentation": "@@gql.hide"
+        "documentation": "@@graphql.hide"
       }
     }
   ]

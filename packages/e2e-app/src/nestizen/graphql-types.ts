@@ -1044,7 +1044,7 @@ export class MiscModel {
   dateTimeList?: Date[];
 }
 
-@ObjectType({ description: '@@gql.hide' })
+@ObjectType({ description: '@@graphql.hide' })
 export class HiddenModel {
   @Field(() => Int, { nullable: false })
   id: number;

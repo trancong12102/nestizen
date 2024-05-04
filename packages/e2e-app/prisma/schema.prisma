@@ -80,7 +80,7 @@ model Category {
   createdAt DateTime          @default(now())
   updatedAt DateTime          @updatedAt()
   name      String            @unique()
-  /// @gql.hideResolveField
+  /// @graphql.hideResolveField
   /// Many to many relation with Post
   posts     Post[]
   /// One to one relation with CategoryMetadata
@@ -108,19 +108,19 @@ model MiscModel {
   decimalField  Decimal
   decimalList   Decimal[]
   floatField    Float
-  /// @gql.hideOutputField
+  /// @graphql.hideOutputField
   bytesField    Bytes
-  /// @gql.hideField(match: '*@(Create|Update)*Input')
+  /// @graphql.hideField(match: '*@(Create|Update)*Input')
   bytesList     Bytes[]
-  /// @gql.hideField
+  /// @graphql.hideField
   bigIntField   BigInt
   bigIntList    BigInt[]
   dateTimeField DateTime
-  /// @gql.hideInputField
+  /// @graphql.hideInputField
   dateTimeList  DateTime[]
 }
 
-/// @@gql.hide
+/// @@graphql.hide
 model HiddenModel {
   id        Int      @id() @default(autoincrement())
   createdAt DateTime @default(now())
