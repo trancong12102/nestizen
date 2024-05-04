@@ -1,28 +1,34 @@
-import { Project, SourceFileStructure, StructureKind } from 'ts-morph';
+import {
+  Project,
+  SourceFileStructure as TsMorphSourceFileStructure,
+  StructureKind,
+} from 'ts-morph';
+import { SourceFileStructure } from '../types/ts-morph';
+import {
+  ESLINT_DISABLE_COMMENT,
+  GENERATED_WARNING_COMMENT,
+} from '../contants/comments';
 
 export class ProjectStructure {
-  private readonly _projectStructure: Record<string, SourceFileStructure> = {};
+  private readonly _projectStructure: Record<
+    string,
+    TsMorphSourceFileStructure
+  > = {};
   private readonly project: Project;
 
   constructor() {
     this.project = new Project();
   }
 
-  getSourceFile(path: string) {
-    return this._projectStructure[path];
-  }
-
-  isSourceFileExists(path: string) {
-    return !!this.getSourceFile(path);
-  }
-
   setSourceFile(path: string, structure: SourceFileStructure) {
-    this._projectStructure[path] = structure;
-  }
-
-  createSourceFile(path: string, structure?: SourceFileStructure) {
-    this._projectStructure[path] = structure || {
+    this._projectStructure[path] = {
       kind: StructureKind.SourceFile,
+      statements: [
+        GENERATED_WARNING_COMMENT,
+        ESLINT_DISABLE_COMMENT,
+        ...structure.imports,
+        ...structure.statements,
+      ],
     };
   }
 

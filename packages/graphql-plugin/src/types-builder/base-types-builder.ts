@@ -1,9 +1,9 @@
 import { AST } from '../ast/AST';
-import { BuildTypeOutput } from './types';
 import { SchemaArg } from '../ast/types';
 import {
   ClassPropertyStructure,
   ImportDeclarationStructure,
+  SourceFileStructure,
 } from '../types/ts-morph';
 import { getScalarType } from './scalar-type';
 import { StructureKind } from 'ts-morph';
@@ -13,7 +13,7 @@ import { getDocsFromDoc } from '../utils/ts-morph';
 export class BaseTypesBuilder {
   constructor(protected readonly ast: AST) {}
 
-  build(): BuildTypeOutput {
+  build(): SourceFileStructure {
     throw new Error('Not implemented');
   }
 

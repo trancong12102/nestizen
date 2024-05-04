@@ -1,12 +1,4 @@
-import {
-  ImportDeclarationStructure,
-  StatementStructure,
-} from '../types/ts-morph';
-
-export type BuildTypeOutput = {
-  imports: ImportDeclarationStructure[];
-  statements: StatementStructure[];
-};
+import { ImportDeclarationStructure } from '../types/ts-morph';
 
 export type GraphqlScalar = {
   imports: ImportDeclarationStructure[];

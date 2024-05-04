@@ -23,3 +23,8 @@ export type ClassPropertyStructure = {
   imports: ImportDeclarationStructure[];
   property: OptionalKind<PropertyDeclarationStructure>;
 };
+
+export type SourceFileStructure = {
+  imports: ImportDeclarationStructure[];
+  statements: StatementStructure[];
+};

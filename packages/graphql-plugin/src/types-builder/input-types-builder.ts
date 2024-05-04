@@ -1,7 +1,7 @@
 import { BaseTypesBuilder } from './base-types-builder';
-import { BuildTypeOutput } from './types';
 import {
   ImportDeclarationStructure,
+  SourceFileStructure,
   StatementStructure,
 } from '../types/ts-morph';
 import { InputType } from '../ast/types';
@@ -13,7 +13,7 @@ import {
 } from 'ts-morph';
 
 export class InputTypesBuilder extends BaseTypesBuilder {
-  build(): BuildTypeOutput {
+  build(): SourceFileStructure {
     const {
       schema: { inputObjectTypes },
     } = this.ast;
@@ -37,7 +37,7 @@ export class InputTypesBuilder extends BaseTypesBuilder {
     return { imports, statements };
   }
 
-  private buildInputObjectType(type: InputType): BuildTypeOutput {
+  private buildInputObjectType(type: InputType): SourceFileStructure {
     const { name, fields } = type;
 
     const properties: OptionalKind<PropertyDeclarationStructure>[] = [];

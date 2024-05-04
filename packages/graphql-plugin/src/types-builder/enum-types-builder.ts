@@ -3,14 +3,14 @@ import { EnumDeclarationStructure, StructureKind } from 'ts-morph';
 import { SchemaEnum } from '../ast/types';
 import { DMMF } from '@prisma/generator-helper';
 import { getDocsFromDoc } from '../utils/ts-morph';
-import { BuildTypeOutput } from './types';
 import {
   ImportDeclarationStructure,
+  SourceFileStructure,
   StatementStructure,
 } from '../types/ts-morph';
 
 export class EnumTypesBuilder extends BaseTypesBuilder {
-  build(): BuildTypeOutput {
+  build(): SourceFileStructure {
     const {
       schema: { enumTypes },
     } = this.ast;

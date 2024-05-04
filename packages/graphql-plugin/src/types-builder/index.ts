@@ -1,14 +1,10 @@
 import { AST } from '../ast/AST';
-import { SourceFileStructure, StructureKind } from 'ts-morph';
 import { EnumTypesBuilder } from './enum-types-builder';
 import { OutputTypesBuilder } from './output-types-builder';
 import { optimizeImports } from '../utils/ts-morph';
-import {
-  ESLINT_DISABLE_COMMENT,
-  GENERATED_WARNING_COMMENT,
-} from '../contants/comments';
 import { InputTypesBuilder } from './input-types-builder';
 import { ArgsTypesBuilder } from './args-types-builder';
+import { SourceFileStructure } from '../types/ts-morph';
 
 export const buildTypes = (ast: AST): SourceFileStructure => {
   const enumTypesBuilder = new EnumTypesBuilder(ast);
@@ -24,16 +20,13 @@ export const buildTypes = (ast: AST): SourceFileStructure => {
   const argsTypesOutput = argsTypesBuilder.build();
 
   return {
-    kind: StructureKind.SourceFile,
+    imports: optimizeImports([
+      ...enumTypesOutput.imports,
+      ...outputTypesOutput.imports,
+      ...inputTypesOutput.imports,
+      ...argsTypesOutput.imports,
+    ]),
     statements: [
-      GENERATED_WARNING_COMMENT,
-      ESLINT_DISABLE_COMMENT,
-      ...optimizeImports([
-        ...enumTypesOutput.imports,
-        ...outputTypesOutput.imports,
-        ...inputTypesOutput.imports,
-        ...argsTypesOutput.imports,
-      ]),
       ...enumTypesOutput.statements,
       ...outputTypesOutput.statements,
       ...inputTypesOutput.statements,

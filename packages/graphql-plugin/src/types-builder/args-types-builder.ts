@@ -1,7 +1,7 @@
 import { BaseTypesBuilder } from './base-types-builder';
-import { BuildTypeOutput } from './types';
 import {
   ImportDeclarationStructure,
+  SourceFileStructure,
   StatementStructure,
 } from '../types/ts-morph';
 import { SchemaField } from '../ast/types';
@@ -18,7 +18,7 @@ import {
 import { getDocsFromDoc } from '../utils/ts-morph';
 
 export class ArgsTypesBuilder extends BaseTypesBuilder {
-  build(): BuildTypeOutput {
+  build(): SourceFileStructure {
     const imports: ImportDeclarationStructure[] = [
       {
         kind: StructureKind.ImportDeclaration,
@@ -51,7 +51,7 @@ export class ArgsTypesBuilder extends BaseTypesBuilder {
   private buildSchemaFieldArgsType(
     name: string,
     field: SchemaField,
-  ): BuildTypeOutput {
+  ): SourceFileStructure {
     const { documentation, args } = field;
 
     const properties: OptionalKind<PropertyDeclarationStructure>[] = [];

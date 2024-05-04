@@ -6,10 +6,10 @@ import {
   StructureKind,
 } from 'ts-morph';
 import { OutputType, SchemaField } from '../ast/types';
-import { BuildTypeOutput } from './types';
 import {
   ClassPropertyStructure,
   ImportDeclarationStructure,
+  SourceFileStructure,
   StatementStructure,
 } from '../types/ts-morph';
 import { getScalarType } from './scalar-type';
@@ -17,7 +17,7 @@ import { getGraphqlListType, getTsListType } from './utils';
 import { getDocsFromDoc } from '../utils/ts-morph';
 
 export class OutputTypesBuilder extends BaseTypesBuilder {
-  build(): BuildTypeOutput {
+  build(): SourceFileStructure {
     const {
       schema: { outputObjectTypes },
     } = this.ast;
@@ -41,7 +41,7 @@ export class OutputTypesBuilder extends BaseTypesBuilder {
     return { imports, statements };
   }
 
-  private buildOutputObjectType(type: OutputType): BuildTypeOutput {
+  private buildOutputObjectType(type: OutputType): SourceFileStructure {
     const { name, fields, model } = type;
     const { documentation } = model || {};
     const properties: OptionalKind<PropertyDeclarationStructure>[] = [];
