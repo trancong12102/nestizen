@@ -3,7 +3,7 @@ import {
   SourceFileStructure as TsMorphSourceFileStructure,
   StructureKind,
 } from 'ts-morph';
-import { SourceFileStructure } from '../types/ts-morph';
+import { SourceFile } from '../types/ts-morph';
 import {
   ESLINT_DISABLE_COMMENT,
   OVERWRITE_WARNING_COMMENT,
@@ -20,10 +20,10 @@ export class ProjectStructure {
     this.project = new Project();
   }
 
-  setSourceFile(
-    path: string,
-    { imports, statements, overwrite, disableEslint }: SourceFileStructure,
-  ) {
+  addSourceFile({
+    path,
+    structure: { imports, statements, overwrite, disableEslint },
+  }: SourceFile) {
     this._projectStructure[path] = {
       kind: StructureKind.SourceFile,
       statements: [

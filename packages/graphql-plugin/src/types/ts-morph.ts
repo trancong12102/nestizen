@@ -30,3 +30,8 @@ export type SourceFileStructure = {
   imports: ImportDeclarationStructure[];
   statements: StatementStructure[];
 };
+
+export type SourceFile = {
+  path: string;
+  structure: SourceFileStructure;
+};

@@ -19,7 +19,10 @@ export const generate = async (
 
   const typesOutputPath = getTypesOutputPath(output);
   const typesSourceFile = buildTypes(ast);
-  projectStructure.setSourceFile(typesOutputPath, typesSourceFile);
+  projectStructure.addSourceFile({
+    path: typesOutputPath,
+    structure: typesSourceFile,
+  });
 
   await projectStructure.save();
 };
