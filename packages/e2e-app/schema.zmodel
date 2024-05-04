@@ -1,0 +1,116 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+plugin nestizen {
+    provider = "@nestizen/graphql-plugin"
+    output = "src"
+}
+
+/// UserRole Documentation
+enum UserRole {
+    /// UserRole USER
+    USER
+    /// UserRole ADMIN
+    ADMIN
+    /// UserRole MODERATOR
+    MODERATOR
+}
+
+enum PostKind {
+    BLOG
+    ADVERT
+}
+
+abstract model Base {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+/// User model documentation
+model User extends Base {
+    /// Email field documentation
+    email        String   @unique
+    /// Multiple line
+    /// documentation
+    name         String?
+    role         UserRole @default(USER)
+    /// One to many relation with Post
+    posts        Post[]
+    parentId     Int?
+    /// Self relation with User
+    parent       User?    @relation("UserToUser", fields: [parentId], references: [id])
+    /// Self relation with User
+    children     User[]   @relation("UserToUser")
+    /// Another Many to many relation with Post
+    anotherPosts Post[]   @relation("AnotherUserToPost")
+    mappedField  String   @map("mapped_field")
+
+    tags         Tag[]
+}
+
+model Post extends Base {
+    title           String
+    content         String?
+    published       Boolean    @default(false)
+    /// Many to one relation with User
+    author          User       @relation(fields: [authorId], references: [id])
+    authorId        Int
+    /// Another Many to one relation with User
+    anotherAuthor   User       @relation("AnotherUserToPost", fields: [anotherAuthorId], references: [id])
+    anotherAuthorId Int
+    /// Many to many relation with Category
+    categories      Category[]
+    postKind        PostKind
+
+    @@allow('all', auth().role == 'ADMIN')
+}
+
+model Tag {
+    key   String @id
+
+    users User[]
+}
+
+model Category extends Base {
+    name      String            @unique
+    /// Many to many relation with Post
+    posts     Post[]            @gql.hideResolveField
+    /// One to one relation with CategoryMetadata
+    metadata  CategoryMetadata?
+}
+
+model CategoryMetadata extends Base {
+    /// One to one relation with Category
+    category   Category @relation(fields: [categoryId], references: [id])
+    categoryId Int      @unique
+    metadata   Json[]
+}
+
+model MiscModel extends Base {
+    name          String
+    jsonField     Json
+    jsonList      Json[]
+    stringList    String[]
+    decimalField  Decimal
+    decimalList   Decimal[]
+    floatField    Float
+    bytesField    Bytes      @gql.hideOutputField
+    bytesList     Bytes[]    @gql.hideField(match: '*@(Create|Update)*Input')
+    bigIntField   BigInt     @gql.hideField
+    bigIntList    BigInt[]
+    dateTimeField DateTime
+    dateTimeList  DateTime[] @gql.hideInputField
+}
+
+model HiddenModel extends Base {
+    data Json
+
+    @@gql.hide
+}

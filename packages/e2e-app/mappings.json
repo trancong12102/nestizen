@@ -1,0 +1,3607 @@
+[
+  {
+    "model": "User",
+    "operations": [
+      {
+        "name": "aggregateUser",
+        "type": "Query",
+        "action": "aggregate",
+        "schemaField": {
+          "name": "aggregateUser",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "_count",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "UserCountAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_avg",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "UserAvgAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_sum",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "UserSumAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_min",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "UserMinAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_max",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "UserMaxAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AggregateUser",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "UserAggregateArgs"
+      },
+      {
+        "name": "createManyUser",
+        "type": "Mutation",
+        "action": "createMany",
+        "schemaField": {
+          "name": "createManyUser",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserCreateManyInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "skipDuplicates",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "Boolean",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "UserCreateManyArgs"
+      },
+      {
+        "name": "deleteManyUser",
+        "type": "Mutation",
+        "action": "deleteMany",
+        "schemaField": {
+          "name": "deleteManyUser",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "UserDeleteManyArgs"
+      },
+      {
+        "name": "findFirstUser",
+        "type": "Query",
+        "action": "findFirst",
+        "schemaField": {
+          "name": "findFirstUser",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "User",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "UserFindFirstArgs"
+      },
+      {
+        "name": "findManyUser",
+        "type": "Query",
+        "action": "findMany",
+        "schemaField": {
+          "name": "findManyUser",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "User",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "UserFindManyArgs"
+      },
+      {
+        "name": "findUniqueUser",
+        "type": "Query",
+        "action": "findUnique",
+        "schemaField": {
+          "name": "findUniqueUser",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "User",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "UserFindUniqueArgs"
+      },
+      {
+        "name": "groupByUser",
+        "type": "Query",
+        "action": "groupBy",
+        "schemaField": {
+          "name": "groupByUser",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserOrderByWithAggregationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "by",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "having",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserScalarWhereWithAggregatesInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "UserGroupByOutputType",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "UserGroupByArgs"
+      },
+      {
+        "name": "updateManyUser",
+        "type": "Mutation",
+        "action": "updateMany",
+        "schemaField": {
+          "name": "updateManyUser",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserUpdateManyMutationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "UserWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "UserUpdateManyArgs"
+      },
+      {
+        "name": "countUser",
+        "type": "Query",
+        "action": "count",
+        "argsTypeName": "UserFindManyArgs"
+      }
+    ]
+  },
+  {
+    "model": "Post",
+    "operations": [
+      {
+        "name": "aggregatePost",
+        "type": "Query",
+        "action": "aggregate",
+        "schemaField": {
+          "name": "aggregatePost",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "_count",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "PostCountAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_avg",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "PostAvgAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_sum",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "PostSumAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_min",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "PostMinAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_max",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "PostMaxAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AggregatePost",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "PostAggregateArgs"
+      },
+      {
+        "name": "createManyPost",
+        "type": "Mutation",
+        "action": "createMany",
+        "schemaField": {
+          "name": "createManyPost",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostCreateManyInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "skipDuplicates",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "Boolean",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "PostCreateManyArgs"
+      },
+      {
+        "name": "deleteManyPost",
+        "type": "Mutation",
+        "action": "deleteMany",
+        "schemaField": {
+          "name": "deleteManyPost",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "PostDeleteManyArgs"
+      },
+      {
+        "name": "findFirstPost",
+        "type": "Query",
+        "action": "findFirst",
+        "schemaField": {
+          "name": "findFirstPost",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "Post",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "PostFindFirstArgs"
+      },
+      {
+        "name": "findManyPost",
+        "type": "Query",
+        "action": "findMany",
+        "schemaField": {
+          "name": "findManyPost",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "Post",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "PostFindManyArgs"
+      },
+      {
+        "name": "findUniquePost",
+        "type": "Query",
+        "action": "findUnique",
+        "schemaField": {
+          "name": "findUniquePost",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "Post",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "PostFindUniqueArgs"
+      },
+      {
+        "name": "groupByPost",
+        "type": "Query",
+        "action": "groupBy",
+        "schemaField": {
+          "name": "groupByPost",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostOrderByWithAggregationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "by",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "having",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostScalarWhereWithAggregatesInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "PostGroupByOutputType",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "PostGroupByArgs"
+      },
+      {
+        "name": "updateManyPost",
+        "type": "Mutation",
+        "action": "updateMany",
+        "schemaField": {
+          "name": "updateManyPost",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostUpdateManyMutationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "PostWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "PostUpdateManyArgs"
+      },
+      {
+        "name": "countPost",
+        "type": "Query",
+        "action": "count",
+        "argsTypeName": "PostFindManyArgs"
+      }
+    ]
+  },
+  {
+    "model": "Tag",
+    "operations": [
+      {
+        "name": "aggregateTag",
+        "type": "Query",
+        "action": "aggregate",
+        "schemaField": {
+          "name": "aggregateTag",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "_count",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "TagCountAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_avg",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "TagAvgAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_sum",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "TagSumAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_min",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "TagMinAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_max",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "TagMaxAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AggregateTag",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "TagAggregateArgs"
+      },
+      {
+        "name": "createManyTag",
+        "type": "Mutation",
+        "action": "createMany",
+        "schemaField": {
+          "name": "createManyTag",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagCreateManyInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "skipDuplicates",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "Boolean",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "TagCreateManyArgs"
+      },
+      {
+        "name": "deleteManyTag",
+        "type": "Mutation",
+        "action": "deleteMany",
+        "schemaField": {
+          "name": "deleteManyTag",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "TagDeleteManyArgs"
+      },
+      {
+        "name": "findFirstTag",
+        "type": "Query",
+        "action": "findFirst",
+        "schemaField": {
+          "name": "findFirstTag",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "Tag",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "TagFindFirstArgs"
+      },
+      {
+        "name": "findManyTag",
+        "type": "Query",
+        "action": "findMany",
+        "schemaField": {
+          "name": "findManyTag",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "Tag",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "TagFindManyArgs"
+      },
+      {
+        "name": "findUniqueTag",
+        "type": "Query",
+        "action": "findUnique",
+        "schemaField": {
+          "name": "findUniqueTag",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "Tag",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "TagFindUniqueArgs"
+      },
+      {
+        "name": "groupByTag",
+        "type": "Query",
+        "action": "groupBy",
+        "schemaField": {
+          "name": "groupByTag",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagOrderByWithAggregationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "by",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "having",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagScalarWhereWithAggregatesInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "TagGroupByOutputType",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "TagGroupByArgs"
+      },
+      {
+        "name": "updateManyTag",
+        "type": "Mutation",
+        "action": "updateMany",
+        "schemaField": {
+          "name": "updateManyTag",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagUpdateManyMutationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "TagWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "TagUpdateManyArgs"
+      },
+      {
+        "name": "countTag",
+        "type": "Query",
+        "action": "count",
+        "argsTypeName": "TagFindManyArgs"
+      }
+    ]
+  },
+  {
+    "model": "Category",
+    "operations": [
+      {
+        "name": "aggregateCategory",
+        "type": "Query",
+        "action": "aggregate",
+        "schemaField": {
+          "name": "aggregateCategory",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "_count",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategoryCountAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_avg",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategoryAvgAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_sum",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategorySumAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_min",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategoryMinAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_max",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategoryMaxAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AggregateCategory",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryAggregateArgs"
+      },
+      {
+        "name": "createManyCategory",
+        "type": "Mutation",
+        "action": "createMany",
+        "schemaField": {
+          "name": "createManyCategory",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryCreateManyInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "skipDuplicates",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "Boolean",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryCreateManyArgs"
+      },
+      {
+        "name": "deleteManyCategory",
+        "type": "Mutation",
+        "action": "deleteMany",
+        "schemaField": {
+          "name": "deleteManyCategory",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryDeleteManyArgs"
+      },
+      {
+        "name": "findFirstCategory",
+        "type": "Query",
+        "action": "findFirst",
+        "schemaField": {
+          "name": "findFirstCategory",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "Category",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryFindFirstArgs"
+      },
+      {
+        "name": "findManyCategory",
+        "type": "Query",
+        "action": "findMany",
+        "schemaField": {
+          "name": "findManyCategory",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "Category",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "CategoryFindManyArgs"
+      },
+      {
+        "name": "findUniqueCategory",
+        "type": "Query",
+        "action": "findUnique",
+        "schemaField": {
+          "name": "findUniqueCategory",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "Category",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryFindUniqueArgs"
+      },
+      {
+        "name": "groupByCategory",
+        "type": "Query",
+        "action": "groupBy",
+        "schemaField": {
+          "name": "groupByCategory",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryOrderByWithAggregationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "by",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "having",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryScalarWhereWithAggregatesInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "CategoryGroupByOutputType",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "CategoryGroupByArgs"
+      },
+      {
+        "name": "updateManyCategory",
+        "type": "Mutation",
+        "action": "updateMany",
+        "schemaField": {
+          "name": "updateManyCategory",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryUpdateManyMutationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryUpdateManyArgs"
+      },
+      {
+        "name": "countCategory",
+        "type": "Query",
+        "action": "count",
+        "argsTypeName": "CategoryFindManyArgs"
+      }
+    ]
+  },
+  {
+    "model": "CategoryMetadata",
+    "operations": [
+      {
+        "name": "aggregateCategoryMetadata",
+        "type": "Query",
+        "action": "aggregate",
+        "schemaField": {
+          "name": "aggregateCategoryMetadata",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "_count",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategoryMetadataCountAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_avg",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategoryMetadataAvgAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_sum",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategoryMetadataSumAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_min",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategoryMetadataMinAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_max",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "CategoryMetadataMaxAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AggregateCategoryMetadata",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryMetadataAggregateArgs"
+      },
+      {
+        "name": "createManyCategoryMetadata",
+        "type": "Mutation",
+        "action": "createMany",
+        "schemaField": {
+          "name": "createManyCategoryMetadata",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataCreateManyInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "skipDuplicates",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "Boolean",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryMetadataCreateManyArgs"
+      },
+      {
+        "name": "deleteManyCategoryMetadata",
+        "type": "Mutation",
+        "action": "deleteMany",
+        "schemaField": {
+          "name": "deleteManyCategoryMetadata",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryMetadataDeleteManyArgs"
+      },
+      {
+        "name": "findFirstCategoryMetadata",
+        "type": "Query",
+        "action": "findFirst",
+        "schemaField": {
+          "name": "findFirstCategoryMetadata",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "CategoryMetadata",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryMetadataFindFirstArgs"
+      },
+      {
+        "name": "findManyCategoryMetadata",
+        "type": "Query",
+        "action": "findMany",
+        "schemaField": {
+          "name": "findManyCategoryMetadata",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "CategoryMetadata",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "CategoryMetadataFindManyArgs"
+      },
+      {
+        "name": "findUniqueCategoryMetadata",
+        "type": "Query",
+        "action": "findUnique",
+        "schemaField": {
+          "name": "findUniqueCategoryMetadata",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "CategoryMetadata",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryMetadataFindUniqueArgs"
+      },
+      {
+        "name": "groupByCategoryMetadata",
+        "type": "Query",
+        "action": "groupBy",
+        "schemaField": {
+          "name": "groupByCategoryMetadata",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataOrderByWithAggregationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "by",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "having",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataScalarWhereWithAggregatesInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "CategoryMetadataGroupByOutputType",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "CategoryMetadataGroupByArgs"
+      },
+      {
+        "name": "updateManyCategoryMetadata",
+        "type": "Mutation",
+        "action": "updateMany",
+        "schemaField": {
+          "name": "updateManyCategoryMetadata",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataUpdateManyMutationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "CategoryMetadataWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "CategoryMetadataUpdateManyArgs"
+      },
+      {
+        "name": "countCategoryMetadata",
+        "type": "Query",
+        "action": "count",
+        "argsTypeName": "CategoryMetadataFindManyArgs"
+      }
+    ]
+  },
+  {
+    "model": "MiscModel",
+    "operations": [
+      {
+        "name": "aggregateMiscModel",
+        "type": "Query",
+        "action": "aggregate",
+        "schemaField": {
+          "name": "aggregateMiscModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "_count",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "MiscModelCountAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_avg",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "MiscModelAvgAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_sum",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "MiscModelSumAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_min",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "MiscModelMinAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_max",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "MiscModelMaxAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AggregateMiscModel",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "MiscModelAggregateArgs"
+      },
+      {
+        "name": "createManyMiscModel",
+        "type": "Mutation",
+        "action": "createMany",
+        "schemaField": {
+          "name": "createManyMiscModel",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelCreateManyInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "skipDuplicates",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "Boolean",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "MiscModelCreateManyArgs"
+      },
+      {
+        "name": "deleteManyMiscModel",
+        "type": "Mutation",
+        "action": "deleteMany",
+        "schemaField": {
+          "name": "deleteManyMiscModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "MiscModelDeleteManyArgs"
+      },
+      {
+        "name": "findFirstMiscModel",
+        "type": "Query",
+        "action": "findFirst",
+        "schemaField": {
+          "name": "findFirstMiscModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "MiscModel",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "MiscModelFindFirstArgs"
+      },
+      {
+        "name": "findManyMiscModel",
+        "type": "Query",
+        "action": "findMany",
+        "schemaField": {
+          "name": "findManyMiscModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "MiscModel",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "MiscModelFindManyArgs"
+      },
+      {
+        "name": "findUniqueMiscModel",
+        "type": "Query",
+        "action": "findUnique",
+        "schemaField": {
+          "name": "findUniqueMiscModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "MiscModel",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "MiscModelFindUniqueArgs"
+      },
+      {
+        "name": "groupByMiscModel",
+        "type": "Query",
+        "action": "groupBy",
+        "schemaField": {
+          "name": "groupByMiscModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelOrderByWithAggregationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "by",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "having",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelScalarWhereWithAggregatesInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "MiscModelGroupByOutputType",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "MiscModelGroupByArgs"
+      },
+      {
+        "name": "updateManyMiscModel",
+        "type": "Mutation",
+        "action": "updateMany",
+        "schemaField": {
+          "name": "updateManyMiscModel",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelUpdateManyMutationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "MiscModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "MiscModelUpdateManyArgs"
+      },
+      {
+        "name": "countMiscModel",
+        "type": "Query",
+        "action": "count",
+        "argsTypeName": "MiscModelFindManyArgs"
+      }
+    ]
+  },
+  {
+    "model": "HiddenModel",
+    "operations": [
+      {
+        "name": "aggregateHiddenModel",
+        "type": "Query",
+        "action": "aggregate",
+        "schemaField": {
+          "name": "aggregateHiddenModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "_count",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "HiddenModelCountAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_avg",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "HiddenModelAvgAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_sum",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "HiddenModelSumAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_min",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "HiddenModelMinAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            },
+            {
+              "name": "_max",
+              "isRequired": false,
+              "isNullable": true,
+              "inputType": {
+                "type": "HiddenModelMaxAggregateInputType",
+                "isList": false,
+                "location": "inputObjectTypes"
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AggregateHiddenModel",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "HiddenModelAggregateArgs"
+      },
+      {
+        "name": "createManyHiddenModel",
+        "type": "Mutation",
+        "action": "createMany",
+        "schemaField": {
+          "name": "createManyHiddenModel",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelCreateManyInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "skipDuplicates",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "Boolean",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "HiddenModelCreateManyArgs"
+      },
+      {
+        "name": "deleteManyHiddenModel",
+        "type": "Mutation",
+        "action": "deleteMany",
+        "schemaField": {
+          "name": "deleteManyHiddenModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "HiddenModelDeleteManyArgs"
+      },
+      {
+        "name": "findFirstHiddenModel",
+        "type": "Query",
+        "action": "findFirst",
+        "schemaField": {
+          "name": "findFirstHiddenModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "HiddenModel",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "HiddenModelFindFirstArgs"
+      },
+      {
+        "name": "findManyHiddenModel",
+        "type": "Query",
+        "action": "findMany",
+        "schemaField": {
+          "name": "findManyHiddenModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelOrderByWithRelationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "cursor",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "distinct",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "HiddenModel",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "HiddenModelFindManyArgs"
+      },
+      {
+        "name": "findUniqueHiddenModel",
+        "type": "Query",
+        "action": "findUnique",
+        "schemaField": {
+          "name": "findUniqueHiddenModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereUniqueInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": true,
+          "outputType": {
+            "type": "HiddenModel",
+            "namespace": "model",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "HiddenModelFindUniqueArgs"
+      },
+      {
+        "name": "groupByHiddenModel",
+        "type": "Query",
+        "action": "groupBy",
+        "schemaField": {
+          "name": "groupByHiddenModel",
+          "args": [
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "orderBy",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelOrderByWithAggregationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "by",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelScalarFieldEnum",
+                "namespace": "prisma",
+                "location": "enumTypes",
+                "isList": true
+              }
+            },
+            {
+              "name": "having",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelScalarWhereWithAggregatesInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "take",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            },
+            {
+              "name": "skip",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "Int",
+                "location": "scalar",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "HiddenModelGroupByOutputType",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": true
+          }
+        },
+        "argsTypeName": "HiddenModelGroupByArgs"
+      },
+      {
+        "name": "updateManyHiddenModel",
+        "type": "Mutation",
+        "action": "updateMany",
+        "schemaField": {
+          "name": "updateManyHiddenModel",
+          "args": [
+            {
+              "name": "data",
+              "isRequired": true,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelUpdateManyMutationInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            },
+            {
+              "name": "where",
+              "isRequired": false,
+              "isNullable": false,
+              "inputType": {
+                "type": "HiddenModelWhereInput",
+                "namespace": "prisma",
+                "location": "inputObjectTypes",
+                "isList": false
+              }
+            }
+          ],
+          "isNullable": false,
+          "outputType": {
+            "type": "AffectedRowsOutput",
+            "namespace": "prisma",
+            "location": "outputObjectTypes",
+            "isList": false
+          }
+        },
+        "argsTypeName": "HiddenModelUpdateManyArgs"
+      },
+      {
+        "name": "countHiddenModel",
+        "type": "Query",
+        "action": "count",
+        "argsTypeName": "HiddenModelFindManyArgs"
+      }
+    ]
+  }
+]
