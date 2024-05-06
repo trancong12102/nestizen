@@ -21,7 +21,7 @@ export type ArgsType = {
   name: string;
   fields: SchemaArg[];
   module: string;
-}
+};
 
 export type SchemaEnum = {
   name: string;
@@ -45,7 +45,9 @@ export type SchemaField = {
   documentation?: string;
 };
 
-export type OutputTypeRef = TypeRef<'scalar' | 'outputObjectTypes' | 'enumTypes'>;
+export type OutputTypeRef = TypeRef<
+  'scalar' | 'outputObjectTypes' | 'enumTypes'
+>;
 
 export type InputType = {
   name: string;
