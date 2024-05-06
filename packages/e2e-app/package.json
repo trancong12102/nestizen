@@ -28,7 +28,7 @@
     "@nestjs/graphql": "^12.1.1",
     "@nestjs/platform-express": "^10.3.8",
     "@prisma/client": "5.13.0",
-    "@zenstackhq/runtime": "^2.0.2",
+    "@zenstackhq/runtime": "^2.0.3",
     "graphql": "^16.8.1",
     "graphql-scalars": "^1.23.0",
     "reflect-metadata": "^0.2.2",
@@ -51,11 +51,11 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.2",
     "ts-loader": "^9.5.1",
-    "ts-morph": "^21.0.0",
+    "ts-morph": "^21.0.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.4.5",
-    "zenstack": "^2.0.2"
+    "zenstack": "^2.0.3"
   },
   "jest": {
     "moduleFileExtensions": [

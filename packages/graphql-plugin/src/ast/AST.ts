@@ -1,18 +1,25 @@
 import {
+  ArgsType,
   InputType,
+  InputTypeRef,
   ModelAction,
   ModelMapping,
   ModelOperation,
   ModelQuery,
   OutputType,
+  OutputTypeRef,
   Schema,
   SchemaArg,
   SchemaEnum,
   SchemaField,
+  SchemaIndexMap,
 } from './types';
 import { DMMF } from '@prisma/generator-helper';
 import {
+  buildSchemaIndex,
   getArgsTypeName,
+  getEnumModel,
+  getTypeByIndexMap,
   isCountOutputType,
   removeRedundantTypesFromSchema,
   selectInputTypeRef,
@@ -21,35 +28,121 @@ import { AGGREGATE_FIELDS } from './contanst';
 import pascalcase from '@stdlib/string-pascalcase';
 
 export class AST {
-  public readonly schema: Schema = {
-    inputObjectTypes: [],
-    enumTypes: [],
-    outputObjectTypes: [],
-  };
-  public readonly mappings: ModelMapping[] = [];
+  public readonly schema: Schema;
+  public readonly mappings: ModelMapping[];
+  public readonly schemaIndex: SchemaIndexMap;
+  private readonly query: OutputType;
+  private readonly mutation: OutputType;
 
   constructor(private readonly dmmf: DMMF.Document) {
     this.schema = this.buildSchema();
-    this.mappings = this.buildModelMappings();
+    this.query = this.schema.outputObjectTypes.find((t) => t.name === 'Query')!;
+    this.mutation = this.schema.outputObjectTypes.find(
+      (t) => t.name === 'Mutation',
+    )!;
     this.schema.outputObjectTypes = this.schema.outputObjectTypes.filter(
       (t) => !['Query', 'Mutation'].includes(t.name),
     );
+    this.mappings = this.buildModelMappings();
     this.schema = removeRedundantTypesFromSchema(this.schema, this.mappings);
+    this.schemaIndex = buildSchemaIndex(this.schema);
+    this.setModuleForSchemaTypes();
+  }
+
+  private setModuleForSchemaTypes() {
+    for (const mapping of this.mappings) {
+      const { model, operations } = mapping;
+
+      for (const operation of operations) {
+        const { outputType, argsTypeName } = operation;
+        this.setModuleForOutputType(outputType, model);
+        this.setModuleForArgsType(argsTypeName, model);
+      }
+    }
+  }
+
+  private setModuleForArgsType(name: string, module: string) {
+    const { fields } = this.getArgsType(name);
+
+    for (const field of fields) {
+      const { inputType } = field;
+      this.setModuleForInputType(inputType, module);
+    }
+  }
+
+  private setModuleForInputType(ref: InputTypeRef, module: string) {
+    const { location, type: typeName } = ref;
+    if (location === 'scalar' || location === 'enumTypes') {
+      return;
+    }
+
+    const type = this.getInputType(typeName);
+    if (type.module !== 'Prisma') {
+      return;
+    }
+
+    type.module = module;
+
+    const { fields } = type;
+
+    for (const field of fields) {
+      const { inputType } = field;
+      this.setModuleForInputType(inputType, module);
+    }
+  }
+
+  private setModuleForOutputType(ref: OutputTypeRef, module: string) {
+    const { location, type: typeName } = ref;
+    if (location === 'scalar') {
+      return;
+    }
+
+    const type = this.getOutputType(typeName);
+    if (type.module !== 'Prisma') {
+      return;
+    }
+
+    type.module = module;
+  }
+
+  getInputType(type: string) {
+    return getTypeByIndexMap<InputType>(
+      'inputObjectTypes',
+      type,
+      this.schema,
+      this.schemaIndex,
+    );
+  }
+
+  getOutputType(type: string) {
+    return getTypeByIndexMap<OutputType>(
+      'outputObjectTypes',
+      type,
+      this.schema,
+      this.schemaIndex,
+    );
+  }
+
+  getEnumType(type: string) {
+    return getTypeByIndexMap<SchemaEnum>(
+      'enumTypes',
+      type,
+      this.schema,
+      this.schemaIndex,
+    );
+  }
+
+  getArgsType(type: string) {
+    return getTypeByIndexMap<ArgsType>(
+      'argsTypes',
+      type,
+      this.schema,
+      this.schemaIndex,
+    );
   }
 
   private buildModelMappings(): ModelMapping[] {
     const { mappings } = this.dmmf;
-    const query = this.schema.outputObjectTypes.find((t) => t.name === 'Query');
-    if (!query) {
-      throw new Error(`Query type not found`);
-    }
-
-    const mutation = this.schema.outputObjectTypes.find(
-      (t) => t.name === 'Mutation',
-    );
-    if (!mutation) {
-      throw new Error(`Mutation type not found`);
-    }
 
     return mappings.modelOperations.map((m) => {
       const { model, ...operationsMap } = m;
@@ -70,9 +163,9 @@ export class AST {
           const type = Object.values(ModelQuery).includes(k as ModelQuery)
             ? 'Query'
             : ('Mutation' as const);
-          const schemaField = (type === 'Query' ? query : mutation).fields.find(
-            (f) => f.name === v,
-          );
+          const schemaField = (
+            type === 'Query' ? this.query : this.mutation
+          ).fields.find((f) => f.name === v);
           if (!schemaField) {
             throw new Error(`Schema field not found: ${v}`);
           }
@@ -103,12 +196,20 @@ export class AST {
             arg.isNullable = false;
           }
 
+          const argsTypeName = getArgsTypeName(model, action);
+
+          this.schema.argsTypes.push({
+            name: argsTypeName,
+            fields: schemaField.args,
+            module: model,
+          });
+
           return {
             name: v || '',
             type,
             action,
-            schemaField,
-            argsTypeName: getArgsTypeName(model, action),
+            argsTypeName,
+            outputType: schemaField.outputType,
           };
         });
 
@@ -124,6 +225,11 @@ export class AST {
         type: 'Query',
         action: ModelAction.count,
         argsTypeName: findManyOperation.argsTypeName,
+        outputType: {
+          type: 'Int',
+          isList: false,
+          location: 'scalar',
+        },
       });
 
       return {
@@ -155,6 +261,7 @@ export class AST {
             isNullable: true,
             isRequired: false,
           })),
+        module: model.name,
       };
 
       this.schema.inputObjectTypes.push(inputType);
@@ -177,6 +284,7 @@ export class AST {
       inputObjectTypes: this.buildInputObjectTypes(),
       outputObjectTypes: this.buildOutputObjectTypes(),
       enumTypes: this.buildEnumTypes(),
+      argsTypes: [],
     };
   }
 
@@ -215,8 +323,8 @@ export class AST {
         minNumFields: constraints.minNumFields,
         fields: constraints.fields as string[] | undefined,
       },
-      meta,
       fields: source.fields.map((f) => this.buildSchemaArg(f)),
+      module: meta?.source || 'Prisma',
     };
   }
 
@@ -229,12 +337,15 @@ export class AST {
       datamodel: { models },
     } = this.dmmf;
 
+    const model = isModel ? models.find((m) => m.name === name) : undefined;
+
     return {
       ...source,
       fields: source.fields
         .filter((f) => !isCountOutputType(f.outputType.type))
         .map((f) => this.buildSchemaField(f)),
-      model: isModel ? models.find((m) => m.name === name) : undefined,
+      model,
+      module: model?.name || 'Prisma',
     };
   }
 
@@ -252,19 +363,31 @@ export class AST {
       },
     } = this.dmmf;
 
-    return [...model, ...prisma].map((t) => this.buildModelEnumType(t));
+    return [
+      ...model.map((e) => this.buildModelEnumType(e, true)),
+      ...prisma.map((e) => this.buildModelEnumType(e, false)),
+    ];
   }
 
-  private buildModelEnumType(source: DMMF.SchemaEnum): SchemaEnum {
+  private buildModelEnumType(
+    source: DMMF.SchemaEnum,
+    isModel: boolean,
+  ): SchemaEnum {
     const { name, values } = source;
     const {
       datamodel: { enums },
     } = this.dmmf;
 
+    const datemodelEnum = isModel
+      ? enums.find((e) => e.name === name)
+      : undefined;
+    const model = isModel ? getEnumModel(this.dmmf, name) : undefined;
+
     return {
       name,
       values: values as string[],
-      model: enums.find((e) => e.name === name),
+      model: datemodelEnum,
+      module: model?.name || 'Prisma',
     };
   }
 

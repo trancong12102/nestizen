@@ -1,22 +1,40 @@
 import { DMMF } from '@prisma/generator-helper';
 import { AGGREGATE_FIELDS } from './contanst';
 
+export type IndexMap = Record<string, number>;
+
+export type SchemaIndexMap = {
+  inputObjectTypes: IndexMap;
+  outputObjectTypes: IndexMap;
+  enumTypes: IndexMap;
+  argsTypes: IndexMap;
+};
+
 export type Schema = {
   inputObjectTypes: InputType[];
   outputObjectTypes: OutputType[];
   enumTypes: SchemaEnum[];
+  argsTypes: ArgsType[];
 };
+
+export type ArgsType = {
+  name: string;
+  fields: SchemaArg[];
+  module: string;
+}
 
 export type SchemaEnum = {
   name: string;
   values: string[];
   model?: DMMF.DatamodelEnum;
+  module: string;
 };
 
 export type OutputType = {
   name: string;
   fields: SchemaField[];
   model?: DMMF.Model;
+  module: string;
 };
 
 export type SchemaField = {
@@ -27,7 +45,7 @@ export type SchemaField = {
   documentation?: string;
 };
 
-type OutputTypeRef = TypeRef<'scalar' | 'outputObjectTypes' | 'enumTypes'>;
+export type OutputTypeRef = TypeRef<'scalar' | 'outputObjectTypes' | 'enumTypes'>;
 
 export type InputType = {
   name: string;
@@ -36,9 +54,7 @@ export type InputType = {
     minNumFields: number | null;
     fields?: string[];
   };
-  meta?: {
-    source?: string;
-  };
+  module: string;
   fields: SchemaArg[];
 };
 
@@ -71,8 +87,8 @@ export type ModelOperation = {
   name: string;
   type: 'Mutation' | 'Query';
   action: ModelAction;
-  schemaField?: SchemaField;
   argsTypeName: string;
+  outputType: OutputTypeRef;
 };
 
 export enum ModelQuery {

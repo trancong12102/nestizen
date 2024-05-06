@@ -22,7 +22,7 @@
     "@stdlib/string-camelcase": "^0.2.1",
     "@stdlib/string-kebabcase": "^0.2.1",
     "@stdlib/string-pascalcase": "^0.2.1",
-    "@zenstackhq/sdk": "^2.0.2",
+    "@zenstackhq/sdk": "^2.0.3",
     "ts-morph": "^22.0.0",
     "zod": "^3.23.6"
   }

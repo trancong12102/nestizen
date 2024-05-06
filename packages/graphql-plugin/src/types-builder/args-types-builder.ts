@@ -4,7 +4,7 @@ import {
   SourceFileStructure,
   StatementStructure,
 } from '../types/ts-morph';
-import { SchemaField } from '../ast/types';
+import { ArgsType } from '../ast/types';
 import {
   ClassDeclarationStructure,
   OptionalKind,
@@ -15,7 +15,6 @@ import {
   CommonImport,
   CommonModuleSpecifier,
 } from '../contants/common-imports';
-import { getDocsFromDoc } from '../utils/ts-morph';
 
 export class ArgsTypesBuilder extends BaseTypesBuilder {
   build(): SourceFileStructure {
@@ -28,38 +27,28 @@ export class ArgsTypesBuilder extends BaseTypesBuilder {
     ];
     const statements: StatementStructure[] = [];
 
-    const { mappings } = this.ast;
-    for (const mapping of mappings) {
-      const { operations } = mapping;
-
-      for (const operation of operations) {
-        const { argsTypeName, schemaField } = operation;
-        if (!schemaField) {
-          continue;
-        }
-
-        const { statements: fieldStatements, imports: fieldImports } =
-          this.buildSchemaFieldArgsType(argsTypeName, schemaField);
-        statements.push(...fieldStatements);
-        imports.push(...fieldImports);
-      }
+    const {
+      schema: { argsTypes },
+    } = this.ast;
+    for (const argsType of argsTypes) {
+      const { statements: argsTypeStatements, imports: argsTypeImports } =
+        this.buildArgsType(argsType);
+      statements.push(...argsTypeStatements);
+      imports.push(...argsTypeImports);
     }
 
     return { imports, statements };
   }
 
-  private buildSchemaFieldArgsType(
-    name: string,
-    field: SchemaField,
-  ): SourceFileStructure {
-    const { documentation, args } = field;
+  private buildArgsType(type: ArgsType): SourceFileStructure {
+    const { name, fields } = type;
 
     const properties: OptionalKind<PropertyDeclarationStructure>[] = [];
     const imports: ImportDeclarationStructure[] = [];
 
-    for (const arg of args) {
+    for (const field of fields) {
       const { property, imports: schemaFieldImports } =
-        this.buildSchemaArg(arg);
+        this.buildSchemaArg(field);
       properties.push(property);
       imports.push(...schemaFieldImports);
     }
@@ -75,7 +64,6 @@ export class ArgsTypesBuilder extends BaseTypesBuilder {
           arguments: [],
         },
       ],
-      docs: getDocsFromDoc(documentation),
     };
 
     return {

@@ -4,6 +4,7 @@ import {
   ImportDeclarationStructure as TsMorphImportDeclarationStructure,
   type OptionalKind,
   type PropertyDeclarationStructure,
+  MethodDeclarationStructure,
 } from 'ts-morph';
 
 export type ImportDeclarationStructure = Pick<
@@ -22,6 +23,11 @@ export type StatementStructure =
 export type ClassPropertyStructure = {
   imports: ImportDeclarationStructure[];
   property: OptionalKind<PropertyDeclarationStructure>;
+};
+
+export type ClassMethodStructure = {
+  imports: ImportDeclarationStructure[];
+  method: OptionalKind<MethodDeclarationStructure>;
 };
 
 export type SourceFileStructure = {
