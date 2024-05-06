@@ -20,21 +20,18 @@ export type Schema = {
 export type ArgsType = {
   name: string;
   fields: SchemaArg[];
-  module: string;
 };
 
 export type SchemaEnum = {
   name: string;
   values: string[];
   model?: DMMF.DatamodelEnum;
-  module: string;
 };
 
 export type OutputType = {
   name: string;
   fields: SchemaField[];
   model?: DMMF.Model;
-  module: string;
 };
 
 export type SchemaField = {
@@ -56,7 +53,6 @@ export type InputType = {
     minNumFields: number | null;
     fields?: string[];
   };
-  module: string;
   fields: SchemaArg[];
 };
 

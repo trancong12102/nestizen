@@ -1,13 +1,11 @@
 import {
   ArgsType,
   InputType,
-  InputTypeRef,
   ModelAction,
   ModelMapping,
   ModelOperation,
   ModelQuery,
   OutputType,
-  OutputTypeRef,
   Schema,
   SchemaArg,
   SchemaEnum,
@@ -18,7 +16,6 @@ import { DMMF } from '@prisma/generator-helper';
 import {
   buildSchemaIndex,
   getArgsTypeName,
-  getEnumModel,
   getTypeByIndexMap,
   isCountOutputType,
   removeRedundantTypesFromSchema,
@@ -46,63 +43,6 @@ export class AST {
     this.mappings = this.buildModelMappings();
     this.schema = removeRedundantTypesFromSchema(this.schema, this.mappings);
     this.schemaIndex = buildSchemaIndex(this.schema);
-    this.setModuleForSchemaTypes();
-  }
-
-  private setModuleForSchemaTypes() {
-    for (const mapping of this.mappings) {
-      const { model, operations } = mapping;
-
-      for (const operation of operations) {
-        const { outputType, argsTypeName } = operation;
-        this.setModuleForOutputType(outputType, model);
-        this.setModuleForArgsType(argsTypeName, model);
-      }
-    }
-  }
-
-  private setModuleForArgsType(name: string, module: string) {
-    const { fields } = this.getArgsType(name);
-
-    for (const field of fields) {
-      const { inputType } = field;
-      this.setModuleForInputType(inputType, module);
-    }
-  }
-
-  private setModuleForInputType(ref: InputTypeRef, module: string) {
-    const { location, type: typeName } = ref;
-    if (location === 'scalar' || location === 'enumTypes') {
-      return;
-    }
-
-    const type = this.getInputType(typeName);
-    if (type.module !== 'Prisma') {
-      return;
-    }
-
-    type.module = module;
-
-    const { fields } = type;
-
-    for (const field of fields) {
-      const { inputType } = field;
-      this.setModuleForInputType(inputType, module);
-    }
-  }
-
-  private setModuleForOutputType(ref: OutputTypeRef, module: string) {
-    const { location, type: typeName } = ref;
-    if (location === 'scalar') {
-      return;
-    }
-
-    const type = this.getOutputType(typeName);
-    if (type.module !== 'Prisma') {
-      return;
-    }
-
-    type.module = module;
   }
 
   getInputType(type: string) {
@@ -201,7 +141,6 @@ export class AST {
           this.schema.argsTypes.push({
             name: argsTypeName,
             fields: schemaField.args,
-            module: model,
           });
 
           return {
@@ -261,7 +200,6 @@ export class AST {
             isNullable: true,
             isRequired: false,
           })),
-        module: model.name,
       };
 
       this.schema.inputObjectTypes.push(inputType);
@@ -314,7 +252,7 @@ export class AST {
   }
 
   private buildInputType(source: DMMF.InputType): InputType {
-    const { name, meta, constraints } = source;
+    const { name, constraints } = source;
 
     return {
       name,
@@ -324,7 +262,6 @@ export class AST {
         fields: constraints.fields as string[] | undefined,
       },
       fields: source.fields.map((f) => this.buildSchemaArg(f)),
-      module: meta?.source || 'Prisma',
     };
   }
 
@@ -345,7 +282,6 @@ export class AST {
         .filter((f) => !isCountOutputType(f.outputType.type))
         .map((f) => this.buildSchemaField(f)),
       model,
-      module: model?.name || 'Prisma',
     };
   }
 
@@ -381,13 +317,11 @@ export class AST {
     const datemodelEnum = isModel
       ? enums.find((e) => e.name === name)
       : undefined;
-    const model = isModel ? getEnumModel(this.dmmf, name) : undefined;
 
     return {
       name,
       values: values as string[],
       model: datemodelEnum,
-      module: model?.name || 'Prisma',
     };
   }
 

@@ -24,8 +24,7 @@
         ],
         "dbName": null,
         "documentation": "UserRole Documentation"
-      },
-      "module": "User"
+      }
     },
     {
       "name": "PostKind",
@@ -43,8 +42,7 @@
           }
         ],
         "dbName": null
-      },
-      "module": "Post"
+      }
     },
     {
       "name": "UserScalarFieldEnum",
@@ -57,8 +55,7 @@
         "role",
         "parentId",
         "mappedField"
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostScalarFieldEnum",
@@ -72,23 +69,19 @@
         "authorId",
         "anotherAuthorId",
         "postKind"
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagScalarFieldEnum",
-      "values": ["key"],
-      "module": "Prisma"
+      "values": ["key"]
     },
     {
       "name": "CategoryScalarFieldEnum",
-      "values": ["id", "createdAt", "updatedAt", "name"],
-      "module": "Prisma"
+      "values": ["id", "createdAt", "updatedAt", "name"]
     },
     {
       "name": "CategoryMetadataScalarFieldEnum",
-      "values": ["id", "createdAt", "updatedAt", "categoryId", "metadata"],
-      "module": "Prisma"
+      "values": ["id", "createdAt", "updatedAt", "categoryId", "metadata"]
     },
     {
       "name": "MiscModelScalarFieldEnum",
@@ -109,28 +102,23 @@
         "bigIntList",
         "dateTimeField",
         "dateTimeList"
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "HiddenModelScalarFieldEnum",
-      "values": ["id", "createdAt", "updatedAt", "data"],
-      "module": "Prisma"
+      "values": ["id", "createdAt", "updatedAt", "data"]
     },
     {
       "name": "SortOrder",
-      "values": ["asc", "desc"],
-      "module": "Prisma"
+      "values": ["asc", "desc"]
     },
     {
       "name": "QueryMode",
-      "values": ["default", "insensitive"],
-      "module": "Prisma"
+      "values": ["default", "insensitive"]
     },
     {
       "name": "NullsOrder",
-      "values": ["first", "last"],
-      "module": "Prisma"
+      "values": ["first", "last"]
     }
   ],
   "inputObjectTypes": [
@@ -317,8 +305,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserOrderByWithRelationInput",
@@ -470,8 +457,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserWhereUniqueInput",
@@ -655,8 +641,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserOrderByWithAggregationInput",
@@ -808,8 +793,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserScalarWhereWithAggregatesInput",
@@ -939,8 +923,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "PostWhereInput",
@@ -1114,8 +1097,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostOrderByWithRelationInput",
@@ -1256,8 +1238,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostWhereUniqueInput",
@@ -1431,8 +1412,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostOrderByWithAggregationInput",
@@ -1595,8 +1575,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostScalarWhereWithAggregatesInput",
@@ -1737,8 +1716,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "TagWhereInput",
@@ -1802,8 +1780,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagOrderByWithRelationInput",
@@ -1834,8 +1811,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagWhereUniqueInput",
@@ -1899,8 +1875,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagOrderByWithAggregationInput",
@@ -1953,8 +1928,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagScalarWhereWithAggregatesInput",
@@ -2007,8 +1981,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "CategoryWhereInput",
@@ -2116,8 +2089,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryOrderByWithRelationInput",
@@ -2192,8 +2164,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryWhereUniqueInput",
@@ -2300,8 +2271,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryOrderByWithAggregationInput",
@@ -2409,8 +2379,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryScalarWhereWithAggregatesInput",
@@ -2496,8 +2465,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryMetadataWhereInput",
@@ -2605,8 +2573,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataOrderByWithRelationInput",
@@ -2681,8 +2648,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryMetadataWhereUniqueInput",
@@ -2789,8 +2755,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataOrderByWithAggregationInput",
@@ -2909,8 +2874,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataScalarWhereWithAggregatesInput",
@@ -3007,8 +2971,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "MiscModelWhereInput",
@@ -3226,8 +3189,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelOrderByWithRelationInput",
@@ -3412,8 +3374,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelWhereUniqueInput",
@@ -3631,8 +3592,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelOrderByWithAggregationInput",
@@ -3872,8 +3832,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelScalarWhereWithAggregatesInput",
@@ -4091,8 +4050,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "HiddenModelWhereInput",
@@ -4178,8 +4136,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelOrderByWithRelationInput",
@@ -4232,8 +4189,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelWhereUniqueInput",
@@ -4319,8 +4275,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelOrderByWithAggregationInput",
@@ -4428,8 +4383,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelScalarWhereWithAggregatesInput",
@@ -4515,8 +4469,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "UserCreateManyInput",
@@ -4606,8 +4559,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserUpdateManyMutationInput",
@@ -4682,8 +4634,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "PostCreateManyInput",
@@ -4783,8 +4734,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostUpdateManyMutationInput",
@@ -4859,8 +4809,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "TagCreateManyInput",
@@ -4879,8 +4828,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagUpdateManyMutationInput",
@@ -4900,8 +4848,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "CategoryCreateManyInput",
@@ -4950,8 +4897,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryUpdateManyMutationInput",
@@ -4993,8 +4939,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryMetadataCreateManyInput",
@@ -5054,8 +4999,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataUpdateManyMutationInput",
@@ -5097,8 +5041,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "MiscModelCreateManyInput",
@@ -5273,8 +5216,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelUpdateManyMutationInput",
@@ -5447,8 +5389,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "HiddenModelCreateManyInput",
@@ -5497,8 +5438,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelUpdateManyMutationInput",
@@ -5539,8 +5479,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "IntFilter",
@@ -5630,8 +5569,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "DateTimeFilter",
@@ -5721,8 +5659,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "StringFilter",
@@ -5853,8 +5790,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "StringNullableFilter",
@@ -5985,8 +5921,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "EnumUserRoleFilter",
@@ -6039,8 +5974,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "IntNullableFilter",
@@ -6130,8 +6064,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostListRelationFilter",
@@ -6173,8 +6106,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserNullableRelationFilter",
@@ -6205,8 +6137,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserListRelationFilter",
@@ -6248,8 +6179,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagListRelationFilter",
@@ -6291,8 +6221,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostOrderByRelationAggregateInput",
@@ -6312,8 +6241,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserOrderByRelationAggregateInput",
@@ -6333,8 +6261,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "TagOrderByRelationAggregateInput",
@@ -6354,8 +6281,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserCountOrderByAggregateInput",
@@ -6452,8 +6378,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserAvgOrderByAggregateInput",
@@ -6484,8 +6409,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserMaxOrderByAggregateInput",
@@ -6582,8 +6506,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserMinOrderByAggregateInput",
@@ -6680,8 +6603,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserSumOrderByAggregateInput",
@@ -6712,8 +6634,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "IntWithAggregatesFilter",
@@ -6858,8 +6779,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "DateTimeWithAggregatesFilter",
@@ -6982,8 +6902,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "StringWithAggregatesFilter",
@@ -7147,8 +7066,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "StringNullableWithAggregatesFilter",
@@ -7312,8 +7230,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "EnumUserRoleWithAggregatesFilter",
@@ -7399,8 +7316,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "IntNullableWithAggregatesFilter",
@@ -7545,8 +7461,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "BoolFilter",
@@ -7576,8 +7491,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "EnumPostKindFilter",
@@ -7630,8 +7544,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserRelationFilter",
@@ -7662,8 +7575,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryListRelationFilter",
@@ -7705,8 +7617,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryOrderByRelationAggregateInput",
@@ -7726,8 +7637,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostCountOrderByAggregateInput",
@@ -7835,8 +7745,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostAvgOrderByAggregateInput",
@@ -7878,8 +7787,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostMaxOrderByAggregateInput",
@@ -7987,8 +7895,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostMinOrderByAggregateInput",
@@ -8096,8 +8003,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostSumOrderByAggregateInput",
@@ -8139,8 +8045,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "BoolWithAggregatesFilter",
@@ -8203,8 +8108,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "EnumPostKindWithAggregatesFilter",
@@ -8290,8 +8194,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagCountOrderByAggregateInput",
@@ -8311,8 +8214,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagMaxOrderByAggregateInput",
@@ -8332,8 +8234,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagMinOrderByAggregateInput",
@@ -8353,8 +8254,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "CategoryMetadataNullableRelationFilter",
@@ -8385,8 +8285,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryCountOrderByAggregateInput",
@@ -8439,8 +8338,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryAvgOrderByAggregateInput",
@@ -8460,8 +8358,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryMaxOrderByAggregateInput",
@@ -8514,8 +8411,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryMinOrderByAggregateInput",
@@ -8568,8 +8464,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategorySumOrderByAggregateInput",
@@ -8589,8 +8484,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "JsonNullableListFilter",
@@ -8649,8 +8543,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryRelationFilter",
@@ -8681,8 +8574,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataCountOrderByAggregateInput",
@@ -8746,8 +8638,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataAvgOrderByAggregateInput",
@@ -8778,8 +8669,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataMaxOrderByAggregateInput",
@@ -8832,8 +8722,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataMinOrderByAggregateInput",
@@ -8886,8 +8775,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataSumOrderByAggregateInput",
@@ -8918,8 +8806,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "JsonFilter",
@@ -9058,8 +8945,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "StringNullableListFilter",
@@ -9118,8 +9004,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "DecimalFilter",
@@ -9209,8 +9094,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "DecimalNullableListFilter",
@@ -9269,8 +9153,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "FloatFilter",
@@ -9360,8 +9243,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "BytesFilter",
@@ -9411,8 +9293,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "BytesNullableListFilter",
@@ -9471,8 +9352,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "BigIntFilter",
@@ -9562,8 +9442,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "BigIntNullableListFilter",
@@ -9622,8 +9501,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "DateTimeNullableListFilter",
@@ -9682,8 +9560,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "MiscModelCountOrderByAggregateInput",
@@ -9868,8 +9745,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelAvgOrderByAggregateInput",
@@ -9944,8 +9820,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelMaxOrderByAggregateInput",
@@ -10053,8 +9928,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelMinOrderByAggregateInput",
@@ -10162,8 +10036,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelSumOrderByAggregateInput",
@@ -10238,8 +10111,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "JsonWithAggregatesFilter",
@@ -10411,8 +10283,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "DecimalWithAggregatesFilter",
@@ -10557,8 +10428,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "FloatWithAggregatesFilter",
@@ -10703,8 +10573,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "BytesWithAggregatesFilter",
@@ -10787,8 +10656,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "BigIntWithAggregatesFilter",
@@ -10933,8 +10801,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "HiddenModelCountOrderByAggregateInput",
@@ -10987,8 +10854,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelAvgOrderByAggregateInput",
@@ -11008,8 +10874,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelMaxOrderByAggregateInput",
@@ -11051,8 +10916,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelMinOrderByAggregateInput",
@@ -11094,8 +10958,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelSumOrderByAggregateInput",
@@ -11115,8 +10978,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "PostCreateNestedManyWithoutAuthorInput",
@@ -11169,8 +11031,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateNestedOneWithoutChildrenInput",
@@ -11212,8 +11073,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateNestedManyWithoutParentInput",
@@ -11266,8 +11126,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateNestedManyWithoutAnotherAuthorInput",
@@ -11320,8 +11179,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagCreateNestedManyWithoutUsersInput",
@@ -11363,8 +11221,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUncheckedCreateNestedManyWithoutAuthorInput",
@@ -11417,8 +11274,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUncheckedCreateNestedManyWithoutParentInput",
@@ -11471,8 +11327,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUncheckedCreateNestedManyWithoutAnotherAuthorInput",
@@ -11525,8 +11380,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagUncheckedCreateNestedManyWithoutUsersInput",
@@ -11568,8 +11422,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "DateTimeFieldUpdateOperationsInput",
@@ -11588,8 +11441,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "StringFieldUpdateOperationsInput",
@@ -11608,8 +11460,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "NullableStringFieldUpdateOperationsInput",
@@ -11628,8 +11479,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "PostUpdateManyWithoutAuthorNestedInput",
@@ -11759,8 +11609,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateOneWithoutChildrenNestedInput",
@@ -11846,8 +11695,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateManyWithoutParentNestedInput",
@@ -11977,8 +11825,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateManyWithoutAnotherAuthorNestedInput",
@@ -12108,8 +11955,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagUpdateManyWithoutUsersNestedInput",
@@ -12228,8 +12074,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "IntFieldUpdateOperationsInput",
@@ -12288,8 +12133,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NullableIntFieldUpdateOperationsInput",
@@ -12348,8 +12192,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUncheckedUpdateManyWithoutAuthorNestedInput",
@@ -12479,8 +12322,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUncheckedUpdateManyWithoutParentNestedInput",
@@ -12610,8 +12452,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUncheckedUpdateManyWithoutAnotherAuthorNestedInput",
@@ -12741,8 +12582,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagUncheckedUpdateManyWithoutUsersNestedInput",
@@ -12861,8 +12701,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateNestedOneWithoutPostsInput",
@@ -12904,8 +12743,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateNestedOneWithoutAnotherPostsInput",
@@ -12947,8 +12785,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryCreateNestedManyWithoutPostsInput",
@@ -12990,8 +12827,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUncheckedCreateNestedManyWithoutPostsInput",
@@ -13033,8 +12869,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "BoolFieldUpdateOperationsInput",
@@ -13053,8 +12888,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "UserUpdateOneRequiredWithoutPostsNestedInput",
@@ -13118,8 +12952,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateOneRequiredWithoutAnotherPostsNestedInput",
@@ -13183,8 +13016,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUpdateManyWithoutPostsNestedInput",
@@ -13303,8 +13135,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUncheckedUpdateManyWithoutPostsNestedInput",
@@ -13423,8 +13254,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateNestedManyWithoutTagsInput",
@@ -13466,8 +13296,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUncheckedCreateNestedManyWithoutTagsInput",
@@ -13509,8 +13338,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateManyWithoutTagsNestedInput",
@@ -13629,8 +13457,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUncheckedUpdateManyWithoutTagsNestedInput",
@@ -13749,8 +13576,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateNestedManyWithoutCategoriesInput",
@@ -13792,8 +13618,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataCreateNestedOneWithoutCategoryInput",
@@ -13835,8 +13660,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUncheckedCreateNestedManyWithoutCategoriesInput",
@@ -13878,8 +13702,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataUncheckedCreateNestedOneWithoutCategoryInput",
@@ -13921,8 +13744,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateManyWithoutCategoriesNestedInput",
@@ -14041,8 +13863,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataUpdateOneWithoutCategoryNestedInput",
@@ -14128,8 +13949,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUncheckedUpdateManyWithoutCategoriesNestedInput",
@@ -14248,8 +14068,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataUncheckedUpdateOneWithoutCategoryNestedInput",
@@ -14335,8 +14154,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataCreatemetadataInput",
@@ -14355,8 +14173,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryCreateNestedOneWithoutMetadataInput",
@@ -14398,8 +14215,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataUpdatemetadataInput",
@@ -14428,8 +14244,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryUpdateOneRequiredWithoutMetadataNestedInput",
@@ -14493,8 +14308,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "MiscModelCreatejsonListInput",
@@ -14513,8 +14327,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelCreatestringListInput",
@@ -14533,8 +14346,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelCreatedecimalListInput",
@@ -14553,8 +14365,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelCreatebytesListInput",
@@ -14573,8 +14384,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelCreatebigIntListInput",
@@ -14593,8 +14403,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelCreatedateTimeListInput",
@@ -14613,8 +14422,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelUpdatejsonListInput",
@@ -14643,8 +14451,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelUpdatestringListInput",
@@ -14673,8 +14480,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "DecimalFieldUpdateOperationsInput",
@@ -14733,8 +14539,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelUpdatedecimalListInput",
@@ -14763,8 +14568,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "FloatFieldUpdateOperationsInput",
@@ -14823,8 +14627,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "BytesFieldUpdateOperationsInput",
@@ -14843,8 +14646,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelUpdatebytesListInput",
@@ -14873,8 +14675,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "BigIntFieldUpdateOperationsInput",
@@ -14933,8 +14734,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelUpdatebigIntListInput",
@@ -14963,8 +14763,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelUpdatedateTimeListInput",
@@ -14993,8 +14792,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "NestedIntFilter",
@@ -15084,8 +14882,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedDateTimeFilter",
@@ -15175,8 +14972,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedStringFilter",
@@ -15296,8 +15092,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedStringNullableFilter",
@@ -15417,8 +15212,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedEnumUserRoleFilter",
@@ -15471,8 +15265,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedIntNullableFilter",
@@ -15562,8 +15355,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedIntWithAggregatesFilter",
@@ -15708,8 +15500,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedFloatFilter",
@@ -15799,8 +15590,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedDateTimeWithAggregatesFilter",
@@ -15923,8 +15713,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedStringWithAggregatesFilter",
@@ -16077,8 +15866,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedStringNullableWithAggregatesFilter",
@@ -16231,8 +16019,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedIntNullableWithAggregatesFilter",
@@ -16377,8 +16164,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedFloatNullableFilter",
@@ -16468,8 +16254,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedBoolFilter",
@@ -16499,8 +16284,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedEnumPostKindFilter",
@@ -16553,8 +16337,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedBoolWithAggregatesFilter",
@@ -16617,8 +16400,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedDecimalFilter",
@@ -16708,8 +16490,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedBytesFilter",
@@ -16759,8 +16540,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedBigIntFilter",
@@ -16850,8 +16630,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedJsonFilter",
@@ -16990,8 +16769,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedDecimalWithAggregatesFilter",
@@ -17136,8 +16914,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedFloatWithAggregatesFilter",
@@ -17282,8 +17059,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedBytesWithAggregatesFilter",
@@ -17366,8 +17142,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "NestedBigIntWithAggregatesFilter",
@@ -17512,8 +17287,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateWithoutAuthorInput",
@@ -17605,8 +17379,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateOrConnectWithoutAuthorInput",
@@ -17637,8 +17410,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateManyAuthorInputEnvelope",
@@ -17668,8 +17440,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateWithoutChildrenInput",
@@ -17783,8 +17554,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateOrConnectWithoutChildrenInput",
@@ -17815,8 +17585,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateWithoutParentInput",
@@ -17930,8 +17699,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateOrConnectWithoutParentInput",
@@ -17962,8 +17730,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateManyParentInputEnvelope",
@@ -17993,8 +17760,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateWithoutAnotherAuthorInput",
@@ -18086,8 +17852,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateOrConnectWithoutAnotherAuthorInput",
@@ -18118,8 +17883,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateManyAnotherAuthorInputEnvelope",
@@ -18149,8 +17913,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagCreateWithoutUsersInput",
@@ -18169,8 +17932,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagCreateOrConnectWithoutUsersInput",
@@ -18201,8 +17963,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpsertWithWhereUniqueWithoutAuthorInput",
@@ -18244,8 +18005,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateWithWhereUniqueWithoutAuthorInput",
@@ -18276,8 +18036,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateManyWithWhereWithoutAuthorInput",
@@ -18308,8 +18067,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostScalarWhereInput",
@@ -18450,8 +18208,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "UserUpsertWithoutChildrenInput",
@@ -18493,8 +18250,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateToOneWithWhereWithoutChildrenInput",
@@ -18525,8 +18281,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateWithoutChildrenInput",
@@ -18645,8 +18400,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpsertWithWhereUniqueWithoutParentInput",
@@ -18688,8 +18442,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateWithWhereUniqueWithoutParentInput",
@@ -18720,8 +18473,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateManyWithWhereWithoutParentInput",
@@ -18752,8 +18504,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserScalarWhereInput",
@@ -18883,8 +18634,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "PostUpsertWithWhereUniqueWithoutAnotherAuthorInput",
@@ -18926,8 +18676,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateWithWhereUniqueWithoutAnotherAuthorInput",
@@ -18958,8 +18707,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateManyWithWhereWithoutAnotherAuthorInput",
@@ -18990,8 +18738,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagUpsertWithWhereUniqueWithoutUsersInput",
@@ -19033,8 +18780,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagUpdateWithWhereUniqueWithoutUsersInput",
@@ -19065,8 +18811,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagUpdateManyWithWhereWithoutUsersInput",
@@ -19097,8 +18842,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagScalarWhereInput",
@@ -19151,8 +18895,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "UserCreateWithoutPostsInput",
@@ -19266,8 +19009,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateOrConnectWithoutPostsInput",
@@ -19298,8 +19040,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateWithoutAnotherPostsInput",
@@ -19413,8 +19154,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateOrConnectWithoutAnotherPostsInput",
@@ -19445,8 +19185,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryCreateWithoutPostsInput",
@@ -19496,8 +19235,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryCreateOrConnectWithoutPostsInput",
@@ -19528,8 +19266,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpsertWithoutPostsInput",
@@ -19571,8 +19308,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateToOneWithWhereWithoutPostsInput",
@@ -19603,8 +19339,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateWithoutPostsInput",
@@ -19723,8 +19458,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpsertWithoutAnotherPostsInput",
@@ -19766,8 +19500,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateToOneWithWhereWithoutAnotherPostsInput",
@@ -19798,8 +19531,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateWithoutAnotherPostsInput",
@@ -19918,8 +19650,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUpsertWithWhereUniqueWithoutPostsInput",
@@ -19961,8 +19692,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUpdateWithWhereUniqueWithoutPostsInput",
@@ -19993,8 +19723,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUpdateManyWithWhereWithoutPostsInput",
@@ -20025,8 +19754,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryScalarWhereInput",
@@ -20112,8 +19840,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "UserCreateWithoutTagsInput",
@@ -20227,8 +19954,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateOrConnectWithoutTagsInput",
@@ -20259,8 +19985,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpsertWithWhereUniqueWithoutTagsInput",
@@ -20302,8 +20027,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateWithWhereUniqueWithoutTagsInput",
@@ -20334,8 +20058,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateManyWithWhereWithoutTagsInput",
@@ -20366,8 +20089,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateWithoutCategoriesInput",
@@ -20459,8 +20181,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateOrConnectWithoutCategoriesInput",
@@ -20491,8 +20212,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataCreateWithoutCategoryInput",
@@ -20532,8 +20252,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataCreateOrConnectWithoutCategoryInput",
@@ -20564,8 +20283,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpsertWithWhereUniqueWithoutCategoriesInput",
@@ -20607,8 +20325,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateWithWhereUniqueWithoutCategoriesInput",
@@ -20639,8 +20356,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateManyWithWhereWithoutCategoriesInput",
@@ -20671,8 +20387,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataUpsertWithoutCategoryInput",
@@ -20714,8 +20429,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataUpdateToOneWithWhereWithoutCategoryInput",
@@ -20746,8 +20460,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataUpdateWithoutCategoryInput",
@@ -20789,8 +20502,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryCreateWithoutMetadataInput",
@@ -20840,8 +20552,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryCreateOrConnectWithoutMetadataInput",
@@ -20872,8 +20583,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUpsertWithoutMetadataInput",
@@ -20915,8 +20625,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUpdateToOneWithWhereWithoutMetadataInput",
@@ -20947,8 +20656,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUpdateWithoutMetadataInput",
@@ -21001,8 +20709,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateManyAuthorInput",
@@ -21092,8 +20799,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCreateManyParentInput",
@@ -21173,8 +20879,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCreateManyAnotherAuthorInput",
@@ -21264,8 +20969,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateWithoutAuthorInput",
@@ -21362,8 +21066,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateWithoutParentInput",
@@ -21482,8 +21185,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateWithoutAnotherAuthorInput",
@@ -21580,8 +21282,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagUpdateWithoutUsersInput",
@@ -21601,8 +21302,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryUpdateWithoutPostsInput",
@@ -21655,8 +21355,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserUpdateWithoutTagsInput",
@@ -21775,8 +21474,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostUpdateWithoutCategoriesInput",
@@ -21873,8 +21571,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserCountAggregateInputType",
@@ -21963,8 +21660,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserAvgAggregateInputType",
@@ -22053,8 +21749,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserSumAggregateInputType",
@@ -22143,8 +21838,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserMinAggregateInputType",
@@ -22233,8 +21927,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserMaxAggregateInputType",
@@ -22323,8 +22016,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "PostCountAggregateInputType",
@@ -22423,8 +22115,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostAvgAggregateInputType",
@@ -22523,8 +22214,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostSumAggregateInputType",
@@ -22623,8 +22313,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostMinAggregateInputType",
@@ -22723,8 +22412,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostMaxAggregateInputType",
@@ -22823,8 +22511,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "TagCountAggregateInputType",
@@ -22843,8 +22530,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagAvgAggregateInputType",
@@ -22863,8 +22549,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagSumAggregateInputType",
@@ -22883,8 +22568,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagMinAggregateInputType",
@@ -22903,8 +22587,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagMaxAggregateInputType",
@@ -22923,8 +22606,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "CategoryCountAggregateInputType",
@@ -22973,8 +22655,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryAvgAggregateInputType",
@@ -23023,8 +22704,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategorySumAggregateInputType",
@@ -23073,8 +22753,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryMinAggregateInputType",
@@ -23123,8 +22802,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryMaxAggregateInputType",
@@ -23173,8 +22851,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryMetadataCountAggregateInputType",
@@ -23233,8 +22910,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataAvgAggregateInputType",
@@ -23293,8 +22969,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataSumAggregateInputType",
@@ -23353,8 +23028,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataMinAggregateInputType",
@@ -23413,8 +23087,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataMaxAggregateInputType",
@@ -23473,8 +23146,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "MiscModelCountAggregateInputType",
@@ -23643,8 +23315,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelAvgAggregateInputType",
@@ -23813,8 +23484,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelSumAggregateInputType",
@@ -23983,8 +23653,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelMinAggregateInputType",
@@ -24153,8 +23822,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelMaxAggregateInputType",
@@ -24323,8 +23991,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "HiddenModelCountAggregateInputType",
@@ -24373,8 +24040,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelAvgAggregateInputType",
@@ -24423,8 +24089,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelSumAggregateInputType",
@@ -24473,8 +24138,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelMinAggregateInputType",
@@ -24523,8 +24187,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelMaxAggregateInputType",
@@ -24573,8 +24236,7 @@
           "isNullable": true,
           "isRequired": false
         }
-      ],
-      "module": "HiddenModel"
+      ]
     }
   ],
   "outputObjectTypes": [
@@ -24636,8 +24298,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserGroupByOutputType",
@@ -24778,8 +24439,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "AggregatePost",
@@ -24839,8 +24499,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostGroupByOutputType",
@@ -24991,8 +24650,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "AggregateTag",
@@ -25030,8 +24688,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagGroupByOutputType",
@@ -25079,8 +24736,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "AggregateCategory",
@@ -25140,8 +24796,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryGroupByOutputType",
@@ -25241,8 +24896,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "AggregateCategoryMetadata",
@@ -25302,8 +24956,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataGroupByOutputType",
@@ -25413,8 +25066,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "AggregateMiscModel",
@@ -25474,8 +25126,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelGroupByOutputType",
@@ -25695,8 +25346,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "AggregateHiddenModel",
@@ -25756,8 +25406,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelGroupByOutputType",
@@ -25857,8 +25506,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "AffectedRowsOutput",
@@ -25873,8 +25521,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserCountAggregateOutputType",
@@ -25969,8 +25616,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserAvgAggregateOutputType",
@@ -25995,8 +25641,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserSumAggregateOutputType",
@@ -26021,8 +25666,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserMinAggregateOutputType",
@@ -26108,8 +25752,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "UserMaxAggregateOutputType",
@@ -26195,8 +25838,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostCountAggregateOutputType",
@@ -26301,8 +25943,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostAvgAggregateOutputType",
@@ -26337,8 +25978,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostSumAggregateOutputType",
@@ -26373,8 +26013,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostMinAggregateOutputType",
@@ -26470,8 +26109,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "PostMaxAggregateOutputType",
@@ -26567,8 +26205,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagCountAggregateOutputType",
@@ -26593,8 +26230,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagMinAggregateOutputType",
@@ -26609,8 +26245,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "TagMaxAggregateOutputType",
@@ -26625,8 +26260,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryCountAggregateOutputType",
@@ -26681,8 +26315,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryAvgAggregateOutputType",
@@ -26697,8 +26330,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategorySumAggregateOutputType",
@@ -26713,8 +26345,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMinAggregateOutputType",
@@ -26759,8 +26390,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMaxAggregateOutputType",
@@ -26805,8 +26435,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataCountAggregateOutputType",
@@ -26871,8 +26500,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataAvgAggregateOutputType",
@@ -26897,8 +26525,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataSumAggregateOutputType",
@@ -26923,8 +26550,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataMinAggregateOutputType",
@@ -26969,8 +26595,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "CategoryMetadataMaxAggregateOutputType",
@@ -27015,8 +26640,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "MiscModelCountAggregateOutputType",
@@ -27191,8 +26815,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "MiscModelAvgAggregateOutputType",
@@ -27257,8 +26880,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "MiscModelSumAggregateOutputType",
@@ -27323,8 +26945,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "MiscModelMinAggregateOutputType",
@@ -27419,8 +27040,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "MiscModelMaxAggregateOutputType",
@@ -27515,8 +27135,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "HiddenModelCountAggregateOutputType",
@@ -27571,8 +27190,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "HiddenModelAvgAggregateOutputType",
@@ -27587,8 +27205,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "HiddenModelSumAggregateOutputType",
@@ -27603,8 +27220,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "HiddenModelMinAggregateOutputType",
@@ -27639,8 +27255,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "HiddenModelMaxAggregateOutputType",
@@ -27675,8 +27290,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Prisma"
+      ]
     },
     {
       "name": "User",
@@ -28300,8 +27914,7 @@
         "uniqueIndexes": [],
         "isGenerated": false,
         "documentation": "User model documentation"
-      },
-      "module": "User"
+      }
     },
     {
       "name": "Post",
@@ -28683,8 +28296,7 @@
         "uniqueIndexes": [],
         "isGenerated": false,
         "documentation": "@@allow('all', auth().role == 'ADMIN')"
-      },
-      "module": "Post"
+      }
     },
     {
       "name": "Tag",
@@ -28814,8 +28426,7 @@
         "uniqueFields": [],
         "uniqueIndexes": [],
         "isGenerated": false
-      },
-      "module": "Tag"
+      }
     },
     {
       "name": "Category",
@@ -29063,8 +28674,7 @@
         "uniqueFields": [],
         "uniqueIndexes": [],
         "isGenerated": false
-      },
-      "module": "Category"
+      }
     },
     {
       "name": "CategoryMetadata",
@@ -29230,8 +28840,7 @@
         "uniqueFields": [],
         "uniqueIndexes": [],
         "isGenerated": false
-      },
-      "module": "CategoryMetadata"
+      }
     },
     {
       "name": "MiscModel",
@@ -29626,8 +29235,7 @@
         "uniqueFields": [],
         "uniqueIndexes": [],
         "isGenerated": false
-      },
-      "module": "MiscModel"
+      }
     },
     {
       "name": "HiddenModel",
@@ -29743,8 +29351,7 @@
         "uniqueIndexes": [],
         "isGenerated": false,
         "documentation": "@@graphql.hide"
-      },
-      "module": "HiddenModel"
+      }
     }
   ],
   "argsTypes": [
@@ -29854,8 +29461,7 @@
             "location": "inputObjectTypes"
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserCreateManyArgs",
@@ -29881,8 +29487,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserDeleteManyArgs",
@@ -29898,8 +29503,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserFindFirstArgs",
@@ -29968,8 +29572,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserFindManyArgs",
@@ -30038,8 +29641,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserFindUniqueArgs",
@@ -30055,8 +29657,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserGroupByArgs",
@@ -30125,8 +29726,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "UserUpdateManyArgs",
@@ -30153,8 +29753,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "User"
+      ]
     },
     {
       "name": "PostAggregateArgs",
@@ -30262,8 +29861,7 @@
             "location": "inputObjectTypes"
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostCreateManyArgs",
@@ -30289,8 +29887,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostDeleteManyArgs",
@@ -30306,8 +29903,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostFindFirstArgs",
@@ -30376,8 +29972,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostFindManyArgs",
@@ -30446,8 +30041,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostFindUniqueArgs",
@@ -30463,8 +30057,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostGroupByArgs",
@@ -30533,8 +30126,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "PostUpdateManyArgs",
@@ -30561,8 +30153,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Post"
+      ]
     },
     {
       "name": "TagAggregateArgs",
@@ -30670,8 +30261,7 @@
             "location": "inputObjectTypes"
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagCreateManyArgs",
@@ -30697,8 +30287,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagDeleteManyArgs",
@@ -30714,8 +30303,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagFindFirstArgs",
@@ -30784,8 +30372,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagFindManyArgs",
@@ -30854,8 +30441,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagFindUniqueArgs",
@@ -30871,8 +30457,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagGroupByArgs",
@@ -30941,8 +30526,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "TagUpdateManyArgs",
@@ -30969,8 +30553,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Tag"
+      ]
     },
     {
       "name": "CategoryAggregateArgs",
@@ -31078,8 +30661,7 @@
             "location": "inputObjectTypes"
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryCreateManyArgs",
@@ -31105,8 +30687,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryDeleteManyArgs",
@@ -31122,8 +30703,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryFindFirstArgs",
@@ -31192,8 +30772,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryFindManyArgs",
@@ -31262,8 +30841,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryFindUniqueArgs",
@@ -31279,8 +30857,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryGroupByArgs",
@@ -31349,8 +30926,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryUpdateManyArgs",
@@ -31377,8 +30953,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "Category"
+      ]
     },
     {
       "name": "CategoryMetadataAggregateArgs",
@@ -31486,8 +31061,7 @@
             "location": "inputObjectTypes"
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataCreateManyArgs",
@@ -31513,8 +31087,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataDeleteManyArgs",
@@ -31530,8 +31103,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataFindFirstArgs",
@@ -31600,8 +31172,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataFindManyArgs",
@@ -31670,8 +31241,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataFindUniqueArgs",
@@ -31687,8 +31257,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataGroupByArgs",
@@ -31757,8 +31326,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "CategoryMetadataUpdateManyArgs",
@@ -31785,8 +31353,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "CategoryMetadata"
+      ]
     },
     {
       "name": "MiscModelAggregateArgs",
@@ -31894,8 +31461,7 @@
             "location": "inputObjectTypes"
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelCreateManyArgs",
@@ -31921,8 +31487,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelDeleteManyArgs",
@@ -31938,8 +31503,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelFindFirstArgs",
@@ -32008,8 +31572,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelFindManyArgs",
@@ -32078,8 +31641,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelFindUniqueArgs",
@@ -32095,8 +31657,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelGroupByArgs",
@@ -32165,8 +31726,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "MiscModelUpdateManyArgs",
@@ -32193,8 +31753,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "MiscModel"
+      ]
     },
     {
       "name": "HiddenModelAggregateArgs",
@@ -32302,8 +31861,7 @@
             "location": "inputObjectTypes"
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelCreateManyArgs",
@@ -32329,8 +31887,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelDeleteManyArgs",
@@ -32346,8 +31903,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelFindFirstArgs",
@@ -32416,8 +31972,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelFindManyArgs",
@@ -32486,8 +32041,7 @@
             "isList": true
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelFindUniqueArgs",
@@ -32503,8 +32057,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelGroupByArgs",
@@ -32573,8 +32126,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     },
     {
       "name": "HiddenModelUpdateManyArgs",
@@ -32601,8 +32153,7 @@
             "isList": false
           }
         }
-      ],
-      "module": "HiddenModel"
+      ]
     }
   ]
 }
