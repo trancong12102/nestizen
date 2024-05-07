@@ -29756,6 +29756,75 @@
       ]
     },
     {
+      "name": "UserCountArgs",
+      "fields": [
+        {
+          "name": "where",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "UserWhereInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "orderBy",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "UserOrderByWithRelationInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": true
+          }
+        },
+        {
+          "name": "cursor",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "UserWhereUniqueInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "take",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "skip",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "distinct",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "UserScalarFieldEnum",
+            "namespace": "prisma",
+            "location": "enumTypes",
+            "isList": true
+          }
+        }
+      ]
+    },
+    {
       "name": "PostAggregateArgs",
       "fields": [
         {
@@ -30151,6 +30220,75 @@
             "namespace": "prisma",
             "location": "inputObjectTypes",
             "isList": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "PostCountArgs",
+      "fields": [
+        {
+          "name": "where",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "PostWhereInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "orderBy",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "PostOrderByWithRelationInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": true
+          }
+        },
+        {
+          "name": "cursor",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "PostWhereUniqueInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "take",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "skip",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "distinct",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "PostScalarFieldEnum",
+            "namespace": "prisma",
+            "location": "enumTypes",
+            "isList": true
           }
         }
       ]
@@ -30556,6 +30694,75 @@
       ]
     },
     {
+      "name": "TagCountArgs",
+      "fields": [
+        {
+          "name": "where",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "TagWhereInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "orderBy",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "TagOrderByWithRelationInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": true
+          }
+        },
+        {
+          "name": "cursor",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "TagWhereUniqueInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "take",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "skip",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "distinct",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "TagScalarFieldEnum",
+            "namespace": "prisma",
+            "location": "enumTypes",
+            "isList": true
+          }
+        }
+      ]
+    },
+    {
       "name": "CategoryAggregateArgs",
       "fields": [
         {
@@ -30951,6 +31158,75 @@
             "namespace": "prisma",
             "location": "inputObjectTypes",
             "isList": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "CategoryCountArgs",
+      "fields": [
+        {
+          "name": "where",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "CategoryWhereInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "orderBy",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "CategoryOrderByWithRelationInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": true
+          }
+        },
+        {
+          "name": "cursor",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "CategoryWhereUniqueInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "take",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "skip",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "distinct",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "CategoryScalarFieldEnum",
+            "namespace": "prisma",
+            "location": "enumTypes",
+            "isList": true
           }
         }
       ]
@@ -31356,6 +31632,75 @@
       ]
     },
     {
+      "name": "CategoryMetadataCountArgs",
+      "fields": [
+        {
+          "name": "where",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "CategoryMetadataWhereInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "orderBy",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "CategoryMetadataOrderByWithRelationInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": true
+          }
+        },
+        {
+          "name": "cursor",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "CategoryMetadataWhereUniqueInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "take",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "skip",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "distinct",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "CategoryMetadataScalarFieldEnum",
+            "namespace": "prisma",
+            "location": "enumTypes",
+            "isList": true
+          }
+        }
+      ]
+    },
+    {
       "name": "MiscModelAggregateArgs",
       "fields": [
         {
@@ -31756,6 +32101,75 @@
       ]
     },
     {
+      "name": "MiscModelCountArgs",
+      "fields": [
+        {
+          "name": "where",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "MiscModelWhereInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "orderBy",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "MiscModelOrderByWithRelationInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": true
+          }
+        },
+        {
+          "name": "cursor",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "MiscModelWhereUniqueInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "take",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "skip",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "distinct",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "MiscModelScalarFieldEnum",
+            "namespace": "prisma",
+            "location": "enumTypes",
+            "isList": true
+          }
+        }
+      ]
+    },
+    {
       "name": "HiddenModelAggregateArgs",
       "fields": [
         {
@@ -32151,6 +32565,75 @@
             "namespace": "prisma",
             "location": "inputObjectTypes",
             "isList": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "HiddenModelCountArgs",
+      "fields": [
+        {
+          "name": "where",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "HiddenModelWhereInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "orderBy",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "HiddenModelOrderByWithRelationInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": true
+          }
+        },
+        {
+          "name": "cursor",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "HiddenModelWhereUniqueInput",
+            "namespace": "prisma",
+            "location": "inputObjectTypes",
+            "isList": false
+          }
+        },
+        {
+          "name": "take",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "skip",
+          "isRequired": true,
+          "isNullable": false,
+          "inputType": {
+            "type": "Int",
+            "location": "scalar",
+            "isList": false
+          }
+        },
+        {
+          "name": "distinct",
+          "isRequired": false,
+          "isNullable": false,
+          "inputType": {
+            "type": "HiddenModelScalarFieldEnum",
+            "namespace": "prisma",
+            "location": "enumTypes",
+            "isList": true
           }
         }
       ]

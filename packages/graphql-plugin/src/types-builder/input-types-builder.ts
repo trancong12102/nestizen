@@ -44,8 +44,10 @@ export class InputTypesBuilder extends BaseTypesBuilder {
     const imports: ImportDeclarationStructure[] = [];
 
     for (const field of fields) {
-      const { property, imports: schemaFieldImports } =
-        this.buildSchemaArg(field);
+      const { property, imports: schemaFieldImports } = this.buildSchemaArg(
+        field,
+        name.endsWith('WhereUniqueInput'),
+      );
       properties.push(property);
       imports.push(...schemaFieldImports);
     }

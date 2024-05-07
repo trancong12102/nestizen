@@ -12,7 +12,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "createManyUser",
@@ -24,7 +25,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "deleteManyUser",
@@ -36,7 +38,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findFirstUser",
@@ -48,7 +51,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "findManyUser",
@@ -60,7 +64,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findUniqueUser",
@@ -72,7 +77,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "groupByUser",
@@ -84,7 +90,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "updateManyUser",
@@ -96,18 +103,20 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "countUser",
         "type": "Query",
         "action": "count",
-        "argsTypeName": "UserFindManyArgs",
+        "argsTypeName": "UserCountArgs",
         "outputType": {
           "type": "Int",
           "isList": false,
           "location": "scalar"
-        }
+        },
+        "isNullable": false
       }
     ]
   },
@@ -124,7 +133,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "createManyPost",
@@ -136,7 +146,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "deleteManyPost",
@@ -148,7 +159,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findFirstPost",
@@ -160,7 +172,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "findManyPost",
@@ -172,7 +185,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findUniquePost",
@@ -184,7 +198,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "groupByPost",
@@ -196,7 +211,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "updateManyPost",
@@ -208,18 +224,20 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "countPost",
         "type": "Query",
         "action": "count",
-        "argsTypeName": "PostFindManyArgs",
+        "argsTypeName": "PostCountArgs",
         "outputType": {
           "type": "Int",
           "isList": false,
           "location": "scalar"
-        }
+        },
+        "isNullable": false
       }
     ]
   },
@@ -236,7 +254,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "createManyTag",
@@ -248,7 +267,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "deleteManyTag",
@@ -260,7 +280,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findFirstTag",
@@ -272,7 +293,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "findManyTag",
@@ -284,7 +306,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findUniqueTag",
@@ -296,7 +319,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "groupByTag",
@@ -308,7 +332,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "updateManyTag",
@@ -320,18 +345,20 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "countTag",
         "type": "Query",
         "action": "count",
-        "argsTypeName": "TagFindManyArgs",
+        "argsTypeName": "TagCountArgs",
         "outputType": {
           "type": "Int",
           "isList": false,
           "location": "scalar"
-        }
+        },
+        "isNullable": false
       }
     ]
   },
@@ -348,7 +375,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "createManyCategory",
@@ -360,7 +388,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "deleteManyCategory",
@@ -372,7 +401,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findFirstCategory",
@@ -384,7 +414,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "findManyCategory",
@@ -396,7 +427,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findUniqueCategory",
@@ -408,7 +440,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "groupByCategory",
@@ -420,7 +453,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "updateManyCategory",
@@ -432,18 +466,20 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "countCategory",
         "type": "Query",
         "action": "count",
-        "argsTypeName": "CategoryFindManyArgs",
+        "argsTypeName": "CategoryCountArgs",
         "outputType": {
           "type": "Int",
           "isList": false,
           "location": "scalar"
-        }
+        },
+        "isNullable": false
       }
     ]
   },
@@ -460,7 +496,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "createManyCategoryMetadata",
@@ -472,7 +509,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "deleteManyCategoryMetadata",
@@ -484,7 +522,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findFirstCategoryMetadata",
@@ -496,7 +535,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "findManyCategoryMetadata",
@@ -508,7 +548,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findUniqueCategoryMetadata",
@@ -520,7 +561,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "groupByCategoryMetadata",
@@ -532,7 +574,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "updateManyCategoryMetadata",
@@ -544,18 +587,20 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "countCategoryMetadata",
         "type": "Query",
         "action": "count",
-        "argsTypeName": "CategoryMetadataFindManyArgs",
+        "argsTypeName": "CategoryMetadataCountArgs",
         "outputType": {
           "type": "Int",
           "isList": false,
           "location": "scalar"
-        }
+        },
+        "isNullable": false
       }
     ]
   },
@@ -572,7 +617,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "createManyMiscModel",
@@ -584,7 +630,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "deleteManyMiscModel",
@@ -596,7 +643,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findFirstMiscModel",
@@ -608,7 +656,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "findManyMiscModel",
@@ -620,7 +669,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findUniqueMiscModel",
@@ -632,7 +682,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "groupByMiscModel",
@@ -644,7 +695,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "updateManyMiscModel",
@@ -656,18 +708,20 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "countMiscModel",
         "type": "Query",
         "action": "count",
-        "argsTypeName": "MiscModelFindManyArgs",
+        "argsTypeName": "MiscModelCountArgs",
         "outputType": {
           "type": "Int",
           "isList": false,
           "location": "scalar"
-        }
+        },
+        "isNullable": false
       }
     ]
   },
@@ -684,7 +738,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "createManyHiddenModel",
@@ -696,7 +751,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "deleteManyHiddenModel",
@@ -708,7 +764,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findFirstHiddenModel",
@@ -720,7 +777,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "findManyHiddenModel",
@@ -732,7 +790,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "findUniqueHiddenModel",
@@ -744,7 +803,8 @@
           "namespace": "model",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": true
       },
       {
         "name": "groupByHiddenModel",
@@ -756,7 +816,8 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": true
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "updateManyHiddenModel",
@@ -768,18 +829,20 @@
           "namespace": "prisma",
           "location": "outputObjectTypes",
           "isList": false
-        }
+        },
+        "isNullable": false
       },
       {
         "name": "countHiddenModel",
         "type": "Query",
         "action": "count",
-        "argsTypeName": "HiddenModelFindManyArgs",
+        "argsTypeName": "HiddenModelCountArgs",
         "outputType": {
           "type": "Int",
           "isList": false,
           "location": "scalar"
-        }
+        },
+        "isNullable": false
       }
     ]
   }

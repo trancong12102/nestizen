@@ -6,6 +6,7 @@ export class BaseModulesBuilder {
   constructor(
     protected readonly ast: AST,
     protected readonly generateOptions: GenerateOptions,
+    protected readonly typesOutputPath: string,
   ) {}
 
   async build(): Promise<SourceFile[]> {

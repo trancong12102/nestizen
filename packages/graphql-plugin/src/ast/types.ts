@@ -87,6 +87,7 @@ export type ModelOperation = {
   action: ModelAction;
   argsTypeName: string;
   outputType: OutputTypeRef;
+  isNullable: boolean;
 };
 
 export enum ModelQuery {

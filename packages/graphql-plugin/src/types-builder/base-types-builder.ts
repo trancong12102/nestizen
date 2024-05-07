@@ -17,7 +17,10 @@ export class BaseTypesBuilder {
     throw new Error('Not implemented');
   }
 
-  protected buildSchemaArg(field: SchemaArg): ClassPropertyStructure {
+  protected buildSchemaArg(
+    field: SchemaArg,
+    unsafeCompatibleWhereUniqueInput?: boolean,
+  ): ClassPropertyStructure {
     const { name, isRequired, inputType, comment } = field;
     const { type, isList } = inputType;
 
@@ -38,7 +41,7 @@ export class BaseTypesBuilder {
         name,
         type: getTsListType(tsType, isList),
         docs: getDocsFromDoc(comment),
-        hasQuestionToken: !isRequired,
+        hasQuestionToken: !unsafeCompatibleWhereUniqueInput && !isRequired,
         decorators: [
           {
             name: 'Field',

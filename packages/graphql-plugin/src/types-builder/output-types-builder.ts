@@ -13,7 +13,7 @@ import {
   StatementStructure,
 } from '../types/ts-morph';
 import { getScalarType } from './scalar-type';
-import { getGraphqlListType, getTsListType } from './utils';
+import { getGraphqlListType, getTsType } from './utils';
 import { getDocsFromDoc } from '../utils/ts-morph';
 
 export class OutputTypesBuilder extends BaseTypesBuilder {
@@ -102,9 +102,8 @@ export class OutputTypesBuilder extends BaseTypesBuilder {
       property: {
         kind: StructureKind.Property,
         name,
-        type: getTsListType(tsType, isList),
+        type: getTsType(tsType, isList, isNullable),
         docs: getDocsFromDoc(documentation),
-        hasQuestionToken: isNullable,
         decorators: [
           {
             name: 'Field',

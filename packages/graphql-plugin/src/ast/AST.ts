@@ -27,6 +27,7 @@ import pascalcase from '@stdlib/string-pascalcase';
 export class AST {
   public readonly schema: Schema;
   public readonly mappings: ModelMapping[];
+  public readonly models: DMMF.Model[];
   public readonly schemaIndex: SchemaIndexMap;
   private readonly query: OutputType;
   private readonly mutation: OutputType;
@@ -43,6 +44,16 @@ export class AST {
     this.mappings = this.buildModelMappings();
     this.schema = removeRedundantTypesFromSchema(this.schema, this.mappings);
     this.schemaIndex = buildSchemaIndex(this.schema);
+    this.models = [...dmmf.datamodel.models];
+  }
+
+  getModel(name: string) {
+    const model = this.models.find((m) => m.name === name);
+    if (!model) {
+      throw new Error(`Model not found: ${name}`);
+    }
+
+    return model;
   }
 
   getInputType(type: string) {
@@ -149,6 +160,7 @@ export class AST {
             action,
             argsTypeName,
             outputType: schemaField.outputType,
+            isNullable: schemaField.isNullable || false,
           };
         });
 
@@ -159,16 +171,30 @@ export class AST {
         throw new Error(`findMany operation not found for model: ${model}`);
       }
 
+      const countArgsTypeName = `${model}CountArgs`;
+      const findManyArgsType = this.schema.argsTypes.find(
+        (t) => t.name === findManyOperation.argsTypeName,
+      );
+      if (!findManyArgsType) {
+        throw new Error(`findManyArgsType not found for model: ${model}`);
+      }
+      const countArgsType: ArgsType = {
+        name: countArgsTypeName,
+        fields: findManyArgsType.fields,
+      };
+      this.schema.argsTypes.push(countArgsType);
+
       operations.push({
         name: `count${model}`,
         type: 'Query',
         action: ModelAction.count,
-        argsTypeName: findManyOperation.argsTypeName,
+        argsTypeName: countArgsTypeName,
         outputType: {
           type: 'Int',
           isList: false,
           location: 'scalar',
         },
+        isNullable: false,
       });
 
       return {
@@ -248,7 +274,7 @@ export class AST {
       },
     } = this.dmmf;
 
-    return prisma.concat(model || []).map((t) => this.buildInputType(t));
+    return (model || []).concat(prisma).map((t) => this.buildInputType(t));
   }
 
   private buildInputType(source: DMMF.InputType): InputType {

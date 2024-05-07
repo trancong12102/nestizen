@@ -20,8 +20,6 @@ export const buildTypes = (ast: AST): SourceFileStructure => {
   const argsTypesOutput = argsTypesBuilder.build();
 
   return {
-    overwrite: true,
-    disableEslint: true,
     imports: optimizeImports([
       ...enumTypesOutput.imports,
       ...outputTypesOutput.imports,

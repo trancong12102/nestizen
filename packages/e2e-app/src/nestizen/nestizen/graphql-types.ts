@@ -173,15 +173,15 @@ registerEnumType(NullsOrder, { name: 'NullsOrder', valuesMap: {} });
 @ObjectType({})
 export class AggregateUser {
   @Field(() => UserCountAggregateOutputType, { nullable: true })
-  _count?: UserCountAggregateOutputType;
+  _count: UserCountAggregateOutputType | null;
   @Field(() => UserAvgAggregateOutputType, { nullable: true })
-  _avg?: UserAvgAggregateOutputType;
+  _avg: UserAvgAggregateOutputType | null;
   @Field(() => UserSumAggregateOutputType, { nullable: true })
-  _sum?: UserSumAggregateOutputType;
+  _sum: UserSumAggregateOutputType | null;
   @Field(() => UserMinAggregateOutputType, { nullable: true })
-  _min?: UserMinAggregateOutputType;
+  _min: UserMinAggregateOutputType | null;
   @Field(() => UserMaxAggregateOutputType, { nullable: true })
-  _max?: UserMaxAggregateOutputType;
+  _max: UserMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
@@ -195,37 +195,37 @@ export class UserGroupByOutputType {
   @Field(() => String, { nullable: false })
   email: string;
   @Field(() => String, { nullable: true })
-  name?: string;
+  name: string | null;
   @Field(() => UserRole, { nullable: false })
   role: UserRole;
   @Field(() => Int, { nullable: true })
-  parentId?: number;
+  parentId: number | null;
   @Field(() => String, { nullable: false })
   mappedField: string;
   @Field(() => UserCountAggregateOutputType, { nullable: true })
-  _count?: UserCountAggregateOutputType;
+  _count: UserCountAggregateOutputType | null;
   @Field(() => UserAvgAggregateOutputType, { nullable: true })
-  _avg?: UserAvgAggregateOutputType;
+  _avg: UserAvgAggregateOutputType | null;
   @Field(() => UserSumAggregateOutputType, { nullable: true })
-  _sum?: UserSumAggregateOutputType;
+  _sum: UserSumAggregateOutputType | null;
   @Field(() => UserMinAggregateOutputType, { nullable: true })
-  _min?: UserMinAggregateOutputType;
+  _min: UserMinAggregateOutputType | null;
   @Field(() => UserMaxAggregateOutputType, { nullable: true })
-  _max?: UserMaxAggregateOutputType;
+  _max: UserMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
 export class AggregatePost {
   @Field(() => PostCountAggregateOutputType, { nullable: true })
-  _count?: PostCountAggregateOutputType;
+  _count: PostCountAggregateOutputType | null;
   @Field(() => PostAvgAggregateOutputType, { nullable: true })
-  _avg?: PostAvgAggregateOutputType;
+  _avg: PostAvgAggregateOutputType | null;
   @Field(() => PostSumAggregateOutputType, { nullable: true })
-  _sum?: PostSumAggregateOutputType;
+  _sum: PostSumAggregateOutputType | null;
   @Field(() => PostMinAggregateOutputType, { nullable: true })
-  _min?: PostMinAggregateOutputType;
+  _min: PostMinAggregateOutputType | null;
   @Field(() => PostMaxAggregateOutputType, { nullable: true })
-  _max?: PostMaxAggregateOutputType;
+  _max: PostMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
@@ -239,7 +239,7 @@ export class PostGroupByOutputType {
   @Field(() => String, { nullable: false })
   title: string;
   @Field(() => String, { nullable: true })
-  content?: string;
+  content: string | null;
   @Field(() => Boolean, { nullable: false })
   published: boolean;
   @Field(() => Int, { nullable: false })
@@ -249,25 +249,25 @@ export class PostGroupByOutputType {
   @Field(() => PostKind, { nullable: false })
   postKind: PostKind;
   @Field(() => PostCountAggregateOutputType, { nullable: true })
-  _count?: PostCountAggregateOutputType;
+  _count: PostCountAggregateOutputType | null;
   @Field(() => PostAvgAggregateOutputType, { nullable: true })
-  _avg?: PostAvgAggregateOutputType;
+  _avg: PostAvgAggregateOutputType | null;
   @Field(() => PostSumAggregateOutputType, { nullable: true })
-  _sum?: PostSumAggregateOutputType;
+  _sum: PostSumAggregateOutputType | null;
   @Field(() => PostMinAggregateOutputType, { nullable: true })
-  _min?: PostMinAggregateOutputType;
+  _min: PostMinAggregateOutputType | null;
   @Field(() => PostMaxAggregateOutputType, { nullable: true })
-  _max?: PostMaxAggregateOutputType;
+  _max: PostMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
 export class AggregateTag {
   @Field(() => TagCountAggregateOutputType, { nullable: true })
-  _count?: TagCountAggregateOutputType;
+  _count: TagCountAggregateOutputType | null;
   @Field(() => TagMinAggregateOutputType, { nullable: true })
-  _min?: TagMinAggregateOutputType;
+  _min: TagMinAggregateOutputType | null;
   @Field(() => TagMaxAggregateOutputType, { nullable: true })
-  _max?: TagMaxAggregateOutputType;
+  _max: TagMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
@@ -275,25 +275,25 @@ export class TagGroupByOutputType {
   @Field(() => String, { nullable: false })
   key: string;
   @Field(() => TagCountAggregateOutputType, { nullable: true })
-  _count?: TagCountAggregateOutputType;
+  _count: TagCountAggregateOutputType | null;
   @Field(() => TagMinAggregateOutputType, { nullable: true })
-  _min?: TagMinAggregateOutputType;
+  _min: TagMinAggregateOutputType | null;
   @Field(() => TagMaxAggregateOutputType, { nullable: true })
-  _max?: TagMaxAggregateOutputType;
+  _max: TagMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
 export class AggregateCategory {
   @Field(() => CategoryCountAggregateOutputType, { nullable: true })
-  _count?: CategoryCountAggregateOutputType;
+  _count: CategoryCountAggregateOutputType | null;
   @Field(() => CategoryAvgAggregateOutputType, { nullable: true })
-  _avg?: CategoryAvgAggregateOutputType;
+  _avg: CategoryAvgAggregateOutputType | null;
   @Field(() => CategorySumAggregateOutputType, { nullable: true })
-  _sum?: CategorySumAggregateOutputType;
+  _sum: CategorySumAggregateOutputType | null;
   @Field(() => CategoryMinAggregateOutputType, { nullable: true })
-  _min?: CategoryMinAggregateOutputType;
+  _min: CategoryMinAggregateOutputType | null;
   @Field(() => CategoryMaxAggregateOutputType, { nullable: true })
-  _max?: CategoryMaxAggregateOutputType;
+  _max: CategoryMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
@@ -307,29 +307,29 @@ export class CategoryGroupByOutputType {
   @Field(() => String, { nullable: false })
   name: string;
   @Field(() => CategoryCountAggregateOutputType, { nullable: true })
-  _count?: CategoryCountAggregateOutputType;
+  _count: CategoryCountAggregateOutputType | null;
   @Field(() => CategoryAvgAggregateOutputType, { nullable: true })
-  _avg?: CategoryAvgAggregateOutputType;
+  _avg: CategoryAvgAggregateOutputType | null;
   @Field(() => CategorySumAggregateOutputType, { nullable: true })
-  _sum?: CategorySumAggregateOutputType;
+  _sum: CategorySumAggregateOutputType | null;
   @Field(() => CategoryMinAggregateOutputType, { nullable: true })
-  _min?: CategoryMinAggregateOutputType;
+  _min: CategoryMinAggregateOutputType | null;
   @Field(() => CategoryMaxAggregateOutputType, { nullable: true })
-  _max?: CategoryMaxAggregateOutputType;
+  _max: CategoryMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
 export class AggregateCategoryMetadata {
   @Field(() => CategoryMetadataCountAggregateOutputType, { nullable: true })
-  _count?: CategoryMetadataCountAggregateOutputType;
+  _count: CategoryMetadataCountAggregateOutputType | null;
   @Field(() => CategoryMetadataAvgAggregateOutputType, { nullable: true })
-  _avg?: CategoryMetadataAvgAggregateOutputType;
+  _avg: CategoryMetadataAvgAggregateOutputType | null;
   @Field(() => CategoryMetadataSumAggregateOutputType, { nullable: true })
-  _sum?: CategoryMetadataSumAggregateOutputType;
+  _sum: CategoryMetadataSumAggregateOutputType | null;
   @Field(() => CategoryMetadataMinAggregateOutputType, { nullable: true })
-  _min?: CategoryMetadataMinAggregateOutputType;
+  _min: CategoryMetadataMinAggregateOutputType | null;
   @Field(() => CategoryMetadataMaxAggregateOutputType, { nullable: true })
-  _max?: CategoryMetadataMaxAggregateOutputType;
+  _max: CategoryMetadataMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
@@ -343,31 +343,31 @@ export class CategoryMetadataGroupByOutputType {
   @Field(() => Int, { nullable: false })
   categoryId: number;
   @Field(() => [GraphQLJSON], { nullable: true })
-  metadata?: any[];
+  metadata: any[] | null;
   @Field(() => CategoryMetadataCountAggregateOutputType, { nullable: true })
-  _count?: CategoryMetadataCountAggregateOutputType;
+  _count: CategoryMetadataCountAggregateOutputType | null;
   @Field(() => CategoryMetadataAvgAggregateOutputType, { nullable: true })
-  _avg?: CategoryMetadataAvgAggregateOutputType;
+  _avg: CategoryMetadataAvgAggregateOutputType | null;
   @Field(() => CategoryMetadataSumAggregateOutputType, { nullable: true })
-  _sum?: CategoryMetadataSumAggregateOutputType;
+  _sum: CategoryMetadataSumAggregateOutputType | null;
   @Field(() => CategoryMetadataMinAggregateOutputType, { nullable: true })
-  _min?: CategoryMetadataMinAggregateOutputType;
+  _min: CategoryMetadataMinAggregateOutputType | null;
   @Field(() => CategoryMetadataMaxAggregateOutputType, { nullable: true })
-  _max?: CategoryMetadataMaxAggregateOutputType;
+  _max: CategoryMetadataMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
 export class AggregateMiscModel {
   @Field(() => MiscModelCountAggregateOutputType, { nullable: true })
-  _count?: MiscModelCountAggregateOutputType;
+  _count: MiscModelCountAggregateOutputType | null;
   @Field(() => MiscModelAvgAggregateOutputType, { nullable: true })
-  _avg?: MiscModelAvgAggregateOutputType;
+  _avg: MiscModelAvgAggregateOutputType | null;
   @Field(() => MiscModelSumAggregateOutputType, { nullable: true })
-  _sum?: MiscModelSumAggregateOutputType;
+  _sum: MiscModelSumAggregateOutputType | null;
   @Field(() => MiscModelMinAggregateOutputType, { nullable: true })
-  _min?: MiscModelMinAggregateOutputType;
+  _min: MiscModelMinAggregateOutputType | null;
   @Field(() => MiscModelMaxAggregateOutputType, { nullable: true })
-  _max?: MiscModelMaxAggregateOutputType;
+  _max: MiscModelMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
@@ -383,51 +383,51 @@ export class MiscModelGroupByOutputType {
   @Field(() => GraphQLJSON, { nullable: false })
   jsonField: any;
   @Field(() => [GraphQLJSON], { nullable: true })
-  jsonList?: any[];
+  jsonList: any[] | null;
   @Field(() => [String], { nullable: true })
-  stringList?: string[];
+  stringList: string[] | null;
   @Field(() => GraphQLHexadecimal, { nullable: false })
   decimalField: string;
   @Field(() => [GraphQLHexadecimal], { nullable: true })
-  decimalList?: string[];
+  decimalList: string[] | null;
   @Field(() => Float, { nullable: false })
   floatField: number;
   @Field(() => GraphQLByte, { nullable: false })
   bytesField: Buffer;
   @Field(() => [GraphQLByte], { nullable: true })
-  bytesList?: Buffer[];
+  bytesList: Buffer[] | null;
   @Field(() => GraphQLBigInt, { nullable: false })
   bigIntField: bigint;
   @Field(() => [GraphQLBigInt], { nullable: true })
-  bigIntList?: bigint[];
+  bigIntList: bigint[] | null;
   @Field(() => Date, { nullable: false })
   dateTimeField: Date;
   @Field(() => [Date], { nullable: true })
-  dateTimeList?: Date[];
+  dateTimeList: Date[] | null;
   @Field(() => MiscModelCountAggregateOutputType, { nullable: true })
-  _count?: MiscModelCountAggregateOutputType;
+  _count: MiscModelCountAggregateOutputType | null;
   @Field(() => MiscModelAvgAggregateOutputType, { nullable: true })
-  _avg?: MiscModelAvgAggregateOutputType;
+  _avg: MiscModelAvgAggregateOutputType | null;
   @Field(() => MiscModelSumAggregateOutputType, { nullable: true })
-  _sum?: MiscModelSumAggregateOutputType;
+  _sum: MiscModelSumAggregateOutputType | null;
   @Field(() => MiscModelMinAggregateOutputType, { nullable: true })
-  _min?: MiscModelMinAggregateOutputType;
+  _min: MiscModelMinAggregateOutputType | null;
   @Field(() => MiscModelMaxAggregateOutputType, { nullable: true })
-  _max?: MiscModelMaxAggregateOutputType;
+  _max: MiscModelMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
 export class AggregateHiddenModel {
   @Field(() => HiddenModelCountAggregateOutputType, { nullable: true })
-  _count?: HiddenModelCountAggregateOutputType;
+  _count: HiddenModelCountAggregateOutputType | null;
   @Field(() => HiddenModelAvgAggregateOutputType, { nullable: true })
-  _avg?: HiddenModelAvgAggregateOutputType;
+  _avg: HiddenModelAvgAggregateOutputType | null;
   @Field(() => HiddenModelSumAggregateOutputType, { nullable: true })
-  _sum?: HiddenModelSumAggregateOutputType;
+  _sum: HiddenModelSumAggregateOutputType | null;
   @Field(() => HiddenModelMinAggregateOutputType, { nullable: true })
-  _min?: HiddenModelMinAggregateOutputType;
+  _min: HiddenModelMinAggregateOutputType | null;
   @Field(() => HiddenModelMaxAggregateOutputType, { nullable: true })
-  _max?: HiddenModelMaxAggregateOutputType;
+  _max: HiddenModelMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
@@ -441,15 +441,15 @@ export class HiddenModelGroupByOutputType {
   @Field(() => GraphQLJSON, { nullable: false })
   data: any;
   @Field(() => HiddenModelCountAggregateOutputType, { nullable: true })
-  _count?: HiddenModelCountAggregateOutputType;
+  _count: HiddenModelCountAggregateOutputType | null;
   @Field(() => HiddenModelAvgAggregateOutputType, { nullable: true })
-  _avg?: HiddenModelAvgAggregateOutputType;
+  _avg: HiddenModelAvgAggregateOutputType | null;
   @Field(() => HiddenModelSumAggregateOutputType, { nullable: true })
-  _sum?: HiddenModelSumAggregateOutputType;
+  _sum: HiddenModelSumAggregateOutputType | null;
   @Field(() => HiddenModelMinAggregateOutputType, { nullable: true })
-  _min?: HiddenModelMinAggregateOutputType;
+  _min: HiddenModelMinAggregateOutputType | null;
   @Field(() => HiddenModelMaxAggregateOutputType, { nullable: true })
-  _max?: HiddenModelMaxAggregateOutputType;
+  _max: HiddenModelMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
@@ -483,57 +483,57 @@ export class UserCountAggregateOutputType {
 @ObjectType({})
 export class UserAvgAggregateOutputType {
   @Field(() => Float, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Float, { nullable: true })
-  parentId?: number;
+  parentId: number | null;
 }
 
 @ObjectType({})
 export class UserSumAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Int, { nullable: true })
-  parentId?: number;
+  parentId: number | null;
 }
 
 @ObjectType({})
 export class UserMinAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => String, { nullable: true })
-  email?: string;
+  email: string | null;
   @Field(() => String, { nullable: true })
-  name?: string;
+  name: string | null;
   @Field(() => UserRole, { nullable: true })
-  role?: UserRole;
+  role: UserRole | null;
   @Field(() => Int, { nullable: true })
-  parentId?: number;
+  parentId: number | null;
   @Field(() => String, { nullable: true })
-  mappedField?: string;
+  mappedField: string | null;
 }
 
 @ObjectType({})
 export class UserMaxAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => String, { nullable: true })
-  email?: string;
+  email: string | null;
   @Field(() => String, { nullable: true })
-  name?: string;
+  name: string | null;
   @Field(() => UserRole, { nullable: true })
-  role?: UserRole;
+  role: UserRole | null;
   @Field(() => Int, { nullable: true })
-  parentId?: number;
+  parentId: number | null;
   @Field(() => String, { nullable: true })
-  mappedField?: string;
+  mappedField: string | null;
 }
 
 @ObjectType({})
@@ -563,65 +563,65 @@ export class PostCountAggregateOutputType {
 @ObjectType({})
 export class PostAvgAggregateOutputType {
   @Field(() => Float, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Float, { nullable: true })
-  authorId?: number;
+  authorId: number | null;
   @Field(() => Float, { nullable: true })
-  anotherAuthorId?: number;
+  anotherAuthorId: number | null;
 }
 
 @ObjectType({})
 export class PostSumAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Int, { nullable: true })
-  authorId?: number;
+  authorId: number | null;
   @Field(() => Int, { nullable: true })
-  anotherAuthorId?: number;
+  anotherAuthorId: number | null;
 }
 
 @ObjectType({})
 export class PostMinAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => String, { nullable: true })
-  title?: string;
+  title: string | null;
   @Field(() => String, { nullable: true })
-  content?: string;
+  content: string | null;
   @Field(() => Boolean, { nullable: true })
-  published?: boolean;
+  published: boolean | null;
   @Field(() => Int, { nullable: true })
-  authorId?: number;
+  authorId: number | null;
   @Field(() => Int, { nullable: true })
-  anotherAuthorId?: number;
+  anotherAuthorId: number | null;
   @Field(() => PostKind, { nullable: true })
-  postKind?: PostKind;
+  postKind: PostKind | null;
 }
 
 @ObjectType({})
 export class PostMaxAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => String, { nullable: true })
-  title?: string;
+  title: string | null;
   @Field(() => String, { nullable: true })
-  content?: string;
+  content: string | null;
   @Field(() => Boolean, { nullable: true })
-  published?: boolean;
+  published: boolean | null;
   @Field(() => Int, { nullable: true })
-  authorId?: number;
+  authorId: number | null;
   @Field(() => Int, { nullable: true })
-  anotherAuthorId?: number;
+  anotherAuthorId: number | null;
   @Field(() => PostKind, { nullable: true })
-  postKind?: PostKind;
+  postKind: PostKind | null;
 }
 
 @ObjectType({})
@@ -635,13 +635,13 @@ export class TagCountAggregateOutputType {
 @ObjectType({})
 export class TagMinAggregateOutputType {
   @Field(() => String, { nullable: true })
-  key?: string;
+  key: string | null;
 }
 
 @ObjectType({})
 export class TagMaxAggregateOutputType {
   @Field(() => String, { nullable: true })
-  key?: string;
+  key: string | null;
 }
 
 @ObjectType({})
@@ -661,37 +661,37 @@ export class CategoryCountAggregateOutputType {
 @ObjectType({})
 export class CategoryAvgAggregateOutputType {
   @Field(() => Float, { nullable: true })
-  id?: number;
+  id: number | null;
 }
 
 @ObjectType({})
 export class CategorySumAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
 }
 
 @ObjectType({})
 export class CategoryMinAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => String, { nullable: true })
-  name?: string;
+  name: string | null;
 }
 
 @ObjectType({})
 export class CategoryMaxAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => String, { nullable: true })
-  name?: string;
+  name: string | null;
 }
 
 @ObjectType({})
@@ -713,41 +713,41 @@ export class CategoryMetadataCountAggregateOutputType {
 @ObjectType({})
 export class CategoryMetadataAvgAggregateOutputType {
   @Field(() => Float, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Float, { nullable: true })
-  categoryId?: number;
+  categoryId: number | null;
 }
 
 @ObjectType({})
 export class CategoryMetadataSumAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Int, { nullable: true })
-  categoryId?: number;
+  categoryId: number | null;
 }
 
 @ObjectType({})
 export class CategoryMetadataMinAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => Int, { nullable: true })
-  categoryId?: number;
+  categoryId: number | null;
 }
 
 @ObjectType({})
 export class CategoryMetadataMaxAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => Int, { nullable: true })
-  categoryId?: number;
+  categoryId: number | null;
 }
 
 @ObjectType({})
@@ -791,77 +791,77 @@ export class MiscModelCountAggregateOutputType {
 @ObjectType({})
 export class MiscModelAvgAggregateOutputType {
   @Field(() => Float, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => GraphQLHexadecimal, { nullable: true })
-  decimalField?: string;
+  decimalField: string | null;
   @Field(() => GraphQLHexadecimal, { nullable: true })
-  decimalList?: string;
+  decimalList: string | null;
   @Field(() => Float, { nullable: true })
-  floatField?: number;
+  floatField: number | null;
   @Field(() => Float, { nullable: true })
-  bigIntField?: number;
+  bigIntField: number | null;
   @Field(() => Float, { nullable: true })
-  bigIntList?: number;
+  bigIntList: number | null;
 }
 
 @ObjectType({})
 export class MiscModelSumAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => GraphQLHexadecimal, { nullable: true })
-  decimalField?: string;
+  decimalField: string | null;
   @Field(() => [GraphQLHexadecimal], { nullable: true })
-  decimalList?: string[];
+  decimalList: string[] | null;
   @Field(() => Float, { nullable: true })
-  floatField?: number;
+  floatField: number | null;
   @Field(() => GraphQLBigInt, { nullable: true })
-  bigIntField?: bigint;
+  bigIntField: bigint | null;
   @Field(() => [GraphQLBigInt], { nullable: true })
-  bigIntList?: bigint[];
+  bigIntList: bigint[] | null;
 }
 
 @ObjectType({})
 export class MiscModelMinAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => String, { nullable: true })
-  name?: string;
+  name: string | null;
   @Field(() => GraphQLHexadecimal, { nullable: true })
-  decimalField?: string;
+  decimalField: string | null;
   @Field(() => Float, { nullable: true })
-  floatField?: number;
+  floatField: number | null;
   @Field(() => GraphQLByte, { nullable: true })
-  bytesField?: Buffer;
+  bytesField: Buffer | null;
   @Field(() => GraphQLBigInt, { nullable: true })
-  bigIntField?: bigint;
+  bigIntField: bigint | null;
   @Field(() => Date, { nullable: true })
-  dateTimeField?: Date;
+  dateTimeField: Date | null;
 }
 
 @ObjectType({})
 export class MiscModelMaxAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
   @Field(() => String, { nullable: true })
-  name?: string;
+  name: string | null;
   @Field(() => GraphQLHexadecimal, { nullable: true })
-  decimalField?: string;
+  decimalField: string | null;
   @Field(() => Float, { nullable: true })
-  floatField?: number;
+  floatField: number | null;
   @Field(() => GraphQLByte, { nullable: true })
-  bytesField?: Buffer;
+  bytesField: Buffer | null;
   @Field(() => GraphQLBigInt, { nullable: true })
-  bigIntField?: bigint;
+  bigIntField: bigint | null;
   @Field(() => Date, { nullable: true })
-  dateTimeField?: Date;
+  dateTimeField: Date | null;
 }
 
 @ObjectType({})
@@ -881,33 +881,33 @@ export class HiddenModelCountAggregateOutputType {
 @ObjectType({})
 export class HiddenModelAvgAggregateOutputType {
   @Field(() => Float, { nullable: true })
-  id?: number;
+  id: number | null;
 }
 
 @ObjectType({})
 export class HiddenModelSumAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
 }
 
 @ObjectType({})
 export class HiddenModelMinAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
 }
 
 @ObjectType({})
 export class HiddenModelMaxAggregateOutputType {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number | null;
   @Field(() => Date, { nullable: true })
-  createdAt?: Date;
+  createdAt: Date | null;
   @Field(() => Date, { nullable: true })
-  updatedAt?: Date;
+  updatedAt: Date | null;
 }
 
 @ObjectType({ description: 'User model documentation' })
@@ -921,23 +921,23 @@ export class User {
   @Field(() => String, { nullable: false })
   email: string;
   @Field(() => String, { nullable: true })
-  name?: string;
+  name: string | null;
   @Field(() => UserRole, { nullable: false })
   role: UserRole;
   @Field(() => Int, { nullable: true })
-  parentId?: number;
+  parentId: number | null;
   @Field(() => String, { nullable: false })
   mappedField: string;
   @Field(() => [Post], { nullable: true })
-  posts?: Post[];
+  posts: Post[] | null;
   @Field(() => User, { nullable: true })
-  parent?: User;
+  parent: User | null;
   @Field(() => [User], { nullable: true })
-  children?: User[];
+  children: User[] | null;
   @Field(() => [Post], { nullable: true })
-  anotherPosts?: Post[];
+  anotherPosts: Post[] | null;
   @Field(() => [Tag], { nullable: true })
-  tags?: Tag[];
+  tags: Tag[] | null;
 }
 
 @ObjectType({ description: "@@allow('all', auth().role == 'ADMIN')" })
@@ -951,7 +951,7 @@ export class Post {
   @Field(() => String, { nullable: false })
   title: string;
   @Field(() => String, { nullable: true })
-  content?: string;
+  content: string | null;
   @Field(() => Boolean, { nullable: false })
   published: boolean;
   @Field(() => Int, { nullable: false })
@@ -965,7 +965,7 @@ export class Post {
   @Field(() => User, { nullable: false })
   anotherAuthor: User;
   @Field(() => [Category], { nullable: true })
-  categories?: Category[];
+  categories: Category[] | null;
 }
 
 @ObjectType({})
@@ -973,7 +973,7 @@ export class Tag {
   @Field(() => String, { nullable: false })
   key: string;
   @Field(() => [User], { nullable: true })
-  users?: User[];
+  users: User[] | null;
 }
 
 @ObjectType({})
@@ -987,9 +987,9 @@ export class Category {
   @Field(() => String, { nullable: false })
   name: string;
   @Field(() => [Post], { nullable: true })
-  posts?: Post[];
+  posts: Post[] | null;
   @Field(() => CategoryMetadata, { nullable: true })
-  metadata?: CategoryMetadata;
+  metadata: CategoryMetadata | null;
 }
 
 @ObjectType({})
@@ -1003,7 +1003,7 @@ export class CategoryMetadata {
   @Field(() => Int, { nullable: false })
   categoryId: number;
   @Field(() => [GraphQLJSON], { nullable: true })
-  metadata?: any[];
+  metadata: any[] | null;
   @Field(() => Category, { nullable: false })
   category: Category;
 }
@@ -1021,27 +1021,27 @@ export class MiscModel {
   @Field(() => GraphQLJSON, { nullable: false })
   jsonField: any;
   @Field(() => [GraphQLJSON], { nullable: true })
-  jsonList?: any[];
+  jsonList: any[] | null;
   @Field(() => [String], { nullable: true })
-  stringList?: string[];
+  stringList: string[] | null;
   @Field(() => GraphQLHexadecimal, { nullable: false })
   decimalField: string;
   @Field(() => [GraphQLHexadecimal], { nullable: true })
-  decimalList?: string[];
+  decimalList: string[] | null;
   @Field(() => Float, { nullable: false })
   floatField: number;
   @Field(() => GraphQLByte, { nullable: false })
   bytesField: Buffer;
   @Field(() => [GraphQLByte], { nullable: true })
-  bytesList?: Buffer[];
+  bytesList: Buffer[] | null;
   @Field(() => GraphQLBigInt, { nullable: false })
   bigIntField: bigint;
   @Field(() => [GraphQLBigInt], { nullable: true })
-  bigIntList?: bigint[];
+  bigIntList: bigint[] | null;
   @Field(() => Date, { nullable: false })
   dateTimeField: Date;
   @Field(() => [Date], { nullable: true })
-  dateTimeList?: Date[];
+  dateTimeList: Date[] | null;
 }
 
 @ObjectType({ description: '@@graphql.hide' })
@@ -1125,37 +1125,37 @@ export class UserOrderByWithRelationInput {
 @InputType()
 export class UserWhereUniqueInput {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number;
   @Field(() => String, { nullable: true })
-  email?: string;
+  email: string;
   @Field(() => [UserWhereInput], { nullable: true })
-  AND?: UserWhereInput[];
+  AND: UserWhereInput[];
   @Field(() => [UserWhereInput], { nullable: true })
-  OR?: UserWhereInput[];
+  OR: UserWhereInput[];
   @Field(() => [UserWhereInput], { nullable: true })
-  NOT?: UserWhereInput[];
+  NOT: UserWhereInput[];
   @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+  createdAt: DateTimeFilter;
   @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+  updatedAt: DateTimeFilter;
   @Field(() => StringNullableFilter, { nullable: true })
-  name?: StringNullableFilter;
+  name: StringNullableFilter;
   @Field(() => EnumUserRoleFilter, { nullable: true })
-  role?: EnumUserRoleFilter;
+  role: EnumUserRoleFilter;
   @Field(() => IntNullableFilter, { nullable: true })
-  parentId?: IntNullableFilter;
+  parentId: IntNullableFilter;
   @Field(() => StringFilter, { nullable: true })
-  mappedField?: StringFilter;
+  mappedField: StringFilter;
   @Field(() => PostListRelationFilter, { nullable: true })
-  posts?: PostListRelationFilter;
+  posts: PostListRelationFilter;
   @Field(() => UserNullableRelationFilter, { nullable: true })
-  parent?: UserNullableRelationFilter;
+  parent: UserNullableRelationFilter;
   @Field(() => UserListRelationFilter, { nullable: true })
-  children?: UserListRelationFilter;
+  children: UserListRelationFilter;
   @Field(() => PostListRelationFilter, { nullable: true })
-  anotherPosts?: PostListRelationFilter;
+  anotherPosts: PostListRelationFilter;
   @Field(() => TagListRelationFilter, { nullable: true })
-  tags?: TagListRelationFilter;
+  tags: TagListRelationFilter;
 }
 
 @InputType()
@@ -1279,35 +1279,35 @@ export class PostOrderByWithRelationInput {
 @InputType()
 export class PostWhereUniqueInput {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number;
   @Field(() => [PostWhereInput], { nullable: true })
-  AND?: PostWhereInput[];
+  AND: PostWhereInput[];
   @Field(() => [PostWhereInput], { nullable: true })
-  OR?: PostWhereInput[];
+  OR: PostWhereInput[];
   @Field(() => [PostWhereInput], { nullable: true })
-  NOT?: PostWhereInput[];
+  NOT: PostWhereInput[];
   @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+  createdAt: DateTimeFilter;
   @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+  updatedAt: DateTimeFilter;
   @Field(() => StringFilter, { nullable: true })
-  title?: StringFilter;
+  title: StringFilter;
   @Field(() => StringNullableFilter, { nullable: true })
-  content?: StringNullableFilter;
+  content: StringNullableFilter;
   @Field(() => BoolFilter, { nullable: true })
-  published?: BoolFilter;
+  published: BoolFilter;
   @Field(() => IntFilter, { nullable: true })
-  authorId?: IntFilter;
+  authorId: IntFilter;
   @Field(() => IntFilter, { nullable: true })
-  anotherAuthorId?: IntFilter;
+  anotherAuthorId: IntFilter;
   @Field(() => EnumPostKindFilter, { nullable: true })
-  postKind?: EnumPostKindFilter;
+  postKind: EnumPostKindFilter;
   @Field(() => UserRelationFilter, { nullable: true })
-  author?: UserRelationFilter;
+  author: UserRelationFilter;
   @Field(() => UserRelationFilter, { nullable: true })
-  anotherAuthor?: UserRelationFilter;
+  anotherAuthor: UserRelationFilter;
   @Field(() => CategoryListRelationFilter, { nullable: true })
-  categories?: CategoryListRelationFilter;
+  categories: CategoryListRelationFilter;
 }
 
 @InputType()
@@ -1395,15 +1395,15 @@ export class TagOrderByWithRelationInput {
 @InputType()
 export class TagWhereUniqueInput {
   @Field(() => String, { nullable: true })
-  key?: string;
+  key: string;
   @Field(() => [TagWhereInput], { nullable: true })
-  AND?: TagWhereInput[];
+  AND: TagWhereInput[];
   @Field(() => [TagWhereInput], { nullable: true })
-  OR?: TagWhereInput[];
+  OR: TagWhereInput[];
   @Field(() => [TagWhereInput], { nullable: true })
-  NOT?: TagWhereInput[];
+  NOT: TagWhereInput[];
   @Field(() => UserListRelationFilter, { nullable: true })
-  users?: UserListRelationFilter;
+  users: UserListRelationFilter;
 }
 
 @InputType()
@@ -1471,23 +1471,23 @@ export class CategoryOrderByWithRelationInput {
 @InputType()
 export class CategoryWhereUniqueInput {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number;
   @Field(() => String, { nullable: true })
-  name?: string;
+  name: string;
   @Field(() => [CategoryWhereInput], { nullable: true })
-  AND?: CategoryWhereInput[];
+  AND: CategoryWhereInput[];
   @Field(() => [CategoryWhereInput], { nullable: true })
-  OR?: CategoryWhereInput[];
+  OR: CategoryWhereInput[];
   @Field(() => [CategoryWhereInput], { nullable: true })
-  NOT?: CategoryWhereInput[];
+  NOT: CategoryWhereInput[];
   @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+  createdAt: DateTimeFilter;
   @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+  updatedAt: DateTimeFilter;
   @Field(() => PostListRelationFilter, { nullable: true })
-  posts?: PostListRelationFilter;
+  posts: PostListRelationFilter;
   @Field(() => CategoryMetadataNullableRelationFilter, { nullable: true })
-  metadata?: CategoryMetadataNullableRelationFilter;
+  metadata: CategoryMetadataNullableRelationFilter;
 }
 
 @InputType()
@@ -1571,23 +1571,23 @@ export class CategoryMetadataOrderByWithRelationInput {
 @InputType()
 export class CategoryMetadataWhereUniqueInput {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number;
   @Field(() => Int, { nullable: true })
-  categoryId?: number;
+  categoryId: number;
   @Field(() => [CategoryMetadataWhereInput], { nullable: true })
-  AND?: CategoryMetadataWhereInput[];
+  AND: CategoryMetadataWhereInput[];
   @Field(() => [CategoryMetadataWhereInput], { nullable: true })
-  OR?: CategoryMetadataWhereInput[];
+  OR: CategoryMetadataWhereInput[];
   @Field(() => [CategoryMetadataWhereInput], { nullable: true })
-  NOT?: CategoryMetadataWhereInput[];
+  NOT: CategoryMetadataWhereInput[];
   @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+  createdAt: DateTimeFilter;
   @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+  updatedAt: DateTimeFilter;
   @Field(() => JsonNullableListFilter, { nullable: true })
-  metadata?: JsonNullableListFilter;
+  metadata: JsonNullableListFilter;
   @Field(() => CategoryRelationFilter, { nullable: true })
-  category?: CategoryRelationFilter;
+  category: CategoryRelationFilter;
 }
 
 @InputType()
@@ -1721,43 +1721,43 @@ export class MiscModelOrderByWithRelationInput {
 @InputType()
 export class MiscModelWhereUniqueInput {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number;
   @Field(() => [MiscModelWhereInput], { nullable: true })
-  AND?: MiscModelWhereInput[];
+  AND: MiscModelWhereInput[];
   @Field(() => [MiscModelWhereInput], { nullable: true })
-  OR?: MiscModelWhereInput[];
+  OR: MiscModelWhereInput[];
   @Field(() => [MiscModelWhereInput], { nullable: true })
-  NOT?: MiscModelWhereInput[];
+  NOT: MiscModelWhereInput[];
   @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+  createdAt: DateTimeFilter;
   @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+  updatedAt: DateTimeFilter;
   @Field(() => StringFilter, { nullable: true })
-  name?: StringFilter;
+  name: StringFilter;
   @Field(() => JsonFilter, { nullable: true })
-  jsonField?: JsonFilter;
+  jsonField: JsonFilter;
   @Field(() => JsonNullableListFilter, { nullable: true })
-  jsonList?: JsonNullableListFilter;
+  jsonList: JsonNullableListFilter;
   @Field(() => StringNullableListFilter, { nullable: true })
-  stringList?: StringNullableListFilter;
+  stringList: StringNullableListFilter;
   @Field(() => DecimalFilter, { nullable: true })
-  decimalField?: DecimalFilter;
+  decimalField: DecimalFilter;
   @Field(() => DecimalNullableListFilter, { nullable: true })
-  decimalList?: DecimalNullableListFilter;
+  decimalList: DecimalNullableListFilter;
   @Field(() => FloatFilter, { nullable: true })
-  floatField?: FloatFilter;
+  floatField: FloatFilter;
   @Field(() => BytesFilter, { nullable: true })
-  bytesField?: BytesFilter;
+  bytesField: BytesFilter;
   @Field(() => BytesNullableListFilter, { nullable: true })
-  bytesList?: BytesNullableListFilter;
+  bytesList: BytesNullableListFilter;
   @Field(() => BigIntFilter, { nullable: true })
-  bigIntField?: BigIntFilter;
+  bigIntField: BigIntFilter;
   @Field(() => BigIntNullableListFilter, { nullable: true })
-  bigIntList?: BigIntNullableListFilter;
+  bigIntList: BigIntNullableListFilter;
   @Field(() => DateTimeFilter, { nullable: true })
-  dateTimeField?: DateTimeFilter;
+  dateTimeField: DateTimeFilter;
   @Field(() => DateTimeNullableListFilter, { nullable: true })
-  dateTimeList?: DateTimeNullableListFilter;
+  dateTimeList: DateTimeNullableListFilter;
 }
 
 @InputType()
@@ -1881,19 +1881,19 @@ export class HiddenModelOrderByWithRelationInput {
 @InputType()
 export class HiddenModelWhereUniqueInput {
   @Field(() => Int, { nullable: true })
-  id?: number;
+  id: number;
   @Field(() => [HiddenModelWhereInput], { nullable: true })
-  AND?: HiddenModelWhereInput[];
+  AND: HiddenModelWhereInput[];
   @Field(() => [HiddenModelWhereInput], { nullable: true })
-  OR?: HiddenModelWhereInput[];
+  OR: HiddenModelWhereInput[];
   @Field(() => [HiddenModelWhereInput], { nullable: true })
-  NOT?: HiddenModelWhereInput[];
+  NOT: HiddenModelWhereInput[];
   @Field(() => DateTimeFilter, { nullable: true })
-  createdAt?: DateTimeFilter;
+  createdAt: DateTimeFilter;
   @Field(() => DateTimeFilter, { nullable: true })
-  updatedAt?: DateTimeFilter;
+  updatedAt: DateTimeFilter;
   @Field(() => JsonFilter, { nullable: true })
-  data?: JsonFilter;
+  data: JsonFilter;
 }
 
 @InputType()
@@ -6553,6 +6553,22 @@ export class UserUpdateManyArgs {
 }
 
 @ArgsType()
+export class UserCountArgs {
+  @Field(() => UserWhereInput, { nullable: true })
+  where?: UserWhereInput;
+  @Field(() => [UserOrderByWithRelationInput], { nullable: true })
+  orderBy?: UserOrderByWithRelationInput[];
+  @Field(() => UserWhereUniqueInput, { nullable: true })
+  cursor?: UserWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [UserScalarFieldEnum], { nullable: true })
+  distinct?: UserScalarFieldEnum[];
+}
+
+@ArgsType()
 export class PostAggregateArgs {
   @Field(() => PostWhereInput, { nullable: true })
   where?: PostWhereInput;
@@ -6650,6 +6666,22 @@ export class PostUpdateManyArgs {
   data: PostUpdateManyMutationInput;
   @Field(() => PostWhereInput, { nullable: true })
   where?: PostWhereInput;
+}
+
+@ArgsType()
+export class PostCountArgs {
+  @Field(() => PostWhereInput, { nullable: true })
+  where?: PostWhereInput;
+  @Field(() => [PostOrderByWithRelationInput], { nullable: true })
+  orderBy?: PostOrderByWithRelationInput[];
+  @Field(() => PostWhereUniqueInput, { nullable: true })
+  cursor?: PostWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [PostScalarFieldEnum], { nullable: true })
+  distinct?: PostScalarFieldEnum[];
 }
 
 @ArgsType()
@@ -6753,6 +6785,22 @@ export class TagUpdateManyArgs {
 }
 
 @ArgsType()
+export class TagCountArgs {
+  @Field(() => TagWhereInput, { nullable: true })
+  where?: TagWhereInput;
+  @Field(() => [TagOrderByWithRelationInput], { nullable: true })
+  orderBy?: TagOrderByWithRelationInput[];
+  @Field(() => TagWhereUniqueInput, { nullable: true })
+  cursor?: TagWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [TagScalarFieldEnum], { nullable: true })
+  distinct?: TagScalarFieldEnum[];
+}
+
+@ArgsType()
 export class CategoryAggregateArgs {
   @Field(() => CategoryWhereInput, { nullable: true })
   where?: CategoryWhereInput;
@@ -6850,6 +6898,22 @@ export class CategoryUpdateManyArgs {
   data: CategoryUpdateManyMutationInput;
   @Field(() => CategoryWhereInput, { nullable: true })
   where?: CategoryWhereInput;
+}
+
+@ArgsType()
+export class CategoryCountArgs {
+  @Field(() => CategoryWhereInput, { nullable: true })
+  where?: CategoryWhereInput;
+  @Field(() => [CategoryOrderByWithRelationInput], { nullable: true })
+  orderBy?: CategoryOrderByWithRelationInput[];
+  @Field(() => CategoryWhereUniqueInput, { nullable: true })
+  cursor?: CategoryWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [CategoryScalarFieldEnum], { nullable: true })
+  distinct?: CategoryScalarFieldEnum[];
 }
 
 @ArgsType()
@@ -6957,6 +7021,22 @@ export class CategoryMetadataUpdateManyArgs {
 }
 
 @ArgsType()
+export class CategoryMetadataCountArgs {
+  @Field(() => CategoryMetadataWhereInput, { nullable: true })
+  where?: CategoryMetadataWhereInput;
+  @Field(() => [CategoryMetadataOrderByWithRelationInput], { nullable: true })
+  orderBy?: CategoryMetadataOrderByWithRelationInput[];
+  @Field(() => CategoryMetadataWhereUniqueInput, { nullable: true })
+  cursor?: CategoryMetadataWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [CategoryMetadataScalarFieldEnum], { nullable: true })
+  distinct?: CategoryMetadataScalarFieldEnum[];
+}
+
+@ArgsType()
 export class MiscModelAggregateArgs {
   @Field(() => MiscModelWhereInput, { nullable: true })
   where?: MiscModelWhereInput;
@@ -7057,6 +7137,22 @@ export class MiscModelUpdateManyArgs {
 }
 
 @ArgsType()
+export class MiscModelCountArgs {
+  @Field(() => MiscModelWhereInput, { nullable: true })
+  where?: MiscModelWhereInput;
+  @Field(() => [MiscModelOrderByWithRelationInput], { nullable: true })
+  orderBy?: MiscModelOrderByWithRelationInput[];
+  @Field(() => MiscModelWhereUniqueInput, { nullable: true })
+  cursor?: MiscModelWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [MiscModelScalarFieldEnum], { nullable: true })
+  distinct?: MiscModelScalarFieldEnum[];
+}
+
+@ArgsType()
 export class HiddenModelAggregateArgs {
   @Field(() => HiddenModelWhereInput, { nullable: true })
   where?: HiddenModelWhereInput;
@@ -7154,4 +7250,20 @@ export class HiddenModelUpdateManyArgs {
   data: HiddenModelUpdateManyMutationInput;
   @Field(() => HiddenModelWhereInput, { nullable: true })
   where?: HiddenModelWhereInput;
+}
+
+@ArgsType()
+export class HiddenModelCountArgs {
+  @Field(() => HiddenModelWhereInput, { nullable: true })
+  where?: HiddenModelWhereInput;
+  @Field(() => [HiddenModelOrderByWithRelationInput], { nullable: true })
+  orderBy?: HiddenModelOrderByWithRelationInput[];
+  @Field(() => HiddenModelWhereUniqueInput, { nullable: true })
+  cursor?: HiddenModelWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [HiddenModelScalarFieldEnum], { nullable: true })
+  distinct?: HiddenModelScalarFieldEnum[];
 }

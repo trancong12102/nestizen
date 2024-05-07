@@ -20,9 +20,17 @@ export class ProjectStructure {
     this.project = new Project();
   }
 
+  addSourceFiles(sourceFiles: SourceFile[]) {
+    for (const sourceFile of sourceFiles) {
+      this.addSourceFile(sourceFile);
+    }
+  }
+
   addSourceFile({
     path,
-    structure: { imports, statements, overwrite, disableEslint },
+    structure: { imports, statements },
+    overwrite,
+    disableEslint,
   }: SourceFile) {
     this._projectStructure[path] = {
       kind: StructureKind.SourceFile,

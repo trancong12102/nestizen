@@ -31,8 +31,6 @@ export type ClassMethodStructure = {
 };
 
 export type SourceFileStructure = {
-  overwrite?: boolean;
-  disableEslint?: boolean;
   imports: ImportDeclarationStructure[];
   statements: StatementStructure[];
 };
@@ -40,4 +38,6 @@ export type SourceFileStructure = {
 export type SourceFile = {
   path: string;
   structure: SourceFileStructure;
+  overwrite?: boolean;
+  disableEslint?: boolean;
 };
