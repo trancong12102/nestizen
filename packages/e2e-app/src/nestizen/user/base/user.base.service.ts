@@ -93,4 +93,14 @@ export class UserBaseService {
       })
       .tags(args);
   }
+
+  async profile(parent: User) {
+    return this.prisma.client.user
+      .findUniqueOrThrow({
+        where: {
+          id: parent.id,
+        },
+      })
+      .profile();
+  }
 }

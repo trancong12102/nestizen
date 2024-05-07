@@ -62,6 +62,19 @@ registerEnumType(UserScalarFieldEnum, {
   valuesMap: {},
 });
 
+export enum ProfileScalarFieldEnum {
+  id = 'id',
+  createdAt = 'createdAt',
+  updatedAt = 'updatedAt',
+  bio = 'bio',
+  userId = 'userId',
+}
+
+registerEnumType(ProfileScalarFieldEnum, {
+  name: 'ProfileScalarFieldEnum',
+  valuesMap: {},
+});
+
 export enum PostScalarFieldEnum {
   id = 'id',
   createdAt = 'createdAt',
@@ -212,6 +225,44 @@ export class UserGroupByOutputType {
   _min: UserMinAggregateOutputType | null;
   @Field(() => UserMaxAggregateOutputType, { nullable: true })
   _max: UserMaxAggregateOutputType | null;
+}
+
+@ObjectType({})
+export class AggregateProfile {
+  @Field(() => ProfileCountAggregateOutputType, { nullable: true })
+  _count: ProfileCountAggregateOutputType | null;
+  @Field(() => ProfileAvgAggregateOutputType, { nullable: true })
+  _avg: ProfileAvgAggregateOutputType | null;
+  @Field(() => ProfileSumAggregateOutputType, { nullable: true })
+  _sum: ProfileSumAggregateOutputType | null;
+  @Field(() => ProfileMinAggregateOutputType, { nullable: true })
+  _min: ProfileMinAggregateOutputType | null;
+  @Field(() => ProfileMaxAggregateOutputType, { nullable: true })
+  _max: ProfileMaxAggregateOutputType | null;
+}
+
+@ObjectType({})
+export class ProfileGroupByOutputType {
+  @Field(() => Int, { nullable: false })
+  id: number;
+  @Field(() => Date, { nullable: false })
+  createdAt: Date;
+  @Field(() => Date, { nullable: false })
+  updatedAt: Date;
+  @Field(() => String, { nullable: true })
+  bio: string | null;
+  @Field(() => Int, { nullable: false })
+  userId: number;
+  @Field(() => ProfileCountAggregateOutputType, { nullable: true })
+  _count: ProfileCountAggregateOutputType | null;
+  @Field(() => ProfileAvgAggregateOutputType, { nullable: true })
+  _avg: ProfileAvgAggregateOutputType | null;
+  @Field(() => ProfileSumAggregateOutputType, { nullable: true })
+  _sum: ProfileSumAggregateOutputType | null;
+  @Field(() => ProfileMinAggregateOutputType, { nullable: true })
+  _min: ProfileMinAggregateOutputType | null;
+  @Field(() => ProfileMaxAggregateOutputType, { nullable: true })
+  _max: ProfileMaxAggregateOutputType | null;
 }
 
 @ObjectType({})
@@ -534,6 +585,66 @@ export class UserMaxAggregateOutputType {
   parentId: number | null;
   @Field(() => String, { nullable: true })
   mappedField: string | null;
+}
+
+@ObjectType({})
+export class ProfileCountAggregateOutputType {
+  @Field(() => Int, { nullable: false })
+  id: number;
+  @Field(() => Int, { nullable: false })
+  createdAt: number;
+  @Field(() => Int, { nullable: false })
+  updatedAt: number;
+  @Field(() => Int, { nullable: false })
+  bio: number;
+  @Field(() => Int, { nullable: false })
+  userId: number;
+  @Field(() => Int, { nullable: false })
+  _all: number;
+}
+
+@ObjectType({})
+export class ProfileAvgAggregateOutputType {
+  @Field(() => Float, { nullable: true })
+  id: number | null;
+  @Field(() => Float, { nullable: true })
+  userId: number | null;
+}
+
+@ObjectType({})
+export class ProfileSumAggregateOutputType {
+  @Field(() => Int, { nullable: true })
+  id: number | null;
+  @Field(() => Int, { nullable: true })
+  userId: number | null;
+}
+
+@ObjectType({})
+export class ProfileMinAggregateOutputType {
+  @Field(() => Int, { nullable: true })
+  id: number | null;
+  @Field(() => Date, { nullable: true })
+  createdAt: Date | null;
+  @Field(() => Date, { nullable: true })
+  updatedAt: Date | null;
+  @Field(() => String, { nullable: true })
+  bio: string | null;
+  @Field(() => Int, { nullable: true })
+  userId: number | null;
+}
+
+@ObjectType({})
+export class ProfileMaxAggregateOutputType {
+  @Field(() => Int, { nullable: true })
+  id: number | null;
+  @Field(() => Date, { nullable: true })
+  createdAt: Date | null;
+  @Field(() => Date, { nullable: true })
+  updatedAt: Date | null;
+  @Field(() => String, { nullable: true })
+  bio: string | null;
+  @Field(() => Int, { nullable: true })
+  userId: number | null;
 }
 
 @ObjectType({})
@@ -938,6 +1049,24 @@ export class User {
   anotherPosts: Post[] | null;
   @Field(() => [Tag], { nullable: true })
   tags: Tag[] | null;
+  @Field(() => Profile, { nullable: true })
+  profile: Profile | null;
+}
+
+@ObjectType({})
+export class Profile {
+  @Field(() => Int, { nullable: false })
+  id: number;
+  @Field(() => Date, { nullable: false })
+  createdAt: Date;
+  @Field(() => Date, { nullable: false })
+  updatedAt: Date;
+  @Field(() => String, { nullable: true })
+  bio: string | null;
+  @Field(() => Int, { nullable: false })
+  userId: number;
+  @Field(() => User, { nullable: false })
+  user: User;
 }
 
 @ObjectType({ description: "@@allow('all', auth().role == 'ADMIN')" })
@@ -1090,6 +1219,8 @@ export class UserWhereInput {
   anotherPosts?: PostListRelationFilter;
   @Field(() => TagListRelationFilter, { nullable: true })
   tags?: TagListRelationFilter;
+  @Field(() => ProfileNullableRelationFilter, { nullable: true })
+  profile?: ProfileNullableRelationFilter;
 }
 
 @InputType()
@@ -1120,6 +1251,8 @@ export class UserOrderByWithRelationInput {
   anotherPosts?: PostOrderByRelationAggregateInput;
   @Field(() => TagOrderByRelationAggregateInput, { nullable: true })
   tags?: TagOrderByRelationAggregateInput;
+  @Field(() => ProfileOrderByWithRelationInput, { nullable: true })
+  profile?: ProfileOrderByWithRelationInput;
 }
 
 @InputType()
@@ -1156,6 +1289,8 @@ export class UserWhereUniqueInput {
   anotherPosts: PostListRelationFilter;
   @Field(() => TagListRelationFilter, { nullable: true })
   tags: TagListRelationFilter;
+  @Field(() => ProfileNullableRelationFilter, { nullable: true })
+  profile: ProfileNullableRelationFilter;
 }
 
 @InputType()
@@ -1212,6 +1347,110 @@ export class UserScalarWhereWithAggregatesInput {
   parentId?: IntNullableWithAggregatesFilter;
   @Field(() => StringWithAggregatesFilter, { nullable: true })
   mappedField?: StringWithAggregatesFilter;
+}
+
+@InputType()
+export class ProfileWhereInput {
+  @Field(() => [ProfileWhereInput], { nullable: true })
+  AND?: ProfileWhereInput[];
+  @Field(() => [ProfileWhereInput], { nullable: true })
+  OR?: ProfileWhereInput[];
+  @Field(() => [ProfileWhereInput], { nullable: true })
+  NOT?: ProfileWhereInput[];
+  @Field(() => IntFilter, { nullable: true })
+  id?: IntFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt?: DateTimeFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  updatedAt?: DateTimeFilter;
+  @Field(() => StringNullableFilter, { nullable: true })
+  bio?: StringNullableFilter;
+  @Field(() => IntFilter, { nullable: true })
+  userId?: IntFilter;
+  @Field(() => UserRelationFilter, { nullable: true })
+  user?: UserRelationFilter;
+}
+
+@InputType()
+export class ProfileOrderByWithRelationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  bio?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  userId?: SortOrder;
+  @Field(() => UserOrderByWithRelationInput, { nullable: true })
+  user?: UserOrderByWithRelationInput;
+}
+
+@InputType()
+export class ProfileWhereUniqueInput {
+  @Field(() => Int, { nullable: true })
+  id: number;
+  @Field(() => Int, { nullable: true })
+  userId: number;
+  @Field(() => [ProfileWhereInput], { nullable: true })
+  AND: ProfileWhereInput[];
+  @Field(() => [ProfileWhereInput], { nullable: true })
+  OR: ProfileWhereInput[];
+  @Field(() => [ProfileWhereInput], { nullable: true })
+  NOT: ProfileWhereInput[];
+  @Field(() => DateTimeFilter, { nullable: true })
+  createdAt: DateTimeFilter;
+  @Field(() => DateTimeFilter, { nullable: true })
+  updatedAt: DateTimeFilter;
+  @Field(() => StringNullableFilter, { nullable: true })
+  bio: StringNullableFilter;
+  @Field(() => UserRelationFilter, { nullable: true })
+  user: UserRelationFilter;
+}
+
+@InputType()
+export class ProfileOrderByWithAggregationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  bio?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  userId?: SortOrder;
+  @Field(() => ProfileCountOrderByAggregateInput, { nullable: true })
+  _count?: ProfileCountOrderByAggregateInput;
+  @Field(() => ProfileAvgOrderByAggregateInput, { nullable: true })
+  _avg?: ProfileAvgOrderByAggregateInput;
+  @Field(() => ProfileMaxOrderByAggregateInput, { nullable: true })
+  _max?: ProfileMaxOrderByAggregateInput;
+  @Field(() => ProfileMinOrderByAggregateInput, { nullable: true })
+  _min?: ProfileMinOrderByAggregateInput;
+  @Field(() => ProfileSumOrderByAggregateInput, { nullable: true })
+  _sum?: ProfileSumOrderByAggregateInput;
+}
+
+@InputType()
+export class ProfileScalarWhereWithAggregatesInput {
+  @Field(() => [ProfileScalarWhereWithAggregatesInput], { nullable: true })
+  AND?: ProfileScalarWhereWithAggregatesInput[];
+  @Field(() => [ProfileScalarWhereWithAggregatesInput], { nullable: true })
+  OR?: ProfileScalarWhereWithAggregatesInput[];
+  @Field(() => [ProfileScalarWhereWithAggregatesInput], { nullable: true })
+  NOT?: ProfileScalarWhereWithAggregatesInput[];
+  @Field(() => IntWithAggregatesFilter, { nullable: true })
+  id?: IntWithAggregatesFilter;
+  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+  createdAt?: DateTimeWithAggregatesFilter;
+  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+  updatedAt?: DateTimeWithAggregatesFilter;
+  @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
+  bio?: StringNullableWithAggregatesFilter;
+  @Field(() => IntWithAggregatesFilter, { nullable: true })
+  userId?: IntWithAggregatesFilter;
 }
 
 @InputType()
@@ -1973,6 +2212,30 @@ export class UserUpdateManyMutationInput {
 }
 
 @InputType()
+export class ProfileCreateManyInput {
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date;
+  @Field(() => String, { nullable: true })
+  bio?: string;
+  @Field(() => Int, { nullable: false })
+  userId: number;
+}
+
+@InputType()
+export class ProfileUpdateManyMutationInput {
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+  bio?: NullableStringFieldUpdateOperationsInput;
+}
+
+@InputType()
 export class PostCreateManyInput {
   @Field(() => Int, { nullable: true })
   id?: number;
@@ -2327,6 +2590,14 @@ export class TagListRelationFilter {
 }
 
 @InputType()
+export class ProfileNullableRelationFilter {
+  @Field(() => ProfileWhereInput, { nullable: true })
+  is?: ProfileWhereInput;
+  @Field(() => ProfileWhereInput, { nullable: true })
+  isNot?: ProfileWhereInput;
+}
+
+@InputType()
 export class PostOrderByRelationAggregateInput {
   @Field(() => SortOrder, { nullable: true })
   _count?: SortOrder;
@@ -2593,6 +2864,72 @@ export class IntNullableWithAggregatesFilter {
 }
 
 @InputType()
+export class UserRelationFilter {
+  @Field(() => UserWhereInput, { nullable: true })
+  is?: UserWhereInput;
+  @Field(() => UserWhereInput, { nullable: true })
+  isNot?: UserWhereInput;
+}
+
+@InputType()
+export class ProfileCountOrderByAggregateInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  bio?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  userId?: SortOrder;
+}
+
+@InputType()
+export class ProfileAvgOrderByAggregateInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  userId?: SortOrder;
+}
+
+@InputType()
+export class ProfileMaxOrderByAggregateInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  bio?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  userId?: SortOrder;
+}
+
+@InputType()
+export class ProfileMinOrderByAggregateInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  createdAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  updatedAt?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  bio?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  userId?: SortOrder;
+}
+
+@InputType()
+export class ProfileSumOrderByAggregateInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  userId?: SortOrder;
+}
+
+@InputType()
 export class BoolFilter {
   @Field(() => Boolean, { nullable: true })
   equals?: boolean;
@@ -2610,14 +2947,6 @@ export class EnumPostKindFilter {
   notIn?: PostKind[];
   @Field(() => PostKind, { nullable: true })
   not?: PostKind;
-}
-
-@InputType()
-export class UserRelationFilter {
-  @Field(() => UserWhereInput, { nullable: true })
-  is?: UserWhereInput;
-  @Field(() => UserWhereInput, { nullable: true })
-  isNot?: UserWhereInput;
 }
 
 @InputType()
@@ -3435,6 +3764,16 @@ export class TagCreateNestedManyWithoutUsersInput {
 }
 
 @InputType()
+export class ProfileCreateNestedOneWithoutUserInput {
+  @Field(() => ProfileCreateWithoutUserInput, { nullable: true })
+  create?: ProfileCreateWithoutUserInput;
+  @Field(() => ProfileCreateOrConnectWithoutUserInput, { nullable: true })
+  connectOrCreate?: ProfileCreateOrConnectWithoutUserInput;
+  @Field(() => ProfileWhereUniqueInput, { nullable: true })
+  connect?: ProfileWhereUniqueInput;
+}
+
+@InputType()
 export class PostUncheckedCreateNestedManyWithoutAuthorInput {
   @Field(() => [PostCreateWithoutAuthorInput], { nullable: true })
   create?: PostCreateWithoutAuthorInput[];
@@ -3480,6 +3819,16 @@ export class TagUncheckedCreateNestedManyWithoutUsersInput {
   connectOrCreate?: TagCreateOrConnectWithoutUsersInput[];
   @Field(() => [TagWhereUniqueInput], { nullable: true })
   connect?: TagWhereUniqueInput[];
+}
+
+@InputType()
+export class ProfileUncheckedCreateNestedOneWithoutUserInput {
+  @Field(() => ProfileCreateWithoutUserInput, { nullable: true })
+  create?: ProfileCreateWithoutUserInput;
+  @Field(() => ProfileCreateOrConnectWithoutUserInput, { nullable: true })
+  connectOrCreate?: ProfileCreateOrConnectWithoutUserInput;
+  @Field(() => ProfileWhereUniqueInput, { nullable: true })
+  connect?: ProfileWhereUniqueInput;
 }
 
 @InputType()
@@ -3637,6 +3986,24 @@ export class TagUpdateManyWithoutUsersNestedInput {
 }
 
 @InputType()
+export class ProfileUpdateOneWithoutUserNestedInput {
+  @Field(() => ProfileCreateWithoutUserInput, { nullable: true })
+  create?: ProfileCreateWithoutUserInput;
+  @Field(() => ProfileCreateOrConnectWithoutUserInput, { nullable: true })
+  connectOrCreate?: ProfileCreateOrConnectWithoutUserInput;
+  @Field(() => ProfileUpsertWithoutUserInput, { nullable: true })
+  upsert?: ProfileUpsertWithoutUserInput;
+  @Field(() => ProfileWhereInput, { nullable: true })
+  disconnect?: ProfileWhereInput;
+  @Field(() => ProfileWhereInput, { nullable: true })
+  delete?: ProfileWhereInput;
+  @Field(() => ProfileWhereUniqueInput, { nullable: true })
+  connect?: ProfileWhereUniqueInput;
+  @Field(() => ProfileUpdateToOneWithWhereWithoutUserInput, { nullable: true })
+  update?: ProfileUpdateToOneWithWhereWithoutUserInput;
+}
+
+@InputType()
 export class IntFieldUpdateOperationsInput {
   @Field(() => Int, { nullable: true })
   set?: number;
@@ -3780,6 +4147,48 @@ export class TagUncheckedUpdateManyWithoutUsersNestedInput {
   updateMany?: TagUpdateManyWithWhereWithoutUsersInput[];
   @Field(() => [TagScalarWhereInput], { nullable: true })
   deleteMany?: TagScalarWhereInput[];
+}
+
+@InputType()
+export class ProfileUncheckedUpdateOneWithoutUserNestedInput {
+  @Field(() => ProfileCreateWithoutUserInput, { nullable: true })
+  create?: ProfileCreateWithoutUserInput;
+  @Field(() => ProfileCreateOrConnectWithoutUserInput, { nullable: true })
+  connectOrCreate?: ProfileCreateOrConnectWithoutUserInput;
+  @Field(() => ProfileUpsertWithoutUserInput, { nullable: true })
+  upsert?: ProfileUpsertWithoutUserInput;
+  @Field(() => ProfileWhereInput, { nullable: true })
+  disconnect?: ProfileWhereInput;
+  @Field(() => ProfileWhereInput, { nullable: true })
+  delete?: ProfileWhereInput;
+  @Field(() => ProfileWhereUniqueInput, { nullable: true })
+  connect?: ProfileWhereUniqueInput;
+  @Field(() => ProfileUpdateToOneWithWhereWithoutUserInput, { nullable: true })
+  update?: ProfileUpdateToOneWithWhereWithoutUserInput;
+}
+
+@InputType()
+export class UserCreateNestedOneWithoutProfileInput {
+  @Field(() => UserCreateWithoutProfileInput, { nullable: true })
+  create?: UserCreateWithoutProfileInput;
+  @Field(() => UserCreateOrConnectWithoutProfileInput, { nullable: true })
+  connectOrCreate?: UserCreateOrConnectWithoutProfileInput;
+  @Field(() => UserWhereUniqueInput, { nullable: true })
+  connect?: UserWhereUniqueInput;
+}
+
+@InputType()
+export class UserUpdateOneRequiredWithoutProfileNestedInput {
+  @Field(() => UserCreateWithoutProfileInput, { nullable: true })
+  create?: UserCreateWithoutProfileInput;
+  @Field(() => UserCreateOrConnectWithoutProfileInput, { nullable: true })
+  connectOrCreate?: UserCreateOrConnectWithoutProfileInput;
+  @Field(() => UserUpsertWithoutProfileInput, { nullable: true })
+  upsert?: UserUpsertWithoutProfileInput;
+  @Field(() => UserWhereUniqueInput, { nullable: true })
+  connect?: UserWhereUniqueInput;
+  @Field(() => UserUpdateToOneWithWhereWithoutProfileInput, { nullable: true })
+  update?: UserUpdateToOneWithWhereWithoutProfileInput;
 }
 
 @InputType()
@@ -4904,6 +5313,8 @@ export class UserCreateWithoutChildrenInput {
   anotherPosts?: PostCreateNestedManyWithoutAnotherAuthorInput;
   @Field(() => TagCreateNestedManyWithoutUsersInput, { nullable: true })
   tags?: TagCreateNestedManyWithoutUsersInput;
+  @Field(() => ProfileCreateNestedOneWithoutUserInput, { nullable: true })
+  profile?: ProfileCreateNestedOneWithoutUserInput;
 }
 
 @InputType()
@@ -4938,6 +5349,8 @@ export class UserCreateWithoutParentInput {
   anotherPosts?: PostCreateNestedManyWithoutAnotherAuthorInput;
   @Field(() => TagCreateNestedManyWithoutUsersInput, { nullable: true })
   tags?: TagCreateNestedManyWithoutUsersInput;
+  @Field(() => ProfileCreateNestedOneWithoutUserInput, { nullable: true })
+  profile?: ProfileCreateNestedOneWithoutUserInput;
 }
 
 @InputType()
@@ -5004,6 +5417,24 @@ export class TagCreateOrConnectWithoutUsersInput {
   where: TagWhereUniqueInput;
   @Field(() => TagCreateWithoutUsersInput, { nullable: false })
   create: TagCreateWithoutUsersInput;
+}
+
+@InputType()
+export class ProfileCreateWithoutUserInput {
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date;
+  @Field(() => String, { nullable: true })
+  bio?: string;
+}
+
+@InputType()
+export class ProfileCreateOrConnectWithoutUserInput {
+  @Field(() => ProfileWhereUniqueInput, { nullable: false })
+  where: ProfileWhereUniqueInput;
+  @Field(() => ProfileCreateWithoutUserInput, { nullable: false })
+  create: ProfileCreateWithoutUserInput;
 }
 
 @InputType()
@@ -5102,6 +5533,8 @@ export class UserUpdateWithoutChildrenInput {
   anotherPosts?: PostUpdateManyWithoutAnotherAuthorNestedInput;
   @Field(() => TagUpdateManyWithoutUsersNestedInput, { nullable: true })
   tags?: TagUpdateManyWithoutUsersNestedInput;
+  @Field(() => ProfileUpdateOneWithoutUserNestedInput, { nullable: true })
+  profile?: ProfileUpdateOneWithoutUserNestedInput;
 }
 
 @InputType()
@@ -5221,6 +5654,116 @@ export class TagScalarWhereInput {
 }
 
 @InputType()
+export class ProfileUpsertWithoutUserInput {
+  @Field(() => ProfileUpdateWithoutUserInput, { nullable: false })
+  update: ProfileUpdateWithoutUserInput;
+  @Field(() => ProfileCreateWithoutUserInput, { nullable: false })
+  create: ProfileCreateWithoutUserInput;
+  @Field(() => ProfileWhereInput, { nullable: true })
+  where?: ProfileWhereInput;
+}
+
+@InputType()
+export class ProfileUpdateToOneWithWhereWithoutUserInput {
+  @Field(() => ProfileWhereInput, { nullable: true })
+  where?: ProfileWhereInput;
+  @Field(() => ProfileUpdateWithoutUserInput, { nullable: false })
+  data: ProfileUpdateWithoutUserInput;
+}
+
+@InputType()
+export class ProfileUpdateWithoutUserInput {
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+  bio?: NullableStringFieldUpdateOperationsInput;
+}
+
+@InputType()
+export class UserCreateWithoutProfileInput {
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date;
+  @Field(() => String, { nullable: false })
+  email: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: UserRole;
+  @Field(() => String, { nullable: false })
+  mappedField: string;
+  @Field(() => PostCreateNestedManyWithoutAuthorInput, { nullable: true })
+  posts?: PostCreateNestedManyWithoutAuthorInput;
+  @Field(() => UserCreateNestedOneWithoutChildrenInput, { nullable: true })
+  parent?: UserCreateNestedOneWithoutChildrenInput;
+  @Field(() => UserCreateNestedManyWithoutParentInput, { nullable: true })
+  children?: UserCreateNestedManyWithoutParentInput;
+  @Field(() => PostCreateNestedManyWithoutAnotherAuthorInput, {
+    nullable: true,
+  })
+  anotherPosts?: PostCreateNestedManyWithoutAnotherAuthorInput;
+  @Field(() => TagCreateNestedManyWithoutUsersInput, { nullable: true })
+  tags?: TagCreateNestedManyWithoutUsersInput;
+}
+
+@InputType()
+export class UserCreateOrConnectWithoutProfileInput {
+  @Field(() => UserWhereUniqueInput, { nullable: false })
+  where: UserWhereUniqueInput;
+  @Field(() => UserCreateWithoutProfileInput, { nullable: false })
+  create: UserCreateWithoutProfileInput;
+}
+
+@InputType()
+export class UserUpsertWithoutProfileInput {
+  @Field(() => UserUpdateWithoutProfileInput, { nullable: false })
+  update: UserUpdateWithoutProfileInput;
+  @Field(() => UserCreateWithoutProfileInput, { nullable: false })
+  create: UserCreateWithoutProfileInput;
+  @Field(() => UserWhereInput, { nullable: true })
+  where?: UserWhereInput;
+}
+
+@InputType()
+export class UserUpdateToOneWithWhereWithoutProfileInput {
+  @Field(() => UserWhereInput, { nullable: true })
+  where?: UserWhereInput;
+  @Field(() => UserUpdateWithoutProfileInput, { nullable: false })
+  data: UserUpdateWithoutProfileInput;
+}
+
+@InputType()
+export class UserUpdateWithoutProfileInput {
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  createdAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  updatedAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  email?: StringFieldUpdateOperationsInput;
+  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
+  name?: NullableStringFieldUpdateOperationsInput;
+  @Field(() => UserRole, { nullable: true })
+  role?: UserRole;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  mappedField?: StringFieldUpdateOperationsInput;
+  @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
+  posts?: PostUpdateManyWithoutAuthorNestedInput;
+  @Field(() => UserUpdateOneWithoutChildrenNestedInput, { nullable: true })
+  parent?: UserUpdateOneWithoutChildrenNestedInput;
+  @Field(() => UserUpdateManyWithoutParentNestedInput, { nullable: true })
+  children?: UserUpdateManyWithoutParentNestedInput;
+  @Field(() => PostUpdateManyWithoutAnotherAuthorNestedInput, {
+    nullable: true,
+  })
+  anotherPosts?: PostUpdateManyWithoutAnotherAuthorNestedInput;
+  @Field(() => TagUpdateManyWithoutUsersNestedInput, { nullable: true })
+  tags?: TagUpdateManyWithoutUsersNestedInput;
+}
+
+@InputType()
 export class UserCreateWithoutPostsInput {
   @Field(() => Date, { nullable: true })
   createdAt?: Date;
@@ -5244,6 +5787,8 @@ export class UserCreateWithoutPostsInput {
   anotherPosts?: PostCreateNestedManyWithoutAnotherAuthorInput;
   @Field(() => TagCreateNestedManyWithoutUsersInput, { nullable: true })
   tags?: TagCreateNestedManyWithoutUsersInput;
+  @Field(() => ProfileCreateNestedOneWithoutUserInput, { nullable: true })
+  profile?: ProfileCreateNestedOneWithoutUserInput;
 }
 
 @InputType()
@@ -5276,6 +5821,8 @@ export class UserCreateWithoutAnotherPostsInput {
   children?: UserCreateNestedManyWithoutParentInput;
   @Field(() => TagCreateNestedManyWithoutUsersInput, { nullable: true })
   tags?: TagCreateNestedManyWithoutUsersInput;
+  @Field(() => ProfileCreateNestedOneWithoutUserInput, { nullable: true })
+  profile?: ProfileCreateNestedOneWithoutUserInput;
 }
 
 @InputType()
@@ -5350,6 +5897,8 @@ export class UserUpdateWithoutPostsInput {
   anotherPosts?: PostUpdateManyWithoutAnotherAuthorNestedInput;
   @Field(() => TagUpdateManyWithoutUsersNestedInput, { nullable: true })
   tags?: TagUpdateManyWithoutUsersNestedInput;
+  @Field(() => ProfileUpdateOneWithoutUserNestedInput, { nullable: true })
+  profile?: ProfileUpdateOneWithoutUserNestedInput;
 }
 
 @InputType()
@@ -5392,6 +5941,8 @@ export class UserUpdateWithoutAnotherPostsInput {
   children?: UserUpdateManyWithoutParentNestedInput;
   @Field(() => TagUpdateManyWithoutUsersNestedInput, { nullable: true })
   tags?: TagUpdateManyWithoutUsersNestedInput;
+  @Field(() => ProfileUpdateOneWithoutUserNestedInput, { nullable: true })
+  profile?: ProfileUpdateOneWithoutUserNestedInput;
 }
 
 @InputType()
@@ -5462,6 +6013,8 @@ export class UserCreateWithoutTagsInput {
     nullable: true,
   })
   anotherPosts?: PostCreateNestedManyWithoutAnotherAuthorInput;
+  @Field(() => ProfileCreateNestedOneWithoutUserInput, { nullable: true })
+  profile?: ProfileCreateNestedOneWithoutUserInput;
 }
 
 @InputType()
@@ -5752,6 +6305,8 @@ export class UserUpdateWithoutParentInput {
   anotherPosts?: PostUpdateManyWithoutAnotherAuthorNestedInput;
   @Field(() => TagUpdateManyWithoutUsersNestedInput, { nullable: true })
   tags?: TagUpdateManyWithoutUsersNestedInput;
+  @Field(() => ProfileUpdateOneWithoutUserNestedInput, { nullable: true })
+  profile?: ProfileUpdateOneWithoutUserNestedInput;
 }
 
 @InputType()
@@ -5818,6 +6373,8 @@ export class UserUpdateWithoutTagsInput {
     nullable: true,
   })
   anotherPosts?: PostUpdateManyWithoutAnotherAuthorNestedInput;
+  @Field(() => ProfileUpdateOneWithoutUserNestedInput, { nullable: true })
+  profile?: ProfileUpdateOneWithoutUserNestedInput;
 }
 
 @InputType()
@@ -5940,6 +6497,76 @@ export class UserMaxAggregateInputType {
   parentId?: boolean;
   @Field(() => Boolean, { nullable: true })
   mappedField?: boolean;
+}
+
+@InputType()
+export class ProfileCountAggregateInputType {
+  @Field(() => Boolean, { nullable: true })
+  id?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  createdAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  updatedAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  bio?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  userId?: boolean;
+}
+
+@InputType()
+export class ProfileAvgAggregateInputType {
+  @Field(() => Boolean, { nullable: true })
+  id?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  createdAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  updatedAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  bio?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  userId?: boolean;
+}
+
+@InputType()
+export class ProfileSumAggregateInputType {
+  @Field(() => Boolean, { nullable: true })
+  id?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  createdAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  updatedAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  bio?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  userId?: boolean;
+}
+
+@InputType()
+export class ProfileMinAggregateInputType {
+  @Field(() => Boolean, { nullable: true })
+  id?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  createdAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  updatedAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  bio?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  userId?: boolean;
+}
+
+@InputType()
+export class ProfileMaxAggregateInputType {
+  @Field(() => Boolean, { nullable: true })
+  id?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  createdAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  updatedAt?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  bio?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  userId?: boolean;
 }
 
 @InputType()
@@ -6566,6 +7193,122 @@ export class UserCountArgs {
   skip: number;
   @Field(() => [UserScalarFieldEnum], { nullable: true })
   distinct?: UserScalarFieldEnum[];
+}
+
+@ArgsType()
+export class ProfileAggregateArgs {
+  @Field(() => ProfileWhereInput, { nullable: true })
+  where?: ProfileWhereInput;
+  @Field(() => [ProfileOrderByWithRelationInput], { nullable: true })
+  orderBy?: ProfileOrderByWithRelationInput[];
+  @Field(() => ProfileWhereUniqueInput, { nullable: true })
+  cursor?: ProfileWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => ProfileCountAggregateInputType, { nullable: true })
+  _count?: ProfileCountAggregateInputType;
+  @Field(() => ProfileAvgAggregateInputType, { nullable: true })
+  _avg?: ProfileAvgAggregateInputType;
+  @Field(() => ProfileSumAggregateInputType, { nullable: true })
+  _sum?: ProfileSumAggregateInputType;
+  @Field(() => ProfileMinAggregateInputType, { nullable: true })
+  _min?: ProfileMinAggregateInputType;
+  @Field(() => ProfileMaxAggregateInputType, { nullable: true })
+  _max?: ProfileMaxAggregateInputType;
+}
+
+@ArgsType()
+export class ProfileCreateManyArgs {
+  @Field(() => [ProfileCreateManyInput], { nullable: false })
+  data: ProfileCreateManyInput[];
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
+}
+
+@ArgsType()
+export class ProfileDeleteManyArgs {
+  @Field(() => ProfileWhereInput, { nullable: true })
+  where?: ProfileWhereInput;
+}
+
+@ArgsType()
+export class ProfileFindFirstArgs {
+  @Field(() => ProfileWhereInput, { nullable: true })
+  where?: ProfileWhereInput;
+  @Field(() => [ProfileOrderByWithRelationInput], { nullable: true })
+  orderBy?: ProfileOrderByWithRelationInput[];
+  @Field(() => ProfileWhereUniqueInput, { nullable: true })
+  cursor?: ProfileWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [ProfileScalarFieldEnum], { nullable: true })
+  distinct?: ProfileScalarFieldEnum[];
+}
+
+@ArgsType()
+export class ProfileFindManyArgs {
+  @Field(() => ProfileWhereInput, { nullable: true })
+  where?: ProfileWhereInput;
+  @Field(() => [ProfileOrderByWithRelationInput], { nullable: true })
+  orderBy?: ProfileOrderByWithRelationInput[];
+  @Field(() => ProfileWhereUniqueInput, { nullable: true })
+  cursor?: ProfileWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [ProfileScalarFieldEnum], { nullable: true })
+  distinct?: ProfileScalarFieldEnum[];
+}
+
+@ArgsType()
+export class ProfileFindUniqueArgs {
+  @Field(() => ProfileWhereUniqueInput, { nullable: false })
+  where: ProfileWhereUniqueInput;
+}
+
+@ArgsType()
+export class ProfileGroupByArgs {
+  @Field(() => ProfileWhereInput, { nullable: true })
+  where?: ProfileWhereInput;
+  @Field(() => [ProfileOrderByWithAggregationInput], { nullable: true })
+  orderBy?: ProfileOrderByWithAggregationInput[];
+  @Field(() => [ProfileScalarFieldEnum], { nullable: false })
+  by: ProfileScalarFieldEnum[];
+  @Field(() => ProfileScalarWhereWithAggregatesInput, { nullable: true })
+  having?: ProfileScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+}
+
+@ArgsType()
+export class ProfileUpdateManyArgs {
+  @Field(() => ProfileUpdateManyMutationInput, { nullable: false })
+  data: ProfileUpdateManyMutationInput;
+  @Field(() => ProfileWhereInput, { nullable: true })
+  where?: ProfileWhereInput;
+}
+
+@ArgsType()
+export class ProfileCountArgs {
+  @Field(() => ProfileWhereInput, { nullable: true })
+  where?: ProfileWhereInput;
+  @Field(() => [ProfileOrderByWithRelationInput], { nullable: true })
+  orderBy?: ProfileOrderByWithRelationInput[];
+  @Field(() => ProfileWhereUniqueInput, { nullable: true })
+  cursor?: ProfileWhereUniqueInput;
+  @Field(() => Int, { nullable: false })
+  take: number;
+  @Field(() => Int, { nullable: false })
+  skip: number;
+  @Field(() => [ProfileScalarFieldEnum], { nullable: true })
+  distinct?: ProfileScalarFieldEnum[];
 }
 
 @ArgsType()

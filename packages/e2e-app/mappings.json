@@ -121,6 +121,127 @@
     ]
   },
   {
+    "model": "Profile",
+    "operations": [
+      {
+        "name": "aggregateProfile",
+        "type": "Query",
+        "action": "aggregate",
+        "argsTypeName": "ProfileAggregateArgs",
+        "outputType": {
+          "type": "AggregateProfile",
+          "namespace": "prisma",
+          "location": "outputObjectTypes",
+          "isList": false
+        },
+        "isNullable": false
+      },
+      {
+        "name": "createManyProfile",
+        "type": "Mutation",
+        "action": "createMany",
+        "argsTypeName": "ProfileCreateManyArgs",
+        "outputType": {
+          "type": "AffectedRowsOutput",
+          "namespace": "prisma",
+          "location": "outputObjectTypes",
+          "isList": false
+        },
+        "isNullable": false
+      },
+      {
+        "name": "deleteManyProfile",
+        "type": "Mutation",
+        "action": "deleteMany",
+        "argsTypeName": "ProfileDeleteManyArgs",
+        "outputType": {
+          "type": "AffectedRowsOutput",
+          "namespace": "prisma",
+          "location": "outputObjectTypes",
+          "isList": false
+        },
+        "isNullable": false
+      },
+      {
+        "name": "findFirstProfile",
+        "type": "Query",
+        "action": "findFirst",
+        "argsTypeName": "ProfileFindFirstArgs",
+        "outputType": {
+          "type": "Profile",
+          "namespace": "model",
+          "location": "outputObjectTypes",
+          "isList": false
+        },
+        "isNullable": true
+      },
+      {
+        "name": "findManyProfile",
+        "type": "Query",
+        "action": "findMany",
+        "argsTypeName": "ProfileFindManyArgs",
+        "outputType": {
+          "type": "Profile",
+          "namespace": "model",
+          "location": "outputObjectTypes",
+          "isList": true
+        },
+        "isNullable": false
+      },
+      {
+        "name": "findUniqueProfile",
+        "type": "Query",
+        "action": "findUnique",
+        "argsTypeName": "ProfileFindUniqueArgs",
+        "outputType": {
+          "type": "Profile",
+          "namespace": "model",
+          "location": "outputObjectTypes",
+          "isList": false
+        },
+        "isNullable": true
+      },
+      {
+        "name": "groupByProfile",
+        "type": "Query",
+        "action": "groupBy",
+        "argsTypeName": "ProfileGroupByArgs",
+        "outputType": {
+          "type": "ProfileGroupByOutputType",
+          "namespace": "prisma",
+          "location": "outputObjectTypes",
+          "isList": true
+        },
+        "isNullable": false
+      },
+      {
+        "name": "updateManyProfile",
+        "type": "Mutation",
+        "action": "updateMany",
+        "argsTypeName": "ProfileUpdateManyArgs",
+        "outputType": {
+          "type": "AffectedRowsOutput",
+          "namespace": "prisma",
+          "location": "outputObjectTypes",
+          "isList": false
+        },
+        "isNullable": false
+      },
+      {
+        "name": "countProfile",
+        "type": "Query",
+        "action": "count",
+        "argsTypeName": "ProfileCountArgs",
+        "outputType": {
+          "type": "Int",
+          "isList": false,
+          "location": "scalar"
+        },
+        "isNullable": false
+      }
+    ]
+  },
+  {
     "model": "Post",
     "operations": [
       {

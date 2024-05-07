@@ -56,6 +56,14 @@ model User extends Base {
     mappedField  String   @map("mapped_field")
 
     tags         Tag[]
+
+    profile      Profile?
+}
+
+model Profile extends Base {
+    bio   String?
+    user  User    @relation(fields: [userId], references: [id])
+    userId Int    @unique
 }
 
 model Post extends Base {

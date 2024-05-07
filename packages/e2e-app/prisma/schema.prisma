@@ -49,6 +49,16 @@ model User {
   anotherPosts Post[]   @relation("AnotherUserToPost")
   mappedField  String   @map("mapped_field")
   tags         Tag[]
+  profile      Profile?
+}
+
+model Profile {
+  id        Int      @id() @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+  bio       String?
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int      @unique()
 }
 
 /// @@allow('all', auth().role == 'ADMIN')

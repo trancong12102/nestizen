@@ -29,6 +29,7 @@ import {
   PostFindManyArgs,
   Tag,
   TagFindManyArgs,
+  Profile,
 } from '../../nestizen/graphql-types';
 
 @Resolver(() => User)
@@ -120,5 +121,10 @@ export class UserBaseResolver {
   @ResolveField(() => Tag, { nullable: false })
   async tags(@Parent() parent: User, @Args() args: TagFindManyArgs) {
     return this.service.tags(parent, args as unknown as Prisma.TagFindManyArgs);
+  }
+
+  @ResolveField(() => Profile, { nullable: true })
+  async profile(@Parent() parent: User) {
+    return this.service.profile(parent);
   }
 }
