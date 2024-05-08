@@ -61,9 +61,9 @@ model User extends Base {
 }
 
 model Profile extends Base {
-    bio   String?
-    user  User    @relation(fields: [userId], references: [id])
-    userId Int    @unique
+    bio    String?
+    user   User    @relation(fields: [userId], references: [id])
+    userId Int     @unique
 }
 
 model Post extends Base {
@@ -90,11 +90,11 @@ model Tag {
 }
 
 model Category extends Base {
-    name      String            @unique
+    name     String            @unique
     /// Many to many relation with Post
-    posts     Post[]            @graphql.hideResolveField
+    posts    Post[]            @graphql.hideResolveField
     /// One to one relation with CategoryMetadata
-    metadata  CategoryMetadata?
+    metadata CategoryMetadata?
 }
 
 model CategoryMetadata extends Base {
@@ -111,17 +111,17 @@ model MiscModel extends Base {
     stringList    String[]
     decimalField  Decimal
     decimalList   Decimal[]
-    floatField    Float
-    bytesField    Bytes      @graphql.hideOutputField
+    floatField    Float      @graphql.hideField
+    bytesField    Bytes      @graphql.hideField(output: true)
     bytesList     Bytes[]    @graphql.hideField(match: '*@(Create|Update)*Input')
-    bigIntField   BigInt     @graphql.hideField
+    bigIntField   BigInt     @graphql.hideField(output: true, input: true)
     bigIntList    BigInt[]
     dateTimeField DateTime
-    dateTimeList  DateTime[] @graphql.hideInputField
+    dateTimeList  DateTime[] @graphql.hideField(input: true)
 }
 
 model HiddenModel extends Base {
     data Json
 
-    @@graphql.hide
+    @@graphql.hideOperations([GQL_OP_ALL])
 }

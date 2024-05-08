@@ -117,20 +117,21 @@ model MiscModel {
   stringList    String[]
   decimalField  Decimal
   decimalList   Decimal[]
+  /// @graphql.hideField
   floatField    Float
-  /// @graphql.hideOutputField
+  /// @graphql.hideField(output: true)
   bytesField    Bytes
   /// @graphql.hideField(match: '*@(Create|Update)*Input')
   bytesList     Bytes[]
-  /// @graphql.hideField
+  /// @graphql.hideField(output: true, input: true)
   bigIntField   BigInt
   bigIntList    BigInt[]
   dateTimeField DateTime
-  /// @graphql.hideInputField
+  /// @graphql.hideField(input: true)
   dateTimeList  DateTime[]
 }
 
-/// @@graphql.hide
+/// @@graphql.hideOperations([GQL_OP_ALL])
 model HiddenModel {
   id        Int      @id() @default(autoincrement())
   createdAt DateTime @default(now())

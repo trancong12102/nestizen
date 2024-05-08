@@ -1,10 +1,10 @@
-import { MiscModelBaseService } from './base/misc-model.base.service';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
+import { MiscModelServiceBase } from './base/misc-model.service.base';
 
 @Injectable()
-export class MiscModelService extends MiscModelBaseService {
-  constructor(protected readonly prisma: PrismaService) {
+export class MiscModelService extends MiscModelServiceBase {
+  constructor(public readonly prisma: PrismaService) {
     super(prisma);
   }
 }

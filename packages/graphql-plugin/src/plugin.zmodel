@@ -1,18 +1,10 @@
 /**
- * Hide field from input type.
- */
-attribute @graphql.hideInputField()
-
-/**
- * Hide field from output type.
- */
-attribute @graphql.hideOutputField()
-
-/**
- * Hide field from type matching a glob pattern. Default is to hide all fields.
+ * Hide field from type.
+ * @param input Hide field from input type.
+ * @param output Hide field from output type. Default is true.
  * @param match A glob pattern to match the type name. See https://github.com/axtgr/outmatch for more information.
  */
-attribute @graphql.hideField(match: String?)
+attribute @graphql.hideField(output: Boolean?, input: Boolean?, match: String?)
 
 /**
  * Hide resolve field from model object.
@@ -20,6 +12,27 @@ attribute @graphql.hideField(match: String?)
 attribute @graphql.hideResolveField() @@@targetField([ModelField])
 
 /**
- * Hide all graphql operations
+ * GraphQL operation enum.
  */
-attribute @@graphql.hide()
+enum GqlOp {
+    GQL_OP_ALL
+    GQL_OP_FIND_UNIQUE
+    GQL_OP_FIND_FIRST
+    GQL_OP_FIND_MANY
+    GQL_OP_CREATE
+    GQL_OP_CREATE_MANY
+    GQL_OP_UPDATE
+    GQL_OP_UPDATE_MANY
+    GQL_OP_UPSERT
+    GQL_OP_DELETE
+    GQL_OP_DELETE_MANY
+    GQL_OP_GROUP_BY
+    GQL_OP_COUNT
+    GQL_OP_AGGREGATE
+}
+
+/**
+ * Default expose all queries and mutations. This attribute can be used to hide specific operations.
+ * @param operations The operations to hide.
+ */
+attribute @@graphql.hideOperations(_ operations: GqlOp[])
