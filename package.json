@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier .",
-    "format:write": "prettier . --write"
+    "lint:check": "eslint .",
+    "lint": "eslint . --fix",
+    "format:check": "prettier .",
+    "format": "prettier . --write"
   },
   "keywords": [],
   "author": "",

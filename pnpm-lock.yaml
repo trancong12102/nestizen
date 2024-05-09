@@ -80,7 +80,7 @@ importers:
     devDependencies:
       '@nestizen/graphql-plugin':
         specifier: workspace:*
-        version: link:../graphql-plugin
+        version: link:../graphql-plugin/dist
       '@nestjs/cli':
         specifier: ^10.3.2
         version: 10.3.2(@swc/cli@0.3.12(@swc/core@1.5.5)(chokidar@3.6.0))(@swc/core@1.5.5)
@@ -190,6 +190,7 @@ importers:
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
+    publishDirectory: dist
 
 packages:
 
