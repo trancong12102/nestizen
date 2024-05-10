@@ -39,6 +39,30 @@ export class BaseServiceGenerator {
     this.modelName = getModelNameVariants(model.name);
   }
 
+  private get resolveParentWhere() {
+    const { primaryKey, fields } = this.model;
+
+    if (primaryKey) {
+      const { fields } = primaryKey;
+      const compoundField = fields.join('_');
+      let where = `{ ${compoundField}: { `;
+
+      for (const field of fields) {
+        where += `${field}: parent.${field}, `;
+      }
+      where += `}}`;
+
+      return where;
+    }
+
+    const idField = fields.find((f) => f.isId);
+    if (!idField) {
+      throw new Error(`Cannot find id field ${this.model.name}`);
+    }
+
+    return `{ ${idField.name}: parent.${idField.name}, }`;
+  }
+
   generate() {
     const { prismaServicePath, output } = this.options;
 
@@ -61,7 +85,7 @@ export class BaseServiceGenerator {
     this.imports.push(
       {
         kind: StructureKind.ImportDeclaration,
-        namedImports: [t('Prisma'), this.modelName.original],
+        namedImports: [t('Prisma')],
         moduleSpecifier: t('@prisma/client'),
       },
       {
@@ -89,6 +113,15 @@ export class BaseServiceGenerator {
     const { fields } = this.model;
 
     const relations = fields.filter(({ relationName }) => relationName);
+    if (relations.length === 0) {
+      return;
+    }
+
+    this.imports.push({
+      kind: StructureKind.ImportDeclaration,
+      namedImports: [this.modelName.original],
+      moduleSpecifier: t('@prisma/client'),
+    });
 
     for (const relation of relations) {
       const { name, type, isList } = relation;
@@ -122,30 +155,6 @@ export class BaseServiceGenerator {
         ],
       });
     }
-  }
-
-  private get resolveParentWhere() {
-    const { primaryKey, fields } = this.model;
-
-    if (primaryKey) {
-      const { fields } = primaryKey;
-      const compoundField = fields.join('_');
-      let where = `{ ${compoundField}: { `;
-
-      for (const field of fields) {
-        where += `${field}: parent.${field}, `;
-      }
-      where += `}}`;
-
-      return where;
-    }
-
-    const idField = fields.find((f) => f.isId);
-    if (!idField) {
-      throw new Error(`Cannot find id field ${this.model.name}`);
-    }
-
-    return `{ ${idField.name}: parent.${idField.name}, }`;
   }
 
   private declareCrudMethods() {

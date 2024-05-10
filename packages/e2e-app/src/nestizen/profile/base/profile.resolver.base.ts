@@ -11,10 +11,10 @@ import {
   Resolver,
   Query,
   Mutation,
-  ResolveField,
   Args,
   Int,
   Parent,
+  ResolveField,
 } from '@nestjs/graphql';
 import { ProfileServiceBase } from './profile.service.base';
 import {

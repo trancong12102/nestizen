@@ -8,7 +8,7 @@ import {
   SourceFileStructure,
   StructureKind,
 } from 'ts-morph';
-import { DMMF } from '@prisma/generator-helper';
+import { DMMF, ReadonlyDeep } from '@prisma/generator-helper';
 import { getModelNameVariants } from '../helpers/get-model-name-variants';
 import path from 'path';
 import { t } from '../helpers/keyword';
@@ -24,6 +24,7 @@ import { GeneratorKeyword } from '../types/generator-keyword';
 import { checkShouldHideResolveFunction } from '../helpers/check-should-hide-resolve-function';
 import { GENERATED_FILE_COMMENTS } from '../../contants';
 import { GenerateOptions } from '../../types';
+import { getModelRelations } from '../helpers/get-model-relations';
 
 export class BaseResolverGenerator {
   private readonly modelName: ModelNameVariants;
@@ -32,6 +33,7 @@ export class BaseResolverGenerator {
   private readonly imports: ImportDeclarationStructure[] = [];
   private classMethods: MethodDeclarationStructure[] = [];
   private typesImportModuleModifier: string;
+  private readonly relations: ReadonlyDeep<DMMF.Field[]>;
 
   constructor(
     private readonly project: ProjectStructure,
@@ -40,6 +42,7 @@ export class BaseResolverGenerator {
     private readonly operationsHideMap: OperationsHideMap,
   ) {
     this.modelName = getModelNameVariants(model.name);
+    this.relations = getModelRelations(model);
   }
 
   generate() {
@@ -62,13 +65,7 @@ export class BaseResolverGenerator {
     this.imports.push(
       {
         kind: StructureKind.ImportDeclaration,
-        namedImports: [
-          t('Resolver'),
-          t('Query'),
-          t('Mutation'),
-          t('ResolveField'),
-          t('Args'),
-        ],
+        namedImports: [t('Resolver'), t('Query'), t('Mutation'), t('Args')],
         moduleSpecifier: t('@nestjs/graphql'),
       },
       {
@@ -93,18 +90,17 @@ export class BaseResolverGenerator {
   }
 
   private declareResolveMethods() {
-    const { fields } = this.model;
-    const relations = fields.filter(({ relationName }) => relationName);
-
-    if (relations.length > 0) {
-      this.imports.push({
-        kind: StructureKind.ImportDeclaration,
-        namedImports: [t('Parent')],
-        moduleSpecifier: t('@nestjs/graphql'),
-      });
+    if (this.relations.length === 0) {
+      return;
     }
 
-    for (const relation of relations) {
+    this.imports.push({
+      kind: StructureKind.ImportDeclaration,
+      namedImports: t('Parent', 'ResolveField'),
+      moduleSpecifier: t('@nestjs/graphql'),
+    });
+
+    for (const relation of this.relations) {
       const { name, type, isList, isRequired, documentation } = relation;
       if (checkShouldHideResolveFunction(documentation)) {
         continue;
@@ -194,7 +190,7 @@ export class BaseResolverGenerator {
         graphqlReturnType: `[${this.modelName.original}]`,
         type: 'Query',
         imports: [this.modelName.original],
-        hide: this.operationsHideMap.LIST,
+        hide: this.operationsHideMap.READ,
       },
       {
         name: camelcase(`create_${this.modelName.camelCase}`),
@@ -234,7 +230,7 @@ export class BaseResolverGenerator {
         graphqlReturnType: t('Int'),
         type: 'Query',
         imports: [],
-        hide: this.operationsHideMap.LIST,
+        hide: this.operationsHideMap.READ,
       },
       {
         name: camelcase(`${this.modelName.camelCase}_aggregate`),
@@ -244,7 +240,7 @@ export class BaseResolverGenerator {
         graphqlReturnType: `Aggregate${this.modelName.original}`,
         type: 'Query',
         imports: [`Aggregate${this.modelName.original}`],
-        hide: this.operationsHideMap.LIST,
+        hide: this.operationsHideMap.READ,
       },
       {
         name: camelcase(`${this.modelName.camelCase}_group_by`),
@@ -254,7 +250,7 @@ export class BaseResolverGenerator {
         graphqlReturnType: `[${this.modelName.original}GroupBy]`,
         type: 'Query',
         imports: [`${this.modelName.original}GroupBy`],
-        hide: this.operationsHideMap.LIST,
+        hide: this.operationsHideMap.READ,
       },
     ];
 
@@ -332,6 +328,8 @@ export class BaseResolverGenerator {
 
   private declareClass() {
     const ServiceBaseType = `${this.modelName.original}ServiceBase`;
+    const shouldHideType =
+      this.relations.length === 0 && this.operationsHideMap.ALL;
 
     this.classDeclaration = {
       kind: StructureKind.Class,
@@ -340,7 +338,7 @@ export class BaseResolverGenerator {
       decorators: [
         {
           name: t('Resolver'),
-          arguments: [`() => ${this.modelName.original}`],
+          arguments: shouldHideType ? [] : [`() => ${this.modelName.original}`],
         },
       ],
       ctors: [

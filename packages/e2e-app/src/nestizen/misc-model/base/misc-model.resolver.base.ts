@@ -7,21 +7,12 @@ Changes to this file will be lost if the code is regenerated.
 */
 /* eslint-disable */
 
-import {
-  Resolver,
-  Query,
-  Mutation,
-  ResolveField,
-  Args,
-  Int,
-} from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { MiscModelServiceBase } from './misc-model.service.base';
 import {
   MiscModel,
   FindUniqueMiscModelArgs,
   FindManyMiscModelArgs,
-  CreateOneMiscModelArgs,
-  UpdateOneMiscModelArgs,
   DeleteOneMiscModelArgs,
   AggregateMiscModel,
   MiscModelAggregateArgs,
@@ -41,16 +32,6 @@ export class MiscModelResolverBase {
   @Query(() => [MiscModel], { nullable: false })
   async miscModels(@Args() args: FindManyMiscModelArgs) {
     return this.service.findMany(args);
-  }
-
-  @Mutation(() => MiscModel, { nullable: false })
-  async createMiscModel(@Args() args: CreateOneMiscModelArgs) {
-    return this.service.create(args);
-  }
-
-  @Mutation(() => MiscModel, { nullable: false })
-  async updateMiscModel(@Args() args: UpdateOneMiscModelArgs) {
-    return this.service.update(args);
   }
 
   @Mutation(() => MiscModel, { nullable: false })

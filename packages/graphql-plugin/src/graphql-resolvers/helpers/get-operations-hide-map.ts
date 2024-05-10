@@ -1,18 +1,13 @@
-const MATCH_REGEX =
-  /^@@graphql\.hideOperations\(\[(((ALL|CREATE|READ|UPDATE|DELETE|LIST)(, )?)*)\]\)/;
+const MATCH_REGEX = /^@@graphql\.hideOperations\(\[(.*?)]\)$/;
 
-const AVAIL_OPERATIONS = [
-  'CREATE',
-  'READ',
-  'UPDATE',
-  'DELETE',
-  'LIST',
-] as const;
+const AVAIL_OPERATIONS = ['CREATE', 'READ', 'UPDATE', 'DELETE', 'ALL'] as const;
 
 export type OperationsHideMap = Record<
   (typeof AVAIL_OPERATIONS)[number],
   boolean
 >;
+
+const GQL_OP_PREFIX = 'GQL_OP_';
 
 export const getOperationsHideMap = (
   documentations?: string,
@@ -26,7 +21,9 @@ export const getOperationsHideMap = (
         .map((chunk) => {
           const match = chunk.match(MATCH_REGEX);
           if (match) {
-            return match[1].split(',').map((operation) => operation.trim());
+            return match[1]
+              .split(',')
+              .map((operation) => operation.trim().replace(GQL_OP_PREFIX, ''));
           }
           return [];
         })
@@ -46,9 +43,7 @@ export const getOperationsHideMap = (
     {} as OperationsHideMap,
   );
 
-  operations.forEach(
-    (operation) => (result[operation as keyof OperationsHideMap] = true),
-  );
+  operations.forEach((operation) => (result[operation] = true));
 
   return result;
 };

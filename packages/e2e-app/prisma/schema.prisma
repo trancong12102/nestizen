@@ -107,6 +107,7 @@ model CategoryMetadata {
   metadata   Json[]
 }
 
+/// @@graphql.hideOperations([GQL_OP_CREATE, GQL_OP_UPDATE])
 model MiscModel {
   id            Int        @id() @default(autoincrement())
   createdAt     DateTime   @default(now())

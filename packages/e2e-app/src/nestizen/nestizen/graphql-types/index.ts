@@ -3740,7 +3740,13 @@ export class MiscModelWhereInput {
   dateTimeList?: InstanceType<typeof DateTimeListFilter>;
 }
 
-@ObjectType()
+/**
+ * @
+ * @graphql .hideOperations([GQL_OP_CREATE, GQL_OP_UPDATE])
+ */
+@ObjectType({
+  description: '@@graphql.hideOperations([GQL_OP_CREATE, GQL_OP_UPDATE])',
+})
 export class MiscModel {
   @Field(() => Int, { nullable: false, description: '' })
   id!: number;

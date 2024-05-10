@@ -1,6 +1,6 @@
 {
   "name": "@nestizen/graphql-plugin",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "type": "commonjs",
   "main": "./dist/index.js",

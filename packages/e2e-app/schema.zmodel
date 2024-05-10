@@ -118,6 +118,8 @@ model MiscModel extends Base {
     bigIntList    BigInt[]
     dateTimeField DateTime
     dateTimeList  DateTime[] @graphql.hideField(input: true)
+
+    @@graphql.hideOperations([GQL_OP_CREATE, GQL_OP_UPDATE])
 }
 
 model HiddenModel extends Base {

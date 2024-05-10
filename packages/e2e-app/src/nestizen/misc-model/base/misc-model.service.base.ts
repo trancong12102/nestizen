@@ -7,7 +7,7 @@ Changes to this file will be lost if the code is regenerated.
 */
 /* eslint-disable */
 
-import { Prisma, MiscModel } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
 
 export class MiscModelServiceBase {

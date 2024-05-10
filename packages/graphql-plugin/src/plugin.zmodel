@@ -16,19 +16,10 @@ attribute @graphql.hideResolveField() @@@targetField([ModelField])
  */
 enum GqlOp {
     GQL_OP_ALL
-    GQL_OP_FIND_UNIQUE
-    GQL_OP_FIND_FIRST
-    GQL_OP_FIND_MANY
     GQL_OP_CREATE
-    GQL_OP_CREATE_MANY
+    GQL_OP_READ
     GQL_OP_UPDATE
-    GQL_OP_UPDATE_MANY
-    GQL_OP_UPSERT
     GQL_OP_DELETE
-    GQL_OP_DELETE_MANY
-    GQL_OP_GROUP_BY
-    GQL_OP_COUNT
-    GQL_OP_AGGREGATE
 }
 
 /**
