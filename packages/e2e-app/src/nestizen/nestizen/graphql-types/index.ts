@@ -22,6 +22,7 @@ import { Decimal } from '@prisma/client/runtime/library';
 import { GraphQLDecimal } from 'prisma-graphql-type-decimal';
 import { transformToDecimal } from 'prisma-graphql-type-decimal';
 import { Transform } from 'class-transformer';
+import { GraphQLBigInt } from 'graphql-scalars';
 
 export enum UserScalarFieldEnum {
   id = 'id',
@@ -2962,7 +2963,7 @@ export class MiscModelCreateInput {
 
 @InputType()
 export class MiscModelCreatebigIntListInput {
-  @Field(() => [String], { nullable: false })
+  @Field(() => [GraphQLBigInt], { nullable: false })
   set!: Array<bigint> | Array<number>;
 }
 
@@ -3060,7 +3061,7 @@ export class MiscModelGroupBy {
   bytesList?: Array<Buffer>;
   @HideField()
   bigIntField!: bigint | number;
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   bigIntList?: Array<bigint> | Array<number>;
   @Field(() => Date, { nullable: false })
   dateTimeField!: Date | string;
@@ -3372,7 +3373,7 @@ export class MiscModelSumAggregate {
   floatField?: number;
   @HideField()
   bigIntField?: bigint | number;
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   bigIntList?: Array<bigint> | Array<number>;
 }
 
@@ -3596,9 +3597,9 @@ export class MiscModelUpdateInput {
 
 @InputType()
 export class MiscModelUpdatebigIntListInput {
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   set?: Array<bigint> | Array<number>;
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   push?: Array<bigint> | Array<number>;
 }
 
@@ -3774,7 +3775,7 @@ export class MiscModel {
   bytesList!: Array<Buffer>;
   @HideField()
   bigIntField!: bigint;
-  @Field(() => [String], { nullable: true, description: '' })
+  @Field(() => [GraphQLBigInt], { nullable: true, description: '' })
   bigIntList!: Array<bigint>;
   @Field(() => Date, { nullable: false, description: '' })
   dateTimeField!: Date;
@@ -5560,33 +5561,33 @@ export class AffectedRows {
 
 @InputType()
 export class BigIntFieldUpdateOperationsInput {
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   set?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   increment?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   decrement?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   multiply?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   divide?: bigint | number;
 }
 
 @InputType()
 export class BigIntFilter {
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   equals?: bigint | number;
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   in?: Array<bigint> | Array<number>;
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   notIn?: Array<bigint> | Array<number>;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   lt?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   lte?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   gt?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   gte?: bigint | number;
   @Field(() => BigIntFilter, { nullable: true })
   not?: InstanceType<typeof BigIntFilter>;
@@ -5594,13 +5595,13 @@ export class BigIntFilter {
 
 @InputType()
 export class BigIntListFilter {
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   equals?: Array<bigint> | Array<number>;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   has?: bigint | number;
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   hasEvery?: Array<bigint> | Array<number>;
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   hasSome?: Array<bigint> | Array<number>;
   @Field(() => Boolean, { nullable: true })
   isEmpty?: boolean;
@@ -5608,19 +5609,19 @@ export class BigIntListFilter {
 
 @InputType()
 export class BigIntWithAggregatesFilter {
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   equals?: bigint | number;
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   in?: Array<bigint> | Array<number>;
-  @Field(() => [String], { nullable: true })
+  @Field(() => [GraphQLBigInt], { nullable: true })
   notIn?: Array<bigint> | Array<number>;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   lt?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   lte?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   gt?: bigint | number;
-  @Field(() => String, { nullable: true })
+  @Field(() => GraphQLBigInt, { nullable: true })
   gte?: bigint | number;
   @Field(() => BigIntWithAggregatesFilter, { nullable: true })
   not?: InstanceType<typeof BigIntWithAggregatesFilter>;
