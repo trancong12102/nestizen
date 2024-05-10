@@ -31,6 +31,8 @@ export const generateGraphqlTypes = async (
       config: {
         emitSingle: 'true',
         omitModelsCount: 'true',
+        combineScalarFilters: 'true',
+        noTypeId: 'true',
         unsafeCompatibleWhereUniqueInput: 'true',
         decorate_hideInputFields_type: '*@(Update|Create)Input',
         decorate_hideInputFields_field: '@(createdAt|updatedAt|id)',
