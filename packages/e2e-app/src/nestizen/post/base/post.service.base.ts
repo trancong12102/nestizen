@@ -25,24 +25,12 @@ export class PostServiceBase {
     return this.prisma.client.post.create(args);
   }
 
-  async createMany(args: Prisma.PostCreateManyArgs) {
-    return this.prisma.client.post.createMany(args);
-  }
-
   async update(args: Prisma.PostUpdateArgs) {
     return this.prisma.client.post.update(args);
   }
 
-  async updateMany(args: Prisma.PostUpdateManyArgs) {
-    return this.prisma.client.post.updateMany(args);
-  }
-
   async delete(args: Prisma.PostDeleteArgs) {
     return this.prisma.client.post.delete(args);
-  }
-
-  async deleteMany(args: Prisma.PostDeleteManyArgs) {
-    return this.prisma.client.post.deleteMany(args);
   }
 
   async count(args: Prisma.PostCountArgs) {

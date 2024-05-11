@@ -25,24 +25,12 @@ export class CategoryServiceBase {
     return this.prisma.client.category.create(args);
   }
 
-  async createMany(args: Prisma.CategoryCreateManyArgs) {
-    return this.prisma.client.category.createMany(args);
-  }
-
   async update(args: Prisma.CategoryUpdateArgs) {
     return this.prisma.client.category.update(args);
   }
 
-  async updateMany(args: Prisma.CategoryUpdateManyArgs) {
-    return this.prisma.client.category.updateMany(args);
-  }
-
   async delete(args: Prisma.CategoryDeleteArgs) {
     return this.prisma.client.category.delete(args);
-  }
-
-  async deleteMany(args: Prisma.CategoryDeleteManyArgs) {
-    return this.prisma.client.category.deleteMany(args);
   }
 
   async count(args: Prisma.CategoryCountArgs) {

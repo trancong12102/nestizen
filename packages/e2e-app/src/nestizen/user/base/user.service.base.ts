@@ -25,24 +25,12 @@ export class UserServiceBase {
     return this.prisma.client.user.create(args);
   }
 
-  async createMany(args: Prisma.UserCreateManyArgs) {
-    return this.prisma.client.user.createMany(args);
-  }
-
   async update(args: Prisma.UserUpdateArgs) {
     return this.prisma.client.user.update(args);
   }
 
-  async updateMany(args: Prisma.UserUpdateManyArgs) {
-    return this.prisma.client.user.updateMany(args);
-  }
-
   async delete(args: Prisma.UserDeleteArgs) {
     return this.prisma.client.user.delete(args);
-  }
-
-  async deleteMany(args: Prisma.UserDeleteManyArgs) {
-    return this.prisma.client.user.deleteMany(args);
   }
 
   async count(args: Prisma.UserCountArgs) {

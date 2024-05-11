@@ -25,24 +25,12 @@ export class CategoryMetadataServiceBase {
     return this.prisma.client.categoryMetadata.create(args);
   }
 
-  async createMany(args: Prisma.CategoryMetadataCreateManyArgs) {
-    return this.prisma.client.categoryMetadata.createMany(args);
-  }
-
   async update(args: Prisma.CategoryMetadataUpdateArgs) {
     return this.prisma.client.categoryMetadata.update(args);
   }
 
-  async updateMany(args: Prisma.CategoryMetadataUpdateManyArgs) {
-    return this.prisma.client.categoryMetadata.updateMany(args);
-  }
-
   async delete(args: Prisma.CategoryMetadataDeleteArgs) {
     return this.prisma.client.categoryMetadata.delete(args);
-  }
-
-  async deleteMany(args: Prisma.CategoryMetadataDeleteManyArgs) {
-    return this.prisma.client.categoryMetadata.deleteMany(args);
   }
 
   async count(args: Prisma.CategoryMetadataCountArgs) {

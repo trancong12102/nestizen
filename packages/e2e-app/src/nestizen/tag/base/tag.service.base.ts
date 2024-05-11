@@ -25,24 +25,12 @@ export class TagServiceBase {
     return this.prisma.client.tag.create(args);
   }
 
-  async createMany(args: Prisma.TagCreateManyArgs) {
-    return this.prisma.client.tag.createMany(args);
-  }
-
   async update(args: Prisma.TagUpdateArgs) {
     return this.prisma.client.tag.update(args);
   }
 
-  async updateMany(args: Prisma.TagUpdateManyArgs) {
-    return this.prisma.client.tag.updateMany(args);
-  }
-
   async delete(args: Prisma.TagDeleteArgs) {
     return this.prisma.client.tag.delete(args);
-  }
-
-  async deleteMany(args: Prisma.TagDeleteManyArgs) {
-    return this.prisma.client.tag.deleteMany(args);
   }
 
   async count(args: Prisma.TagCountArgs) {

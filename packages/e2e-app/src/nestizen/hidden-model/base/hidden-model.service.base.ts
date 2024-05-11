@@ -25,24 +25,12 @@ export class HiddenModelServiceBase {
     return this.prisma.client.hiddenModel.create(args);
   }
 
-  async createMany(args: Prisma.HiddenModelCreateManyArgs) {
-    return this.prisma.client.hiddenModel.createMany(args);
-  }
-
   async update(args: Prisma.HiddenModelUpdateArgs) {
     return this.prisma.client.hiddenModel.update(args);
   }
 
-  async updateMany(args: Prisma.HiddenModelUpdateManyArgs) {
-    return this.prisma.client.hiddenModel.updateMany(args);
-  }
-
   async delete(args: Prisma.HiddenModelDeleteArgs) {
     return this.prisma.client.hiddenModel.delete(args);
-  }
-
-  async deleteMany(args: Prisma.HiddenModelDeleteManyArgs) {
-    return this.prisma.client.hiddenModel.deleteMany(args);
   }
 
   async count(args: Prisma.HiddenModelCountArgs) {

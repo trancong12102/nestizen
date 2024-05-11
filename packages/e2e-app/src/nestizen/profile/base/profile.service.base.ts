@@ -25,24 +25,12 @@ export class ProfileServiceBase {
     return this.prisma.client.profile.create(args);
   }
 
-  async createMany(args: Prisma.ProfileCreateManyArgs) {
-    return this.prisma.client.profile.createMany(args);
-  }
-
   async update(args: Prisma.ProfileUpdateArgs) {
     return this.prisma.client.profile.update(args);
   }
 
-  async updateMany(args: Prisma.ProfileUpdateManyArgs) {
-    return this.prisma.client.profile.updateMany(args);
-  }
-
   async delete(args: Prisma.ProfileDeleteArgs) {
     return this.prisma.client.profile.delete(args);
-  }
-
-  async deleteMany(args: Prisma.ProfileDeleteManyArgs) {
-    return this.prisma.client.profile.deleteMany(args);
   }
 
   async count(args: Prisma.ProfileCountArgs) {

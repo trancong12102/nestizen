@@ -25,24 +25,12 @@ export class MiscModelServiceBase {
     return this.prisma.client.miscModel.create(args);
   }
 
-  async createMany(args: Prisma.MiscModelCreateManyArgs) {
-    return this.prisma.client.miscModel.createMany(args);
-  }
-
   async update(args: Prisma.MiscModelUpdateArgs) {
     return this.prisma.client.miscModel.update(args);
   }
 
-  async updateMany(args: Prisma.MiscModelUpdateManyArgs) {
-    return this.prisma.client.miscModel.updateMany(args);
-  }
-
   async delete(args: Prisma.MiscModelDeleteArgs) {
     return this.prisma.client.miscModel.delete(args);
-  }
-
-  async deleteMany(args: Prisma.MiscModelDeleteManyArgs) {
-    return this.prisma.client.miscModel.deleteMany(args);
   }
 
   async count(args: Prisma.MiscModelCountArgs) {
