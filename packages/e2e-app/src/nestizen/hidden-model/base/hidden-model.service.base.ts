@@ -52,8 +52,4 @@ export class HiddenModelServiceBase {
   async aggregate(args: Prisma.HiddenModelAggregateArgs) {
     return this.prisma.client.hiddenModel.aggregate(args);
   }
-
-  async groupBy(args: Prisma.HiddenModelGroupByArgs) {
-    return this.prisma.client.hiddenModel.groupBy(args);
-  }
 }

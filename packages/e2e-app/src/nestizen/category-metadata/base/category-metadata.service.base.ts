@@ -53,10 +53,6 @@ export class CategoryMetadataServiceBase {
     return this.prisma.client.categoryMetadata.aggregate(args);
   }
 
-  async groupBy(args: Prisma.CategoryMetadataGroupByArgs) {
-    return this.prisma.client.categoryMetadata.groupBy(args);
-  }
-
   async resolveCategory(parent: CategoryMetadata) {
     return this.prisma.client.categoryMetadata
       .findUniqueOrThrow({

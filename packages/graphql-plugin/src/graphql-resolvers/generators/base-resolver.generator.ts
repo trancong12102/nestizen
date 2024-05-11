@@ -242,16 +242,16 @@ export class BaseResolverGenerator {
         imports: [`Aggregate${this.modelName.original}`],
         hide: this.operationsHideMap.READ,
       },
-      {
-        name: camelcase(`${this.modelName.camelCase}_group_by`),
-        method: 'groupBy',
-        argsType: `${this.modelName.original}GroupByArgs`,
-        nullable: false,
-        graphqlReturnType: `[${this.modelName.original}GroupBy]`,
-        type: 'Query',
-        imports: [`${this.modelName.original}GroupBy`],
-        hide: this.operationsHideMap.READ,
-      },
+      // {
+      //   name: camelcase(`${this.modelName.camelCase}_group_by`),
+      //   method: 'groupBy',
+      //   argsType: `${this.modelName.original}GroupByArgs`,
+      //   nullable: false,
+      //   graphqlReturnType: `[${this.modelName.original}GroupBy]`,
+      //   type: 'Query',
+      //   imports: [`${this.modelName.original}GroupBy`],
+      //   hide: this.operationsHideMap.READ,
+      // },
     ];
 
     for (const spec of methodSpecs) {

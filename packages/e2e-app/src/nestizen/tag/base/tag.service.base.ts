@@ -53,10 +53,6 @@ export class TagServiceBase {
     return this.prisma.client.tag.aggregate(args);
   }
 
-  async groupBy(args: Prisma.TagGroupByArgs) {
-    return this.prisma.client.tag.groupBy(args);
-  }
-
   async resolveUsers(parent: Tag, args: Prisma.UserFindManyArgs) {
     return this.prisma.client.tag
       .findUniqueOrThrow({

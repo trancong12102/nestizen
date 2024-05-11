@@ -26,8 +26,6 @@ import {
   DeleteOneTagArgs,
   AggregateTag,
   TagAggregateArgs,
-  TagGroupBy,
-  TagGroupByArgs,
   FindManyUserArgs,
   User,
 } from '../../nestizen/graphql-types';
@@ -69,11 +67,6 @@ export class TagResolverBase {
   @Query(() => AggregateTag, { nullable: false })
   async tagAggregate(@Args() args: TagAggregateArgs) {
     return this.service.aggregate(args);
-  }
-
-  @Query(() => [TagGroupBy], { nullable: false })
-  async tagGroupBy(@Args() args: TagGroupByArgs) {
-    return this.service.groupBy(args);
   }
 
   @ResolveField(() => [User], { nullable: false })

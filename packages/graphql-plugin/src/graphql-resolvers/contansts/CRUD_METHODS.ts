@@ -9,5 +9,5 @@ export const CRUD_METHODS = [
   'deleteMany',
   'count',
   'aggregate',
-  'groupBy',
+  // 'groupBy',
 ];

@@ -26,8 +26,6 @@ import {
   DeleteOneCategoryArgs,
   AggregateCategory,
   CategoryAggregateArgs,
-  CategoryGroupBy,
-  CategoryGroupByArgs,
   CategoryMetadata,
 } from '../../nestizen/graphql-types';
 
@@ -68,11 +66,6 @@ export class CategoryResolverBase {
   @Query(() => AggregateCategory, { nullable: false })
   async categoryAggregate(@Args() args: CategoryAggregateArgs) {
     return this.service.aggregate(args);
-  }
-
-  @Query(() => [CategoryGroupBy], { nullable: false })
-  async categoryGroupBy(@Args() args: CategoryGroupByArgs) {
-    return this.service.groupBy(args);
   }
 
   @ResolveField(() => CategoryMetadata)

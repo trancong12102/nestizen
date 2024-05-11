@@ -53,10 +53,6 @@ export class CategoryServiceBase {
     return this.prisma.client.category.aggregate(args);
   }
 
-  async groupBy(args: Prisma.CategoryGroupByArgs) {
-    return this.prisma.client.category.groupBy(args);
-  }
-
   async resolvePosts(parent: Category, args: Prisma.PostFindManyArgs) {
     return this.prisma.client.category
       .findUniqueOrThrow({

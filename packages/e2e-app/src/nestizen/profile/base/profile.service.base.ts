@@ -53,10 +53,6 @@ export class ProfileServiceBase {
     return this.prisma.client.profile.aggregate(args);
   }
 
-  async groupBy(args: Prisma.ProfileGroupByArgs) {
-    return this.prisma.client.profile.groupBy(args);
-  }
-
   async resolveUser(parent: Profile) {
     return this.prisma.client.profile
       .findUniqueOrThrow({

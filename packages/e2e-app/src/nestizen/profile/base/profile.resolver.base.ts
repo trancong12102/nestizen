@@ -26,8 +26,6 @@ import {
   DeleteOneProfileArgs,
   AggregateProfile,
   ProfileAggregateArgs,
-  ProfileGroupBy,
-  ProfileGroupByArgs,
   User,
 } from '../../nestizen/graphql-types';
 
@@ -68,11 +66,6 @@ export class ProfileResolverBase {
   @Query(() => AggregateProfile, { nullable: false })
   async profileAggregate(@Args() args: ProfileAggregateArgs) {
     return this.service.aggregate(args);
-  }
-
-  @Query(() => [ProfileGroupBy], { nullable: false })
-  async profileGroupBy(@Args() args: ProfileGroupByArgs) {
-    return this.service.groupBy(args);
   }
 
   @ResolveField(() => User)

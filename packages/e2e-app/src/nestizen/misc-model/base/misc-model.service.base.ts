@@ -52,8 +52,4 @@ export class MiscModelServiceBase {
   async aggregate(args: Prisma.MiscModelAggregateArgs) {
     return this.prisma.client.miscModel.aggregate(args);
   }
-
-  async groupBy(args: Prisma.MiscModelGroupByArgs) {
-    return this.prisma.client.miscModel.groupBy(args);
-  }
 }

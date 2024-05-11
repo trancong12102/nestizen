@@ -53,10 +53,6 @@ export class PostServiceBase {
     return this.prisma.client.post.aggregate(args);
   }
 
-  async groupBy(args: Prisma.PostGroupByArgs) {
-    return this.prisma.client.post.groupBy(args);
-  }
-
   async resolveAuthor(parent: Post) {
     return this.prisma.client.post
       .findUniqueOrThrow({

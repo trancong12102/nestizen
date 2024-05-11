@@ -53,10 +53,6 @@ export class UserServiceBase {
     return this.prisma.client.user.aggregate(args);
   }
 
-  async groupBy(args: Prisma.UserGroupByArgs) {
-    return this.prisma.client.user.groupBy(args);
-  }
-
   async resolvePosts(parent: User, args: Prisma.PostFindManyArgs) {
     return this.prisma.client.user
       .findUniqueOrThrow({

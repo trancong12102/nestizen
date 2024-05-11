@@ -26,8 +26,6 @@ import {
   DeleteOneUserArgs,
   AggregateUser,
   UserAggregateArgs,
-  UserGroupBy,
-  UserGroupByArgs,
   FindManyPostArgs,
   Post,
   FindManyTagArgs,
@@ -72,11 +70,6 @@ export class UserResolverBase {
   @Query(() => AggregateUser, { nullable: false })
   async userAggregate(@Args() args: UserAggregateArgs) {
     return this.service.aggregate(args);
-  }
-
-  @Query(() => [UserGroupBy], { nullable: false })
-  async userGroupBy(@Args() args: UserGroupByArgs) {
-    return this.service.groupBy(args);
   }
 
   @ResolveField(() => [Post], { nullable: false })

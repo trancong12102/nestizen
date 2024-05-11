@@ -26,8 +26,6 @@ import {
   DeleteOneCategoryMetadataArgs,
   AggregateCategoryMetadata,
   CategoryMetadataAggregateArgs,
-  CategoryMetadataGroupBy,
-  CategoryMetadataGroupByArgs,
   Category,
 } from '../../nestizen/graphql-types';
 
@@ -68,11 +66,6 @@ export class CategoryMetadataResolverBase {
   @Query(() => AggregateCategoryMetadata, { nullable: false })
   async categoryMetadataAggregate(@Args() args: CategoryMetadataAggregateArgs) {
     return this.service.aggregate(args);
-  }
-
-  @Query(() => [CategoryMetadataGroupBy], { nullable: false })
-  async categoryMetadataGroupBy(@Args() args: CategoryMetadataGroupByArgs) {
-    return this.service.groupBy(args);
   }
 
   @ResolveField(() => Category)

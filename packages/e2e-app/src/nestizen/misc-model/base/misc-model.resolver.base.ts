@@ -16,8 +16,6 @@ import {
   DeleteOneMiscModelArgs,
   AggregateMiscModel,
   MiscModelAggregateArgs,
-  MiscModelGroupBy,
-  MiscModelGroupByArgs,
 } from '../../nestizen/graphql-types';
 
 @Resolver(() => MiscModel)
@@ -47,10 +45,5 @@ export class MiscModelResolverBase {
   @Query(() => AggregateMiscModel, { nullable: false })
   async miscModelAggregate(@Args() args: MiscModelAggregateArgs) {
     return this.service.aggregate(args);
-  }
-
-  @Query(() => [MiscModelGroupBy], { nullable: false })
-  async miscModelGroupBy(@Args() args: MiscModelGroupByArgs) {
-    return this.service.groupBy(args);
   }
 }
