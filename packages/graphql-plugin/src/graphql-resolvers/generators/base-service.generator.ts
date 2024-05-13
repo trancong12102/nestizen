@@ -86,7 +86,7 @@ export class BaseServiceGenerator {
       {
         kind: StructureKind.ImportDeclaration,
         namedImports: [t('Prisma')],
-        moduleSpecifier: t('@prisma/client'),
+        moduleSpecifier: t('@zenstackhq/runtime/models'),
       },
       {
         kind: StructureKind.ImportDeclaration,
@@ -120,7 +120,7 @@ export class BaseServiceGenerator {
     this.imports.push({
       kind: StructureKind.ImportDeclaration,
       namedImports: [this.modelName.original],
-      moduleSpecifier: t('@prisma/client'),
+      moduleSpecifier: t('@zenstackhq/runtime/models'),
     });
 
     for (const relation of relations) {

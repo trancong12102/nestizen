@@ -35,37 +35,37 @@ export class ProfileResolverBase {
 
   @Query(() => Profile, { nullable: true })
   async profile(@Args() args: FindUniqueProfileArgs) {
-    return this.service.findUnique(args as any);
+    return this.service.findUnique(args);
   }
 
   @Query(() => [Profile], { nullable: false })
   async profiles(@Args() args: FindManyProfileArgs) {
-    return this.service.findMany(args as any);
+    return this.service.findMany(args);
   }
 
   @Mutation(() => Profile, { nullable: false })
   async createProfile(@Args() args: CreateOneProfileArgs) {
-    return this.service.create(args as any);
+    return this.service.create(args);
   }
 
   @Mutation(() => Profile, { nullable: false })
   async updateProfile(@Args() args: UpdateOneProfileArgs) {
-    return this.service.update(args as any);
+    return this.service.update(args);
   }
 
   @Mutation(() => Profile, { nullable: false })
   async deleteProfile(@Args() args: DeleteOneProfileArgs) {
-    return this.service.delete(args as any);
+    return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
   async profileCount(@Args() args: FindManyProfileArgs) {
-    return this.service.count(args as any);
+    return this.service.count(args);
   }
 
   @Query(() => AggregateProfile, { nullable: false })
   async profileAggregate(@Args() args: ProfileAggregateArgs) {
-    return this.service.aggregate(args as any);
+    return this.service.aggregate(args);
   }
 
   @ResolveField(() => User)

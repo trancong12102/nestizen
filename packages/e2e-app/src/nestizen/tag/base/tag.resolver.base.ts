@@ -36,41 +36,41 @@ export class TagResolverBase {
 
   @Query(() => Tag, { nullable: true })
   async tag(@Args() args: FindUniqueTagArgs) {
-    return this.service.findUnique(args as any);
+    return this.service.findUnique(args);
   }
 
   @Query(() => [Tag], { nullable: false })
   async tags(@Args() args: FindManyTagArgs) {
-    return this.service.findMany(args as any);
+    return this.service.findMany(args);
   }
 
   @Mutation(() => Tag, { nullable: false })
   async createTag(@Args() args: CreateOneTagArgs) {
-    return this.service.create(args as any);
+    return this.service.create(args);
   }
 
   @Mutation(() => Tag, { nullable: false })
   async updateTag(@Args() args: UpdateOneTagArgs) {
-    return this.service.update(args as any);
+    return this.service.update(args);
   }
 
   @Mutation(() => Tag, { nullable: false })
   async deleteTag(@Args() args: DeleteOneTagArgs) {
-    return this.service.delete(args as any);
+    return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
   async tagCount(@Args() args: FindManyTagArgs) {
-    return this.service.count(args as any);
+    return this.service.count(args);
   }
 
   @Query(() => AggregateTag, { nullable: false })
   async tagAggregate(@Args() args: TagAggregateArgs) {
-    return this.service.aggregate(args as any);
+    return this.service.aggregate(args);
   }
 
   @ResolveField(() => [User], { nullable: false })
   async users(@Parent() parent: Tag, @Args() args: FindManyUserArgs) {
-    return this.service.resolveUsers(parent, args as any);
+    return this.service.resolveUsers(parent, args);
   }
 }

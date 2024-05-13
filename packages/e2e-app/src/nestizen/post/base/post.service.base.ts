@@ -7,7 +7,7 @@
  */
 
 /* eslint-disable */
-import { Prisma, Post } from '@prisma/client';
+import { Prisma, Post } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 
 export class PostServiceBase {

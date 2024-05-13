@@ -12,7 +12,6 @@ plugin nestizen {
     output = "./src/nestizen"
     prismaServicePath = "./src/prisma/prisma.service.ts"
     prismaServiceName = "PrismaService"
-    prismaClientPath = "@prisma/client"
 }
 
 /// UserRole Documentation

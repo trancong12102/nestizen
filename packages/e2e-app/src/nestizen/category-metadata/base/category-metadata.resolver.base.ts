@@ -35,37 +35,37 @@ export class CategoryMetadataResolverBase {
 
   @Query(() => CategoryMetadata, { nullable: true })
   async categoryMetadata(@Args() args: FindUniqueCategoryMetadataArgs) {
-    return this.service.findUnique(args as any);
+    return this.service.findUnique(args);
   }
 
   @Query(() => [CategoryMetadata], { nullable: false })
   async categoryMetadatas(@Args() args: FindManyCategoryMetadataArgs) {
-    return this.service.findMany(args as any);
+    return this.service.findMany(args);
   }
 
   @Mutation(() => CategoryMetadata, { nullable: false })
   async createCategoryMetadata(@Args() args: CreateOneCategoryMetadataArgs) {
-    return this.service.create(args as any);
+    return this.service.create(args);
   }
 
   @Mutation(() => CategoryMetadata, { nullable: false })
   async updateCategoryMetadata(@Args() args: UpdateOneCategoryMetadataArgs) {
-    return this.service.update(args as any);
+    return this.service.update(args);
   }
 
   @Mutation(() => CategoryMetadata, { nullable: false })
   async deleteCategoryMetadata(@Args() args: DeleteOneCategoryMetadataArgs) {
-    return this.service.delete(args as any);
+    return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
   async categoryMetadataCount(@Args() args: FindManyCategoryMetadataArgs) {
-    return this.service.count(args as any);
+    return this.service.count(args);
   }
 
   @Query(() => AggregateCategoryMetadata, { nullable: false })
   async categoryMetadataAggregate(@Args() args: CategoryMetadataAggregateArgs) {
-    return this.service.aggregate(args as any);
+    return this.service.aggregate(args);
   }
 
   @ResolveField(() => Category)

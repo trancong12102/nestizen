@@ -7,7 +7,7 @@
  */
 
 /* eslint-disable */
-import { Prisma, Category } from '@prisma/client';
+import { Prisma, Category } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 
 export class CategoryServiceBase {

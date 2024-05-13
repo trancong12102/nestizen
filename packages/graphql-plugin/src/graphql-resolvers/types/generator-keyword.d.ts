@@ -4,7 +4,7 @@ export type GeneratorKeyword =
   | 'Prisma'
   | 'prisma'
   | '@nestjs/common'
-  | '@prisma/client'
+  | '@zenstackhq/runtime/models'
   | 'Prisma.BatchPayload'
   | 'number'
   | 'parent'

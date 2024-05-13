@@ -3,7 +3,6 @@ import { getZodSchemaFieldsShallow } from './utils';
 
 export const PluginOptionsSchema = z.object({
   output: z.string(),
-  prismaClientPath: z.string().default('@prisma/client'),
   prismaServicePath: z.string(),
   prismaServiceName: z.string(),
 });

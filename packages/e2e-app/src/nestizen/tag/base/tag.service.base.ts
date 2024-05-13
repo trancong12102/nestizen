@@ -7,7 +7,7 @@
  */
 
 /* eslint-disable */
-import { Prisma, Tag } from '@prisma/client';
+import { Prisma, Tag } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 
 export class TagServiceBase {

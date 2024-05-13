@@ -7,7 +7,7 @@
  */
 
 /* eslint-disable */
-import { Prisma, Profile } from '@prisma/client';
+import { Prisma, Profile } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 
 export class ProfileServiceBase {

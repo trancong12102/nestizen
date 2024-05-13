@@ -37,37 +37,37 @@ export class PostResolverBase {
 
   @Query(() => Post, { nullable: true })
   async post(@Args() args: FindUniquePostArgs) {
-    return this.service.findUnique(args as any);
+    return this.service.findUnique(args);
   }
 
   @Query(() => [Post], { nullable: false })
   async posts(@Args() args: FindManyPostArgs) {
-    return this.service.findMany(args as any);
+    return this.service.findMany(args);
   }
 
   @Mutation(() => Post, { nullable: false })
   async createPost(@Args() args: CreateOnePostArgs) {
-    return this.service.create(args as any);
+    return this.service.create(args);
   }
 
   @Mutation(() => Post, { nullable: false })
   async updatePost(@Args() args: UpdateOnePostArgs) {
-    return this.service.update(args as any);
+    return this.service.update(args);
   }
 
   @Mutation(() => Post, { nullable: false })
   async deletePost(@Args() args: DeleteOnePostArgs) {
-    return this.service.delete(args as any);
+    return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
   async postCount(@Args() args: FindManyPostArgs) {
-    return this.service.count(args as any);
+    return this.service.count(args);
   }
 
   @Query(() => AggregatePost, { nullable: false })
   async postAggregate(@Args() args: PostAggregateArgs) {
-    return this.service.aggregate(args as any);
+    return this.service.aggregate(args);
   }
 
   @ResolveField(() => User)
@@ -82,6 +82,6 @@ export class PostResolverBase {
 
   @ResolveField(() => [Category], { nullable: false })
   async categories(@Parent() parent: Post, @Args() args: FindManyCategoryArgs) {
-    return this.service.resolveCategories(parent, args as any);
+    return this.service.resolveCategories(parent, args);
   }
 }

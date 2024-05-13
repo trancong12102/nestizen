@@ -35,37 +35,37 @@ export class CategoryResolverBase {
 
   @Query(() => Category, { nullable: true })
   async category(@Args() args: FindUniqueCategoryArgs) {
-    return this.service.findUnique(args as any);
+    return this.service.findUnique(args);
   }
 
   @Query(() => [Category], { nullable: false })
   async categories(@Args() args: FindManyCategoryArgs) {
-    return this.service.findMany(args as any);
+    return this.service.findMany(args);
   }
 
   @Mutation(() => Category, { nullable: false })
   async createCategory(@Args() args: CreateOneCategoryArgs) {
-    return this.service.create(args as any);
+    return this.service.create(args);
   }
 
   @Mutation(() => Category, { nullable: false })
   async updateCategory(@Args() args: UpdateOneCategoryArgs) {
-    return this.service.update(args as any);
+    return this.service.update(args);
   }
 
   @Mutation(() => Category, { nullable: false })
   async deleteCategory(@Args() args: DeleteOneCategoryArgs) {
-    return this.service.delete(args as any);
+    return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
   async categoryCount(@Args() args: FindManyCategoryArgs) {
-    return this.service.count(args as any);
+    return this.service.count(args);
   }
 
   @Query(() => AggregateCategory, { nullable: false })
   async categoryAggregate(@Args() args: CategoryAggregateArgs) {
-    return this.service.aggregate(args as any);
+    return this.service.aggregate(args);
   }
 
   @ResolveField(() => CategoryMetadata)

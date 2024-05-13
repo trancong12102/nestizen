@@ -24,26 +24,26 @@ export class MiscModelResolverBase {
 
   @Query(() => MiscModel, { nullable: true })
   async miscModel(@Args() args: FindUniqueMiscModelArgs) {
-    return this.service.findUnique(args as any);
+    return this.service.findUnique(args);
   }
 
   @Query(() => [MiscModel], { nullable: false })
   async miscModels(@Args() args: FindManyMiscModelArgs) {
-    return this.service.findMany(args as any);
+    return this.service.findMany(args);
   }
 
   @Mutation(() => MiscModel, { nullable: false })
   async deleteMiscModel(@Args() args: DeleteOneMiscModelArgs) {
-    return this.service.delete(args as any);
+    return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
   async miscModelCount(@Args() args: FindManyMiscModelArgs) {
-    return this.service.count(args as any);
+    return this.service.count(args);
   }
 
   @Query(() => AggregateMiscModel, { nullable: false })
   async miscModelAggregate(@Args() args: MiscModelAggregateArgs) {
-    return this.service.aggregate(args as any);
+    return this.service.aggregate(args);
   }
 }

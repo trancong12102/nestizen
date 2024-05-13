@@ -7,7 +7,7 @@
  */
 
 /* eslint-disable */
-import { Prisma } from '@prisma/client';
+import { Prisma } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 
 export class HiddenModelServiceBase {
