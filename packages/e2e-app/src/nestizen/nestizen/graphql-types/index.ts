@@ -6,7 +6,8 @@
  * -----------------------------------------------------------------------------
  */
 
-/* eslint-disable */ import { Field } from '@nestjs/graphql';
+/* eslint-disable */
+import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { ArgsType } from '@nestjs/graphql';
 import { Type } from 'class-transformer';

@@ -6,4 +6,5 @@ export const GENERATED_FILE_COMMENTS = `/**
  * -----------------------------------------------------------------------------
  */
 
-/* eslint-disable */`;
+/* eslint-disable */
+`;
