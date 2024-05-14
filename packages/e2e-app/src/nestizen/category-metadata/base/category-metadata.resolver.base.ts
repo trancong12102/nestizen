@@ -11,8 +11,8 @@ import {
   Resolver,
   Query,
   Args,
-  Int,
   Mutation,
+  Int,
   Parent,
   ResolveField,
 } from '@nestjs/graphql';

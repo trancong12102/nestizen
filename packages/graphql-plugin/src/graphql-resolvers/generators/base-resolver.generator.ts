@@ -288,9 +288,17 @@ export class BaseResolverGenerator {
 
     this.imports.push({
       kind: StructureKind.ImportDeclaration,
-      namedImports: [type, t('Args'), t('Int')],
+      namedImports: [type, t('Args')],
       moduleSpecifier: t('@nestjs/graphql'),
     });
+
+    if (method === 'count') {
+      this.imports.push({
+        kind: StructureKind.ImportDeclaration,
+        namedImports: [t('Int')],
+        moduleSpecifier: t('@nestjs/graphql'),
+      });
+    }
 
     this.classMethods.push({
       kind: StructureKind.Method,

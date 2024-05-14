@@ -6,4 +6,4 @@ export const CRUD_METHODS = [
   'delete',
   'count',
   'aggregate',
-];
+] as const;
