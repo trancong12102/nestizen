@@ -17,32 +17,38 @@ import {
   AggregateMiscModel,
   MiscModelAggregateArgs,
 } from '../../nestizen/graphql-types';
+import { ZenPermission } from '@nestizen/runtime';
 
 @Resolver(() => MiscModel)
 export class MiscModelResolverBase {
   constructor(public readonly service: MiscModelServiceBase) {}
 
   @Query(() => MiscModel, { nullable: true })
+  @ZenPermission('MiscModel', 'read')
   async miscModel(@Args() args: FindUniqueMiscModelArgs) {
     return this.service.findUnique(args);
   }
 
   @Query(() => [MiscModel], { nullable: false })
+  @ZenPermission('MiscModel', 'read')
   async miscModels(@Args() args: FindManyMiscModelArgs) {
     return this.service.findMany(args);
   }
 
   @Mutation(() => MiscModel, { nullable: false })
+  @ZenPermission('MiscModel', 'delete')
   async deleteMiscModel(@Args() args: DeleteOneMiscModelArgs) {
     return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
+  @ZenPermission('MiscModel', 'read')
   async miscModelCount(@Args() args: FindManyMiscModelArgs) {
     return this.service.count(args);
   }
 
   @Query(() => AggregateMiscModel, { nullable: false })
+  @ZenPermission('MiscModel', 'read')
   async miscModelAggregate(@Args() args: MiscModelAggregateArgs) {
     return this.service.aggregate(args);
   }

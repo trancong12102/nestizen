@@ -24,4 +24,6 @@ export type GeneratorKeyword =
   | 'Nest'
   | 'Module'
   | 'PrismaClient'
-  | 'Global';
+  | 'Global'
+  | 'ZenPermission'
+  | '@nestizen/runtime';

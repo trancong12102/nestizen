@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
+import { enhance } from '@zenstackhq/runtime';
 
 @Injectable()
 export class PrismaService {
@@ -10,6 +11,6 @@ export class PrismaService {
   }
 
   get client() {
-    return this._client.$extends({});
+    return enhance(this._client);
   }
 }

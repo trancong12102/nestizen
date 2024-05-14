@@ -29,42 +29,50 @@ import {
   FindManyUserArgs,
   User,
 } from '../../nestizen/graphql-types';
+import { ZenPermission } from '@nestizen/runtime';
 
 @Resolver(() => Tag)
 export class TagResolverBase {
   constructor(public readonly service: TagServiceBase) {}
 
   @Query(() => Tag, { nullable: true })
+  @ZenPermission('Tag', 'read')
   async tag(@Args() args: FindUniqueTagArgs) {
     return this.service.findUnique(args);
   }
 
   @Query(() => [Tag], { nullable: false })
+  @ZenPermission('Tag', 'read')
   async tags(@Args() args: FindManyTagArgs) {
     return this.service.findMany(args);
   }
 
   @Mutation(() => Tag, { nullable: false })
+  @ZenPermission('Tag', 'create')
   async createTag(@Args() args: CreateOneTagArgs) {
     return this.service.create(args);
   }
 
   @Mutation(() => Tag, { nullable: false })
+  @ZenPermission('Tag', 'update')
   async updateTag(@Args() args: UpdateOneTagArgs) {
     return this.service.update(args);
   }
 
   @Mutation(() => Tag, { nullable: false })
+  @ZenPermission('Tag', 'delete')
   async deleteTag(@Args() args: DeleteOneTagArgs) {
     return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
+  @ZenPermission('Tag', 'read')
   async tagCount(@Args() args: FindManyTagArgs) {
     return this.service.count(args);
   }
 
   @Query(() => AggregateTag, { nullable: false })
+  @ZenPermission('Tag', 'read')
   async tagAggregate(@Args() args: TagAggregateArgs) {
     return this.service.aggregate(args);
   }

@@ -30,42 +30,50 @@ import {
   FindManyCategoryArgs,
   Category,
 } from '../../nestizen/graphql-types';
+import { ZenPermission } from '@nestizen/runtime';
 
 @Resolver(() => Post)
 export class PostResolverBase {
   constructor(public readonly service: PostServiceBase) {}
 
   @Query(() => Post, { nullable: true })
+  @ZenPermission('Post', 'read')
   async post(@Args() args: FindUniquePostArgs) {
     return this.service.findUnique(args);
   }
 
   @Query(() => [Post], { nullable: false })
+  @ZenPermission('Post', 'read')
   async posts(@Args() args: FindManyPostArgs) {
     return this.service.findMany(args);
   }
 
   @Mutation(() => Post, { nullable: false })
+  @ZenPermission('Post', 'create')
   async createPost(@Args() args: CreateOnePostArgs) {
     return this.service.create(args);
   }
 
   @Mutation(() => Post, { nullable: false })
+  @ZenPermission('Post', 'update')
   async updatePost(@Args() args: UpdateOnePostArgs) {
     return this.service.update(args);
   }
 
   @Mutation(() => Post, { nullable: false })
+  @ZenPermission('Post', 'delete')
   async deletePost(@Args() args: DeleteOnePostArgs) {
     return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
+  @ZenPermission('Post', 'read')
   async postCount(@Args() args: FindManyPostArgs) {
     return this.service.count(args);
   }
 
   @Query(() => AggregatePost, { nullable: false })
+  @ZenPermission('Post', 'read')
   async postAggregate(@Args() args: PostAggregateArgs) {
     return this.service.aggregate(args);
   }

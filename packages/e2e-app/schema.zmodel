@@ -7,6 +7,11 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+plugin enhancer {
+    provider = '@core/enhancer'
+    generatePermissionChecker = true
+}
+
 plugin nestizen {
     provider = "@nestizen/graphql-plugin"
     output = "./src/nestizen"
@@ -71,7 +76,7 @@ model Post extends Base {
     published       Boolean    @default(false)
     /// Many to one relation with User
     author          User       @relation(fields: [authorId], references: [id])
-    authorId        Int
+    authorId        Int        @default(auth().id)
     /// Another Many to one relation with User
     anotherAuthor   User       @relation("AnotherUserToPost", fields: [anotherAuthorId], references: [id])
     anotherAuthorId Int

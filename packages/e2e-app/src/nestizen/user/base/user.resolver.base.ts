@@ -32,42 +32,50 @@ import {
   Tag,
   Profile,
 } from '../../nestizen/graphql-types';
+import { ZenPermission } from '@nestizen/runtime';
 
 @Resolver(() => User)
 export class UserResolverBase {
   constructor(public readonly service: UserServiceBase) {}
 
   @Query(() => User, { nullable: true })
+  @ZenPermission('User', 'read')
   async user(@Args() args: FindUniqueUserArgs) {
     return this.service.findUnique(args);
   }
 
   @Query(() => [User], { nullable: false })
+  @ZenPermission('User', 'read')
   async users(@Args() args: FindManyUserArgs) {
     return this.service.findMany(args);
   }
 
   @Mutation(() => User, { nullable: false })
+  @ZenPermission('User', 'create')
   async createUser(@Args() args: CreateOneUserArgs) {
     return this.service.create(args);
   }
 
   @Mutation(() => User, { nullable: false })
+  @ZenPermission('User', 'update')
   async updateUser(@Args() args: UpdateOneUserArgs) {
     return this.service.update(args);
   }
 
   @Mutation(() => User, { nullable: false })
+  @ZenPermission('User', 'delete')
   async deleteUser(@Args() args: DeleteOneUserArgs) {
     return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
+  @ZenPermission('User', 'read')
   async userCount(@Args() args: FindManyUserArgs) {
     return this.service.count(args);
   }
 
   @Query(() => AggregateUser, { nullable: false })
+  @ZenPermission('User', 'read')
   async userAggregate(@Args() args: UserAggregateArgs) {
     return this.service.aggregate(args);
   }

@@ -25,6 +25,7 @@ import { checkShouldHideResolveFunction } from '../helpers/check-should-hide-res
 import { GENERATED_FILE_COMMENTS } from '../../contants';
 import { GenerateOptions } from '../../types';
 import { getModelRelations } from '../helpers/get-model-relations';
+import { PolicyCrudKind } from '@zenstackhq/runtime';
 
 export class BaseResolverGenerator {
   private readonly modelName: ModelNameVariants;
@@ -174,6 +175,7 @@ export class BaseResolverGenerator {
     const methodSpecs: Parameters<typeof this.declareCrudMethod>[0][] = [
       {
         name: this.modelName.camelCase,
+        zenPermissionOperation: 'read',
         method: 'findUnique',
         argsType: `FindUnique${this.modelName.original}Args`,
         nullable: true,
@@ -184,6 +186,7 @@ export class BaseResolverGenerator {
       },
       {
         name: pluralize(this.modelName.camelCase),
+        zenPermissionOperation: 'read',
         method: 'findMany',
         argsType: `FindMany${this.modelName.original}Args`,
         nullable: false,
@@ -194,6 +197,7 @@ export class BaseResolverGenerator {
       },
       {
         name: camelcase(`create_${this.modelName.camelCase}`),
+        zenPermissionOperation: 'create',
         method: 'create',
         argsType: `CreateOne${this.modelName.original}Args`,
         nullable: false,
@@ -204,6 +208,7 @@ export class BaseResolverGenerator {
       },
       {
         name: camelcase(`update_${this.modelName.camelCase}`),
+        zenPermissionOperation: 'update',
         method: 'update',
         argsType: `UpdateOne${this.modelName.original}Args`,
         nullable: false,
@@ -214,6 +219,7 @@ export class BaseResolverGenerator {
       },
       {
         name: camelcase(`delete_${this.modelName.camelCase}`),
+        zenPermissionOperation: 'delete',
         method: 'delete',
         argsType: `DeleteOne${this.modelName.original}Args`,
         nullable: false,
@@ -224,6 +230,7 @@ export class BaseResolverGenerator {
       },
       {
         name: camelcase(`${this.modelName.camelCase}_count`),
+        zenPermissionOperation: 'read',
         method: 'count',
         argsType: `FindMany${this.modelName.original}Args`,
         nullable: false,
@@ -234,6 +241,7 @@ export class BaseResolverGenerator {
       },
       {
         name: camelcase(`${this.modelName.camelCase}_aggregate`),
+        zenPermissionOperation: 'read',
         method: 'aggregate',
         argsType: `${this.modelName.original}AggregateArgs`,
         nullable: false,
@@ -261,6 +269,7 @@ export class BaseResolverGenerator {
 
   private declareCrudMethod(options: {
     name: string;
+    zenPermissionOperation: PolicyCrudKind;
     method: CrudMethod;
     argsType: string;
     nullable: boolean;
@@ -271,6 +280,7 @@ export class BaseResolverGenerator {
   }) {
     const {
       name,
+      zenPermissionOperation,
       method,
       nullable,
       graphqlReturnType,
@@ -309,6 +319,13 @@ export class BaseResolverGenerator {
             }),
           ],
         },
+        {
+          name: t('ZenPermission'),
+          arguments: [
+            `'${this.modelName.original}'`,
+            `'${zenPermissionOperation}'`,
+          ],
+        },
       ],
       statements: [`return this.service.${method}(args)`],
     });
@@ -322,6 +339,11 @@ export class BaseResolverGenerator {
         kind: StructureKind.ImportDeclaration,
         moduleSpecifier: this.typesImportModuleModifier,
         namedImports: [argsType],
+      },
+      {
+        kind: StructureKind.ImportDeclaration,
+        namedImports: [t('ZenPermission')],
+        moduleSpecifier: t('@nestizen/runtime'),
       },
     );
   }

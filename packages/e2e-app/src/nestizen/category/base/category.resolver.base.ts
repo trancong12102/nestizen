@@ -28,42 +28,50 @@ import {
   CategoryAggregateArgs,
   CategoryMetadata,
 } from '../../nestizen/graphql-types';
+import { ZenPermission } from '@nestizen/runtime';
 
 @Resolver(() => Category)
 export class CategoryResolverBase {
   constructor(public readonly service: CategoryServiceBase) {}
 
   @Query(() => Category, { nullable: true })
+  @ZenPermission('Category', 'read')
   async category(@Args() args: FindUniqueCategoryArgs) {
     return this.service.findUnique(args);
   }
 
   @Query(() => [Category], { nullable: false })
+  @ZenPermission('Category', 'read')
   async categories(@Args() args: FindManyCategoryArgs) {
     return this.service.findMany(args);
   }
 
   @Mutation(() => Category, { nullable: false })
+  @ZenPermission('Category', 'create')
   async createCategory(@Args() args: CreateOneCategoryArgs) {
     return this.service.create(args);
   }
 
   @Mutation(() => Category, { nullable: false })
+  @ZenPermission('Category', 'update')
   async updateCategory(@Args() args: UpdateOneCategoryArgs) {
     return this.service.update(args);
   }
 
   @Mutation(() => Category, { nullable: false })
+  @ZenPermission('Category', 'delete')
   async deleteCategory(@Args() args: DeleteOneCategoryArgs) {
     return this.service.delete(args);
   }
 
   @Query(() => Int, { nullable: false })
+  @ZenPermission('Category', 'read')
   async categoryCount(@Args() args: FindManyCategoryArgs) {
     return this.service.count(args);
   }
 
   @Query(() => AggregateCategory, { nullable: false })
+  @ZenPermission('Category', 'read')
   async categoryAggregate(@Args() args: CategoryAggregateArgs) {
     return this.service.aggregate(args);
   }
