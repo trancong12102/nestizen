@@ -1,8 +1,8 @@
 import { Prisma } from '@prisma/client';
-import { PolicyCrudKind } from '@zenstackhq/runtime';
 import { ExecutionContext, SetMetadata } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import camelcase from '@stdlib/string-camelcase';
+import { enhance, PolicyCrudKind } from '@zenstackhq/runtime';
 
 export const ZenPermission = (
   model: Prisma.ModelName,
@@ -25,10 +25,14 @@ const getZenPermissionCheck = (
   context: ExecutionContext,
 ) => reflector.get<ZenPermissionCheck>(METADATA_KEY, context.getHandler());
 
-export const checkZenPermission = async <DbClient>(
+export const checkZenPermission: <DbClient extends ReturnType<typeof enhance>>(
   client: DbClient,
   reflector: Reflector,
   context: ExecutionContext,
+) => Promise<boolean> = async (
+  client,
+  reflector,
+  context,
 ): Promise<boolean> => {
   const check = getZenPermissionCheck(reflector, context);
   if (!check) {
@@ -36,7 +40,7 @@ export const checkZenPermission = async <DbClient>(
   }
 
   const { model, operation } = check;
-  const delegate = (client as Record<string, unknown>)[camelcase(model)] as {
+  const delegate = client[camelcase(model)] as {
     check: (args: { operation: PolicyCrudKind }) => Promise<boolean>;
   };
   if (!delegate || !delegate.check) {
