@@ -25,9 +25,7 @@ const getZenPermissionCheck = (
   context: ExecutionContext,
 ) => reflector.get<ZenPermissionCheck>(METADATA_KEY, context.getHandler());
 
-export const checkZenPermission = async <
-  DbClient extends Record<string, unknown>,
->(
+export const checkZenPermission = async <DbClient>(
   client: DbClient,
   reflector: Reflector,
   context: ExecutionContext,
@@ -38,7 +36,7 @@ export const checkZenPermission = async <
   }
 
   const { model, operation } = check;
-  const delegate = client[camelcase(model)] as {
+  const delegate = (client as Record<string, unknown>)[camelcase(model)] as {
     check: (args: { operation: PolicyCrudKind }) => Promise<boolean>;
   };
   if (!delegate || !delegate.check) {
