@@ -1,14 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Prisma } from '@prisma/client';
 import { ExecutionContext, SetMetadata } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import camelcase from '@stdlib/string-camelcase';
-import { enhance, PolicyCrudKind } from '@zenstackhq/runtime';
-import type {
-  InternalArgs,
-  TypeMapCbDef,
-  TypeMapDef,
-} from '@prisma/client/runtime/library';
+import { PolicyCrudKind } from '@zenstackhq/runtime';
 
 export const ZenPermission = (
   model: Prisma.ModelName,
@@ -30,24 +24,6 @@ const getZenPermissionCheck = (
   reflector: Reflector,
   context: ExecutionContext,
 ) => reflector.get<ZenPermissionCheck>(METADATA_KEY, context.getHandler());
-
-export async function checkZenPermission<
-  TypeMap extends TypeMapDef,
-  TypeMapCb extends TypeMapCbDef,
-  ExtArgs extends Record<string, any> & InternalArgs,
->(
-  client: ReturnType<typeof enhance<TypeMap, TypeMapCb, ExtArgs>>,
-  reflector: Reflector,
-  context: ExecutionContext,
-): Promise<boolean>;
-
-export async function checkZenPermission<
-  ExtArgs extends Record<string, any> & InternalArgs,
->(
-  client: ReturnType<typeof enhance<ExtArgs>>,
-  reflector: Reflector,
-  context: ExecutionContext,
-): Promise<boolean>;
 
 export async function checkZenPermission(
   client: unknown,
