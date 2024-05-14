@@ -63,18 +63,11 @@ export class BaseResolverGenerator {
       kind: StructureKind.SourceFile,
     };
 
-    this.imports.push(
-      {
-        kind: StructureKind.ImportDeclaration,
-        namedImports: [t('Resolver'), t('Query'), t('Mutation'), t('Args')],
-        moduleSpecifier: t('@nestjs/graphql'),
-      },
-      {
-        kind: StructureKind.ImportDeclaration,
-        namedImports: [t('Int')],
-        moduleSpecifier: t('@nestjs/graphql'),
-      },
-    );
+    this.imports.push({
+      kind: StructureKind.ImportDeclaration,
+      namedImports: [t('Resolver')],
+      moduleSpecifier: t('@nestjs/graphql'),
+    });
 
     this.declareClass();
     this.declareCrudMethods();
@@ -292,6 +285,12 @@ export class BaseResolverGenerator {
     if (hide) {
       return;
     }
+
+    this.imports.push({
+      kind: StructureKind.ImportDeclaration,
+      namedImports: [type, t('Args'), t('Int')],
+      moduleSpecifier: t('@nestjs/graphql'),
+    });
 
     this.classMethods.push({
       kind: StructureKind.Method,
