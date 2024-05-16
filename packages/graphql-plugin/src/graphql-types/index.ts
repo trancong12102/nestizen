@@ -5,6 +5,7 @@ import * as path from 'node:path';
 import { readFile } from 'fs-extra';
 import { writeFile } from 'fs/promises';
 import { GENERATED_FILE_COMMENTS } from '../contants';
+import { removeCreateManyAndReturnMutations } from './remove-create-many-and-return-mutations';
 
 export const generateGraphqlTypes = async (
   dmmf: WritableDMMF,
@@ -12,6 +13,7 @@ export const generateGraphqlTypes = async (
 ) => {
   const { graphqlTypesSourcePath, typesGenerateConfig } = options;
 
+  removeCreateManyAndReturnMutations(dmmf);
   transpileDMMFAttributes(dmmf);
 
   await generate({
