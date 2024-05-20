@@ -52,10 +52,10 @@ importers:
         version: 10.3.8(@nestjs/common@10.3.8(class-transformer@0.5.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.8)
       '@prisma/client':
         specifier: ^5.14.0
-        version: 5.14.0(prisma@5.13.0)
+        version: 5.14.0(prisma@5.14.0)
       '@zenstackhq/runtime':
         specifier: ^2.1.1
-        version: 2.1.1(@prisma/client@5.14.0(prisma@5.13.0))
+        version: 2.1.1(@prisma/client@5.14.0(prisma@5.14.0))
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1
@@ -70,7 +70,7 @@ importers:
         version: 0.3.2(graphql@16.8.1)
       prisma-graphql-type-decimal:
         specifier: ^3.0.0
-        version: 3.0.0(@prisma/client@5.14.0(prisma@5.13.0))(graphql@16.8.1)
+        version: 3.0.0(@prisma/client@5.14.0(prisma@5.14.0))(graphql@16.8.1)
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -115,8 +115,8 @@ importers:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.12.12)(ts-node@10.9.2(@swc/core@1.5.7)(@types/node@20.12.12)(typescript@5.4.5))
       prisma:
-        specifier: ^5.13.0
-        version: 5.13.0
+        specifier: ^5.14.0
+        version: 5.14.0
       source-map-support:
         specifier: ^0.5.21
         version: 0.5.21
@@ -143,7 +143,7 @@ importers:
         version: 5.4.5
       zenstack:
         specifier: ^2.1.1
-        version: 2.1.1(@prisma/client@5.14.0(prisma@5.13.0))(prisma@5.13.0)
+        version: 2.1.1(@prisma/client@5.14.0(prisma@5.14.0))(prisma@5.14.0)
 
   packages/graphql-plugin:
     dependencies:
@@ -169,8 +169,8 @@ importers:
         specifier: ^11.2.0
         version: 11.2.0
       prisma-nestjs-graphql:
-        specifier: ^20.0.2
-        version: 20.0.2
+        specifier: ^20.0.3
+        version: 20.0.3
       ts-morph:
         specifier: ^22.0.0
         version: 22.0.0
@@ -3345,8 +3345,8 @@ packages:
       '@prisma/client': '>=4.12 <=5'
       graphql: '16'
 
-  prisma-nestjs-graphql@20.0.2:
-    resolution: {integrity: sha512-XreGti6mCx14F+rNrhEZ0mBRTBtBniR4EVbRl6pVoO0SzaDqI2tGTKIq6YIdEZxn2bmG3MxpfRykt/uOS7o9vA==}
+  prisma-nestjs-graphql@20.0.3:
+    resolution: {integrity: sha512-p8ZGoXqc+s6sI1UnIRK9qmT9neFyt8V+SAfuP1SZNgJQBhKc/8hO2dfwZFqLHAYrbfo/psAa+AghO4yx5pohuA==}
     hasBin: true
 
   prisma@5.13.0:
@@ -5118,19 +5118,17 @@ snapshots:
     optionalDependencies:
       prisma: 5.13.0
 
-  '@prisma/client@5.14.0(prisma@5.13.0)':
-    optionalDependencies:
-      prisma: 5.13.0
-
   '@prisma/client@5.14.0(prisma@5.14.0)':
     optionalDependencies:
       prisma: 5.14.0
 
-  '@prisma/debug@5.13.0': {}
+  '@prisma/debug@5.13.0':
+    optional: true
 
   '@prisma/debug@5.14.0': {}
 
-  '@prisma/engines-version@5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b': {}
+  '@prisma/engines-version@5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b':
+    optional: true
 
   '@prisma/engines-version@5.14.0-25.e9771e62de70f79a5e1c604a2d7c8e2a0a874b48': {}
 
@@ -5140,6 +5138,7 @@ snapshots:
       '@prisma/engines-version': 5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b
       '@prisma/fetch-engine': 5.13.0
       '@prisma/get-platform': 5.13.0
+    optional: true
 
   '@prisma/engines@5.14.0':
     dependencies:
@@ -5153,6 +5152,7 @@ snapshots:
       '@prisma/debug': 5.13.0
       '@prisma/engines-version': 5.13.0-23.b9a39a7ee606c28e3455d0fd60e78c3ba82b1a2b
       '@prisma/get-platform': 5.13.0
+    optional: true
 
   '@prisma/fetch-engine@5.14.0':
     dependencies:
@@ -5167,6 +5167,7 @@ snapshots:
   '@prisma/get-platform@5.13.0':
     dependencies:
       '@prisma/debug': 5.13.0
+    optional: true
 
   '@prisma/get-platform@5.14.0':
     dependencies:
@@ -5766,29 +5767,6 @@ snapshots:
       zod: 3.23.8
       zod-validation-error: 1.5.0(zod@3.23.8)
 
-  '@zenstackhq/runtime@2.1.1(@prisma/client@5.14.0(prisma@5.13.0))':
-    dependencies:
-      '@prisma/client': 5.14.0(prisma@5.13.0)
-      bcryptjs: 2.4.3
-      buffer: 6.0.3
-      change-case: 4.1.2
-      decimal.js: 10.4.3
-      deepcopy: 2.1.0
-      deepmerge: 4.3.1
-      logic-solver: 2.0.1
-      lower-case-first: 2.0.2
-      pluralize: 8.0.0
-      safe-json-stringify: 1.2.0
-      semver: 7.6.2
-      superjson: 1.13.3
-      tiny-invariant: 1.3.3
-      ts-pattern: 4.3.0
-      tslib: 2.6.2
-      upper-case-first: 2.0.2
-      uuid: 9.0.1
-      zod: 3.23.8
-      zod-validation-error: 1.5.0(zod@3.23.8)
-
   '@zenstackhq/runtime@2.1.1(@prisma/client@5.14.0(prisma@5.14.0))':
     dependencies:
       '@prisma/client': 5.14.0(prisma@5.14.0)
@@ -5811,21 +5789,6 @@ snapshots:
       uuid: 9.0.1
       zod: 3.23.8
       zod-validation-error: 1.5.0(zod@3.23.8)
-
-  '@zenstackhq/sdk@2.1.1(@prisma/client@5.14.0(prisma@5.13.0))':
-    dependencies:
-      '@prisma/generator-helper': 5.14.0
-      '@prisma/internals': 5.14.0
-      '@zenstackhq/language': 2.1.1
-      '@zenstackhq/runtime': 2.1.1(@prisma/client@5.14.0(prisma@5.13.0))
-      langium: 1.3.1
-      lower-case-first: 2.0.2
-      semver: 7.6.2
-      ts-morph: 16.0.0
-      ts-pattern: 4.3.0
-      upper-case-first: 2.0.2
-    transitivePeerDependencies:
-      - '@prisma/client'
 
   '@zenstackhq/sdk@2.1.1(@prisma/client@5.14.0(prisma@5.14.0))':
     dependencies:
@@ -7952,12 +7915,12 @@ snapshots:
       emphasize: 4.2.0
       strip-ansi: 6.0.1
 
-  prisma-graphql-type-decimal@3.0.0(@prisma/client@5.14.0(prisma@5.13.0))(graphql@16.8.1):
+  prisma-graphql-type-decimal@3.0.0(@prisma/client@5.14.0(prisma@5.14.0))(graphql@16.8.1):
     dependencies:
-      '@prisma/client': 5.14.0(prisma@5.13.0)
+      '@prisma/client': 5.14.0(prisma@5.14.0)
       graphql: 16.8.1
 
-  prisma-nestjs-graphql@20.0.2:
+  prisma-nestjs-graphql@20.0.3:
     dependencies:
       '@prisma/generator-helper': 5.14.0
       await-event-emitter: 2.0.2
@@ -7975,11 +7938,11 @@ snapshots:
   prisma@5.13.0:
     dependencies:
       '@prisma/engines': 5.13.0
+    optional: true
 
   prisma@5.14.0:
     dependencies:
       '@prisma/engines': 5.14.0
-    optional: true
 
   process-nextick-args@2.0.1: {}
 
@@ -8815,12 +8778,12 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zenstack@2.1.1(@prisma/client@5.14.0(prisma@5.13.0))(prisma@5.13.0):
+  zenstack@2.1.1(@prisma/client@5.14.0(prisma@5.14.0))(prisma@5.14.0):
     dependencies:
       '@paralleldrive/cuid2': 2.2.2
       '@types/node': 20.12.12
       '@zenstackhq/language': 2.1.1
-      '@zenstackhq/sdk': 2.1.1(@prisma/client@5.14.0(prisma@5.13.0))
+      '@zenstackhq/sdk': 2.1.1(@prisma/client@5.14.0(prisma@5.14.0))
       async-exit-hook: 2.0.1
       change-case: 4.1.2
       colors: 1.4.0
@@ -8832,7 +8795,7 @@ snapshots:
       ora: 5.4.1
       pluralize: 8.0.0
       pretty-repl: 4.0.1
-      prisma: 5.13.0
+      prisma: 5.14.0
       promisify: 0.0.3
       semver: 7.6.2
       sleep-promise: 9.1.0
