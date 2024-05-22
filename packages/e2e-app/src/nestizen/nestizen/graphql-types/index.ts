@@ -749,38 +749,38 @@ export class CategoryUncheckedUpdateManyWithoutPostsNestedInput {
 
 @InputType()
 export class CategoryUncheckedUpdateManyWithoutPostsInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
 }
 
 @InputType()
 export class CategoryUncheckedUpdateManyInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
 }
 
 @InputType()
 export class CategoryUncheckedUpdateWithoutMetadataInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => PostUncheckedUpdateManyWithoutCategoriesNestedInput, {
     nullable: true,
   })
@@ -791,14 +791,14 @@ export class CategoryUncheckedUpdateWithoutMetadataInput {
 
 @InputType()
 export class CategoryUncheckedUpdateWithoutPostsInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => CategoryMetadataUncheckedUpdateOneWithoutCategoryNestedInput, {
     nullable: true,
   })
@@ -810,13 +810,13 @@ export class CategoryUncheckedUpdateWithoutPostsInput {
 @InputType()
 export class CategoryUncheckedUpdateInput {
   @HideField()
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
+  id?: number;
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => PostUncheckedUpdateManyWithoutCategoriesNestedInput, {
     nullable: true,
   })
@@ -833,12 +833,12 @@ export class CategoryUncheckedUpdateInput {
 
 @InputType()
 export class CategoryUpdateManyMutationInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
 }
 
 @InputType()
@@ -929,24 +929,24 @@ export class CategoryUpdateWithWhereUniqueWithoutPostsInput {
 
 @InputType()
 export class CategoryUpdateWithoutMetadataInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => PostUpdateManyWithoutCategoriesNestedInput, { nullable: true })
   posts?: InstanceType<typeof PostUpdateManyWithoutCategoriesNestedInput>;
 }
 
 @InputType()
 export class CategoryUpdateWithoutPostsInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => CategoryMetadataUpdateOneWithoutCategoryNestedInput, {
     nullable: true,
   })
@@ -958,11 +958,11 @@ export class CategoryUpdateWithoutPostsInput {
 @InputType()
 export class CategoryUpdateInput {
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => PostUpdateManyWithoutCategoriesNestedInput, { nullable: true })
   posts?: InstanceType<typeof PostUpdateManyWithoutCategoriesNestedInput>;
   @Field(() => CategoryMetadataUpdateOneWithoutCategoryNestedInput, {
@@ -1322,8 +1322,8 @@ export class CategoryMetadataCreateManyInput {
   updatedAt?: Date | string;
   @Field(() => Int, { nullable: false })
   categoryId!: number;
-  @Field(() => CategoryMetadataCreatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataCreatemetadataInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
 }
 
 @InputType()
@@ -1362,8 +1362,8 @@ export class CategoryMetadataCreateWithoutCategoryInput {
   createdAt?: Date | string;
   @Field(() => Date, { nullable: true })
   updatedAt?: Date | string;
-  @Field(() => CategoryMetadataCreatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataCreatemetadataInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
 }
 
 @InputType()
@@ -1372,8 +1372,8 @@ export class CategoryMetadataCreateInput {
   createdAt?: Date | string;
   @HideField()
   updatedAt?: Date | string;
-  @Field(() => CategoryMetadataCreatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataCreatemetadataInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
   @Field(() => CategoryCreateNestedOneWithoutMetadataInput, { nullable: false })
   category!: InstanceType<typeof CategoryCreateNestedOneWithoutMetadataInput>;
 }
@@ -1637,8 +1637,8 @@ export class CategoryMetadataUncheckedCreateWithoutCategoryInput {
   createdAt?: Date | string;
   @Field(() => Date, { nullable: true })
   updatedAt?: Date | string;
-  @Field(() => CategoryMetadataCreatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataCreatemetadataInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
 }
 
 @InputType()
@@ -1651,22 +1651,22 @@ export class CategoryMetadataUncheckedCreateInput {
   updatedAt?: Date | string;
   @Field(() => Int, { nullable: false })
   categoryId!: number;
-  @Field(() => CategoryMetadataCreatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataCreatemetadataInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
 }
 
 @InputType()
 export class CategoryMetadataUncheckedUpdateManyInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  categoryId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => CategoryMetadataUpdatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataUpdatemetadataInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => Int, { nullable: true })
+  categoryId?: number;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
 }
 
 @InputType()
@@ -1706,38 +1706,38 @@ export class CategoryMetadataUncheckedUpdateOneWithoutCategoryNestedInput {
 
 @InputType()
 export class CategoryMetadataUncheckedUpdateWithoutCategoryInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => CategoryMetadataUpdatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataUpdatemetadataInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
 }
 
 @InputType()
 export class CategoryMetadataUncheckedUpdateInput {
   @HideField()
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
+  id?: number;
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  categoryId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => CategoryMetadataUpdatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataUpdatemetadataInput>;
+  updatedAt?: Date | string;
+  @Field(() => Int, { nullable: true })
+  categoryId?: number;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
 }
 
 @InputType()
 export class CategoryMetadataUpdateManyMutationInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => CategoryMetadataUpdatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataUpdatemetadataInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
 }
 
 @InputType()
@@ -1787,22 +1787,22 @@ export class CategoryMetadataUpdateToOneWithWhereWithoutCategoryInput {
 
 @InputType()
 export class CategoryMetadataUpdateWithoutCategoryInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => CategoryMetadataUpdatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataUpdatemetadataInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
 }
 
 @InputType()
 export class CategoryMetadataUpdateInput {
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => CategoryMetadataUpdatemetadataInput, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataUpdatemetadataInput>;
+  updatedAt?: Date | string;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  metadata?: Array<any>;
   @Field(() => CategoryUpdateOneRequiredWithoutMetadataNestedInput, {
     nullable: true,
   })
@@ -2443,12 +2443,12 @@ export class HiddenModelUncheckedCreateInput {
 
 @InputType()
 export class HiddenModelUncheckedUpdateManyInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
   @Field(() => GraphQLJSON, { nullable: true })
   data?: any;
 }
@@ -2456,21 +2456,21 @@ export class HiddenModelUncheckedUpdateManyInput {
 @InputType()
 export class HiddenModelUncheckedUpdateInput {
   @HideField()
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
+  id?: number;
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
   @Field(() => GraphQLJSON, { nullable: true })
   data?: any;
 }
 
 @InputType()
 export class HiddenModelUpdateManyMutationInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
   @Field(() => GraphQLJSON, { nullable: true })
   data?: any;
 }
@@ -2478,9 +2478,9 @@ export class HiddenModelUpdateManyMutationInput {
 @InputType()
 export class HiddenModelUpdateInput {
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
   @Field(() => GraphQLJSON, { nullable: true })
   data?: any;
 }
@@ -2891,34 +2891,32 @@ export class MiscModelCreateManyInput {
   name!: string;
   @Field(() => GraphQLJSON, { nullable: false })
   jsonField!: any;
-  @Field(() => MiscModelCreatejsonListInput, { nullable: true })
-  @Type(() => MiscModelCreatejsonListInput)
-  jsonList?: InstanceType<typeof MiscModelCreatejsonListInput>;
-  @Field(() => MiscModelCreatestringListInput, { nullable: true })
-  @Type(() => MiscModelCreatestringListInput)
-  stringList?: InstanceType<typeof MiscModelCreatestringListInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  jsonList?: Array<any>;
+  @Field(() => [String], { nullable: true })
+  stringList?: Array<string>;
   @Field(() => GraphQLDecimal, { nullable: false })
   @Type(() => Object)
   @Transform(transformToDecimal)
   decimalField!: Decimal;
-  @Field(() => MiscModelCreatedecimalListInput, { nullable: true })
-  @Type(() => MiscModelCreatedecimalListInput)
-  decimalList?: InstanceType<typeof MiscModelCreatedecimalListInput>;
+  @Field(() => [GraphQLDecimal], { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalList?: Array<Decimal>;
   @Field(() => Float, { nullable: false })
   floatField!: number;
   @Field(() => String, { nullable: false })
   bytesField!: Buffer;
   @HideField()
-  bytesList?: InstanceType<typeof MiscModelCreatebytesListInput>;
+  bytesList?: Array<Buffer>;
   @HideField()
   bigIntField!: bigint | number;
-  @Field(() => MiscModelCreatebigIntListInput, { nullable: true })
-  @Type(() => MiscModelCreatebigIntListInput)
-  bigIntList?: InstanceType<typeof MiscModelCreatebigIntListInput>;
+  @Field(() => [GraphQLBigInt], { nullable: true })
+  bigIntList?: Array<bigint> | Array<number>;
   @Field(() => Date, { nullable: false })
   dateTimeField!: Date | string;
   @HideField()
-  dateTimeList?: InstanceType<typeof MiscModelCreatedateTimeListInput>;
+  dateTimeList?: Array<Date> | Array<string>;
 }
 
 @InputType()
@@ -2931,34 +2929,32 @@ export class MiscModelCreateInput {
   name!: string;
   @Field(() => GraphQLJSON, { nullable: false })
   jsonField!: any;
-  @Field(() => MiscModelCreatejsonListInput, { nullable: true })
-  @Type(() => MiscModelCreatejsonListInput)
-  jsonList?: InstanceType<typeof MiscModelCreatejsonListInput>;
-  @Field(() => MiscModelCreatestringListInput, { nullable: true })
-  @Type(() => MiscModelCreatestringListInput)
-  stringList?: InstanceType<typeof MiscModelCreatestringListInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  jsonList?: Array<any>;
+  @Field(() => [String], { nullable: true })
+  stringList?: Array<string>;
   @Field(() => GraphQLDecimal, { nullable: false })
   @Type(() => Object)
   @Transform(transformToDecimal)
   decimalField!: Decimal;
-  @Field(() => MiscModelCreatedecimalListInput, { nullable: true })
-  @Type(() => MiscModelCreatedecimalListInput)
-  decimalList?: InstanceType<typeof MiscModelCreatedecimalListInput>;
+  @Field(() => [GraphQLDecimal], { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalList?: Array<Decimal>;
   @Field(() => Float, { nullable: false })
   floatField!: number;
   @Field(() => String, { nullable: false })
   bytesField!: Buffer;
   @HideField()
-  bytesList?: InstanceType<typeof MiscModelCreatebytesListInput>;
+  bytesList?: Array<Buffer>;
   @HideField()
   bigIntField!: bigint | number;
-  @Field(() => MiscModelCreatebigIntListInput, { nullable: true })
-  @Type(() => MiscModelCreatebigIntListInput)
-  bigIntList?: InstanceType<typeof MiscModelCreatebigIntListInput>;
+  @Field(() => [GraphQLBigInt], { nullable: true })
+  bigIntList?: Array<bigint> | Array<number>;
   @Field(() => Date, { nullable: false })
   dateTimeField!: Date | string;
   @HideField()
-  dateTimeList?: InstanceType<typeof MiscModelCreatedateTimeListInput>;
+  dateTimeList?: Array<Date> | Array<string>;
 }
 
 @InputType()
@@ -3405,194 +3401,188 @@ export class MiscModelUncheckedCreateInput {
   name!: string;
   @Field(() => GraphQLJSON, { nullable: false })
   jsonField!: any;
-  @Field(() => MiscModelCreatejsonListInput, { nullable: true })
-  @Type(() => MiscModelCreatejsonListInput)
-  jsonList?: InstanceType<typeof MiscModelCreatejsonListInput>;
-  @Field(() => MiscModelCreatestringListInput, { nullable: true })
-  @Type(() => MiscModelCreatestringListInput)
-  stringList?: InstanceType<typeof MiscModelCreatestringListInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  jsonList?: Array<any>;
+  @Field(() => [String], { nullable: true })
+  stringList?: Array<string>;
   @Field(() => GraphQLDecimal, { nullable: false })
   @Type(() => Object)
   @Transform(transformToDecimal)
   decimalField!: Decimal;
-  @Field(() => MiscModelCreatedecimalListInput, { nullable: true })
-  @Type(() => MiscModelCreatedecimalListInput)
-  decimalList?: InstanceType<typeof MiscModelCreatedecimalListInput>;
+  @Field(() => [GraphQLDecimal], { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalList?: Array<Decimal>;
   @Field(() => Float, { nullable: false })
   floatField!: number;
   @Field(() => String, { nullable: false })
   bytesField!: Buffer;
   @HideField()
-  bytesList?: InstanceType<typeof MiscModelCreatebytesListInput>;
+  bytesList?: Array<Buffer>;
   @HideField()
   bigIntField!: bigint | number;
-  @Field(() => MiscModelCreatebigIntListInput, { nullable: true })
-  @Type(() => MiscModelCreatebigIntListInput)
-  bigIntList?: InstanceType<typeof MiscModelCreatebigIntListInput>;
+  @Field(() => [GraphQLBigInt], { nullable: true })
+  bigIntList?: Array<bigint> | Array<number>;
   @Field(() => Date, { nullable: false })
   dateTimeField!: Date | string;
   @HideField()
-  dateTimeList?: InstanceType<typeof MiscModelCreatedateTimeListInput>;
+  dateTimeList?: Array<Date> | Array<string>;
 }
 
 @InputType()
 export class MiscModelUncheckedUpdateManyInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => GraphQLJSON, { nullable: true })
   jsonField?: any;
-  @Field(() => MiscModelUpdatejsonListInput, { nullable: true })
-  @Type(() => MiscModelUpdatejsonListInput)
-  jsonList?: InstanceType<typeof MiscModelUpdatejsonListInput>;
-  @Field(() => MiscModelUpdatestringListInput, { nullable: true })
-  @Type(() => MiscModelUpdatestringListInput)
-  stringList?: InstanceType<typeof MiscModelUpdatestringListInput>;
-  @Field(() => DecimalFieldUpdateOperationsInput, { nullable: true })
-  @Type(() => DecimalFieldUpdateOperationsInput)
-  decimalField?: InstanceType<typeof DecimalFieldUpdateOperationsInput>;
-  @Field(() => MiscModelUpdatedecimalListInput, { nullable: true })
-  @Type(() => MiscModelUpdatedecimalListInput)
-  decimalList?: InstanceType<typeof MiscModelUpdatedecimalListInput>;
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  floatField?: InstanceType<typeof FloatFieldUpdateOperationsInput>;
-  @Field(() => BytesFieldUpdateOperationsInput, { nullable: true })
-  bytesField?: InstanceType<typeof BytesFieldUpdateOperationsInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  jsonList?: Array<any>;
+  @Field(() => [String], { nullable: true })
+  stringList?: Array<string>;
+  @Field(() => GraphQLDecimal, { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalField?: Decimal;
+  @Field(() => [GraphQLDecimal], { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalList?: Array<Decimal>;
+  @Field(() => Float, { nullable: true })
+  floatField?: number;
+  @Field(() => String, { nullable: true })
+  bytesField?: Buffer;
   @HideField()
-  bytesList?: InstanceType<typeof MiscModelUpdatebytesListInput>;
+  bytesList?: Array<Buffer>;
   @HideField()
-  bigIntField?: InstanceType<typeof BigIntFieldUpdateOperationsInput>;
-  @Field(() => MiscModelUpdatebigIntListInput, { nullable: true })
-  @Type(() => MiscModelUpdatebigIntListInput)
-  bigIntList?: InstanceType<typeof MiscModelUpdatebigIntListInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  dateTimeField?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  bigIntField?: bigint | number;
+  @Field(() => [GraphQLBigInt], { nullable: true })
+  bigIntList?: Array<bigint> | Array<number>;
+  @Field(() => Date, { nullable: true })
+  dateTimeField?: Date | string;
   @HideField()
-  dateTimeList?: InstanceType<typeof MiscModelUpdatedateTimeListInput>;
+  dateTimeList?: Array<Date> | Array<string>;
 }
 
 @InputType()
 export class MiscModelUncheckedUpdateInput {
   @HideField()
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
+  id?: number;
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => GraphQLJSON, { nullable: true })
   jsonField?: any;
-  @Field(() => MiscModelUpdatejsonListInput, { nullable: true })
-  @Type(() => MiscModelUpdatejsonListInput)
-  jsonList?: InstanceType<typeof MiscModelUpdatejsonListInput>;
-  @Field(() => MiscModelUpdatestringListInput, { nullable: true })
-  @Type(() => MiscModelUpdatestringListInput)
-  stringList?: InstanceType<typeof MiscModelUpdatestringListInput>;
-  @Field(() => DecimalFieldUpdateOperationsInput, { nullable: true })
-  @Type(() => DecimalFieldUpdateOperationsInput)
-  decimalField?: InstanceType<typeof DecimalFieldUpdateOperationsInput>;
-  @Field(() => MiscModelUpdatedecimalListInput, { nullable: true })
-  @Type(() => MiscModelUpdatedecimalListInput)
-  decimalList?: InstanceType<typeof MiscModelUpdatedecimalListInput>;
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  floatField?: InstanceType<typeof FloatFieldUpdateOperationsInput>;
-  @Field(() => BytesFieldUpdateOperationsInput, { nullable: true })
-  bytesField?: InstanceType<typeof BytesFieldUpdateOperationsInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  jsonList?: Array<any>;
+  @Field(() => [String], { nullable: true })
+  stringList?: Array<string>;
+  @Field(() => GraphQLDecimal, { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalField?: Decimal;
+  @Field(() => [GraphQLDecimal], { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalList?: Array<Decimal>;
+  @Field(() => Float, { nullable: true })
+  floatField?: number;
+  @Field(() => String, { nullable: true })
+  bytesField?: Buffer;
   @HideField()
-  bytesList?: InstanceType<typeof MiscModelUpdatebytesListInput>;
+  bytesList?: Array<Buffer>;
   @HideField()
-  bigIntField?: InstanceType<typeof BigIntFieldUpdateOperationsInput>;
-  @Field(() => MiscModelUpdatebigIntListInput, { nullable: true })
-  @Type(() => MiscModelUpdatebigIntListInput)
-  bigIntList?: InstanceType<typeof MiscModelUpdatebigIntListInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  dateTimeField?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  bigIntField?: bigint | number;
+  @Field(() => [GraphQLBigInt], { nullable: true })
+  bigIntList?: Array<bigint> | Array<number>;
+  @Field(() => Date, { nullable: true })
+  dateTimeField?: Date | string;
   @HideField()
-  dateTimeList?: InstanceType<typeof MiscModelUpdatedateTimeListInput>;
+  dateTimeList?: Array<Date> | Array<string>;
 }
 
 @InputType()
 export class MiscModelUpdateManyMutationInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => GraphQLJSON, { nullable: true })
   jsonField?: any;
-  @Field(() => MiscModelUpdatejsonListInput, { nullable: true })
-  @Type(() => MiscModelUpdatejsonListInput)
-  jsonList?: InstanceType<typeof MiscModelUpdatejsonListInput>;
-  @Field(() => MiscModelUpdatestringListInput, { nullable: true })
-  @Type(() => MiscModelUpdatestringListInput)
-  stringList?: InstanceType<typeof MiscModelUpdatestringListInput>;
-  @Field(() => DecimalFieldUpdateOperationsInput, { nullable: true })
-  @Type(() => DecimalFieldUpdateOperationsInput)
-  decimalField?: InstanceType<typeof DecimalFieldUpdateOperationsInput>;
-  @Field(() => MiscModelUpdatedecimalListInput, { nullable: true })
-  @Type(() => MiscModelUpdatedecimalListInput)
-  decimalList?: InstanceType<typeof MiscModelUpdatedecimalListInput>;
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  floatField?: InstanceType<typeof FloatFieldUpdateOperationsInput>;
-  @Field(() => BytesFieldUpdateOperationsInput, { nullable: true })
-  bytesField?: InstanceType<typeof BytesFieldUpdateOperationsInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  jsonList?: Array<any>;
+  @Field(() => [String], { nullable: true })
+  stringList?: Array<string>;
+  @Field(() => GraphQLDecimal, { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalField?: Decimal;
+  @Field(() => [GraphQLDecimal], { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalList?: Array<Decimal>;
+  @Field(() => Float, { nullable: true })
+  floatField?: number;
+  @Field(() => String, { nullable: true })
+  bytesField?: Buffer;
   @HideField()
-  bytesList?: InstanceType<typeof MiscModelUpdatebytesListInput>;
+  bytesList?: Array<Buffer>;
   @HideField()
-  bigIntField?: InstanceType<typeof BigIntFieldUpdateOperationsInput>;
-  @Field(() => MiscModelUpdatebigIntListInput, { nullable: true })
-  @Type(() => MiscModelUpdatebigIntListInput)
-  bigIntList?: InstanceType<typeof MiscModelUpdatebigIntListInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  dateTimeField?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  bigIntField?: bigint | number;
+  @Field(() => [GraphQLBigInt], { nullable: true })
+  bigIntList?: Array<bigint> | Array<number>;
+  @Field(() => Date, { nullable: true })
+  dateTimeField?: Date | string;
   @HideField()
-  dateTimeList?: InstanceType<typeof MiscModelUpdatedateTimeListInput>;
+  dateTimeList?: Array<Date> | Array<string>;
 }
 
 @InputType()
 export class MiscModelUpdateInput {
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  name?: string;
   @Field(() => GraphQLJSON, { nullable: true })
   jsonField?: any;
-  @Field(() => MiscModelUpdatejsonListInput, { nullable: true })
-  @Type(() => MiscModelUpdatejsonListInput)
-  jsonList?: InstanceType<typeof MiscModelUpdatejsonListInput>;
-  @Field(() => MiscModelUpdatestringListInput, { nullable: true })
-  @Type(() => MiscModelUpdatestringListInput)
-  stringList?: InstanceType<typeof MiscModelUpdatestringListInput>;
-  @Field(() => DecimalFieldUpdateOperationsInput, { nullable: true })
-  @Type(() => DecimalFieldUpdateOperationsInput)
-  decimalField?: InstanceType<typeof DecimalFieldUpdateOperationsInput>;
-  @Field(() => MiscModelUpdatedecimalListInput, { nullable: true })
-  @Type(() => MiscModelUpdatedecimalListInput)
-  decimalList?: InstanceType<typeof MiscModelUpdatedecimalListInput>;
-  @Field(() => FloatFieldUpdateOperationsInput, { nullable: true })
-  floatField?: InstanceType<typeof FloatFieldUpdateOperationsInput>;
-  @Field(() => BytesFieldUpdateOperationsInput, { nullable: true })
-  bytesField?: InstanceType<typeof BytesFieldUpdateOperationsInput>;
+  @Field(() => [GraphQLJSON], { nullable: true })
+  jsonList?: Array<any>;
+  @Field(() => [String], { nullable: true })
+  stringList?: Array<string>;
+  @Field(() => GraphQLDecimal, { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalField?: Decimal;
+  @Field(() => [GraphQLDecimal], { nullable: true })
+  @Type(() => Object)
+  @Transform(transformToDecimal)
+  decimalList?: Array<Decimal>;
+  @Field(() => Float, { nullable: true })
+  floatField?: number;
+  @Field(() => String, { nullable: true })
+  bytesField?: Buffer;
   @HideField()
-  bytesList?: InstanceType<typeof MiscModelUpdatebytesListInput>;
+  bytesList?: Array<Buffer>;
   @HideField()
-  bigIntField?: InstanceType<typeof BigIntFieldUpdateOperationsInput>;
-  @Field(() => MiscModelUpdatebigIntListInput, { nullable: true })
-  @Type(() => MiscModelUpdatebigIntListInput)
-  bigIntList?: InstanceType<typeof MiscModelUpdatebigIntListInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  dateTimeField?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  bigIntField?: bigint | number;
+  @Field(() => [GraphQLBigInt], { nullable: true })
+  bigIntList?: Array<bigint> | Array<number>;
+  @Field(() => Date, { nullable: true })
+  dateTimeField?: Date | string;
   @HideField()
-  dateTimeList?: InstanceType<typeof MiscModelUpdatedateTimeListInput>;
+  dateTimeList?: Array<Date> | Array<string>;
 }
 
 @InputType()
@@ -4837,22 +4827,22 @@ export class PostUncheckedUpdateManyWithoutAnotherAuthorNestedInput {
 
 @InputType()
 export class PostUncheckedUpdateManyWithoutAnotherAuthorInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  authorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => Int, { nullable: true })
+  authorId?: number;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
 }
 
 @InputType()
@@ -4891,22 +4881,22 @@ export class PostUncheckedUpdateManyWithoutAuthorNestedInput {
 
 @InputType()
 export class PostUncheckedUpdateManyWithoutAuthorInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  anotherAuthorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => Int, { nullable: true })
+  anotherAuthorId?: number;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
 }
 
 @InputType()
@@ -4943,66 +4933,66 @@ export class PostUncheckedUpdateManyWithoutCategoriesNestedInput {
 
 @InputType()
 export class PostUncheckedUpdateManyWithoutCategoriesInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  authorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  anotherAuthorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => Int, { nullable: true })
+  authorId?: number;
+  @Field(() => Int, { nullable: true })
+  anotherAuthorId?: number;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
 }
 
 @InputType()
 export class PostUncheckedUpdateManyInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  authorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  anotherAuthorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => Int, { nullable: true })
+  authorId?: number;
+  @Field(() => Int, { nullable: true })
+  anotherAuthorId?: number;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
 }
 
 @InputType()
 export class PostUncheckedUpdateWithoutAnotherAuthorInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  authorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => Int, { nullable: true })
+  authorId?: number;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
   @Field(() => CategoryUncheckedUpdateManyWithoutPostsNestedInput, {
     nullable: true,
   })
@@ -5013,22 +5003,22 @@ export class PostUncheckedUpdateWithoutAnotherAuthorInput {
 
 @InputType()
 export class PostUncheckedUpdateWithoutAuthorInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  anotherAuthorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => Int, { nullable: true })
+  anotherAuthorId?: number;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
   @Field(() => CategoryUncheckedUpdateManyWithoutPostsNestedInput, {
     nullable: true,
   })
@@ -5039,46 +5029,46 @@ export class PostUncheckedUpdateWithoutAuthorInput {
 
 @InputType()
 export class PostUncheckedUpdateWithoutCategoriesInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  authorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  anotherAuthorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => Int, { nullable: true })
+  authorId?: number;
+  @Field(() => Int, { nullable: true })
+  anotherAuthorId?: number;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
 }
 
 @InputType()
 export class PostUncheckedUpdateInput {
   @HideField()
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
+  id?: number;
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  authorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  anotherAuthorId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => Int, { nullable: true })
+  authorId?: number;
+  @Field(() => Int, { nullable: true })
+  anotherAuthorId?: number;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
   @Field(() => CategoryUncheckedUpdateManyWithoutPostsNestedInput, {
     nullable: true,
   })
@@ -5089,18 +5079,18 @@ export class PostUncheckedUpdateInput {
 
 @InputType()
 export class PostUpdateManyMutationInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
 }
 
 @InputType()
@@ -5267,18 +5257,18 @@ export class PostUpdateWithWhereUniqueWithoutCategoriesInput {
 
 @InputType()
 export class PostUpdateWithoutAnotherAuthorInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
   @Field(() => UserUpdateOneRequiredWithoutPostsNestedInput, { nullable: true })
   author?: InstanceType<typeof UserUpdateOneRequiredWithoutPostsNestedInput>;
   @Field(() => CategoryUpdateManyWithoutPostsNestedInput, { nullable: true })
@@ -5287,18 +5277,18 @@ export class PostUpdateWithoutAnotherAuthorInput {
 
 @InputType()
 export class PostUpdateWithoutAuthorInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
   @Field(() => UserUpdateOneRequiredWithoutAnotherPostsNestedInput, {
     nullable: true,
   })
@@ -5311,18 +5301,18 @@ export class PostUpdateWithoutAuthorInput {
 
 @InputType()
 export class PostUpdateWithoutCategoriesInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
   @Field(() => UserUpdateOneRequiredWithoutPostsNestedInput, { nullable: true })
   author?: InstanceType<typeof UserUpdateOneRequiredWithoutPostsNestedInput>;
   @Field(() => UserUpdateOneRequiredWithoutAnotherPostsNestedInput, {
@@ -5336,17 +5326,17 @@ export class PostUpdateWithoutCategoriesInput {
 @InputType()
 export class PostUpdateInput {
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  title?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  content?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => BoolFieldUpdateOperationsInput, { nullable: true })
-  published?: InstanceType<typeof BoolFieldUpdateOperationsInput>;
-  @Field(() => EnumPostKindFieldUpdateOperationsInput, { nullable: true })
-  postKind?: InstanceType<typeof EnumPostKindFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  title?: string;
+  @Field(() => String, { nullable: true })
+  content?: string;
+  @Field(() => Boolean, { nullable: true })
+  published?: boolean;
+  @Field(() => PostKind, { nullable: true })
+  postKind?: keyof typeof PostKind;
   @Field(() => UserUpdateOneRequiredWithoutPostsNestedInput, { nullable: true })
   author?: InstanceType<typeof UserUpdateOneRequiredWithoutPostsNestedInput>;
   @Field(() => UserUpdateOneRequiredWithoutAnotherPostsNestedInput, {
@@ -5560,20 +5550,6 @@ export class AffectedRows {
 }
 
 @InputType()
-export class BigIntFieldUpdateOperationsInput {
-  @Field(() => GraphQLBigInt, { nullable: true })
-  set?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  increment?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  decrement?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  multiply?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  divide?: bigint | number;
-}
-
-@InputType()
 export class BigIntFilter {
   @Field(() => GraphQLBigInt, { nullable: true })
   equals?: bigint | number;
@@ -5638,12 +5614,6 @@ export class BigIntWithAggregatesFilter {
 }
 
 @InputType()
-export class BoolFieldUpdateOperationsInput {
-  @Field(() => Boolean, { nullable: true })
-  set?: boolean;
-}
-
-@InputType()
 export class BoolFilter {
   @Field(() => Boolean, { nullable: true })
   equals?: boolean;
@@ -5663,12 +5633,6 @@ export class BoolWithAggregatesFilter {
   _min?: InstanceType<typeof BoolFilter>;
   @Field(() => BoolFilter, { nullable: true })
   _max?: InstanceType<typeof BoolFilter>;
-}
-
-@InputType()
-export class BytesFieldUpdateOperationsInput {
-  @Field(() => String, { nullable: true })
-  set?: Buffer;
 }
 
 @InputType()
@@ -5713,12 +5677,6 @@ export class BytesWithAggregatesFilter {
   _min?: InstanceType<typeof BytesFilter>;
   @Field(() => BytesFilter, { nullable: true })
   _max?: InstanceType<typeof BytesFilter>;
-}
-
-@InputType()
-export class DateTimeFieldUpdateOperationsInput {
-  @Field(() => Date, { nullable: true })
-  set?: Date | string;
 }
 
 @InputType()
@@ -5779,30 +5737,6 @@ export class DateTimeWithAggregatesFilter {
   _min?: InstanceType<typeof DateTimeFilter>;
   @Field(() => DateTimeFilter, { nullable: true })
   _max?: InstanceType<typeof DateTimeFilter>;
-}
-
-@InputType()
-export class DecimalFieldUpdateOperationsInput {
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  set?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  increment?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  decrement?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  multiply?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  divide?: Decimal;
 }
 
 @InputType()
@@ -5906,12 +5840,6 @@ export class DecimalWithAggregatesFilter {
 }
 
 @InputType()
-export class EnumPostKindFieldUpdateOperationsInput {
-  @Field(() => PostKind, { nullable: true })
-  set?: keyof typeof PostKind;
-}
-
-@InputType()
 export class EnumPostKindFilter {
   @Field(() => PostKind, { nullable: true })
   equals?: keyof typeof PostKind;
@@ -5942,12 +5870,6 @@ export class EnumPostKindWithAggregatesFilter {
 }
 
 @InputType()
-export class EnumUserRoleFieldUpdateOperationsInput {
-  @Field(() => UserRole, { nullable: true })
-  set?: keyof typeof UserRole;
-}
-
-@InputType()
 export class EnumUserRoleFilter {
   @Field(() => UserRole, { nullable: true })
   equals?: keyof typeof UserRole;
@@ -5975,20 +5897,6 @@ export class EnumUserRoleWithAggregatesFilter {
   _min?: InstanceType<typeof EnumUserRoleFilter>;
   @Field(() => EnumUserRoleFilter, { nullable: true })
   _max?: InstanceType<typeof EnumUserRoleFilter>;
-}
-
-@InputType()
-export class FloatFieldUpdateOperationsInput {
-  @Field(() => Float, { nullable: true })
-  set?: number;
-  @Field(() => Float, { nullable: true })
-  increment?: number;
-  @Field(() => Float, { nullable: true })
-  decrement?: number;
-  @Field(() => Float, { nullable: true })
-  multiply?: number;
-  @Field(() => Float, { nullable: true })
-  divide?: number;
 }
 
 @InputType()
@@ -6039,20 +5947,6 @@ export class FloatWithAggregatesFilter {
   _min?: InstanceType<typeof FloatFilter>;
   @Field(() => FloatFilter, { nullable: true })
   _max?: InstanceType<typeof FloatFilter>;
-}
-
-@InputType()
-export class IntFieldUpdateOperationsInput {
-  @Field(() => Int, { nullable: true })
-  set?: number;
-  @Field(() => Int, { nullable: true })
-  increment?: number;
-  @Field(() => Int, { nullable: true })
-  decrement?: number;
-  @Field(() => Int, { nullable: true })
-  multiply?: number;
-  @Field(() => Int, { nullable: true })
-  divide?: number;
 }
 
 @InputType()
@@ -6186,37 +6080,11 @@ export class JsonWithAggregatesFilter {
 }
 
 @InputType()
-export class NullableIntFieldUpdateOperationsInput {
-  @Field(() => Int, { nullable: true })
-  set?: number;
-  @Field(() => Int, { nullable: true })
-  increment?: number;
-  @Field(() => Int, { nullable: true })
-  decrement?: number;
-  @Field(() => Int, { nullable: true })
-  multiply?: number;
-  @Field(() => Int, { nullable: true })
-  divide?: number;
-}
-
-@InputType()
-export class NullableStringFieldUpdateOperationsInput {
-  @Field(() => String, { nullable: true })
-  set?: string;
-}
-
-@InputType()
 export class SortOrderInput {
   @Field(() => SortOrder, { nullable: false })
   sort!: keyof typeof SortOrder;
   @Field(() => NullsOrder, { nullable: true })
   nulls?: keyof typeof NullsOrder;
-}
-
-@InputType()
-export class StringFieldUpdateOperationsInput {
-  @Field(() => String, { nullable: true })
-  set?: string;
 }
 
 @InputType()
@@ -6826,16 +6694,16 @@ export class ProfileUncheckedCreateInput {
 
 @InputType()
 export class ProfileUncheckedUpdateManyInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  bio?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  userId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  bio?: string;
+  @Field(() => Int, { nullable: true })
+  userId?: number;
 }
 
 @InputType()
@@ -6864,38 +6732,38 @@ export class ProfileUncheckedUpdateOneWithoutUserNestedInput {
 
 @InputType()
 export class ProfileUncheckedUpdateWithoutUserInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  bio?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  bio?: string;
 }
 
 @InputType()
 export class ProfileUncheckedUpdateInput {
   @HideField()
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
+  id?: number;
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  bio?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  userId?: InstanceType<typeof IntFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  bio?: string;
+  @Field(() => Int, { nullable: true })
+  userId?: number;
 }
 
 @InputType()
 export class ProfileUpdateManyMutationInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  bio?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  bio?: string;
 }
 
 @InputType()
@@ -6934,22 +6802,22 @@ export class ProfileUpdateToOneWithWhereWithoutUserInput {
 
 @InputType()
 export class ProfileUpdateWithoutUserInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  bio?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  bio?: string;
 }
 
 @InputType()
 export class ProfileUpdateInput {
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  bio?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  bio?: string;
   @Field(() => UserUpdateOneRequiredWithoutProfileNestedInput, {
     nullable: true,
   })
@@ -7451,26 +7319,26 @@ export class TagUncheckedUpdateManyWithoutUsersNestedInput {
 
 @InputType()
 export class TagUncheckedUpdateManyWithoutUsersInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  key?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => String, { nullable: true })
+  key?: string;
 }
 
 @InputType()
 export class TagUncheckedUpdateManyInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  key?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => String, { nullable: true })
+  key?: string;
 }
 
 @InputType()
 export class TagUncheckedUpdateWithoutUsersInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  key?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => String, { nullable: true })
+  key?: string;
 }
 
 @InputType()
 export class TagUncheckedUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  key?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => String, { nullable: true })
+  key?: string;
   @Field(() => UserUncheckedUpdateManyWithoutTagsNestedInput, {
     nullable: true,
   })
@@ -7479,8 +7347,8 @@ export class TagUncheckedUpdateInput {
 
 @InputType()
 export class TagUpdateManyMutationInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  key?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => String, { nullable: true })
+  key?: string;
 }
 
 @InputType()
@@ -7535,14 +7403,14 @@ export class TagUpdateWithWhereUniqueWithoutUsersInput {
 
 @InputType()
 export class TagUpdateWithoutUsersInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  key?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => String, { nullable: true })
+  key?: string;
 }
 
 @InputType()
 export class TagUpdateInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  key?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => String, { nullable: true })
+  key?: string;
   @Field(() => UserUpdateManyWithoutTagsNestedInput, { nullable: true })
   users?: InstanceType<typeof UserUpdateManyWithoutTagsNestedInput>;
 }
@@ -8992,20 +8860,20 @@ export class UserUncheckedUpdateManyWithoutParentNestedInput {
 
 @InputType()
 export class UserUncheckedUpdateManyWithoutParentInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
 }
 
 @InputType()
@@ -9040,62 +8908,62 @@ export class UserUncheckedUpdateManyWithoutTagsNestedInput {
 
 @InputType()
 export class UserUncheckedUpdateManyWithoutTagsInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  parentId?: InstanceType<typeof NullableIntFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => Int, { nullable: true })
+  parentId?: number;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
 }
 
 @InputType()
 export class UserUncheckedUpdateManyInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  parentId?: InstanceType<typeof NullableIntFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => Int, { nullable: true })
+  parentId?: number;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
 }
 
 @InputType()
 export class UserUncheckedUpdateWithoutAnotherPostsInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  parentId?: InstanceType<typeof NullableIntFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => Int, { nullable: true })
+  parentId?: number;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUncheckedUpdateManyWithoutAuthorNestedInput, {
     nullable: true,
   })
@@ -9120,22 +8988,22 @@ export class UserUncheckedUpdateWithoutAnotherPostsInput {
 
 @InputType()
 export class UserUncheckedUpdateWithoutChildrenInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  parentId?: InstanceType<typeof NullableIntFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => Int, { nullable: true })
+  parentId?: number;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUncheckedUpdateManyWithoutAuthorNestedInput, {
     nullable: true,
   })
@@ -9160,20 +9028,20 @@ export class UserUncheckedUpdateWithoutChildrenInput {
 
 @InputType()
 export class UserUncheckedUpdateWithoutParentInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUncheckedUpdateManyWithoutAuthorNestedInput, {
     nullable: true,
   })
@@ -9204,22 +9072,22 @@ export class UserUncheckedUpdateWithoutParentInput {
 
 @InputType()
 export class UserUncheckedUpdateWithoutPostsInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  parentId?: InstanceType<typeof NullableIntFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => Int, { nullable: true })
+  parentId?: number;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => UserUncheckedUpdateManyWithoutParentNestedInput, {
     nullable: true,
   })
@@ -9246,22 +9114,22 @@ export class UserUncheckedUpdateWithoutPostsInput {
 
 @InputType()
 export class UserUncheckedUpdateWithoutProfileInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  parentId?: InstanceType<typeof NullableIntFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => Int, { nullable: true })
+  parentId?: number;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUncheckedUpdateManyWithoutAuthorNestedInput, {
     nullable: true,
   })
@@ -9286,22 +9154,22 @@ export class UserUncheckedUpdateWithoutProfileInput {
 
 @InputType()
 export class UserUncheckedUpdateWithoutTagsInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  parentId?: InstanceType<typeof NullableIntFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Int, { nullable: true })
+  id?: number;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => Int, { nullable: true })
+  parentId?: number;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUncheckedUpdateManyWithoutAuthorNestedInput, {
     nullable: true,
   })
@@ -9329,21 +9197,21 @@ export class UserUncheckedUpdateWithoutTagsInput {
 @InputType()
 export class UserUncheckedUpdateInput {
   @HideField()
-  id?: InstanceType<typeof IntFieldUpdateOperationsInput>;
+  id?: number;
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => NullableIntFieldUpdateOperationsInput, { nullable: true })
-  parentId?: InstanceType<typeof NullableIntFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => Int, { nullable: true })
+  parentId?: number;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUncheckedUpdateManyWithoutAuthorNestedInput, {
     nullable: true,
   })
@@ -9374,18 +9242,18 @@ export class UserUncheckedUpdateInput {
 
 @InputType()
 export class UserUpdateManyMutationInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
 }
 
 @InputType()
@@ -9620,18 +9488,18 @@ export class UserUpdateWithWhereUniqueWithoutTagsInput {
 
 @InputType()
 export class UserUpdateWithoutAnotherPostsInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
   posts?: InstanceType<typeof PostUpdateManyWithoutAuthorNestedInput>;
   @Field(() => UserUpdateOneWithoutChildrenNestedInput, { nullable: true })
@@ -9646,18 +9514,18 @@ export class UserUpdateWithoutAnotherPostsInput {
 
 @InputType()
 export class UserUpdateWithoutChildrenInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
   posts?: InstanceType<typeof PostUpdateManyWithoutAuthorNestedInput>;
   @Field(() => UserUpdateOneWithoutChildrenNestedInput, { nullable: true })
@@ -9676,18 +9544,18 @@ export class UserUpdateWithoutChildrenInput {
 
 @InputType()
 export class UserUpdateWithoutParentInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
   posts?: InstanceType<typeof PostUpdateManyWithoutAuthorNestedInput>;
   @Field(() => UserUpdateManyWithoutParentNestedInput, { nullable: true })
@@ -9706,18 +9574,18 @@ export class UserUpdateWithoutParentInput {
 
 @InputType()
 export class UserUpdateWithoutPostsInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => UserUpdateOneWithoutChildrenNestedInput, { nullable: true })
   parent?: InstanceType<typeof UserUpdateOneWithoutChildrenNestedInput>;
   @Field(() => UserUpdateManyWithoutParentNestedInput, { nullable: true })
@@ -9736,18 +9604,18 @@ export class UserUpdateWithoutPostsInput {
 
 @InputType()
 export class UserUpdateWithoutProfileInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
   posts?: InstanceType<typeof PostUpdateManyWithoutAuthorNestedInput>;
   @Field(() => UserUpdateOneWithoutChildrenNestedInput, { nullable: true })
@@ -9766,18 +9634,18 @@ export class UserUpdateWithoutProfileInput {
 
 @InputType()
 export class UserUpdateWithoutTagsInput {
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date | string;
+  @Field(() => Date, { nullable: true })
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
   posts?: InstanceType<typeof PostUpdateManyWithoutAuthorNestedInput>;
   @Field(() => UserUpdateOneWithoutChildrenNestedInput, { nullable: true })
@@ -9797,17 +9665,17 @@ export class UserUpdateWithoutTagsInput {
 @InputType()
 export class UserUpdateInput {
   @HideField()
-  createdAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
+  createdAt?: Date | string;
   @HideField()
-  updatedAt?: InstanceType<typeof DateTimeFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  email?: InstanceType<typeof StringFieldUpdateOperationsInput>;
-  @Field(() => NullableStringFieldUpdateOperationsInput, { nullable: true })
-  name?: InstanceType<typeof NullableStringFieldUpdateOperationsInput>;
-  @Field(() => EnumUserRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: InstanceType<typeof EnumUserRoleFieldUpdateOperationsInput>;
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  mappedField?: InstanceType<typeof StringFieldUpdateOperationsInput>;
+  updatedAt?: Date | string;
+  @Field(() => String, { nullable: true })
+  email?: string;
+  @Field(() => String, { nullable: true })
+  name?: string;
+  @Field(() => UserRole, { nullable: true })
+  role?: keyof typeof UserRole;
+  @Field(() => String, { nullable: true })
+  mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
   posts?: InstanceType<typeof PostUpdateManyWithoutAuthorNestedInput>;
   @Field(() => UserUpdateOneWithoutChildrenNestedInput, { nullable: true })
