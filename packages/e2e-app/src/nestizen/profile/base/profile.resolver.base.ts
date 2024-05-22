@@ -37,43 +37,43 @@ export class ProfileResolverBase {
   @Query(() => Profile, { nullable: true })
   @ZenPermission('Profile', 'read')
   async profile(@Args() args: FindUniqueProfileArgs) {
-    return this.service.findUnique(args);
+    return this.service.findUnique(args as any);
   }
 
   @Query(() => [Profile], { nullable: false })
   @ZenPermission('Profile', 'read')
   async profiles(@Args() args: FindManyProfileArgs) {
-    return this.service.findMany(args);
+    return this.service.findMany(args as any);
   }
 
   @Mutation(() => Profile, { nullable: false })
   @ZenPermission('Profile', 'create')
   async createProfile(@Args() args: CreateOneProfileArgs) {
-    return this.service.create(args);
+    return this.service.create(args as any);
   }
 
   @Mutation(() => Profile, { nullable: false })
   @ZenPermission('Profile', 'update')
   async updateProfile(@Args() args: UpdateOneProfileArgs) {
-    return this.service.update(args);
+    return this.service.update(args as any);
   }
 
   @Mutation(() => Profile, { nullable: false })
   @ZenPermission('Profile', 'delete')
   async deleteProfile(@Args() args: DeleteOneProfileArgs) {
-    return this.service.delete(args);
+    return this.service.delete(args as any);
   }
 
   @Query(() => Int, { nullable: false })
   @ZenPermission('Profile', 'read')
   async profileCount(@Args() args: FindManyProfileArgs) {
-    return this.service.count(args);
+    return this.service.count(args as any);
   }
 
   @Query(() => AggregateProfile, { nullable: false })
   @ZenPermission('Profile', 'read')
   async profileAggregate(@Args() args: ProfileAggregateArgs) {
-    return this.service.aggregate(args);
+    return this.service.aggregate(args as any);
   }
 
   @ResolveField(() => User)

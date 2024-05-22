@@ -39,43 +39,43 @@ export class PostResolverBase {
   @Query(() => Post, { nullable: true })
   @ZenPermission('Post', 'read')
   async post(@Args() args: FindUniquePostArgs) {
-    return this.service.findUnique(args);
+    return this.service.findUnique(args as any);
   }
 
   @Query(() => [Post], { nullable: false })
   @ZenPermission('Post', 'read')
   async posts(@Args() args: FindManyPostArgs) {
-    return this.service.findMany(args);
+    return this.service.findMany(args as any);
   }
 
   @Mutation(() => Post, { nullable: false })
   @ZenPermission('Post', 'create')
   async createPost(@Args() args: CreateOnePostArgs) {
-    return this.service.create(args);
+    return this.service.create(args as any);
   }
 
   @Mutation(() => Post, { nullable: false })
   @ZenPermission('Post', 'update')
   async updatePost(@Args() args: UpdateOnePostArgs) {
-    return this.service.update(args);
+    return this.service.update(args as any);
   }
 
   @Mutation(() => Post, { nullable: false })
   @ZenPermission('Post', 'delete')
   async deletePost(@Args() args: DeleteOnePostArgs) {
-    return this.service.delete(args);
+    return this.service.delete(args as any);
   }
 
   @Query(() => Int, { nullable: false })
   @ZenPermission('Post', 'read')
   async postCount(@Args() args: FindManyPostArgs) {
-    return this.service.count(args);
+    return this.service.count(args as any);
   }
 
   @Query(() => AggregatePost, { nullable: false })
   @ZenPermission('Post', 'read')
   async postAggregate(@Args() args: PostAggregateArgs) {
-    return this.service.aggregate(args);
+    return this.service.aggregate(args as any);
   }
 
   @ResolveField(() => User)
@@ -90,6 +90,6 @@ export class PostResolverBase {
 
   @ResolveField(() => [Category], { nullable: false })
   async categories(@Parent() parent: Post, @Args() args: FindManyCategoryArgs) {
-    return this.service.resolveCategories(parent, args);
+    return this.service.resolveCategories(parent, args as any);
   }
 }

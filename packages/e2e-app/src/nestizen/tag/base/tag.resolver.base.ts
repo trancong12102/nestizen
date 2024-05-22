@@ -38,47 +38,47 @@ export class TagResolverBase {
   @Query(() => Tag, { nullable: true })
   @ZenPermission('Tag', 'read')
   async tag(@Args() args: FindUniqueTagArgs) {
-    return this.service.findUnique(args);
+    return this.service.findUnique(args as any);
   }
 
   @Query(() => [Tag], { nullable: false })
   @ZenPermission('Tag', 'read')
   async tags(@Args() args: FindManyTagArgs) {
-    return this.service.findMany(args);
+    return this.service.findMany(args as any);
   }
 
   @Mutation(() => Tag, { nullable: false })
   @ZenPermission('Tag', 'create')
   async createTag(@Args() args: CreateOneTagArgs) {
-    return this.service.create(args);
+    return this.service.create(args as any);
   }
 
   @Mutation(() => Tag, { nullable: false })
   @ZenPermission('Tag', 'update')
   async updateTag(@Args() args: UpdateOneTagArgs) {
-    return this.service.update(args);
+    return this.service.update(args as any);
   }
 
   @Mutation(() => Tag, { nullable: false })
   @ZenPermission('Tag', 'delete')
   async deleteTag(@Args() args: DeleteOneTagArgs) {
-    return this.service.delete(args);
+    return this.service.delete(args as any);
   }
 
   @Query(() => Int, { nullable: false })
   @ZenPermission('Tag', 'read')
   async tagCount(@Args() args: FindManyTagArgs) {
-    return this.service.count(args);
+    return this.service.count(args as any);
   }
 
   @Query(() => AggregateTag, { nullable: false })
   @ZenPermission('Tag', 'read')
   async tagAggregate(@Args() args: TagAggregateArgs) {
-    return this.service.aggregate(args);
+    return this.service.aggregate(args as any);
   }
 
   @ResolveField(() => [User], { nullable: false })
   async users(@Parent() parent: Tag, @Args() args: FindManyUserArgs) {
-    return this.service.resolveUsers(parent, args);
+    return this.service.resolveUsers(parent, args as any);
   }
 }

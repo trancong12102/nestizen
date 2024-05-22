@@ -26,30 +26,30 @@ export class MiscModelResolverBase {
   @Query(() => MiscModel, { nullable: true })
   @ZenPermission('MiscModel', 'read')
   async miscModel(@Args() args: FindUniqueMiscModelArgs) {
-    return this.service.findUnique(args);
+    return this.service.findUnique(args as any);
   }
 
   @Query(() => [MiscModel], { nullable: false })
   @ZenPermission('MiscModel', 'read')
   async miscModels(@Args() args: FindManyMiscModelArgs) {
-    return this.service.findMany(args);
+    return this.service.findMany(args as any);
   }
 
   @Mutation(() => MiscModel, { nullable: false })
   @ZenPermission('MiscModel', 'delete')
   async deleteMiscModel(@Args() args: DeleteOneMiscModelArgs) {
-    return this.service.delete(args);
+    return this.service.delete(args as any);
   }
 
   @Query(() => Int, { nullable: false })
   @ZenPermission('MiscModel', 'read')
   async miscModelCount(@Args() args: FindManyMiscModelArgs) {
-    return this.service.count(args);
+    return this.service.count(args as any);
   }
 
   @Query(() => AggregateMiscModel, { nullable: false })
   @ZenPermission('MiscModel', 'read')
   async miscModelAggregate(@Args() args: MiscModelAggregateArgs) {
-    return this.service.aggregate(args);
+    return this.service.aggregate(args as any);
   }
 }

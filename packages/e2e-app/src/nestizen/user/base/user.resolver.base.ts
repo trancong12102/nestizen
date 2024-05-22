@@ -41,48 +41,48 @@ export class UserResolverBase {
   @Query(() => User, { nullable: true })
   @ZenPermission('User', 'read')
   async user(@Args() args: FindUniqueUserArgs) {
-    return this.service.findUnique(args);
+    return this.service.findUnique(args as any);
   }
 
   @Query(() => [User], { nullable: false })
   @ZenPermission('User', 'read')
   async users(@Args() args: FindManyUserArgs) {
-    return this.service.findMany(args);
+    return this.service.findMany(args as any);
   }
 
   @Mutation(() => User, { nullable: false })
   @ZenPermission('User', 'create')
   async createUser(@Args() args: CreateOneUserArgs) {
-    return this.service.create(args);
+    return this.service.create(args as any);
   }
 
   @Mutation(() => User, { nullable: false })
   @ZenPermission('User', 'update')
   async updateUser(@Args() args: UpdateOneUserArgs) {
-    return this.service.update(args);
+    return this.service.update(args as any);
   }
 
   @Mutation(() => User, { nullable: false })
   @ZenPermission('User', 'delete')
   async deleteUser(@Args() args: DeleteOneUserArgs) {
-    return this.service.delete(args);
+    return this.service.delete(args as any);
   }
 
   @Query(() => Int, { nullable: false })
   @ZenPermission('User', 'read')
   async userCount(@Args() args: FindManyUserArgs) {
-    return this.service.count(args);
+    return this.service.count(args as any);
   }
 
   @Query(() => AggregateUser, { nullable: false })
   @ZenPermission('User', 'read')
   async userAggregate(@Args() args: UserAggregateArgs) {
-    return this.service.aggregate(args);
+    return this.service.aggregate(args as any);
   }
 
   @ResolveField(() => [Post], { nullable: false })
   async posts(@Parent() parent: User, @Args() args: FindManyPostArgs) {
-    return this.service.resolvePosts(parent, args);
+    return this.service.resolvePosts(parent, args as any);
   }
 
   @ResolveField(() => User)
@@ -92,17 +92,17 @@ export class UserResolverBase {
 
   @ResolveField(() => [User], { nullable: false })
   async children(@Parent() parent: User, @Args() args: FindManyUserArgs) {
-    return this.service.resolveChildren(parent, args);
+    return this.service.resolveChildren(parent, args as any);
   }
 
   @ResolveField(() => [Post], { nullable: false })
   async anotherPosts(@Parent() parent: User, @Args() args: FindManyPostArgs) {
-    return this.service.resolveAnotherPosts(parent, args);
+    return this.service.resolveAnotherPosts(parent, args as any);
   }
 
   @ResolveField(() => [Tag], { nullable: false })
   async tags(@Parent() parent: User, @Args() args: FindManyTagArgs) {
-    return this.service.resolveTags(parent, args);
+    return this.service.resolveTags(parent, args as any);
   }
 
   @ResolveField(() => Profile)

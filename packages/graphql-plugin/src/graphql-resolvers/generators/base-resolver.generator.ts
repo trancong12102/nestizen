@@ -150,7 +150,7 @@ export class BaseResolverGenerator {
         statements: [
           `
         return this.service.${camelcase(`resolve_${name}`)}(parent${
-          isList ? `, args` : ''
+          isList ? `, args as any` : ''
         })
       `,
         ],
@@ -334,7 +334,7 @@ export class BaseResolverGenerator {
           ],
         },
       ],
-      statements: [`return this.service.${method}(args)`],
+      statements: [`return this.service.${method}(args as any)`],
     });
     this.imports.push(
       ...imports.map<ImportDeclarationStructure>((i) => ({
