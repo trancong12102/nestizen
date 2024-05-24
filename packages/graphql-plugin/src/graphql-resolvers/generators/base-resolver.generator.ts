@@ -84,7 +84,7 @@ export class BaseResolverGenerator {
   }
 
   private declareResolveMethods() {
-    if (this.relations.length === 0) {
+    if (this.relations.length === 0 || this.operationsHideMap.READ) {
       return;
     }
 
