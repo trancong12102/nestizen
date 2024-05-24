@@ -363,8 +363,7 @@ export class BaseResolverGenerator {
 
   private declareClass() {
     const ServiceBaseType = `${this.modelName.original}ServiceBase`;
-    const shouldHideType =
-      this.relations.length === 0 && this.operationsHideMap.ALL;
+    const shouldHideType = this.operationsHideMap.ALL;
 
     this.classDeclaration = {
       kind: StructureKind.Class,
