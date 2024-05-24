@@ -94,6 +94,12 @@ export class BaseResolverGenerator {
       moduleSpecifier: t('@nestjs/graphql'),
     });
 
+    this.imports.push({
+      kind: StructureKind.ImportDeclaration,
+      namedImports: [this.modelName.original],
+      moduleSpecifier: this.typesImportModuleModifier,
+    });
+
     for (const relation of this.relations) {
       const { name, type, isList, isRequired, documentation } = relation;
       if (checkShouldHideResolveFunction(documentation)) {
