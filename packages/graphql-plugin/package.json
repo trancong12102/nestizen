@@ -17,14 +17,14 @@
   "license": "ISC",
   "devDependencies": {
     "@swc/cli": "^0.3.12",
-    "@swc/core": "^1.5.7",
+    "@swc/core": "^1.5.25",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.12.12",
-    "type-fest": "^4.18.2",
+    "@types/node": "^20.14.2",
+    "type-fest": "^4.19.0",
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@prisma/generator-helper": "^5.14.0",
+    "@prisma/generator-helper": "^5.15.0",
     "@stdlib/string-camelcase": "^0.2.1",
     "@stdlib/string-kebabcase": "^0.2.1",
     "@stdlib/string-pascalcase": "^0.2.1",
