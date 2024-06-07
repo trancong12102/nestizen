@@ -6,7 +6,6 @@
  * -----------------------------------------------------------------------------
  */
 
-/* eslint-disable */
 import { Prisma, CategoryMetadata } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 

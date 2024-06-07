@@ -6,7 +6,6 @@
  * -----------------------------------------------------------------------------
  */
 
-/* eslint-disable */
 import { Resolver, Query, Args, Mutation, Int } from '@nestjs/graphql';
 import { MiscModelServiceBase } from './misc-model.service.base';
 import {

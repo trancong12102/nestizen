@@ -6,7 +6,6 @@
  * -----------------------------------------------------------------------------
  */
 
-/* eslint-disable */
 import { UserModule } from '../user/user.module';
 import { ProfileModule } from '../profile/profile.module';
 import { PostModule } from '../post/post.module';

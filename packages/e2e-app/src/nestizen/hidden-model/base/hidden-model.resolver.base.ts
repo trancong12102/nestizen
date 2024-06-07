@@ -6,7 +6,6 @@
  * -----------------------------------------------------------------------------
  */
 
-/* eslint-disable */
 import { Resolver } from '@nestjs/graphql';
 import { HiddenModelServiceBase } from './hidden-model.service.base';
 

@@ -6,7 +6,6 @@
  * -----------------------------------------------------------------------------
  */
 
-/* eslint-disable */
 import { Prisma, Post } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 

@@ -17,7 +17,13 @@ export default [
       },
     },
     {
-      ignores: ['**/*.js', '**/*.mjs', '**/*.cjs'],
+      ignores: [
+        '**/*.js',
+        '**/*.mjs',
+        '**/*.cjs',
+        '**/base/*.base.ts',
+        '**/graphql-types/index.ts',
+      ],
     },
     {
       rules: {
