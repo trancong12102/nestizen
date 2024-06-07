@@ -10,6 +10,6 @@
     },
     "baseUrl": "./"
   },
-  "minify": true,
+  "minify": false,
   "sourceMaps": false
 }

@@ -90,7 +90,7 @@ export class BaseResolverGenerator {
 
     this.imports.push({
       kind: StructureKind.ImportDeclaration,
-      namedImports: t('Parent', 'ResolveField'),
+      namedImports: [t('Parent'), t('ResolveField')],
       moduleSpecifier: t('@nestjs/graphql'),
     });
 

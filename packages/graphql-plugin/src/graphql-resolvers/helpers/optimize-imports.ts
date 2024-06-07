@@ -3,50 +3,48 @@ import { ImportDeclarationStructure, StructureKind } from 'ts-morph';
 export function optimizeImports(
   imports: ImportDeclarationStructure[],
 ): ImportDeclarationStructure[] {
-  const namedImportsMap: Record<string, string[]> = {};
-  const namespaceImportsMap: Record<string, string> = {};
-  const defaultImportsMap: Record<string, string> = {};
+  const importMap = new Map<
+    string,
+    {
+      isTypeOnly?: boolean;
+      namedImports: Set<string>;
+    }
+  >();
 
   for (const importDeclaration of imports) {
-    const { moduleSpecifier } = importDeclaration;
-
-    if (importDeclaration.namedImports) {
-      namedImportsMap[moduleSpecifier] = (
-        namedImportsMap[moduleSpecifier] || []
-      ).concat(importDeclaration.namedImports as string[]);
+    const key = importDeclaration.moduleSpecifier;
+    if (!importMap.has(key)) {
+      importMap.set(key, {
+        isTypeOnly: importDeclaration.isTypeOnly,
+        namedImports: new Set(),
+      });
     }
 
-    if (importDeclaration.namespaceImport) {
-      namespaceImportsMap[moduleSpecifier] = importDeclaration.namespaceImport;
+    const existingImport = importMap.get(key);
+    if (!existingImport) {
+      throw new Error('existingImport is undefined');
     }
 
-    if (importDeclaration.defaultImport) {
-      defaultImportsMap[moduleSpecifier] = importDeclaration.defaultImport;
+    const namedImports = (importDeclaration.namedImports || []) as string[];
+    if (!namedImports.map) {
+      throw new Error('namedImports is not an array');
+    }
+
+    for (const namedImport of namedImports) {
+      if (typeof namedImport !== 'string') {
+        throw new Error('namedImport is not a string');
+      }
+
+      existingImport.namedImports.add(namedImport);
     }
   }
 
-  return Object.entries(namedImportsMap)
-    .map<ImportDeclarationStructure>(([moduleSpecifier, namedImports]) => ({
+  return Array.from(importMap.entries()).map(
+    ([moduleSpecifier, { isTypeOnly, namedImports }]) => ({
       kind: StructureKind.ImportDeclaration,
       moduleSpecifier,
-      namedImports: Array.from(new Set(namedImports)),
-    }))
-    .concat(
-      Object.entries(namespaceImportsMap).map<ImportDeclarationStructure>(
-        ([moduleSpecifier, namespaceImport]) => ({
-          kind: StructureKind.ImportDeclaration,
-          moduleSpecifier,
-          namespaceImport,
-        }),
-      ),
-    )
-    .concat(
-      Object.entries(defaultImportsMap).map<ImportDeclarationStructure>(
-        ([moduleSpecifier, defaultImport]) => ({
-          kind: StructureKind.ImportDeclaration,
-          moduleSpecifier,
-          defaultImport,
-        }),
-      ),
-    );
+      namedImports: Array.from(namedImports),
+      isTypeOnly,
+    }),
+  );
 }

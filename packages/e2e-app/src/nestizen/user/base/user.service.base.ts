@@ -6,7 +6,7 @@
  * -----------------------------------------------------------------------------
  */
 
-import { Prisma, User } from '@zenstackhq/runtime/models';
+import type { Prisma, User } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 
 export class UserServiceBase {

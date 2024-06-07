@@ -46,7 +46,7 @@ export class RootModuleGenerator {
 
     imports.push({
       kind: StructureKind.ImportDeclaration,
-      namedImports: t('Module'),
+      namedImports: [t('Module')],
       moduleSpecifier: t('@nestjs/common'),
     });
 

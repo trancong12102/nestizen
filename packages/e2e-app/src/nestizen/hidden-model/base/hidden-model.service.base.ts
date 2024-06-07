@@ -6,7 +6,7 @@
  * -----------------------------------------------------------------------------
  */
 
-import { Prisma } from '@zenstackhq/runtime/models';
+import type { Prisma } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 
 export class HiddenModelServiceBase {

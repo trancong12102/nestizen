@@ -87,10 +87,11 @@ export class BaseServiceGenerator {
         kind: StructureKind.ImportDeclaration,
         namedImports: [t('Prisma')],
         moduleSpecifier: t('@zenstackhq/runtime/models'),
+        isTypeOnly: true,
       },
       {
         kind: StructureKind.ImportDeclaration,
-        namedImports: t('PrismaService'),
+        namedImports: [t('PrismaService')],
         moduleSpecifier: this.prismaServiceImportModuleModifier,
       },
     );
@@ -121,6 +122,7 @@ export class BaseServiceGenerator {
       kind: StructureKind.ImportDeclaration,
       namedImports: [this.modelName.original],
       moduleSpecifier: t('@zenstackhq/runtime/models'),
+      isTypeOnly: true,
     });
 
     for (const relation of relations) {

@@ -6,7 +6,7 @@
  * -----------------------------------------------------------------------------
  */
 
-import { Prisma, Tag } from '@zenstackhq/runtime/models';
+import type { Prisma, Tag } from '@zenstackhq/runtime/models';
 import { PrismaService } from '../../../prisma/prisma.service';
 
 export class TagServiceBase {

@@ -54,7 +54,7 @@ export class ServiceGenerator {
       },
       {
         kind: StructureKind.ImportDeclaration,
-        namedImports: t('PrismaService'),
+        namedImports: [t('PrismaService')],
         moduleSpecifier: prismaServiceImportModuleModifier,
       },
       {
