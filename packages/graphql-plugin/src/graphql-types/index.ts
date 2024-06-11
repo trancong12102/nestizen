@@ -5,6 +5,7 @@ import * as path from 'node:path';
 import { readFile } from 'fs-extra';
 import { writeFile } from 'fs/promises';
 import { GENERATED_FILE_COMMENTS } from '../contants';
+import { HIDE_FROM_CREATE_UPDATE_INPUT_ANNOTATIONS } from './constants';
 
 export const generateGraphqlTypes = async (
   dmmf: WritableDMMF,
@@ -37,7 +38,7 @@ export const generateGraphqlTypes = async (
         unsafeCompatibleWhereUniqueInput: 'true',
         graphqlScalars_BigInt_name: 'GraphQLBigInt',
         graphqlScalars_BigInt_specifier: 'graphql-scalars',
-        decorate_hideInputFields_type: '*@(Update|Create)Input',
+        decorate_hideInputFields_type: HIDE_FROM_CREATE_UPDATE_INPUT_ANNOTATIONS,
         decorate_hideInputFields_field: '@(createdAt|updatedAt|id)',
         decorate_hideInputFields_name: 'HideField',
         decorate_hideInputFields_from: '@nestjs/graphql',
