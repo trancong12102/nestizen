@@ -1,6 +1,6 @@
 {
   "name": "@nestizen/graphql-plugin",
-  "version": "0.14.2",
+  "version": "0.15.0",
   "description": "",
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -24,11 +24,11 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@prisma/generator-helper": "^5.15.0",
+    "@prisma/generator-helper": "^5.17.0",
     "@stdlib/string-camelcase": "^0.2.1",
     "@stdlib/string-kebabcase": "^0.2.1",
     "@stdlib/string-pascalcase": "^0.2.1",
-    "@zenstackhq/sdk": "^2.2.0",
+    "@zenstackhq/sdk": "^2.3.3",
     "fs-extra": "^11.2.0",
     "prisma-nestjs-graphql": "^20.0.3",
     "ts-morph": "^22.0.0",
