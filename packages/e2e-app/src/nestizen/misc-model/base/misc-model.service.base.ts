@@ -20,14 +20,6 @@ export class MiscModelServiceBase {
     return this.prisma.client.miscModel.findMany(args);
   }
 
-  async create(args: Prisma.MiscModelCreateArgs) {
-    return this.prisma.client.miscModel.create(args);
-  }
-
-  async update(args: Prisma.MiscModelUpdateArgs) {
-    return this.prisma.client.miscModel.update(args);
-  }
-
   async delete(args: Prisma.MiscModelDeleteArgs) {
     return this.prisma.client.miscModel.delete(args);
   }

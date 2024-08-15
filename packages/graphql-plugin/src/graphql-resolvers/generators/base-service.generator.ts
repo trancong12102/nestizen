@@ -22,6 +22,7 @@ import { getRelativeImportModuleSpecifier } from '../helpers/get-relative-import
 import { GENERATED_FILE_COMMENTS } from '../../contants';
 import { GenerateOptions } from '../../types';
 import { CRUD_METHODS } from '../contansts/CRUD_METHODS';
+import { CrudHideMap } from '../helpers/get-operations-hide-map';
 
 export class BaseServiceGenerator {
   private readonly modelName: ModelNameVariants;
@@ -35,6 +36,7 @@ export class BaseServiceGenerator {
     private readonly project: ProjectStructure,
     private readonly model: DMMF.Model,
     private readonly options: GenerateOptions,
+    private readonly hideMap: CrudHideMap,
   ) {
     this.modelName = getModelNameVariants(model.name);
   }
@@ -166,6 +168,10 @@ export class BaseServiceGenerator {
   }
 
   private declareCrudMethod(method: CrudMethod) {
+    if (this.hideMap[method]) {
+      return;
+    }
+
     this.classMethods.push({
       kind: StructureKind.Method,
       name: method,

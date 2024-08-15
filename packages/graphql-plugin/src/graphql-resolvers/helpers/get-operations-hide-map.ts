@@ -1,6 +1,10 @@
+import { CrudMethod } from '../types/crud-method';
+
 const MATCH_REGEX = /^@@graphql\.hideOperations\(\[(.*?)]\)$/;
 
 const AVAIL_OPERATIONS = ['CREATE', 'READ', 'UPDATE', 'DELETE', 'ALL'] as const;
+
+type Operation = typeof AVAIL_OPERATIONS[number];
 
 export type OperationsHideMap = Record<
   (typeof AVAIL_OPERATIONS)[number],
@@ -47,3 +51,27 @@ export const getOperationsHideMap = (
 
   return result;
 };
+
+const crudHideMap: Record<CrudMethod, Operation> = {
+  'count': 'READ',
+  'findUnique': 'READ',
+  'findMany': 'READ',
+  aggregate: 'READ',
+  create: 'CREATE',
+  delete: 'DELETE',
+  update: 'UPDATE',
+}
+
+export type CrudHideMap = Record<CrudMethod, Operation>;
+
+export const getCrudOperationHideMap = (
+  operationHideMap: OperationsHideMap,
+): CrudHideMap => {
+  return (Object.keys(crudHideMap) as CrudMethod[]).reduce(
+    (acc, method) => ({
+      ...acc,
+      [method]: operationHideMap[crudHideMap[method]],
+    }),
+    {} as CrudHideMap,
+  );
+}
