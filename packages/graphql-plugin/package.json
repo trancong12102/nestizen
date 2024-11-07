@@ -1,6 +1,6 @@
 {
   "name": "@nestizen/graphql-plugin",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "",
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -16,25 +16,22 @@
   "author": "trancong12102",
   "license": "ISC",
   "devDependencies": {
-    "@swc/cli": "0.4.1-nightly.20240914",
-    "@swc/core": "^1.7.36",
+    "@swc/cli": "0.5.0",
+    "@swc/core": "^1.9.1",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.17.6",
     "type-fest": "^4.26.1",
-    "typescript": "^5.4.5"
+    "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@prisma/generator-helper": "^5.21.1",
+    "@prisma/generator-helper": "^5.22.0",
     "@stdlib/string-camelcase": "^0.2.2",
     "@stdlib/string-kebabcase": "^0.2.2",
     "@stdlib/string-pascalcase": "^0.2.2",
-    "@zenstackhq/sdk": "^2.7.1",
+    "@zenstackhq/sdk": "^2.8.0",
     "fs-extra": "^11.2.0",
     "prisma-nestjs-graphql": "^20.0.3",
     "ts-morph": "^22.0.0",
     "zod": "^3.23.8"
-  },
-  "peerDependencies": {
-    "@zenstackhq/runtime": "^2.7.0"
   }
 }
