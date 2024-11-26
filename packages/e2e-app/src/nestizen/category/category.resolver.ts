@@ -1,7 +1,7 @@
 import { Resolver } from '@nestjs/graphql';
-import { CategoryService } from './category.service';
-import { CategoryResolverBase } from './base/category.resolver.base';
 import { Category } from '../nestizen/graphql-types';
+import { CategoryResolverBase } from './base/category.resolver.base';
+import { CategoryService } from './category.service';
 
 @Resolver(() => Category)
 export class CategoryResolver extends CategoryResolverBase {

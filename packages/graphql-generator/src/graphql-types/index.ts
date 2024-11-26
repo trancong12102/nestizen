@@ -1,11 +1,11 @@
-import { generate } from 'prisma-nestjs-graphql/generate';
-import { GenerateOptions, WritableDMMF } from '../types';
-import { transpileDMMFAttributes } from './transpile-DMMF-attributes';
+import { writeFile } from 'node:fs/promises';
 import * as path from 'node:path';
 import { readFile } from 'fs-extra';
-import { writeFile } from 'fs/promises';
+import { generate } from 'prisma-nestjs-graphql/generate';
 import { GENERATED_FILE_COMMENTS } from '../contants';
+import { GenerateOptions, WritableDMMF } from '../types';
 import { HIDE_FROM_CREATE_UPDATE_INPUT_ANNOTATIONS } from './constants';
+import { transpileDMMFAttributes } from './transpile-DMMF-attributes';
 
 export const generateGraphqlTypes = async (
   dmmf: WritableDMMF,

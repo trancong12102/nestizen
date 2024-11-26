@@ -1,7 +1,7 @@
 import { Resolver } from '@nestjs/graphql';
-import { UserService } from './user.service';
-import { UserResolverBase } from './base/user.resolver.base';
 import { User } from '../nestizen/graphql-types';
+import { UserResolverBase } from './base/user.resolver.base';
+import { UserService } from './user.service';
 
 @Resolver(() => User)
 export class UserResolver extends UserResolverBase {

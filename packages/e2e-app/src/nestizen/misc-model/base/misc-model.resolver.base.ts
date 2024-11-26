@@ -6,17 +6,17 @@
  * -----------------------------------------------------------------------------
  */
 
-import { Resolver, Query, Args, Mutation, Int } from '@nestjs/graphql';
-import { MiscModelServiceBase } from './misc-model.service.base';
+import { ZenPermission } from '@nestizen/runtime';
+import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
 import {
-  MiscModel,
-  FindUniqueMiscModelArgs,
-  FindManyMiscModelArgs,
-  DeleteOneMiscModelArgs,
   AggregateMiscModel,
+  DeleteOneMiscModelArgs,
+  FindManyMiscModelArgs,
+  FindUniqueMiscModelArgs,
+  MiscModel,
   MiscModelAggregateArgs,
 } from '../../nestizen/graphql-types';
-import { ZenPermission } from '@nestizen/runtime';
+import { MiscModelServiceBase } from './misc-model.service.base';
 
 @Resolver(() => MiscModel)
 export class MiscModelResolverBase {

@@ -9,19 +9,19 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { ArgsType } from '@nestjs/graphql';
-import { Type } from 'class-transformer';
-import { Prisma } from '@prisma/client';
 import { Int } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { Float } from '@nestjs/graphql';
 import { HideField } from '@nestjs/graphql';
 import { registerEnumType } from '@nestjs/graphql';
-import { GraphQLJSON } from 'graphql-type-json';
+import { Prisma } from '@prisma/client';
 import { Decimal } from '@prisma/client/runtime/library';
-import { GraphQLDecimal } from 'prisma-graphql-type-decimal';
-import { transformToDecimal } from 'prisma-graphql-type-decimal';
+import { Type } from 'class-transformer';
 import { Transform } from 'class-transformer';
 import { GraphQLBigInt } from 'graphql-scalars';
+import { GraphQLJSON } from 'graphql-type-json';
+import { GraphQLDecimal } from 'prisma-graphql-type-decimal';
+import { transformToDecimal } from 'prisma-graphql-type-decimal';
 
 export enum UserScalarFieldEnum {
   id = 'id',
@@ -65,7 +65,7 @@ export enum SortOrder {
 }
 
 export enum QueryMode {
-  'default' = 'default',
+  default = 'default',
   insensitive = 'insensitive',
 }
 

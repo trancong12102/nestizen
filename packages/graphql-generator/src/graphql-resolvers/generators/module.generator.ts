@@ -1,17 +1,17 @@
+import path from 'node:path';
+import { DMMF } from '@prisma/generator-helper';
 import {
   ClassDeclarationStructure,
   ImportDeclarationStructure,
   SourceFileStructure,
   StructureKind,
 } from 'ts-morph';
-import { DMMF } from '@prisma/generator-helper';
-import { getModelNameVariants } from '../helpers/get-model-name-variants';
-import path from 'path';
-import { t } from '../helpers/keyword';
-import { ProjectStructure } from '../helpers/project-structure';
-import { isPathExists } from '../helpers/is-path-exists';
-import { optimizeImports } from '../helpers/optimize-imports';
 import { GenerateOptions } from '../../types';
+import { getModelNameVariants } from '../helpers/get-model-name-variants';
+import { isPathExists } from '../helpers/is-path-exists';
+import { t } from '../helpers/keyword';
+import { optimizeImports } from '../helpers/optimize-imports';
+import { ProjectStructure } from '../helpers/project-structure';
 
 export class ModuleGenerator {
   constructor(

@@ -1,5 +1,5 @@
-import { WritableDeep } from 'type-fest';
 import { DMMF } from '@prisma/generator-helper';
+import { WritableDeep } from 'type-fest';
 import { PluginOptions } from './options';
 
 export type WritableDMMF = WritableDeep<DMMF.Document>;

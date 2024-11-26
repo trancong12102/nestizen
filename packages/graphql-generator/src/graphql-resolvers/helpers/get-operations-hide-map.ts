@@ -4,7 +4,7 @@ const MATCH_REGEX = /^@@graphql\.hideOperations\(\[(.*?)]\)$/;
 
 const AVAIL_OPERATIONS = ['CREATE', 'READ', 'UPDATE', 'DELETE', 'ALL'] as const;
 
-type Operation = typeof AVAIL_OPERATIONS[number];
+type Operation = (typeof AVAIL_OPERATIONS)[number];
 
 export type OperationsHideMap = Record<
   (typeof AVAIL_OPERATIONS)[number],
@@ -53,14 +53,14 @@ export const getOperationsHideMap = (
 };
 
 const crudHideMap: Record<CrudMethod, Operation> = {
-  'count': 'READ',
-  'findUnique': 'READ',
-  'findMany': 'READ',
+  count: 'READ',
+  findUnique: 'READ',
+  findMany: 'READ',
   aggregate: 'READ',
   create: 'CREATE',
   delete: 'DELETE',
   update: 'UPDATE',
-}
+};
 
 export type CrudHideMap = Record<CrudMethod, Operation>;
 
@@ -74,4 +74,4 @@ export const getCrudOperationHideMap = (
     }),
     {} as CrudHideMap,
   );
-}
+};

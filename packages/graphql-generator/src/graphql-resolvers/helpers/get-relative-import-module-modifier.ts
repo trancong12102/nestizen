@@ -1,4 +1,4 @@
-import { dirname, relative } from 'path';
+import { dirname, relative } from 'node:path';
 
 export function getRelativeImportModuleSpecifier(
   importDest: string,

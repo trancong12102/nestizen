@@ -1,3 +1,7 @@
+import path from 'node:path';
+import { DMMF, ReadonlyDeep } from '@prisma/generator-helper';
+import camelcase from '@stdlib/string-camelcase';
+import { PolicyCrudKind } from '@zenstackhq/runtime';
 import {
   ClassDeclarationStructure,
   ImportDeclarationStructure,
@@ -8,24 +12,20 @@ import {
   SourceFileStructure,
   StructureKind,
 } from 'ts-morph';
-import { DMMF, ReadonlyDeep } from '@prisma/generator-helper';
-import { getModelNameVariants } from '../helpers/get-model-name-variants';
-import path from 'path';
-import { t } from '../helpers/keyword';
-import { pluralize } from '../helpers/pluralize';
-import camelcase from '@stdlib/string-camelcase';
-import { ProjectStructure } from '../helpers/project-structure';
-import { optimizeImports } from '../helpers/optimize-imports';
-import { OperationsHideMap } from '../helpers/get-operations-hide-map';
-import { getRelativeImportModuleSpecifier } from '../helpers/get-relative-import-module-modifier';
-import { ModelNameVariants } from '../types/model-name-variants';
-import { CrudMethod } from '../types/crud-method';
-import { GeneratorKeyword } from '../types/generator-keyword';
-import { checkShouldHideResolveFunction } from '../helpers/check-should-hide-resolve-function';
 import { GENERATED_FILE_COMMENTS } from '../../contants';
 import { GenerateOptions } from '../../types';
+import { checkShouldHideResolveFunction } from '../helpers/check-should-hide-resolve-function';
+import { getModelNameVariants } from '../helpers/get-model-name-variants';
 import { getModelRelations } from '../helpers/get-model-relations';
-import { PolicyCrudKind } from '@zenstackhq/runtime';
+import { OperationsHideMap } from '../helpers/get-operations-hide-map';
+import { getRelativeImportModuleSpecifier } from '../helpers/get-relative-import-module-modifier';
+import { t } from '../helpers/keyword';
+import { optimizeImports } from '../helpers/optimize-imports';
+import { pluralize } from '../helpers/pluralize';
+import { ProjectStructure } from '../helpers/project-structure';
+import { CrudMethod } from '../types/crud-method';
+import { GeneratorKeyword } from '../types/generator-keyword';
+import { ModelNameVariants } from '../types/model-name-variants';
 
 export class BaseResolverGenerator {
   private readonly modelName: ModelNameVariants;
@@ -156,7 +156,7 @@ export class BaseResolverGenerator {
         statements: [
           `
         return this.service.${camelcase(`resolve_${name}`)}(parent${
-          isList ? `, args as any` : ''
+          isList ? ', args as any' : ''
         })
       `,
         ],

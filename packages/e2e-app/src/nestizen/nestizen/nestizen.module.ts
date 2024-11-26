@@ -6,15 +6,15 @@
  * -----------------------------------------------------------------------------
  */
 
-import { UserModule } from '../user/user.module';
-import { ProfileModule } from '../profile/profile.module';
-import { PostModule } from '../post/post.module';
-import { TagModule } from '../tag/tag.module';
-import { CategoryModule } from '../category/category.module';
-import { CategoryMetadataModule } from '../category-metadata/category-metadata.module';
-import { MiscModelModule } from '../misc-model/misc-model.module';
-import { HiddenModelModule } from '../hidden-model/hidden-model.module';
 import { Module } from '@nestjs/common';
+import { CategoryMetadataModule } from '../category-metadata/category-metadata.module';
+import { CategoryModule } from '../category/category.module';
+import { HiddenModelModule } from '../hidden-model/hidden-model.module';
+import { MiscModelModule } from '../misc-model/misc-model.module';
+import { PostModule } from '../post/post.module';
+import { ProfileModule } from '../profile/profile.module';
+import { TagModule } from '../tag/tag.module';
+import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [

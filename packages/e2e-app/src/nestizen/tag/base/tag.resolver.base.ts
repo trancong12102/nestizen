@@ -6,29 +6,29 @@
  * -----------------------------------------------------------------------------
  */
 
+import { ZenPermission } from '@nestizen/runtime';
 import {
-  Resolver,
-  Query,
   Args,
-  Mutation,
   Int,
+  Mutation,
   Parent,
+  Query,
   ResolveField,
+  Resolver,
 } from '@nestjs/graphql';
-import { TagServiceBase } from './tag.service.base';
 import {
-  Tag,
-  FindUniqueTagArgs,
-  FindManyTagArgs,
-  CreateOneTagArgs,
-  UpdateOneTagArgs,
-  DeleteOneTagArgs,
   AggregateTag,
-  TagAggregateArgs,
+  CreateOneTagArgs,
+  DeleteOneTagArgs,
+  FindManyTagArgs,
   FindManyUserArgs,
+  FindUniqueTagArgs,
+  Tag,
+  TagAggregateArgs,
+  UpdateOneTagArgs,
   User,
 } from '../../nestizen/graphql-types';
-import { ZenPermission } from '@nestizen/runtime';
+import { TagServiceBase } from './tag.service.base';
 
 @Resolver(() => Tag)
 export class TagResolverBase {

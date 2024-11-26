@@ -1,17 +1,20 @@
 import { generatorHandler } from '@prisma/generator-helper';
-import { GenerateOptionsKeys, PluginOptionsSchema } from './options';
 import { generate } from './generate';
-import { getGraphqlTypesSourcePath, removeKeys } from './utils';
+import { GenerateOptionsKeys, PluginOptionsSchema } from './options';
 import { WritableDMMF } from './types';
+import { getGraphqlTypesSourcePath, removeKeys } from './utils';
 
 generatorHandler({
   onManifest() {
     return {
       prettyName: 'Nestizen Prisma Generator',
-    }
+    };
   },
   async onGenerate(options) {
-    const {dmmf, generator: {config, output, sourceFilePath}} = options
+    const {
+      dmmf,
+      generator: { config, output, sourceFilePath },
+    } = options;
 
     const pluginOptions = PluginOptionsSchema.passthrough().parse({
       ...config,
@@ -31,4 +34,4 @@ generatorHandler({
       dmmf as WritableDMMF,
     );
   },
-})
+});

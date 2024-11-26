@@ -1,7 +1,7 @@
 import { Resolver } from '@nestjs/graphql';
-import { ProfileService } from './profile.service';
-import { ProfileResolverBase } from './base/profile.resolver.base';
 import { Profile } from '../nestizen/graphql-types';
+import { ProfileResolverBase } from './base/profile.resolver.base';
+import { ProfileService } from './profile.service';
 
 @Resolver(() => Profile)
 export class ProfileResolver extends ProfileResolverBase {

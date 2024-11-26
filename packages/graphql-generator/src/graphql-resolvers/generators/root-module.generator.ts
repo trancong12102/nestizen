@@ -1,17 +1,17 @@
 import { DMMF } from '@prisma/generator-helper';
-import { getModelNameVariants } from '../helpers/get-model-name-variants';
-import { t } from '../helpers/keyword';
 import {
   ClassDeclarationStructure,
   ImportDeclarationStructure,
   SourceFileStructure,
   StructureKind,
 } from 'ts-morph';
-import { ProjectStructure } from '../helpers/project-structure';
-import { optimizeImports } from '../helpers/optimize-imports';
 import { GENERATED_FILE_COMMENTS } from '../../contants';
 import { GenerateOptions } from '../../types';
-import { getRootModuleSourcePath, ROOT_MODULE_NAME } from '../../utils';
+import { ROOT_MODULE_NAME, getRootModuleSourcePath } from '../../utils';
+import { getModelNameVariants } from '../helpers/get-model-name-variants';
+import { t } from '../helpers/keyword';
+import { optimizeImports } from '../helpers/optimize-imports';
+import { ProjectStructure } from '../helpers/project-structure';
 
 export class RootModuleGenerator {
   constructor(

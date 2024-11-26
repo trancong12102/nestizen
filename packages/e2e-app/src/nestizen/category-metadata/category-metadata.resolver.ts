@@ -1,7 +1,7 @@
 import { Resolver } from '@nestjs/graphql';
-import { CategoryMetadataService } from './category-metadata.service';
-import { CategoryMetadataResolverBase } from './base/category-metadata.resolver.base';
 import { CategoryMetadata } from '../nestizen/graphql-types';
+import { CategoryMetadataResolverBase } from './base/category-metadata.resolver.base';
+import { CategoryMetadataService } from './category-metadata.service';
 
 @Resolver(() => CategoryMetadata)
 export class CategoryMetadataResolver extends CategoryMetadataResolverBase {

@@ -1,3 +1,7 @@
+import path from 'node:path';
+import { DMMF } from '@prisma/generator-helper';
+import camelcase from '@stdlib/string-camelcase';
+import pascalcase from '@stdlib/string-pascalcase';
 import {
   ClassDeclarationStructure,
   ImportDeclarationStructure,
@@ -8,21 +12,17 @@ import {
   SourceFileStructure,
   StructureKind,
 } from 'ts-morph';
-import { DMMF } from '@prisma/generator-helper';
-import { getModelNameVariants } from '../helpers/get-model-name-variants';
-import path from 'path';
-import { t } from '../helpers/keyword';
-import camelcase from '@stdlib/string-camelcase';
-import pascalcase from '@stdlib/string-pascalcase';
-import { ProjectStructure } from '../helpers/project-structure';
-import { optimizeImports } from '../helpers/optimize-imports';
-import { CrudMethod } from '../types/crud-method';
-import { ModelNameVariants } from '../types/model-name-variants';
-import { getRelativeImportModuleSpecifier } from '../helpers/get-relative-import-module-modifier';
 import { GENERATED_FILE_COMMENTS } from '../../contants';
 import { GenerateOptions } from '../../types';
 import { CRUD_METHODS } from '../contansts/CRUD_METHODS';
+import { getModelNameVariants } from '../helpers/get-model-name-variants';
 import { CrudHideMap } from '../helpers/get-operations-hide-map';
+import { getRelativeImportModuleSpecifier } from '../helpers/get-relative-import-module-modifier';
+import { t } from '../helpers/keyword';
+import { optimizeImports } from '../helpers/optimize-imports';
+import { ProjectStructure } from '../helpers/project-structure';
+import { CrudMethod } from '../types/crud-method';
+import { ModelNameVariants } from '../types/model-name-variants';
 
 export class BaseServiceGenerator {
   private readonly modelName: ModelNameVariants;
@@ -52,7 +52,7 @@ export class BaseServiceGenerator {
       for (const field of fields) {
         where += `${field}: parent.${field}, `;
       }
-      where += `}}`;
+      where += '}}';
 
       return where;
     }

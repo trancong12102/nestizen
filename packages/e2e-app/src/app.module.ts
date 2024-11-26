@@ -1,10 +1,10 @@
+import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 /* eslint-disable @typescript-eslint/no-explicit-any,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
 import { Module } from '@nestjs/common';
-import { PrismaModule } from './prisma/prisma.module';
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { GraphQLModule } from '@nestjs/graphql';
 import { NestizenModule } from './nestizen/nestizen/nestizen.module';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [

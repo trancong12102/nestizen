@@ -1,7 +1,7 @@
 import { Resolver } from '@nestjs/graphql';
-import { PostService } from './post.service';
-import { PostResolverBase } from './base/post.resolver.base';
 import { Post } from '../nestizen/graphql-types';
+import { PostResolverBase } from './base/post.resolver.base';
+import { PostService } from './post.service';
 
 @Resolver(() => Post)
 export class PostResolver extends PostResolverBase {

@@ -6,28 +6,28 @@
  * -----------------------------------------------------------------------------
  */
 
+import { ZenPermission } from '@nestizen/runtime';
 import {
-  Resolver,
-  Query,
   Args,
-  Mutation,
   Int,
+  Mutation,
   Parent,
+  Query,
   ResolveField,
+  Resolver,
 } from '@nestjs/graphql';
-import { ProfileServiceBase } from './profile.service.base';
 import {
-  Profile,
-  FindUniqueProfileArgs,
-  FindManyProfileArgs,
-  CreateOneProfileArgs,
-  UpdateOneProfileArgs,
-  DeleteOneProfileArgs,
   AggregateProfile,
+  CreateOneProfileArgs,
+  DeleteOneProfileArgs,
+  FindManyProfileArgs,
+  FindUniqueProfileArgs,
+  Profile,
   ProfileAggregateArgs,
+  UpdateOneProfileArgs,
   User,
 } from '../../nestizen/graphql-types';
-import { ZenPermission } from '@nestizen/runtime';
+import { ProfileServiceBase } from './profile.service.base';
 
 @Resolver(() => Profile)
 export class ProfileResolverBase {

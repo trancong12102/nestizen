@@ -1,6 +1,6 @@
-import { Prisma } from '@prisma/client';
 import { ExecutionContext, SetMetadata } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
+import { Prisma } from '@prisma/client';
 import camelcase from '@stdlib/string-camelcase';
 import { PolicyCrudKind } from '@zenstackhq/runtime';
 

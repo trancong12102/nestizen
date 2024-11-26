@@ -1,12 +1,15 @@
-import { BaseServiceGenerator } from './generators/base-service.generator';
-import { BaseResolverGenerator } from './generators/base-resolver.generator';
-import { ServiceGenerator } from './generators/service.generator';
-import { ResolverGenerator } from './generators/resolver.generator';
-import { ModuleGenerator } from './generators/module.generator';
-import { RootModuleGenerator } from './generators/root-module.generator';
-import { ProjectStructure } from './helpers/project-structure';
-import { getCrudOperationHideMap, getOperationsHideMap } from './helpers/get-operations-hide-map';
 import { GenerateOptions, WritableDMMF } from '../types';
+import { BaseResolverGenerator } from './generators/base-resolver.generator';
+import { BaseServiceGenerator } from './generators/base-service.generator';
+import { ModuleGenerator } from './generators/module.generator';
+import { ResolverGenerator } from './generators/resolver.generator';
+import { RootModuleGenerator } from './generators/root-module.generator';
+import { ServiceGenerator } from './generators/service.generator';
+import {
+  getCrudOperationHideMap,
+  getOperationsHideMap,
+} from './helpers/get-operations-hide-map';
+import { ProjectStructure } from './helpers/project-structure';
 
 export const generateGraphqlResolvers = async (
   dmmf: WritableDMMF,
@@ -23,7 +26,7 @@ export const generateGraphqlResolvers = async (
       project,
       model,
       options,
-      getCrudOperationHideMap(operationsHideMap)
+      getCrudOperationHideMap(operationsHideMap),
     );
     baseServiceGenerator.generate();
 

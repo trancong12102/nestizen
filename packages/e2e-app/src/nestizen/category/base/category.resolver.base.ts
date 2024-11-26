@@ -6,28 +6,28 @@
  * -----------------------------------------------------------------------------
  */
 
+import { ZenPermission } from '@nestizen/runtime';
 import {
-  Resolver,
-  Query,
   Args,
-  Mutation,
   Int,
+  Mutation,
   Parent,
+  Query,
   ResolveField,
+  Resolver,
 } from '@nestjs/graphql';
-import { CategoryServiceBase } from './category.service.base';
 import {
-  Category,
-  FindUniqueCategoryArgs,
-  FindManyCategoryArgs,
-  CreateOneCategoryArgs,
-  UpdateOneCategoryArgs,
-  DeleteOneCategoryArgs,
   AggregateCategory,
+  Category,
   CategoryAggregateArgs,
   CategoryMetadata,
+  CreateOneCategoryArgs,
+  DeleteOneCategoryArgs,
+  FindManyCategoryArgs,
+  FindUniqueCategoryArgs,
+  UpdateOneCategoryArgs,
 } from '../../nestizen/graphql-types';
-import { ZenPermission } from '@nestizen/runtime';
+import { CategoryServiceBase } from './category.service.base';
 
 @Resolver(() => Category)
 export class CategoryResolverBase {

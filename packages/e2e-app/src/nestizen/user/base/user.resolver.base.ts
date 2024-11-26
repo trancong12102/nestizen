@@ -6,32 +6,32 @@
  * -----------------------------------------------------------------------------
  */
 
-import {
-  Resolver,
-  Query,
-  Args,
-  Mutation,
-  Int,
-  Parent,
-  ResolveField,
-} from '@nestjs/graphql';
-import { UserServiceBase } from './user.service.base';
-import {
-  User,
-  FindUniqueUserArgs,
-  FindManyUserArgs,
-  CreateOneUserArgs,
-  UpdateOneUserArgs,
-  DeleteOneUserArgs,
-  AggregateUser,
-  UserAggregateArgs,
-  FindManyPostArgs,
-  Post,
-  FindManyTagArgs,
-  Tag,
-  Profile,
-} from '../../nestizen/graphql-types';
 import { ZenPermission } from '@nestizen/runtime';
+import {
+  Args,
+  Int,
+  Mutation,
+  Parent,
+  Query,
+  ResolveField,
+  Resolver,
+} from '@nestjs/graphql';
+import {
+  AggregateUser,
+  CreateOneUserArgs,
+  DeleteOneUserArgs,
+  FindManyPostArgs,
+  FindManyTagArgs,
+  FindManyUserArgs,
+  FindUniqueUserArgs,
+  Post,
+  Profile,
+  Tag,
+  UpdateOneUserArgs,
+  User,
+  UserAggregateArgs,
+} from '../../nestizen/graphql-types';
+import { UserServiceBase } from './user.service.base';
 
 @Resolver(() => User)
 export class UserResolverBase {

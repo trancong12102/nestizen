@@ -1,7 +1,7 @@
 import { Resolver } from '@nestjs/graphql';
-import { TagService } from './tag.service';
-import { TagResolverBase } from './base/tag.resolver.base';
 import { Tag } from '../nestizen/graphql-types';
+import { TagResolverBase } from './base/tag.resolver.base';
+import { TagService } from './tag.service';
 
 @Resolver(() => Tag)
 export class TagResolver extends TagResolverBase {

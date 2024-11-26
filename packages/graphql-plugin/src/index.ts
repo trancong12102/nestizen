@@ -11,5 +11,4 @@ export default async function run(
   _options: ZenstackPluginOptions,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _dmmf: DMMF.Document,
-) {
-}
+) {}

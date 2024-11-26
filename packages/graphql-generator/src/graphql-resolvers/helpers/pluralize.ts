@@ -9,9 +9,9 @@ export const pluralize = (str: string) => {
     ['ch', 'sh'].includes(lastTwoChars)
   ) {
     return `${str}es`;
-  } else if (lastChar === 'y' && !vowels.includes(secondToLastChar)) {
-    return `${str.slice(0, -1)}ies`;
-  } else {
-    return `${str}s`;
   }
+  if (lastChar === 'y' && !vowels.includes(secondToLastChar)) {
+    return `${str.slice(0, -1)}ies`;
+  }
+  return `${str}s`;
 };
