@@ -18,15 +18,15 @@ plugin enhancer {
     generatePermissionChecker = true
 }
 
-plugin nestizen_dsl {
+plugin nestizen {
     provider = "@nestizen/graphql-plugin"
-}
-
-generator nestizen {
-    provider = "node ../graphql-generator/dist/index.js"
-    output = "../src/nestizen"
+    output = "./src/nestizen"
     prismaServicePath = "./src/prisma/prisma.service.ts"
     prismaServiceName = "PrismaService"
+}
+
+generator nestizen_gql_docs {
+    provider = "node ../graphql-docs-generator/dist/index.js"
 }
 
 /// UserRole Documentation

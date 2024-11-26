@@ -13,3 +13,8 @@ export type PluginOptions = z.infer<typeof PluginOptionsSchema>;
 export const GenerateOptionsKeys = getZodSchemaFieldsShallow(
   PluginOptionsSchema,
 ).concat(['provider', 'schemaPath']);
+
+export const SchemaInfoSchema = z.object({
+  dmmf: z.object({}).passthrough(),
+  sourceFilePath: z.string(),
+});

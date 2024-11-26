@@ -20,8 +20,6 @@ export const generateGraphqlResolvers = async (
   for (const model of dmmf.datamodel.models) {
     const operationsHideMap = getOperationsHideMap(model.documentation);
 
-    console.log(operationsHideMap);
-
     const baseServiceGenerator = new BaseServiceGenerator(
       project,
       model,

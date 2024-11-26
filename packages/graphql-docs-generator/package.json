@@ -1,9 +1,10 @@
 {
-  "name": "@nestizen/graphql-generator",
-  "version": "0.1.0",
+  "name": "@nestizen/graphql-docs-generator",
+  "version": "0.20.0",
   "description": "",
   "type": "commonjs",
   "bin": "index.js",
+  "main": "index.js",
   "publishConfig": {
     "directory": "dist",
     "linkDirectory": true

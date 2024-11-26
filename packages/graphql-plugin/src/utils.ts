@@ -1,5 +1,7 @@
 import * as path from 'node:path';
+import { DMMF } from '@prisma/generator-helper';
 import { ZodSchema } from 'zod';
+import { WritableDMMF } from './types';
 
 export const getDocumentationLines = (
   documentation: string | null | undefined,
@@ -40,4 +42,29 @@ export const getZodSchemaFieldsShallow = (schema: ZodSchema) => {
   });
   schema.safeParse(proxy);
   return Object.keys(fields);
+};
+
+export const mergeDocumentationFromVerboseDMMF = (
+  dmmf: WritableDMMF,
+  verboseDMMF: DMMF.Document,
+) => {
+  const {
+    datamodel: { models },
+  } = dmmf;
+
+  for (let i = 0; i < models.length; i++) {
+    const model = models[i];
+    const verboseModel = verboseDMMF.datamodel.models[i];
+    model.documentation = verboseModel.documentation;
+
+    // Merge fields
+    const { fields } = model;
+    for (let j = 0; j < fields.length; j++) {
+      const field = fields[j];
+      const verboseField = verboseModel.fields[j];
+      field.documentation = verboseField.documentation;
+    }
+  }
+
+  return dmmf;
 };
