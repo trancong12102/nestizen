@@ -16,12 +16,12 @@
   "author": "trancong12102",
   "license": "ISC",
   "devDependencies": {
-    "@swc/cli": "0.5.0",
-    "@swc/core": "^1.9.1",
+    "@swc/cli": "0.5.1",
+    "@swc/core": "^1.9.3",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.17.6",
-    "type-fest": "^4.26.1",
-    "typescript": "^5.6.3"
+    "@types/node": "^22.10.0",
+    "type-fest": "^4.28.1",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
     "@prisma/generator-helper": "^5.22.0",
@@ -30,7 +30,7 @@
     "@stdlib/string-pascalcase": "^0.2.2",
     "fs-extra": "^11.2.0",
     "prisma-nestjs-graphql": "^20.0.3",
-    "ts-morph": "^22.0.0",
+    "ts-morph": "^24.0.0",
     "zod": "^3.23.8"
   }
 }
