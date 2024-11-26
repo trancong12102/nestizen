@@ -5,6 +5,7 @@ export const PluginOptionsSchema = z.object({
   output: z.string(),
   prismaServicePath: z.string(),
   prismaServiceName: z.string(),
+  schemaPath: z.string(),
 });
 
 export type PluginOptions = z.infer<typeof PluginOptionsSchema>;

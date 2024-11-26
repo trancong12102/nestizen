@@ -11,7 +11,7 @@ export const generateGraphqlTypes = async (
   dmmf: WritableDMMF,
   options: GenerateOptions,
 ) => {
-  const { graphqlTypesSourcePath, typesGenerateConfig } = options;
+  const { graphqlTypesSourcePath, typesGenerateConfig, schemaPath } = options;
 
   transpileDMMFAttributes(dmmf);
 
@@ -19,6 +19,7 @@ export const generateGraphqlTypes = async (
     dmmf,
     generator: {
       name: 'prisma-nestjs-graphql',
+      sourceFilePath: schemaPath,
       output: {
         value: graphqlTypesSourcePath,
         fromEnvVar: null,

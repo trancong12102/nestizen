@@ -7,14 +7,24 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+plugin prisma {
+    provider = '@core/prisma'
+    customAttributesAsComments = true
+    generateClient = true
+}
+
 plugin enhancer {
     provider = '@core/enhancer'
     generatePermissionChecker = true
 }
 
-plugin nestizen {
+plugin nestizen_dsl {
     provider = "@nestizen/graphql-plugin"
-    output = "./src/nestizen"
+}
+
+generator nestizen {
+    provider = "node ../graphql-generator/dist/index.js"
+    output = "../src/nestizen"
     prismaServicePath = "./src/prisma/prisma.service.ts"
     prismaServiceName = "PrismaService"
 }

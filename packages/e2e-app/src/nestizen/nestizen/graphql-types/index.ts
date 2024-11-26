@@ -1053,12 +1053,12 @@ export class Category {
   @Field(() => String, { nullable: false, description: '' })
   name!: string;
   /**
-   * @graphql .hideResolveField
    * Many to many relation with Post
+   * @graphql .hideResolveField
    */
   @Field(() => [Post], {
     nullable: true,
-    description: '@graphql.hideResolveField\nMany to many relation with Post',
+    description: 'Many to many relation with Post\n@graphql.hideResolveField',
   })
   posts?: Array<Post>;
   /**
@@ -4068,8 +4068,8 @@ export class PostCreateManyAnotherAuthorInput {
   content?: string;
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
-  @Field(() => Int, { nullable: true })
-  authorId?: number;
+  @Field(() => Int, { nullable: false })
+  authorId!: number;
   @Field(() => PostKind, { nullable: false })
   postKind!: keyof typeof PostKind;
 }
@@ -4117,8 +4117,8 @@ export class PostCreateManyInput {
   content?: string;
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
-  @Field(() => Int, { nullable: true })
-  authorId?: number;
+  @Field(() => Int, { nullable: false })
+  authorId!: number;
   @Field(() => Int, { nullable: false })
   anotherAuthorId!: number;
   @Field(() => PostKind, { nullable: false })
@@ -4214,8 +4214,8 @@ export class PostCreateWithoutAnotherAuthorInput {
   published?: boolean;
   @Field(() => PostKind, { nullable: false })
   postKind!: keyof typeof PostKind;
-  @Field(() => UserCreateNestedOneWithoutPostsInput, { nullable: true })
-  author?: InstanceType<typeof UserCreateNestedOneWithoutPostsInput>;
+  @Field(() => UserCreateNestedOneWithoutPostsInput, { nullable: false })
+  author!: InstanceType<typeof UserCreateNestedOneWithoutPostsInput>;
   @Field(() => CategoryCreateNestedManyWithoutPostsInput, { nullable: true })
   categories?: InstanceType<typeof CategoryCreateNestedManyWithoutPostsInput>;
 }
@@ -4256,8 +4256,8 @@ export class PostCreateWithoutCategoriesInput {
   published?: boolean;
   @Field(() => PostKind, { nullable: false })
   postKind!: keyof typeof PostKind;
-  @Field(() => UserCreateNestedOneWithoutPostsInput, { nullable: true })
-  author?: InstanceType<typeof UserCreateNestedOneWithoutPostsInput>;
+  @Field(() => UserCreateNestedOneWithoutPostsInput, { nullable: false })
+  author!: InstanceType<typeof UserCreateNestedOneWithoutPostsInput>;
   @Field(() => UserCreateNestedOneWithoutAnotherPostsInput, { nullable: false })
   anotherAuthor!: InstanceType<
     typeof UserCreateNestedOneWithoutAnotherPostsInput
@@ -4278,8 +4278,8 @@ export class PostCreateInput {
   published?: boolean;
   @Field(() => PostKind, { nullable: false })
   postKind!: keyof typeof PostKind;
-  @Field(() => UserCreateNestedOneWithoutPostsInput, { nullable: true })
-  author?: InstanceType<typeof UserCreateNestedOneWithoutPostsInput>;
+  @Field(() => UserCreateNestedOneWithoutPostsInput, { nullable: false })
+  author!: InstanceType<typeof UserCreateNestedOneWithoutPostsInput>;
   @Field(() => UserCreateNestedOneWithoutAnotherPostsInput, { nullable: false })
   anotherAuthor!: InstanceType<
     typeof UserCreateNestedOneWithoutAnotherPostsInput
@@ -4700,8 +4700,8 @@ export class PostUncheckedCreateWithoutAnotherAuthorInput {
   content?: string;
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
-  @Field(() => Int, { nullable: true })
-  authorId?: number;
+  @Field(() => Int, { nullable: false })
+  authorId!: number;
   @Field(() => PostKind, { nullable: false })
   postKind!: keyof typeof PostKind;
   @Field(() => CategoryUncheckedCreateNestedManyWithoutPostsInput, {
@@ -4752,8 +4752,8 @@ export class PostUncheckedCreateWithoutCategoriesInput {
   content?: string;
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
-  @Field(() => Int, { nullable: true })
-  authorId?: number;
+  @Field(() => Int, { nullable: false })
+  authorId!: number;
   @Field(() => Int, { nullable: false })
   anotherAuthorId!: number;
   @Field(() => PostKind, { nullable: false })
@@ -4774,8 +4774,8 @@ export class PostUncheckedCreateInput {
   content?: string;
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
-  @Field(() => Int, { nullable: true })
-  authorId?: number;
+  @Field(() => Int, { nullable: false })
+  authorId!: number;
   @Field(() => Int, { nullable: false })
   anotherAuthorId!: number;
   @Field(() => PostKind, { nullable: false })
@@ -5477,7 +5477,7 @@ export class Post {
     description: '',
   })
   published!: boolean;
-  @Field(() => Int, { nullable: false, defaultValue: 0, description: '' })
+  @Field(() => Int, { nullable: false, description: '' })
   authorId!: number;
   @Field(() => Int, { nullable: false, description: '' })
   anotherAuthorId!: number;
