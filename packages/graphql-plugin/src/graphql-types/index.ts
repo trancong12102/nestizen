@@ -33,7 +33,6 @@ export const generateGraphqlTypes = async (
       config: {
         emitSingle: 'true',
         omitModelsCount: 'true',
-        combineScalarFilters: 'true',
         noTypeId: 'true',
         noAtomicOperations: 'true',
         unsafeCompatibleWhereUniqueInput: 'true',
