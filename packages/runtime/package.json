@@ -1,6 +1,6 @@
 {
   "name": "@nestizen/runtime",
-  "version": "0.2.0",
+  "version": "0.21.0",
   "description": "",
   "type": "commonjs",
   "main": "./dist/index.js",
@@ -28,7 +28,7 @@
   "peerDependencies": {
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
-    "@prisma/client": "^5.17.0",
+    "@prisma/client": "^6.0.0",
     "@zenstackhq/runtime": "^2.3.0"
   }
 }
