@@ -12,10 +12,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-generator nestizen_gql_docs {
-  provider = "node ../graphql-docs-generator/dist/index.js"
-}
-
 /// UserRole Documentation
 enum UserRole {
   /// UserRole USER
