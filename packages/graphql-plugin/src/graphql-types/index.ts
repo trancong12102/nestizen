@@ -35,6 +35,7 @@ export const generateGraphqlTypes = async (
         omitModelsCount: 'true',
         noTypeId: 'true',
         noAtomicOperations: 'true',
+        combineScalarFilters: 'true',
         unsafeCompatibleWhereUniqueInput: 'true',
         graphqlScalars_BigInt_name: 'GraphQLBigInt',
         graphqlScalars_BigInt_specifier: 'graphql-scalars',

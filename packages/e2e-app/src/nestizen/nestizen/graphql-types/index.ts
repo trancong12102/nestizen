@@ -249,7 +249,7 @@ export class CategoryAvgAggregate {
 @InputType()
 export class CategoryAvgOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
 }
 
 @InputType()
@@ -283,13 +283,13 @@ export class CategoryCountAggregate {
 @InputType()
 export class CategoryCountOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
 }
 
 @ObjectType()
@@ -412,7 +412,7 @@ export class CategoryGroupByArgs {
   @Field(() => [CategoryOrderByWithAggregationInput], { nullable: true })
   orderBy?: Array<CategoryOrderByWithAggregationInput>;
   @Field(() => [CategoryScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof CategoryScalarFieldEnum>;
+  by!: Array<`${CategoryScalarFieldEnum}`>;
   @Field(() => CategoryScalarWhereWithAggregatesInput, { nullable: true })
   having?: InstanceType<typeof CategoryScalarWhereWithAggregatesInput>;
   @Field(() => Int, { nullable: true })
@@ -490,13 +490,13 @@ export class CategoryMaxAggregate {
 @InputType()
 export class CategoryMaxOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
 }
 
 @InputType()
@@ -526,31 +526,31 @@ export class CategoryMinAggregate {
 @InputType()
 export class CategoryMinOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
 }
 
 @InputType()
 export class CategoryOrderByRelationAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  _count?: keyof typeof SortOrder;
+  _count?: `${SortOrder}`;
 }
 
 @InputType()
 export class CategoryOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => CategoryCountOrderByAggregateInput, { nullable: true })
   _count?: InstanceType<typeof CategoryCountOrderByAggregateInput>;
   @Field(() => CategoryAvgOrderByAggregateInput, { nullable: true })
@@ -566,17 +566,25 @@ export class CategoryOrderByWithAggregationInput {
 @InputType()
 export class CategoryOrderByWithRelationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => PostOrderByRelationAggregateInput, { nullable: true })
   posts?: InstanceType<typeof PostOrderByRelationAggregateInput>;
   @Field(() => CategoryMetadataOrderByWithRelationInput, { nullable: true })
   metadata?: InstanceType<typeof CategoryMetadataOrderByWithRelationInput>;
+}
+
+@InputType()
+export class CategoryScalarRelationFilter {
+  @Field(() => CategoryWhereInput, { nullable: true })
+  is?: InstanceType<typeof CategoryWhereInput>;
+  @Field(() => CategoryWhereInput, { nullable: true })
+  isNot?: InstanceType<typeof CategoryWhereInput>;
 }
 
 @InputType()
@@ -630,7 +638,7 @@ export class CategorySumAggregate {
 @InputType()
 export class CategorySumOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
 }
 
 @InputType()
@@ -1008,8 +1016,8 @@ export class CategoryWhereUniqueInput {
   updatedAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => PostListRelationFilter, { nullable: true })
   posts?: InstanceType<typeof PostListRelationFilter>;
-  @Field(() => CategoryMetadataNullableScalarRelationFilter, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataNullableScalarRelationFilter>;
+  @Field(() => CategoryMetadataScalarRelationFilter, { nullable: true })
+  metadata?: InstanceType<typeof CategoryMetadataScalarRelationFilter>;
 }
 
 @InputType()
@@ -1030,35 +1038,35 @@ export class CategoryWhereInput {
   name?: InstanceType<typeof StringFilter>;
   @Field(() => PostListRelationFilter, { nullable: true })
   posts?: InstanceType<typeof PostListRelationFilter>;
-  @Field(() => CategoryMetadataNullableScalarRelationFilter, { nullable: true })
-  metadata?: InstanceType<typeof CategoryMetadataNullableScalarRelationFilter>;
+  @Field(() => CategoryMetadataScalarRelationFilter, { nullable: true })
+  metadata?: InstanceType<typeof CategoryMetadataScalarRelationFilter>;
 }
 
 @ObjectType()
 export class Category {
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   id!: number;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   createdAt!: Date;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   updatedAt!: Date;
-  @Field(() => String, { nullable: false, description: '' })
+  @Field(() => String, { description: '', nullable: false })
   name!: string;
   /**
    * Many to many relation with Post
    * @graphql .hideResolveField
    */
   @Field(() => [Post], {
-    nullable: true,
     description: 'Many to many relation with Post\n@graphql.hideResolveField',
+    nullable: true,
   })
   posts?: Array<Post>;
   /**
    * One to one relation with CategoryMetadata
    */
   @Field(() => CategoryMetadata, {
-    nullable: true,
     description: 'One to one relation with CategoryMetadata',
+    nullable: true,
   })
   metadata?: InstanceType<typeof CategoryMetadata> | null;
 }
@@ -1107,7 +1115,7 @@ export class FindFirstCategoryOrThrowArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [CategoryScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof CategoryScalarFieldEnum>;
+  distinct?: Array<`${CategoryScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -1124,7 +1132,7 @@ export class FindFirstCategoryArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [CategoryScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof CategoryScalarFieldEnum>;
+  distinct?: Array<`${CategoryScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -1141,7 +1149,7 @@ export class FindManyCategoryArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [CategoryScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof CategoryScalarFieldEnum>;
+  distinct?: Array<`${CategoryScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -1252,9 +1260,9 @@ export class CategoryMetadataAvgAggregate {
 @InputType()
 export class CategoryMetadataAvgOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  categoryId?: keyof typeof SortOrder;
+  categoryId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -1292,15 +1300,15 @@ export class CategoryMetadataCountAggregate {
 @InputType()
 export class CategoryMetadataCountOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  categoryId?: keyof typeof SortOrder;
+  categoryId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  metadata?: keyof typeof SortOrder;
+  metadata?: `${SortOrder}`;
 }
 
 @InputType()
@@ -1385,7 +1393,7 @@ export class CategoryMetadataGroupByArgs {
   })
   orderBy?: Array<CategoryMetadataOrderByWithAggregationInput>;
   @Field(() => [CategoryMetadataScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof CategoryMetadataScalarFieldEnum>;
+  by!: Array<`${CategoryMetadataScalarFieldEnum}`>;
   @Field(() => CategoryMetadataScalarWhereWithAggregatesInput, {
     nullable: true,
   })
@@ -1457,13 +1465,13 @@ export class CategoryMetadataMaxAggregate {
 @InputType()
 export class CategoryMetadataMaxOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  categoryId?: keyof typeof SortOrder;
+  categoryId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -1493,27 +1501,27 @@ export class CategoryMetadataMinAggregate {
 @InputType()
 export class CategoryMetadataMinOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  categoryId?: keyof typeof SortOrder;
+  categoryId?: `${SortOrder}`;
 }
 
 @InputType()
 export class CategoryMetadataOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  categoryId?: keyof typeof SortOrder;
+  categoryId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  metadata?: keyof typeof SortOrder;
+  metadata?: `${SortOrder}`;
   @Field(() => CategoryMetadataCountOrderByAggregateInput, { nullable: true })
   _count?: InstanceType<typeof CategoryMetadataCountOrderByAggregateInput>;
   @Field(() => CategoryMetadataAvgOrderByAggregateInput, { nullable: true })
@@ -1529,17 +1537,25 @@ export class CategoryMetadataOrderByWithAggregationInput {
 @InputType()
 export class CategoryMetadataOrderByWithRelationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  categoryId?: keyof typeof SortOrder;
+  categoryId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  metadata?: keyof typeof SortOrder;
+  metadata?: `${SortOrder}`;
   @Field(() => CategoryOrderByWithRelationInput, { nullable: true })
   category?: InstanceType<typeof CategoryOrderByWithRelationInput>;
+}
+
+@InputType()
+export class CategoryMetadataScalarRelationFilter {
+  @Field(() => CategoryMetadataWhereInput, { nullable: true })
+  is?: InstanceType<typeof CategoryMetadataWhereInput>;
+  @Field(() => CategoryMetadataWhereInput, { nullable: true })
+  isNot?: InstanceType<typeof CategoryMetadataWhereInput>;
 }
 
 @InputType()
@@ -1564,8 +1580,8 @@ export class CategoryMetadataScalarWhereWithAggregatesInput {
   updatedAt?: InstanceType<typeof DateTimeWithAggregatesFilter>;
   @Field(() => IntWithAggregatesFilter, { nullable: true })
   categoryId?: InstanceType<typeof IntWithAggregatesFilter>;
-  @Field(() => JsonNullableListFilter, { nullable: true })
-  metadata?: InstanceType<typeof JsonNullableListFilter>;
+  @Field(() => JsonListFilter, { nullable: true })
+  metadata?: InstanceType<typeof JsonListFilter>;
 }
 
 @InputType()
@@ -1587,9 +1603,9 @@ export class CategoryMetadataSumAggregate {
 @InputType()
 export class CategoryMetadataSumOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  categoryId?: keyof typeof SortOrder;
+  categoryId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -1831,8 +1847,8 @@ export class CategoryMetadataWhereUniqueInput {
   createdAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => DateTimeFilter, { nullable: true })
   updatedAt?: InstanceType<typeof DateTimeFilter>;
-  @Field(() => JsonNullableListFilter, { nullable: true })
-  metadata?: InstanceType<typeof JsonNullableListFilter>;
+  @Field(() => JsonListFilter, { nullable: true })
+  metadata?: InstanceType<typeof JsonListFilter>;
   @Field(() => CategoryScalarRelationFilter, { nullable: true })
   category?: InstanceType<typeof CategoryScalarRelationFilter>;
 }
@@ -1853,30 +1869,30 @@ export class CategoryMetadataWhereInput {
   updatedAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => IntFilter, { nullable: true })
   categoryId?: InstanceType<typeof IntFilter>;
-  @Field(() => JsonNullableListFilter, { nullable: true })
-  metadata?: InstanceType<typeof JsonNullableListFilter>;
+  @Field(() => JsonListFilter, { nullable: true })
+  metadata?: InstanceType<typeof JsonListFilter>;
   @Field(() => CategoryScalarRelationFilter, { nullable: true })
   category?: InstanceType<typeof CategoryScalarRelationFilter>;
 }
 
 @ObjectType()
 export class CategoryMetadata {
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   id!: number;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   createdAt!: Date;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   updatedAt!: Date;
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   categoryId!: number;
-  @Field(() => [GraphQLJSON], { nullable: true, description: '' })
+  @Field(() => [GraphQLJSON], { description: '', nullable: true })
   metadata!: Array<any>;
   /**
    * One to one relation with Category
    */
   @Field(() => Category, {
-    nullable: false,
     description: 'One to one relation with Category',
+    nullable: false,
   })
   category?: InstanceType<typeof Category>;
 }
@@ -1928,7 +1944,7 @@ export class FindFirstCategoryMetadataOrThrowArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [CategoryMetadataScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof CategoryMetadataScalarFieldEnum>;
+  distinct?: Array<`${CategoryMetadataScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -1948,7 +1964,7 @@ export class FindFirstCategoryMetadataArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [CategoryMetadataScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof CategoryMetadataScalarFieldEnum>;
+  distinct?: Array<`${CategoryMetadataScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -1968,7 +1984,7 @@ export class FindManyCategoryMetadataArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [CategoryMetadataScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof CategoryMetadataScalarFieldEnum>;
+  distinct?: Array<`${CategoryMetadataScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -2076,7 +2092,7 @@ export class FindFirstHiddenModelOrThrowArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [HiddenModelScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof HiddenModelScalarFieldEnum>;
+  distinct?: Array<`${HiddenModelScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -2093,7 +2109,7 @@ export class FindFirstHiddenModelArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [HiddenModelScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof HiddenModelScalarFieldEnum>;
+  distinct?: Array<`${HiddenModelScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -2110,7 +2126,7 @@ export class FindManyHiddenModelArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [HiddenModelScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof HiddenModelScalarFieldEnum>;
+  distinct?: Array<`${HiddenModelScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -2167,7 +2183,7 @@ export class HiddenModelAvgAggregate {
 @InputType()
 export class HiddenModelAvgOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
 }
 
 @InputType()
@@ -2201,13 +2217,13 @@ export class HiddenModelCountAggregate {
 @InputType()
 export class HiddenModelCountOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  data?: keyof typeof SortOrder;
+  data?: `${SortOrder}`;
 }
 
 @InputType()
@@ -2240,7 +2256,7 @@ export class HiddenModelGroupByArgs {
   @Field(() => [HiddenModelOrderByWithAggregationInput], { nullable: true })
   orderBy?: Array<HiddenModelOrderByWithAggregationInput>;
   @Field(() => [HiddenModelScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof HiddenModelScalarFieldEnum>;
+  by!: Array<`${HiddenModelScalarFieldEnum}`>;
   @Field(() => HiddenModelScalarWhereWithAggregatesInput, { nullable: true })
   having?: InstanceType<typeof HiddenModelScalarWhereWithAggregatesInput>;
   @Field(() => Int, { nullable: true })
@@ -2304,11 +2320,11 @@ export class HiddenModelMaxAggregate {
 @InputType()
 export class HiddenModelMaxOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
 }
 
 @InputType()
@@ -2334,23 +2350,23 @@ export class HiddenModelMinAggregate {
 @InputType()
 export class HiddenModelMinOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
 }
 
 @InputType()
 export class HiddenModelOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  data?: keyof typeof SortOrder;
+  data?: `${SortOrder}`;
   @Field(() => HiddenModelCountOrderByAggregateInput, { nullable: true })
   _count?: InstanceType<typeof HiddenModelCountOrderByAggregateInput>;
   @Field(() => HiddenModelAvgOrderByAggregateInput, { nullable: true })
@@ -2366,13 +2382,13 @@ export class HiddenModelOrderByWithAggregationInput {
 @InputType()
 export class HiddenModelOrderByWithRelationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  data?: keyof typeof SortOrder;
+  data?: `${SortOrder}`;
 }
 
 @InputType()
@@ -2409,7 +2425,7 @@ export class HiddenModelSumAggregate {
 @InputType()
 export class HiddenModelSumOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
 }
 
 @InputType()
@@ -2512,13 +2528,13 @@ export class HiddenModelWhereInput {
  */
 @ObjectType({ description: '@@graphql.hideOperations([GQL_OP_ALL])' })
 export class HiddenModel {
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   id!: number;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   createdAt!: Date;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   updatedAt!: Date;
-  @Field(() => GraphQLJSON, { nullable: false, description: '' })
+  @Field(() => GraphQLJSON, { description: '', nullable: false })
   data!: any;
 }
 
@@ -2615,7 +2631,7 @@ export class FindFirstMiscModelOrThrowArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [MiscModelScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof MiscModelScalarFieldEnum>;
+  distinct?: Array<`${MiscModelScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -2634,7 +2650,7 @@ export class FindFirstMiscModelArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [MiscModelScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof MiscModelScalarFieldEnum>;
+  distinct?: Array<`${MiscModelScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -2653,7 +2669,7 @@ export class FindManyMiscModelArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [MiscModelScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof MiscModelScalarFieldEnum>;
+  distinct?: Array<`${MiscModelScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -2737,17 +2753,17 @@ export class MiscModelAvgAggregate {
 @InputType()
 export class MiscModelAvgOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalField?: keyof typeof SortOrder;
+  decimalField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalList?: keyof typeof SortOrder;
+  decimalList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  floatField?: keyof typeof SortOrder;
+  floatField?: `${SortOrder}`;
   @HideField()
-  bigIntField?: keyof typeof SortOrder;
+  bigIntField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bigIntList?: keyof typeof SortOrder;
+  bigIntList?: `${SortOrder}`;
 }
 
 @InputType()
@@ -2829,37 +2845,37 @@ export class MiscModelCountAggregate {
 @InputType()
 export class MiscModelCountOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  jsonField?: keyof typeof SortOrder;
+  jsonField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  jsonList?: keyof typeof SortOrder;
+  jsonList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  stringList?: keyof typeof SortOrder;
+  stringList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalField?: keyof typeof SortOrder;
+  decimalField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalList?: keyof typeof SortOrder;
+  decimalList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  floatField?: keyof typeof SortOrder;
+  floatField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bytesField?: keyof typeof SortOrder;
+  bytesField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bytesList?: keyof typeof SortOrder;
+  bytesList?: `${SortOrder}`;
   @HideField()
-  bigIntField?: keyof typeof SortOrder;
+  bigIntField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bigIntList?: keyof typeof SortOrder;
+  bigIntList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  dateTimeField?: keyof typeof SortOrder;
+  dateTimeField?: `${SortOrder}`;
   @HideField()
-  dateTimeList?: keyof typeof SortOrder;
+  dateTimeList?: `${SortOrder}`;
 }
 
 @InputType()
@@ -2889,9 +2905,9 @@ export class MiscModelCreateManyInput {
   @Field(() => Float, { nullable: false })
   floatField!: number;
   @Field(() => String, { nullable: false })
-  bytesField!: Buffer;
+  bytesField!: Uint8Array;
   @HideField()
-  bytesList?: Array<Buffer>;
+  bytesList?: Array<Uint8Array>;
   @HideField()
   bigIntField!: bigint | number;
   @Field(() => [GraphQLBigInt], { nullable: true })
@@ -2927,9 +2943,9 @@ export class MiscModelCreateInput {
   @Field(() => Float, { nullable: false })
   floatField!: number;
   @Field(() => String, { nullable: false })
-  bytesField!: Buffer;
+  bytesField!: Uint8Array;
   @HideField()
-  bytesList?: Array<Buffer>;
+  bytesList?: Array<Uint8Array>;
   @HideField()
   bigIntField!: bigint | number;
   @Field(() => [GraphQLBigInt], { nullable: true })
@@ -2949,7 +2965,7 @@ export class MiscModelCreatebigIntListInput {
 @InputType()
 export class MiscModelCreatebytesListInput {
   @Field(() => [String], { nullable: false })
-  set!: Array<Buffer>;
+  set!: Array<Uint8Array>;
 }
 
 @InputType()
@@ -2987,7 +3003,7 @@ export class MiscModelGroupByArgs {
   @Type(() => MiscModelOrderByWithAggregationInput)
   orderBy?: Array<MiscModelOrderByWithAggregationInput>;
   @Field(() => [MiscModelScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof MiscModelScalarFieldEnum>;
+  by!: Array<`${MiscModelScalarFieldEnum}`>;
   @Field(() => MiscModelScalarWhereWithAggregatesInput, { nullable: true })
   @Type(() => MiscModelScalarWhereWithAggregatesInput)
   having?: InstanceType<typeof MiscModelScalarWhereWithAggregatesInput>;
@@ -3035,9 +3051,9 @@ export class MiscModelGroupBy {
   @HideField()
   floatField!: number;
   @HideField()
-  bytesField!: Buffer;
+  bytesField!: Uint8Array;
   @Field(() => [String], { nullable: true })
-  bytesList?: Array<Buffer>;
+  bytesList?: Array<Uint8Array>;
   @HideField()
   bigIntField!: bigint | number;
   @Field(() => [GraphQLBigInt], { nullable: true })
@@ -3095,7 +3111,7 @@ export class MiscModelMaxAggregate {
   @HideField()
   floatField?: number;
   @HideField()
-  bytesField?: Buffer;
+  bytesField?: Uint8Array;
   @HideField()
   bigIntField?: bigint | number;
   @Field(() => Date, { nullable: true })
@@ -3105,23 +3121,23 @@ export class MiscModelMaxAggregate {
 @InputType()
 export class MiscModelMaxOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalField?: keyof typeof SortOrder;
+  decimalField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  floatField?: keyof typeof SortOrder;
+  floatField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bytesField?: keyof typeof SortOrder;
+  bytesField?: `${SortOrder}`;
   @HideField()
-  bigIntField?: keyof typeof SortOrder;
+  bigIntField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  dateTimeField?: keyof typeof SortOrder;
+  dateTimeField?: `${SortOrder}`;
 }
 
 @InputType()
@@ -3161,7 +3177,7 @@ export class MiscModelMinAggregate {
   @HideField()
   floatField?: number;
   @HideField()
-  bytesField?: Buffer;
+  bytesField?: Uint8Array;
   @HideField()
   bigIntField?: bigint | number;
   @Field(() => Date, { nullable: true })
@@ -3171,59 +3187,59 @@ export class MiscModelMinAggregate {
 @InputType()
 export class MiscModelMinOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalField?: keyof typeof SortOrder;
+  decimalField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  floatField?: keyof typeof SortOrder;
+  floatField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bytesField?: keyof typeof SortOrder;
+  bytesField?: `${SortOrder}`;
   @HideField()
-  bigIntField?: keyof typeof SortOrder;
+  bigIntField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  dateTimeField?: keyof typeof SortOrder;
+  dateTimeField?: `${SortOrder}`;
 }
 
 @InputType()
 export class MiscModelOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  jsonField?: keyof typeof SortOrder;
+  jsonField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  jsonList?: keyof typeof SortOrder;
+  jsonList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  stringList?: keyof typeof SortOrder;
+  stringList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalField?: keyof typeof SortOrder;
+  decimalField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalList?: keyof typeof SortOrder;
+  decimalList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  floatField?: keyof typeof SortOrder;
+  floatField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bytesField?: keyof typeof SortOrder;
+  bytesField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bytesList?: keyof typeof SortOrder;
+  bytesList?: `${SortOrder}`;
   @HideField()
-  bigIntField?: keyof typeof SortOrder;
+  bigIntField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bigIntList?: keyof typeof SortOrder;
+  bigIntList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  dateTimeField?: keyof typeof SortOrder;
+  dateTimeField?: `${SortOrder}`;
   @HideField()
-  dateTimeList?: keyof typeof SortOrder;
+  dateTimeList?: `${SortOrder}`;
   @Field(() => MiscModelCountOrderByAggregateInput, { nullable: true })
   @Type(() => MiscModelCountOrderByAggregateInput)
   _count?: InstanceType<typeof MiscModelCountOrderByAggregateInput>;
@@ -3244,37 +3260,37 @@ export class MiscModelOrderByWithAggregationInput {
 @InputType()
 export class MiscModelOrderByWithRelationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  jsonField?: keyof typeof SortOrder;
+  jsonField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  jsonList?: keyof typeof SortOrder;
+  jsonList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  stringList?: keyof typeof SortOrder;
+  stringList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalField?: keyof typeof SortOrder;
+  decimalField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalList?: keyof typeof SortOrder;
+  decimalList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  floatField?: keyof typeof SortOrder;
+  floatField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bytesField?: keyof typeof SortOrder;
+  bytesField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bytesList?: keyof typeof SortOrder;
+  bytesList?: `${SortOrder}`;
   @HideField()
-  bigIntField?: keyof typeof SortOrder;
+  bigIntField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bigIntList?: keyof typeof SortOrder;
+  bigIntList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  dateTimeField?: keyof typeof SortOrder;
+  dateTimeField?: `${SortOrder}`;
   @HideField()
-  dateTimeList?: keyof typeof SortOrder;
+  dateTimeList?: `${SortOrder}`;
 }
 
 @InputType()
@@ -3298,30 +3314,30 @@ export class MiscModelScalarWhereWithAggregatesInput {
   name?: InstanceType<typeof StringWithAggregatesFilter>;
   @Field(() => JsonWithAggregatesFilter, { nullable: true })
   jsonField?: InstanceType<typeof JsonWithAggregatesFilter>;
-  @Field(() => JsonNullableListFilter, { nullable: true })
-  jsonList?: InstanceType<typeof JsonNullableListFilter>;
-  @Field(() => StringNullableListFilter, { nullable: true })
-  stringList?: InstanceType<typeof StringNullableListFilter>;
+  @Field(() => JsonListFilter, { nullable: true })
+  jsonList?: InstanceType<typeof JsonListFilter>;
+  @Field(() => StringListFilter, { nullable: true })
+  stringList?: InstanceType<typeof StringListFilter>;
   @Field(() => DecimalWithAggregatesFilter, { nullable: true })
   @Type(() => DecimalWithAggregatesFilter)
   decimalField?: InstanceType<typeof DecimalWithAggregatesFilter>;
-  @Field(() => DecimalNullableListFilter, { nullable: true })
-  @Type(() => DecimalNullableListFilter)
-  decimalList?: InstanceType<typeof DecimalNullableListFilter>;
+  @Field(() => DecimalListFilter, { nullable: true })
+  @Type(() => DecimalListFilter)
+  decimalList?: InstanceType<typeof DecimalListFilter>;
   @Field(() => FloatWithAggregatesFilter, { nullable: true })
   floatField?: InstanceType<typeof FloatWithAggregatesFilter>;
   @Field(() => BytesWithAggregatesFilter, { nullable: true })
   bytesField?: InstanceType<typeof BytesWithAggregatesFilter>;
-  @Field(() => BytesNullableListFilter, { nullable: true })
-  bytesList?: InstanceType<typeof BytesNullableListFilter>;
+  @Field(() => BytesListFilter, { nullable: true })
+  bytesList?: InstanceType<typeof BytesListFilter>;
   @HideField()
   bigIntField?: InstanceType<typeof BigIntWithAggregatesFilter>;
-  @Field(() => BigIntNullableListFilter, { nullable: true })
-  bigIntList?: InstanceType<typeof BigIntNullableListFilter>;
+  @Field(() => BigIntListFilter, { nullable: true })
+  bigIntList?: InstanceType<typeof BigIntListFilter>;
   @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
   dateTimeField?: InstanceType<typeof DateTimeWithAggregatesFilter>;
   @HideField()
-  dateTimeList?: InstanceType<typeof DateTimeNullableListFilter>;
+  dateTimeList?: InstanceType<typeof DateTimeListFilter>;
 }
 
 @InputType()
@@ -3359,17 +3375,17 @@ export class MiscModelSumAggregate {
 @InputType()
 export class MiscModelSumOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalField?: keyof typeof SortOrder;
+  decimalField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  decimalList?: keyof typeof SortOrder;
+  decimalList?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  floatField?: keyof typeof SortOrder;
+  floatField?: `${SortOrder}`;
   @HideField()
-  bigIntField?: keyof typeof SortOrder;
+  bigIntField?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bigIntList?: keyof typeof SortOrder;
+  bigIntList?: `${SortOrder}`;
 }
 
 @InputType()
@@ -3399,9 +3415,9 @@ export class MiscModelUncheckedCreateInput {
   @Field(() => Float, { nullable: false })
   floatField!: number;
   @Field(() => String, { nullable: false })
-  bytesField!: Buffer;
+  bytesField!: Uint8Array;
   @HideField()
-  bytesList?: Array<Buffer>;
+  bytesList?: Array<Uint8Array>;
   @HideField()
   bigIntField!: bigint | number;
   @Field(() => [GraphQLBigInt], { nullable: true })
@@ -3439,9 +3455,9 @@ export class MiscModelUncheckedUpdateManyInput {
   @Field(() => Float, { nullable: true })
   floatField?: number;
   @Field(() => String, { nullable: true })
-  bytesField?: Buffer;
+  bytesField?: Uint8Array;
   @HideField()
-  bytesList?: Array<Buffer>;
+  bytesList?: Array<Uint8Array>;
   @HideField()
   bigIntField?: bigint | number;
   @Field(() => [GraphQLBigInt], { nullable: true })
@@ -3479,9 +3495,9 @@ export class MiscModelUncheckedUpdateInput {
   @Field(() => Float, { nullable: true })
   floatField?: number;
   @Field(() => String, { nullable: true })
-  bytesField?: Buffer;
+  bytesField?: Uint8Array;
   @HideField()
-  bytesList?: Array<Buffer>;
+  bytesList?: Array<Uint8Array>;
   @HideField()
   bigIntField?: bigint | number;
   @Field(() => [GraphQLBigInt], { nullable: true })
@@ -3517,9 +3533,9 @@ export class MiscModelUpdateManyMutationInput {
   @Field(() => Float, { nullable: true })
   floatField?: number;
   @Field(() => String, { nullable: true })
-  bytesField?: Buffer;
+  bytesField?: Uint8Array;
   @HideField()
-  bytesList?: Array<Buffer>;
+  bytesList?: Array<Uint8Array>;
   @HideField()
   bigIntField?: bigint | number;
   @Field(() => [GraphQLBigInt], { nullable: true })
@@ -3555,9 +3571,9 @@ export class MiscModelUpdateInput {
   @Field(() => Float, { nullable: true })
   floatField?: number;
   @Field(() => String, { nullable: true })
-  bytesField?: Buffer;
+  bytesField?: Uint8Array;
   @HideField()
-  bytesList?: Array<Buffer>;
+  bytesList?: Array<Uint8Array>;
   @HideField()
   bigIntField?: bigint | number;
   @Field(() => [GraphQLBigInt], { nullable: true })
@@ -3579,9 +3595,9 @@ export class MiscModelUpdatebigIntListInput {
 @InputType()
 export class MiscModelUpdatebytesListInput {
   @Field(() => [String], { nullable: true })
-  set?: Array<Buffer>;
+  set?: Array<Uint8Array>;
   @Field(() => [String], { nullable: true })
-  push?: Array<Buffer>;
+  push?: Array<Uint8Array>;
 }
 
 @InputType()
@@ -3641,30 +3657,30 @@ export class MiscModelWhereUniqueInput {
   name?: InstanceType<typeof StringFilter>;
   @Field(() => JsonFilter, { nullable: true })
   jsonField?: InstanceType<typeof JsonFilter>;
-  @Field(() => JsonNullableListFilter, { nullable: true })
-  jsonList?: InstanceType<typeof JsonNullableListFilter>;
-  @Field(() => StringNullableListFilter, { nullable: true })
-  stringList?: InstanceType<typeof StringNullableListFilter>;
+  @Field(() => JsonListFilter, { nullable: true })
+  jsonList?: InstanceType<typeof JsonListFilter>;
+  @Field(() => StringListFilter, { nullable: true })
+  stringList?: InstanceType<typeof StringListFilter>;
   @Field(() => DecimalFilter, { nullable: true })
   @Type(() => DecimalFilter)
   decimalField?: InstanceType<typeof DecimalFilter>;
-  @Field(() => DecimalNullableListFilter, { nullable: true })
-  @Type(() => DecimalNullableListFilter)
-  decimalList?: InstanceType<typeof DecimalNullableListFilter>;
+  @Field(() => DecimalListFilter, { nullable: true })
+  @Type(() => DecimalListFilter)
+  decimalList?: InstanceType<typeof DecimalListFilter>;
   @Field(() => FloatFilter, { nullable: true })
   floatField?: InstanceType<typeof FloatFilter>;
   @Field(() => BytesFilter, { nullable: true })
   bytesField?: InstanceType<typeof BytesFilter>;
-  @Field(() => BytesNullableListFilter, { nullable: true })
-  bytesList?: InstanceType<typeof BytesNullableListFilter>;
+  @Field(() => BytesListFilter, { nullable: true })
+  bytesList?: InstanceType<typeof BytesListFilter>;
   @HideField()
   bigIntField?: InstanceType<typeof BigIntFilter>;
-  @Field(() => BigIntNullableListFilter, { nullable: true })
-  bigIntList?: InstanceType<typeof BigIntNullableListFilter>;
+  @Field(() => BigIntListFilter, { nullable: true })
+  bigIntList?: InstanceType<typeof BigIntListFilter>;
   @Field(() => DateTimeFilter, { nullable: true })
   dateTimeField?: InstanceType<typeof DateTimeFilter>;
   @HideField()
-  dateTimeList?: InstanceType<typeof DateTimeNullableListFilter>;
+  dateTimeList?: InstanceType<typeof DateTimeListFilter>;
 }
 
 @InputType()
@@ -3688,30 +3704,30 @@ export class MiscModelWhereInput {
   name?: InstanceType<typeof StringFilter>;
   @Field(() => JsonFilter, { nullable: true })
   jsonField?: InstanceType<typeof JsonFilter>;
-  @Field(() => JsonNullableListFilter, { nullable: true })
-  jsonList?: InstanceType<typeof JsonNullableListFilter>;
-  @Field(() => StringNullableListFilter, { nullable: true })
-  stringList?: InstanceType<typeof StringNullableListFilter>;
+  @Field(() => JsonListFilter, { nullable: true })
+  jsonList?: InstanceType<typeof JsonListFilter>;
+  @Field(() => StringListFilter, { nullable: true })
+  stringList?: InstanceType<typeof StringListFilter>;
   @Field(() => DecimalFilter, { nullable: true })
   @Type(() => DecimalFilter)
   decimalField?: InstanceType<typeof DecimalFilter>;
-  @Field(() => DecimalNullableListFilter, { nullable: true })
-  @Type(() => DecimalNullableListFilter)
-  decimalList?: InstanceType<typeof DecimalNullableListFilter>;
+  @Field(() => DecimalListFilter, { nullable: true })
+  @Type(() => DecimalListFilter)
+  decimalList?: InstanceType<typeof DecimalListFilter>;
   @Field(() => FloatFilter, { nullable: true })
   floatField?: InstanceType<typeof FloatFilter>;
   @Field(() => BytesFilter, { nullable: true })
   bytesField?: InstanceType<typeof BytesFilter>;
-  @Field(() => BytesNullableListFilter, { nullable: true })
-  bytesList?: InstanceType<typeof BytesNullableListFilter>;
+  @Field(() => BytesListFilter, { nullable: true })
+  bytesList?: InstanceType<typeof BytesListFilter>;
   @HideField()
   bigIntField?: InstanceType<typeof BigIntFilter>;
-  @Field(() => BigIntNullableListFilter, { nullable: true })
-  bigIntList?: InstanceType<typeof BigIntNullableListFilter>;
+  @Field(() => BigIntListFilter, { nullable: true })
+  bigIntList?: InstanceType<typeof BigIntListFilter>;
   @Field(() => DateTimeFilter, { nullable: true })
   dateTimeField?: InstanceType<typeof DateTimeFilter>;
   @HideField()
-  dateTimeList?: InstanceType<typeof DateTimeNullableListFilter>;
+  dateTimeList?: InstanceType<typeof DateTimeListFilter>;
 }
 
 /**
@@ -3722,35 +3738,35 @@ export class MiscModelWhereInput {
   description: '@@graphql.hideOperations([GQL_OP_CREATE, GQL_OP_UPDATE])',
 })
 export class MiscModel {
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   id!: number;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   createdAt!: Date;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   updatedAt!: Date;
-  @Field(() => String, { nullable: false, description: '' })
+  @Field(() => String, { description: '', nullable: false })
   name!: string;
-  @Field(() => GraphQLJSON, { nullable: false, description: '' })
+  @Field(() => GraphQLJSON, { description: '', nullable: false })
   jsonField!: any;
-  @Field(() => [GraphQLJSON], { nullable: true, description: '' })
+  @Field(() => [GraphQLJSON], { description: '', nullable: true })
   jsonList!: Array<any>;
-  @Field(() => [String], { nullable: true, description: '' })
+  @Field(() => [String], { description: '', nullable: true })
   stringList!: Array<string>;
-  @Field(() => GraphQLDecimal, { nullable: false, description: '' })
+  @Field(() => GraphQLDecimal, { description: '', nullable: false })
   decimalField!: Decimal;
-  @Field(() => [GraphQLDecimal], { nullable: true, description: '' })
+  @Field(() => [GraphQLDecimal], { description: '', nullable: true })
   decimalList!: Array<Decimal>;
   @HideField()
   floatField!: number;
   @HideField()
-  bytesField!: Buffer;
+  bytesField!: Uint8Array;
   @Field(() => [String], { nullable: true })
-  bytesList!: Array<Buffer>;
+  bytesList!: Array<Uint8Array>;
   @HideField()
   bigIntField!: bigint;
-  @Field(() => [GraphQLBigInt], { nullable: true, description: '' })
+  @Field(() => [GraphQLBigInt], { description: '', nullable: true })
   bigIntList!: Array<bigint>;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   dateTimeField!: Date;
   @Field(() => [Date], { nullable: true })
   dateTimeList!: Array<Date>;
@@ -3847,7 +3863,7 @@ export class FindFirstPostOrThrowArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [PostScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof PostScalarFieldEnum>;
+  distinct?: Array<`${PostScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -3864,7 +3880,7 @@ export class FindFirstPostArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [PostScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof PostScalarFieldEnum>;
+  distinct?: Array<`${PostScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -3881,7 +3897,7 @@ export class FindManyPostArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [PostScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof PostScalarFieldEnum>;
+  distinct?: Array<`${PostScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -3946,11 +3962,11 @@ export class PostAvgAggregate {
 @InputType()
 export class PostAvgOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  authorId?: keyof typeof SortOrder;
+  authorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  anotherAuthorId?: keyof typeof SortOrder;
+  anotherAuthorId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -4004,23 +4020,23 @@ export class PostCountAggregate {
 @InputType()
 export class PostCountOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  title?: keyof typeof SortOrder;
+  title?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  content?: keyof typeof SortOrder;
+  content?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  published?: keyof typeof SortOrder;
+  published?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  authorId?: keyof typeof SortOrder;
+  authorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  anotherAuthorId?: keyof typeof SortOrder;
+  anotherAuthorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  postKind?: keyof typeof SortOrder;
+  postKind?: `${SortOrder}`;
 }
 
 @ObjectType()
@@ -4055,7 +4071,7 @@ export class PostCreateManyAnotherAuthorInput {
   @Field(() => Int, { nullable: true })
   authorId?: number;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
 }
 
 @InputType()
@@ -4084,7 +4100,7 @@ export class PostCreateManyAuthorInput {
   @Field(() => Int, { nullable: false })
   anotherAuthorId!: number;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
 }
 
 @InputType()
@@ -4106,7 +4122,7 @@ export class PostCreateManyInput {
   @Field(() => Int, { nullable: false })
   anotherAuthorId!: number;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
 }
 
 @InputType()
@@ -4197,7 +4213,7 @@ export class PostCreateWithoutAnotherAuthorInput {
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
   @Field(() => UserCreateNestedOneWithoutPostsInput, { nullable: true })
   author?: InstanceType<typeof UserCreateNestedOneWithoutPostsInput>;
   @Field(() => CategoryCreateNestedManyWithoutPostsInput, { nullable: true })
@@ -4217,7 +4233,7 @@ export class PostCreateWithoutAuthorInput {
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
   @Field(() => UserCreateNestedOneWithoutAnotherPostsInput, { nullable: false })
   anotherAuthor!: InstanceType<
     typeof UserCreateNestedOneWithoutAnotherPostsInput
@@ -4239,7 +4255,7 @@ export class PostCreateWithoutCategoriesInput {
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
   @Field(() => UserCreateNestedOneWithoutPostsInput, { nullable: true })
   author?: InstanceType<typeof UserCreateNestedOneWithoutPostsInput>;
   @Field(() => UserCreateNestedOneWithoutAnotherPostsInput, { nullable: false })
@@ -4261,7 +4277,7 @@ export class PostCreateInput {
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
   @Field(() => UserCreateNestedOneWithoutPostsInput, { nullable: true })
   author?: InstanceType<typeof UserCreateNestedOneWithoutPostsInput>;
   @Field(() => UserCreateNestedOneWithoutAnotherPostsInput, { nullable: false })
@@ -4280,7 +4296,7 @@ export class PostGroupByArgs {
   @Field(() => [PostOrderByWithAggregationInput], { nullable: true })
   orderBy?: Array<PostOrderByWithAggregationInput>;
   @Field(() => [PostScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof PostScalarFieldEnum>;
+  by!: Array<`${PostScalarFieldEnum}`>;
   @Field(() => PostScalarWhereWithAggregatesInput, { nullable: true })
   having?: InstanceType<typeof PostScalarWhereWithAggregatesInput>;
   @Field(() => Int, { nullable: true })
@@ -4318,7 +4334,7 @@ export class PostGroupBy {
   @Field(() => Int, { nullable: false })
   anotherAuthorId!: number;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
   @Field(() => PostCountAggregate, { nullable: true })
   _count?: InstanceType<typeof PostCountAggregate>;
   @Field(() => PostAvgAggregate, { nullable: true })
@@ -4382,29 +4398,29 @@ export class PostMaxAggregate {
   @Field(() => Int, { nullable: true })
   anotherAuthorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
 }
 
 @InputType()
 export class PostMaxOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  title?: keyof typeof SortOrder;
+  title?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  content?: keyof typeof SortOrder;
+  content?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  published?: keyof typeof SortOrder;
+  published?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  authorId?: keyof typeof SortOrder;
+  authorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  anotherAuthorId?: keyof typeof SortOrder;
+  anotherAuthorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  postKind?: keyof typeof SortOrder;
+  postKind?: `${SortOrder}`;
 }
 
 @InputType()
@@ -4448,57 +4464,57 @@ export class PostMinAggregate {
   @Field(() => Int, { nullable: true })
   anotherAuthorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
 }
 
 @InputType()
 export class PostMinOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  title?: keyof typeof SortOrder;
+  title?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  content?: keyof typeof SortOrder;
+  content?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  published?: keyof typeof SortOrder;
+  published?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  authorId?: keyof typeof SortOrder;
+  authorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  anotherAuthorId?: keyof typeof SortOrder;
+  anotherAuthorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  postKind?: keyof typeof SortOrder;
+  postKind?: `${SortOrder}`;
 }
 
 @InputType()
 export class PostOrderByRelationAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  _count?: keyof typeof SortOrder;
+  _count?: `${SortOrder}`;
 }
 
 @InputType()
 export class PostOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  title?: keyof typeof SortOrder;
+  title?: `${SortOrder}`;
   @Field(() => SortOrderInput, { nullable: true })
   content?: InstanceType<typeof SortOrderInput>;
   @Field(() => SortOrder, { nullable: true })
-  published?: keyof typeof SortOrder;
+  published?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  authorId?: keyof typeof SortOrder;
+  authorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  anotherAuthorId?: keyof typeof SortOrder;
+  anotherAuthorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  postKind?: keyof typeof SortOrder;
+  postKind?: `${SortOrder}`;
   @Field(() => PostCountOrderByAggregateInput, { nullable: true })
   _count?: InstanceType<typeof PostCountOrderByAggregateInput>;
   @Field(() => PostAvgOrderByAggregateInput, { nullable: true })
@@ -4514,23 +4530,23 @@ export class PostOrderByWithAggregationInput {
 @InputType()
 export class PostOrderByWithRelationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  title?: keyof typeof SortOrder;
+  title?: `${SortOrder}`;
   @Field(() => SortOrderInput, { nullable: true })
   content?: InstanceType<typeof SortOrderInput>;
   @Field(() => SortOrder, { nullable: true })
-  published?: keyof typeof SortOrder;
+  published?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  authorId?: keyof typeof SortOrder;
+  authorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  anotherAuthorId?: keyof typeof SortOrder;
+  anotherAuthorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  postKind?: keyof typeof SortOrder;
+  postKind?: `${SortOrder}`;
   @Field(() => UserOrderByWithRelationInput, { nullable: true })
   author?: InstanceType<typeof UserOrderByWithRelationInput>;
   @Field(() => UserOrderByWithRelationInput, { nullable: true })
@@ -4555,8 +4571,8 @@ export class PostScalarWhereWithAggregatesInput {
   updatedAt?: InstanceType<typeof DateTimeWithAggregatesFilter>;
   @Field(() => StringWithAggregatesFilter, { nullable: true })
   title?: InstanceType<typeof StringWithAggregatesFilter>;
-  @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
-  content?: InstanceType<typeof StringNullableWithAggregatesFilter>;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  content?: InstanceType<typeof StringWithAggregatesFilter>;
   @Field(() => BoolWithAggregatesFilter, { nullable: true })
   published?: InstanceType<typeof BoolWithAggregatesFilter>;
   @Field(() => IntWithAggregatesFilter, { nullable: true })
@@ -4583,8 +4599,8 @@ export class PostScalarWhereInput {
   updatedAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => StringFilter, { nullable: true })
   title?: InstanceType<typeof StringFilter>;
-  @Field(() => StringNullableFilter, { nullable: true })
-  content?: InstanceType<typeof StringNullableFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  content?: InstanceType<typeof StringFilter>;
   @Field(() => BoolFilter, { nullable: true })
   published?: InstanceType<typeof BoolFilter>;
   @Field(() => IntFilter, { nullable: true })
@@ -4618,11 +4634,11 @@ export class PostSumAggregate {
 @InputType()
 export class PostSumOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  authorId?: keyof typeof SortOrder;
+  authorId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  anotherAuthorId?: keyof typeof SortOrder;
+  anotherAuthorId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -4687,7 +4703,7 @@ export class PostUncheckedCreateWithoutAnotherAuthorInput {
   @Field(() => Int, { nullable: true })
   authorId?: number;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
   @Field(() => CategoryUncheckedCreateNestedManyWithoutPostsInput, {
     nullable: true,
   })
@@ -4713,7 +4729,7 @@ export class PostUncheckedCreateWithoutAuthorInput {
   @Field(() => Int, { nullable: false })
   anotherAuthorId!: number;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
   @Field(() => CategoryUncheckedCreateNestedManyWithoutPostsInput, {
     nullable: true,
   })
@@ -4741,7 +4757,7 @@ export class PostUncheckedCreateWithoutCategoriesInput {
   @Field(() => Int, { nullable: false })
   anotherAuthorId!: number;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
 }
 
 @InputType()
@@ -4763,7 +4779,7 @@ export class PostUncheckedCreateInput {
   @Field(() => Int, { nullable: false })
   anotherAuthorId!: number;
   @Field(() => PostKind, { nullable: false })
-  postKind!: keyof typeof PostKind;
+  postKind!: `${PostKind}`;
   @Field(() => CategoryUncheckedCreateNestedManyWithoutPostsInput, {
     nullable: true,
   })
@@ -4825,7 +4841,7 @@ export class PostUncheckedUpdateManyWithoutAnotherAuthorInput {
   @Field(() => Int, { nullable: true })
   authorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
 }
 
 @InputType()
@@ -4879,7 +4895,7 @@ export class PostUncheckedUpdateManyWithoutAuthorInput {
   @Field(() => Int, { nullable: true })
   anotherAuthorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
 }
 
 @InputType()
@@ -4933,7 +4949,7 @@ export class PostUncheckedUpdateManyWithoutCategoriesInput {
   @Field(() => Int, { nullable: true })
   anotherAuthorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
 }
 
 @InputType()
@@ -4955,7 +4971,7 @@ export class PostUncheckedUpdateManyInput {
   @Field(() => Int, { nullable: true })
   anotherAuthorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
 }
 
 @InputType()
@@ -4975,7 +4991,7 @@ export class PostUncheckedUpdateWithoutAnotherAuthorInput {
   @Field(() => Int, { nullable: true })
   authorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
   @Field(() => CategoryUncheckedUpdateManyWithoutPostsNestedInput, {
     nullable: true,
   })
@@ -5001,7 +5017,7 @@ export class PostUncheckedUpdateWithoutAuthorInput {
   @Field(() => Int, { nullable: true })
   anotherAuthorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
   @Field(() => CategoryUncheckedUpdateManyWithoutPostsNestedInput, {
     nullable: true,
   })
@@ -5029,7 +5045,7 @@ export class PostUncheckedUpdateWithoutCategoriesInput {
   @Field(() => Int, { nullable: true })
   anotherAuthorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
 }
 
 @InputType()
@@ -5051,7 +5067,7 @@ export class PostUncheckedUpdateInput {
   @Field(() => Int, { nullable: true })
   anotherAuthorId?: number;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
   @Field(() => CategoryUncheckedUpdateManyWithoutPostsNestedInput, {
     nullable: true,
   })
@@ -5073,7 +5089,7 @@ export class PostUpdateManyMutationInput {
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
 }
 
 @InputType()
@@ -5251,7 +5267,7 @@ export class PostUpdateWithoutAnotherAuthorInput {
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
   @Field(() => UserUpdateOneRequiredWithoutPostsNestedInput, { nullable: true })
   author?: InstanceType<typeof UserUpdateOneRequiredWithoutPostsNestedInput>;
   @Field(() => CategoryUpdateManyWithoutPostsNestedInput, { nullable: true })
@@ -5271,7 +5287,7 @@ export class PostUpdateWithoutAuthorInput {
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
   @Field(() => UserUpdateOneRequiredWithoutAnotherPostsNestedInput, {
     nullable: true,
   })
@@ -5295,7 +5311,7 @@ export class PostUpdateWithoutCategoriesInput {
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
   @Field(() => UserUpdateOneRequiredWithoutPostsNestedInput, { nullable: true })
   author?: InstanceType<typeof UserUpdateOneRequiredWithoutPostsNestedInput>;
   @Field(() => UserUpdateOneRequiredWithoutAnotherPostsNestedInput, {
@@ -5319,7 +5335,7 @@ export class PostUpdateInput {
   @Field(() => Boolean, { nullable: true })
   published?: boolean;
   @Field(() => PostKind, { nullable: true })
-  postKind?: keyof typeof PostKind;
+  postKind?: `${PostKind}`;
   @Field(() => UserUpdateOneRequiredWithoutPostsNestedInput, { nullable: true })
   author?: InstanceType<typeof UserUpdateOneRequiredWithoutPostsNestedInput>;
   @Field(() => UserUpdateOneRequiredWithoutAnotherPostsNestedInput, {
@@ -5387,8 +5403,8 @@ export class PostWhereUniqueInput {
   updatedAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => StringFilter, { nullable: true })
   title?: InstanceType<typeof StringFilter>;
-  @Field(() => StringNullableFilter, { nullable: true })
-  content?: InstanceType<typeof StringNullableFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  content?: InstanceType<typeof StringFilter>;
   @Field(() => BoolFilter, { nullable: true })
   published?: InstanceType<typeof BoolFilter>;
   @Field(() => IntFilter, { nullable: true })
@@ -5421,8 +5437,8 @@ export class PostWhereInput {
   updatedAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => StringFilter, { nullable: true })
   title?: InstanceType<typeof StringFilter>;
-  @Field(() => StringNullableFilter, { nullable: true })
-  content?: InstanceType<typeof StringNullableFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  content?: InstanceType<typeof StringFilter>;
   @Field(() => BoolFilter, { nullable: true })
   published?: InstanceType<typeof BoolFilter>;
   @Field(() => IntFilter, { nullable: true })
@@ -5445,50 +5461,50 @@ export class PostWhereInput {
  */
 @ObjectType({ description: "@@allow('all', auth().role == 'ADMIN')" })
 export class Post {
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   id!: number;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   createdAt!: Date;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   updatedAt!: Date;
-  @Field(() => String, { nullable: false, description: '' })
+  @Field(() => String, { description: '', nullable: false })
   title!: string;
-  @Field(() => String, { nullable: true, description: '' })
+  @Field(() => String, { description: '', nullable: true })
   content!: string | null;
   @Field(() => Boolean, {
-    nullable: false,
     defaultValue: false,
     description: '',
+    nullable: false,
   })
   published!: boolean;
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { defaultValue: 0, description: '', nullable: false })
   authorId!: number;
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   anotherAuthorId!: number;
-  @Field(() => PostKind, { nullable: false, description: '' })
-  postKind!: keyof typeof PostKind;
+  @Field(() => PostKind, { description: '', nullable: false })
+  postKind!: `${PostKind}`;
   /**
    * Many to one relation with User
    */
   @Field(() => User, {
-    nullable: false,
     description: 'Many to one relation with User',
+    nullable: false,
   })
   author?: InstanceType<typeof User>;
   /**
    * Another Many to one relation with User
    */
   @Field(() => User, {
-    nullable: false,
     description: 'Another Many to one relation with User',
+    nullable: false,
   })
   anotherAuthor?: InstanceType<typeof User>;
   /**
    * Many to many relation with Category
    */
   @Field(() => [Category], {
-    nullable: true,
     description: 'Many to many relation with Category',
+    nullable: true,
   })
   categories?: Array<Category>;
 }
@@ -5548,12 +5564,12 @@ export class BigIntFilter {
   gt?: bigint | number;
   @Field(() => GraphQLBigInt, { nullable: true })
   gte?: bigint | number;
-  @Field(() => NestedBigIntFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBigIntFilter>;
+  @Field(() => BigIntFilter, { nullable: true })
+  not?: InstanceType<typeof BigIntFilter>;
 }
 
 @InputType()
-export class BigIntNullableListFilter {
+export class BigIntListFilter {
   @Field(() => [GraphQLBigInt], { nullable: true })
   equals?: Array<bigint> | Array<number>;
   @Field(() => GraphQLBigInt, { nullable: true })
@@ -5582,64 +5598,64 @@ export class BigIntWithAggregatesFilter {
   gt?: bigint | number;
   @Field(() => GraphQLBigInt, { nullable: true })
   gte?: bigint | number;
-  @Field(() => NestedBigIntWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBigIntWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedBigIntFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedBigIntFilter>;
-  @Field(() => NestedBigIntFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedBigIntFilter>;
-  @Field(() => NestedBigIntFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedBigIntFilter>;
+  @Field(() => BigIntWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof BigIntWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => FloatFilter, { nullable: true })
+  _avg?: InstanceType<typeof FloatFilter>;
+  @Field(() => BigIntFilter, { nullable: true })
+  _sum?: InstanceType<typeof BigIntFilter>;
+  @Field(() => BigIntFilter, { nullable: true })
+  _min?: InstanceType<typeof BigIntFilter>;
+  @Field(() => BigIntFilter, { nullable: true })
+  _max?: InstanceType<typeof BigIntFilter>;
 }
 
 @InputType()
 export class BoolFilter {
   @Field(() => Boolean, { nullable: true })
   equals?: boolean;
-  @Field(() => NestedBoolFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBoolFilter>;
+  @Field(() => BoolFilter, { nullable: true })
+  not?: InstanceType<typeof BoolFilter>;
 }
 
 @InputType()
 export class BoolWithAggregatesFilter {
   @Field(() => Boolean, { nullable: true })
   equals?: boolean;
-  @Field(() => NestedBoolWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBoolWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedBoolFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedBoolFilter>;
-  @Field(() => NestedBoolFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedBoolFilter>;
+  @Field(() => BoolWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof BoolWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => BoolFilter, { nullable: true })
+  _min?: InstanceType<typeof BoolFilter>;
+  @Field(() => BoolFilter, { nullable: true })
+  _max?: InstanceType<typeof BoolFilter>;
 }
 
 @InputType()
 export class BytesFilter {
   @Field(() => String, { nullable: true })
-  equals?: Buffer;
+  equals?: Uint8Array;
   @Field(() => [String], { nullable: true })
-  in?: Array<Buffer>;
+  in?: Array<Uint8Array>;
   @Field(() => [String], { nullable: true })
-  notIn?: Array<Buffer>;
-  @Field(() => NestedBytesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBytesFilter>;
+  notIn?: Array<Uint8Array>;
+  @Field(() => BytesFilter, { nullable: true })
+  not?: InstanceType<typeof BytesFilter>;
 }
 
 @InputType()
-export class BytesNullableListFilter {
+export class BytesListFilter {
   @Field(() => [String], { nullable: true })
-  equals?: Array<Buffer>;
+  equals?: Array<Uint8Array>;
   @Field(() => String, { nullable: true })
-  has?: Buffer;
+  has?: Uint8Array;
   @Field(() => [String], { nullable: true })
-  hasEvery?: Array<Buffer>;
+  hasEvery?: Array<Uint8Array>;
   @Field(() => [String], { nullable: true })
-  hasSome?: Array<Buffer>;
+  hasSome?: Array<Uint8Array>;
   @Field(() => Boolean, { nullable: true })
   isEmpty?: boolean;
 }
@@ -5647,35 +5663,19 @@ export class BytesNullableListFilter {
 @InputType()
 export class BytesWithAggregatesFilter {
   @Field(() => String, { nullable: true })
-  equals?: Buffer;
+  equals?: Uint8Array;
   @Field(() => [String], { nullable: true })
-  in?: Array<Buffer>;
+  in?: Array<Uint8Array>;
   @Field(() => [String], { nullable: true })
-  notIn?: Array<Buffer>;
-  @Field(() => NestedBytesWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBytesWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedBytesFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedBytesFilter>;
-  @Field(() => NestedBytesFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedBytesFilter>;
-}
-
-@InputType()
-export class CategoryMetadataNullableScalarRelationFilter {
-  @Field(() => CategoryMetadataWhereInput, { nullable: true })
-  is?: InstanceType<typeof CategoryMetadataWhereInput>;
-  @Field(() => CategoryMetadataWhereInput, { nullable: true })
-  isNot?: InstanceType<typeof CategoryMetadataWhereInput>;
-}
-
-@InputType()
-export class CategoryScalarRelationFilter {
-  @Field(() => CategoryWhereInput, { nullable: true })
-  is?: InstanceType<typeof CategoryWhereInput>;
-  @Field(() => CategoryWhereInput, { nullable: true })
-  isNot?: InstanceType<typeof CategoryWhereInput>;
+  notIn?: Array<Uint8Array>;
+  @Field(() => BytesWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof BytesWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => BytesFilter, { nullable: true })
+  _min?: InstanceType<typeof BytesFilter>;
+  @Field(() => BytesFilter, { nullable: true })
+  _max?: InstanceType<typeof BytesFilter>;
 }
 
 @InputType()
@@ -5694,12 +5694,12 @@ export class DateTimeFilter {
   gt?: Date | string;
   @Field(() => Date, { nullable: true })
   gte?: Date | string;
-  @Field(() => NestedDateTimeFilter, { nullable: true })
-  not?: InstanceType<typeof NestedDateTimeFilter>;
+  @Field(() => DateTimeFilter, { nullable: true })
+  not?: InstanceType<typeof DateTimeFilter>;
 }
 
 @InputType()
-export class DateTimeNullableListFilter {
+export class DateTimeListFilter {
   @Field(() => [Date], { nullable: true })
   equals?: Array<Date> | Array<string>;
   @Field(() => Date, { nullable: true })
@@ -5728,14 +5728,14 @@ export class DateTimeWithAggregatesFilter {
   gt?: Date | string;
   @Field(() => Date, { nullable: true })
   gte?: Date | string;
-  @Field(() => NestedDateTimeWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedDateTimeWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedDateTimeFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedDateTimeFilter>;
-  @Field(() => NestedDateTimeFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedDateTimeFilter>;
+  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof DateTimeWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => DateTimeFilter, { nullable: true })
+  _min?: InstanceType<typeof DateTimeFilter>;
+  @Field(() => DateTimeFilter, { nullable: true })
+  _max?: InstanceType<typeof DateTimeFilter>;
 }
 
 @InputType()
@@ -5768,12 +5768,12 @@ export class DecimalFilter {
   @Type(() => Object)
   @Transform(transformToDecimal)
   gte?: Decimal;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  not?: InstanceType<typeof NestedDecimalFilter>;
+  @Field(() => DecimalFilter, { nullable: true })
+  not?: InstanceType<typeof DecimalFilter>;
 }
 
 @InputType()
-export class DecimalNullableListFilter {
+export class DecimalListFilter {
   @Field(() => [GraphQLDecimal], { nullable: true })
   @Type(() => Object)
   @Transform(transformToDecimal)
@@ -5824,78 +5824,78 @@ export class DecimalWithAggregatesFilter {
   @Type(() => Object)
   @Transform(transformToDecimal)
   gte?: Decimal;
-  @Field(() => NestedDecimalWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedDecimalWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedDecimalFilter>;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedDecimalFilter>;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedDecimalFilter>;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedDecimalFilter>;
+  @Field(() => DecimalWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof DecimalWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => DecimalFilter, { nullable: true })
+  _avg?: InstanceType<typeof DecimalFilter>;
+  @Field(() => DecimalFilter, { nullable: true })
+  _sum?: InstanceType<typeof DecimalFilter>;
+  @Field(() => DecimalFilter, { nullable: true })
+  _min?: InstanceType<typeof DecimalFilter>;
+  @Field(() => DecimalFilter, { nullable: true })
+  _max?: InstanceType<typeof DecimalFilter>;
 }
 
 @InputType()
 export class EnumPostKindFilter {
   @Field(() => PostKind, { nullable: true })
-  equals?: keyof typeof PostKind;
+  equals?: `${PostKind}`;
   @Field(() => [PostKind], { nullable: true })
-  in?: Array<keyof typeof PostKind>;
+  in?: Array<`${PostKind}`>;
   @Field(() => [PostKind], { nullable: true })
-  notIn?: Array<keyof typeof PostKind>;
-  @Field(() => NestedEnumPostKindFilter, { nullable: true })
-  not?: InstanceType<typeof NestedEnumPostKindFilter>;
+  notIn?: Array<`${PostKind}`>;
+  @Field(() => EnumPostKindFilter, { nullable: true })
+  not?: InstanceType<typeof EnumPostKindFilter>;
 }
 
 @InputType()
 export class EnumPostKindWithAggregatesFilter {
   @Field(() => PostKind, { nullable: true })
-  equals?: keyof typeof PostKind;
+  equals?: `${PostKind}`;
   @Field(() => [PostKind], { nullable: true })
-  in?: Array<keyof typeof PostKind>;
+  in?: Array<`${PostKind}`>;
   @Field(() => [PostKind], { nullable: true })
-  notIn?: Array<keyof typeof PostKind>;
-  @Field(() => NestedEnumPostKindWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedEnumPostKindWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedEnumPostKindFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedEnumPostKindFilter>;
-  @Field(() => NestedEnumPostKindFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedEnumPostKindFilter>;
+  notIn?: Array<`${PostKind}`>;
+  @Field(() => EnumPostKindWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof EnumPostKindWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => EnumPostKindFilter, { nullable: true })
+  _min?: InstanceType<typeof EnumPostKindFilter>;
+  @Field(() => EnumPostKindFilter, { nullable: true })
+  _max?: InstanceType<typeof EnumPostKindFilter>;
 }
 
 @InputType()
 export class EnumUserRoleFilter {
   @Field(() => UserRole, { nullable: true })
-  equals?: keyof typeof UserRole;
+  equals?: `${UserRole}`;
   @Field(() => [UserRole], { nullable: true })
-  in?: Array<keyof typeof UserRole>;
+  in?: Array<`${UserRole}`>;
   @Field(() => [UserRole], { nullable: true })
-  notIn?: Array<keyof typeof UserRole>;
-  @Field(() => NestedEnumUserRoleFilter, { nullable: true })
-  not?: InstanceType<typeof NestedEnumUserRoleFilter>;
+  notIn?: Array<`${UserRole}`>;
+  @Field(() => EnumUserRoleFilter, { nullable: true })
+  not?: InstanceType<typeof EnumUserRoleFilter>;
 }
 
 @InputType()
 export class EnumUserRoleWithAggregatesFilter {
   @Field(() => UserRole, { nullable: true })
-  equals?: keyof typeof UserRole;
+  equals?: `${UserRole}`;
   @Field(() => [UserRole], { nullable: true })
-  in?: Array<keyof typeof UserRole>;
+  in?: Array<`${UserRole}`>;
   @Field(() => [UserRole], { nullable: true })
-  notIn?: Array<keyof typeof UserRole>;
-  @Field(() => NestedEnumUserRoleWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedEnumUserRoleWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedEnumUserRoleFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedEnumUserRoleFilter>;
-  @Field(() => NestedEnumUserRoleFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedEnumUserRoleFilter>;
+  notIn?: Array<`${UserRole}`>;
+  @Field(() => EnumUserRoleWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof EnumUserRoleWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => EnumUserRoleFilter, { nullable: true })
+  _min?: InstanceType<typeof EnumUserRoleFilter>;
+  @Field(() => EnumUserRoleFilter, { nullable: true })
+  _max?: InstanceType<typeof EnumUserRoleFilter>;
 }
 
 @InputType()
@@ -5914,8 +5914,8 @@ export class FloatFilter {
   gt?: number;
   @Field(() => Float, { nullable: true })
   gte?: number;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  not?: InstanceType<typeof NestedFloatFilter>;
+  @Field(() => FloatFilter, { nullable: true })
+  not?: InstanceType<typeof FloatFilter>;
 }
 
 @InputType()
@@ -5934,18 +5934,18 @@ export class FloatWithAggregatesFilter {
   gt?: number;
   @Field(() => Float, { nullable: true })
   gte?: number;
-  @Field(() => NestedFloatWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedFloatWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedFloatFilter>;
+  @Field(() => FloatWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof FloatWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => FloatFilter, { nullable: true })
+  _avg?: InstanceType<typeof FloatFilter>;
+  @Field(() => FloatFilter, { nullable: true })
+  _sum?: InstanceType<typeof FloatFilter>;
+  @Field(() => FloatFilter, { nullable: true })
+  _min?: InstanceType<typeof FloatFilter>;
+  @Field(() => FloatFilter, { nullable: true })
+  _max?: InstanceType<typeof FloatFilter>;
 }
 
 @InputType()
@@ -5964,58 +5964,8 @@ export class IntFilter {
   gt?: number;
   @Field(() => Int, { nullable: true })
   gte?: number;
-  @Field(() => NestedIntFilter, { nullable: true })
-  not?: InstanceType<typeof NestedIntFilter>;
-}
-
-@InputType()
-export class IntNullableFilter {
-  @Field(() => Int, { nullable: true })
-  equals?: number;
-  @Field(() => [Int], { nullable: true })
-  in?: Array<number>;
-  @Field(() => [Int], { nullable: true })
-  notIn?: Array<number>;
-  @Field(() => Int, { nullable: true })
-  lt?: number;
-  @Field(() => Int, { nullable: true })
-  lte?: number;
-  @Field(() => Int, { nullable: true })
-  gt?: number;
-  @Field(() => Int, { nullable: true })
-  gte?: number;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  not?: InstanceType<typeof NestedIntNullableFilter>;
-}
-
-@InputType()
-export class IntNullableWithAggregatesFilter {
-  @Field(() => Int, { nullable: true })
-  equals?: number;
-  @Field(() => [Int], { nullable: true })
-  in?: Array<number>;
-  @Field(() => [Int], { nullable: true })
-  notIn?: Array<number>;
-  @Field(() => Int, { nullable: true })
-  lt?: number;
-  @Field(() => Int, { nullable: true })
-  lte?: number;
-  @Field(() => Int, { nullable: true })
-  gt?: number;
-  @Field(() => Int, { nullable: true })
-  gte?: number;
-  @Field(() => NestedIntNullableWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedIntNullableWithAggregatesFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntNullableFilter>;
-  @Field(() => NestedFloatNullableFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedFloatNullableFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedIntNullableFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedIntNullableFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedIntNullableFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  not?: InstanceType<typeof IntFilter>;
 }
 
 @InputType()
@@ -6034,18 +5984,18 @@ export class IntWithAggregatesFilter {
   gt?: number;
   @Field(() => Int, { nullable: true })
   gte?: number;
-  @Field(() => NestedIntWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedIntWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedIntFilter>;
+  @Field(() => IntWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof IntWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => FloatFilter, { nullable: true })
+  _avg?: InstanceType<typeof FloatFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _sum?: InstanceType<typeof IntFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _min?: InstanceType<typeof IntFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _max?: InstanceType<typeof IntFilter>;
 }
 
 @InputType()
@@ -6061,11 +6011,11 @@ export class JsonFilter {
   @Field(() => String, { nullable: true })
   string_ends_with?: string;
   @Field(() => GraphQLJSON, { nullable: true })
-  array_contains?: any;
-  @Field(() => GraphQLJSON, { nullable: true })
   array_starts_with?: any;
   @Field(() => GraphQLJSON, { nullable: true })
   array_ends_with?: any;
+  @Field(() => GraphQLJSON, { nullable: true })
+  array_contains?: any;
   @Field(() => GraphQLJSON, { nullable: true })
   lt?: any;
   @Field(() => GraphQLJSON, { nullable: true })
@@ -6079,7 +6029,7 @@ export class JsonFilter {
 }
 
 @InputType()
-export class JsonNullableListFilter {
+export class JsonListFilter {
   @Field(() => [GraphQLJSON], { nullable: true })
   equals?: Array<any>;
   @Field(() => GraphQLJSON, { nullable: true })
@@ -6105,11 +6055,11 @@ export class JsonWithAggregatesFilter {
   @Field(() => String, { nullable: true })
   string_ends_with?: string;
   @Field(() => GraphQLJSON, { nullable: true })
-  array_contains?: any;
-  @Field(() => GraphQLJSON, { nullable: true })
   array_starts_with?: any;
   @Field(() => GraphQLJSON, { nullable: true })
   array_ends_with?: any;
+  @Field(() => GraphQLJSON, { nullable: true })
+  array_contains?: any;
   @Field(() => GraphQLJSON, { nullable: true })
   lt?: any;
   @Field(() => GraphQLJSON, { nullable: true })
@@ -6120,630 +6070,20 @@ export class JsonWithAggregatesFilter {
   gte?: any;
   @Field(() => GraphQLJSON, { nullable: true })
   not?: any;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedJsonFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedJsonFilter>;
-  @Field(() => NestedJsonFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedJsonFilter>;
-}
-
-@InputType()
-export class NestedBigIntFilter {
-  @Field(() => GraphQLBigInt, { nullable: true })
-  equals?: bigint | number;
-  @Field(() => [GraphQLBigInt], { nullable: true })
-  in?: Array<bigint> | Array<number>;
-  @Field(() => [GraphQLBigInt], { nullable: true })
-  notIn?: Array<bigint> | Array<number>;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  lt?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  lte?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  gt?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  gte?: bigint | number;
-  @Field(() => NestedBigIntFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBigIntFilter>;
-}
-
-@InputType()
-export class NestedBigIntWithAggregatesFilter {
-  @Field(() => GraphQLBigInt, { nullable: true })
-  equals?: bigint | number;
-  @Field(() => [GraphQLBigInt], { nullable: true })
-  in?: Array<bigint> | Array<number>;
-  @Field(() => [GraphQLBigInt], { nullable: true })
-  notIn?: Array<bigint> | Array<number>;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  lt?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  lte?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  gt?: bigint | number;
-  @Field(() => GraphQLBigInt, { nullable: true })
-  gte?: bigint | number;
-  @Field(() => NestedBigIntWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBigIntWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedBigIntFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedBigIntFilter>;
-  @Field(() => NestedBigIntFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedBigIntFilter>;
-  @Field(() => NestedBigIntFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedBigIntFilter>;
-}
-
-@InputType()
-export class NestedBoolFilter {
-  @Field(() => Boolean, { nullable: true })
-  equals?: boolean;
-  @Field(() => NestedBoolFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBoolFilter>;
-}
-
-@InputType()
-export class NestedBoolWithAggregatesFilter {
-  @Field(() => Boolean, { nullable: true })
-  equals?: boolean;
-  @Field(() => NestedBoolWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBoolWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedBoolFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedBoolFilter>;
-  @Field(() => NestedBoolFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedBoolFilter>;
-}
-
-@InputType()
-export class NestedBytesFilter {
-  @Field(() => String, { nullable: true })
-  equals?: Buffer;
-  @Field(() => [String], { nullable: true })
-  in?: Array<Buffer>;
-  @Field(() => [String], { nullable: true })
-  notIn?: Array<Buffer>;
-  @Field(() => NestedBytesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBytesFilter>;
-}
-
-@InputType()
-export class NestedBytesWithAggregatesFilter {
-  @Field(() => String, { nullable: true })
-  equals?: Buffer;
-  @Field(() => [String], { nullable: true })
-  in?: Array<Buffer>;
-  @Field(() => [String], { nullable: true })
-  notIn?: Array<Buffer>;
-  @Field(() => NestedBytesWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedBytesWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedBytesFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedBytesFilter>;
-  @Field(() => NestedBytesFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedBytesFilter>;
-}
-
-@InputType()
-export class NestedDateTimeFilter {
-  @Field(() => Date, { nullable: true })
-  equals?: Date | string;
-  @Field(() => [Date], { nullable: true })
-  in?: Array<Date> | Array<string>;
-  @Field(() => [Date], { nullable: true })
-  notIn?: Array<Date> | Array<string>;
-  @Field(() => Date, { nullable: true })
-  lt?: Date | string;
-  @Field(() => Date, { nullable: true })
-  lte?: Date | string;
-  @Field(() => Date, { nullable: true })
-  gt?: Date | string;
-  @Field(() => Date, { nullable: true })
-  gte?: Date | string;
-  @Field(() => NestedDateTimeFilter, { nullable: true })
-  not?: InstanceType<typeof NestedDateTimeFilter>;
-}
-
-@InputType()
-export class NestedDateTimeWithAggregatesFilter {
-  @Field(() => Date, { nullable: true })
-  equals?: Date | string;
-  @Field(() => [Date], { nullable: true })
-  in?: Array<Date> | Array<string>;
-  @Field(() => [Date], { nullable: true })
-  notIn?: Array<Date> | Array<string>;
-  @Field(() => Date, { nullable: true })
-  lt?: Date | string;
-  @Field(() => Date, { nullable: true })
-  lte?: Date | string;
-  @Field(() => Date, { nullable: true })
-  gt?: Date | string;
-  @Field(() => Date, { nullable: true })
-  gte?: Date | string;
-  @Field(() => NestedDateTimeWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedDateTimeWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedDateTimeFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedDateTimeFilter>;
-  @Field(() => NestedDateTimeFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedDateTimeFilter>;
-}
-
-@InputType()
-export class NestedDecimalFilter {
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  equals?: Decimal;
-  @Field(() => [GraphQLDecimal], { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  in?: Array<Decimal>;
-  @Field(() => [GraphQLDecimal], { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  notIn?: Array<Decimal>;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  lt?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  lte?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  gt?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  gte?: Decimal;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  not?: InstanceType<typeof NestedDecimalFilter>;
-}
-
-@InputType()
-export class NestedDecimalWithAggregatesFilter {
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  equals?: Decimal;
-  @Field(() => [GraphQLDecimal], { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  in?: Array<Decimal>;
-  @Field(() => [GraphQLDecimal], { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  notIn?: Array<Decimal>;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  lt?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  lte?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  gt?: Decimal;
-  @Field(() => GraphQLDecimal, { nullable: true })
-  @Type(() => Object)
-  @Transform(transformToDecimal)
-  gte?: Decimal;
-  @Field(() => NestedDecimalWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedDecimalWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedDecimalFilter>;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedDecimalFilter>;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedDecimalFilter>;
-  @Field(() => NestedDecimalFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedDecimalFilter>;
-}
-
-@InputType()
-export class NestedEnumPostKindFilter {
-  @Field(() => PostKind, { nullable: true })
-  equals?: keyof typeof PostKind;
-  @Field(() => [PostKind], { nullable: true })
-  in?: Array<keyof typeof PostKind>;
-  @Field(() => [PostKind], { nullable: true })
-  notIn?: Array<keyof typeof PostKind>;
-  @Field(() => NestedEnumPostKindFilter, { nullable: true })
-  not?: InstanceType<typeof NestedEnumPostKindFilter>;
-}
-
-@InputType()
-export class NestedEnumPostKindWithAggregatesFilter {
-  @Field(() => PostKind, { nullable: true })
-  equals?: keyof typeof PostKind;
-  @Field(() => [PostKind], { nullable: true })
-  in?: Array<keyof typeof PostKind>;
-  @Field(() => [PostKind], { nullable: true })
-  notIn?: Array<keyof typeof PostKind>;
-  @Field(() => NestedEnumPostKindWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedEnumPostKindWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedEnumPostKindFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedEnumPostKindFilter>;
-  @Field(() => NestedEnumPostKindFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedEnumPostKindFilter>;
-}
-
-@InputType()
-export class NestedEnumUserRoleFilter {
-  @Field(() => UserRole, { nullable: true })
-  equals?: keyof typeof UserRole;
-  @Field(() => [UserRole], { nullable: true })
-  in?: Array<keyof typeof UserRole>;
-  @Field(() => [UserRole], { nullable: true })
-  notIn?: Array<keyof typeof UserRole>;
-  @Field(() => NestedEnumUserRoleFilter, { nullable: true })
-  not?: InstanceType<typeof NestedEnumUserRoleFilter>;
-}
-
-@InputType()
-export class NestedEnumUserRoleWithAggregatesFilter {
-  @Field(() => UserRole, { nullable: true })
-  equals?: keyof typeof UserRole;
-  @Field(() => [UserRole], { nullable: true })
-  in?: Array<keyof typeof UserRole>;
-  @Field(() => [UserRole], { nullable: true })
-  notIn?: Array<keyof typeof UserRole>;
-  @Field(() => NestedEnumUserRoleWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedEnumUserRoleWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedEnumUserRoleFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedEnumUserRoleFilter>;
-  @Field(() => NestedEnumUserRoleFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedEnumUserRoleFilter>;
-}
-
-@InputType()
-export class NestedFloatFilter {
-  @Field(() => Float, { nullable: true })
-  equals?: number;
-  @Field(() => [Float], { nullable: true })
-  in?: Array<number>;
-  @Field(() => [Float], { nullable: true })
-  notIn?: Array<number>;
-  @Field(() => Float, { nullable: true })
-  lt?: number;
-  @Field(() => Float, { nullable: true })
-  lte?: number;
-  @Field(() => Float, { nullable: true })
-  gt?: number;
-  @Field(() => Float, { nullable: true })
-  gte?: number;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  not?: InstanceType<typeof NestedFloatFilter>;
-}
-
-@InputType()
-export class NestedFloatNullableFilter {
-  @Field(() => Float, { nullable: true })
-  equals?: number;
-  @Field(() => [Float], { nullable: true })
-  in?: Array<number>;
-  @Field(() => [Float], { nullable: true })
-  notIn?: Array<number>;
-  @Field(() => Float, { nullable: true })
-  lt?: number;
-  @Field(() => Float, { nullable: true })
-  lte?: number;
-  @Field(() => Float, { nullable: true })
-  gt?: number;
-  @Field(() => Float, { nullable: true })
-  gte?: number;
-  @Field(() => NestedFloatNullableFilter, { nullable: true })
-  not?: InstanceType<typeof NestedFloatNullableFilter>;
-}
-
-@InputType()
-export class NestedFloatWithAggregatesFilter {
-  @Field(() => Float, { nullable: true })
-  equals?: number;
-  @Field(() => [Float], { nullable: true })
-  in?: Array<number>;
-  @Field(() => [Float], { nullable: true })
-  notIn?: Array<number>;
-  @Field(() => Float, { nullable: true })
-  lt?: number;
-  @Field(() => Float, { nullable: true })
-  lte?: number;
-  @Field(() => Float, { nullable: true })
-  gt?: number;
-  @Field(() => Float, { nullable: true })
-  gte?: number;
-  @Field(() => NestedFloatWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedFloatWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedFloatFilter>;
-}
-
-@InputType()
-export class NestedIntFilter {
-  @Field(() => Int, { nullable: true })
-  equals?: number;
-  @Field(() => [Int], { nullable: true })
-  in?: Array<number>;
-  @Field(() => [Int], { nullable: true })
-  notIn?: Array<number>;
-  @Field(() => Int, { nullable: true })
-  lt?: number;
-  @Field(() => Int, { nullable: true })
-  lte?: number;
-  @Field(() => Int, { nullable: true })
-  gt?: number;
-  @Field(() => Int, { nullable: true })
-  gte?: number;
-  @Field(() => NestedIntFilter, { nullable: true })
-  not?: InstanceType<typeof NestedIntFilter>;
-}
-
-@InputType()
-export class NestedIntNullableFilter {
-  @Field(() => Int, { nullable: true })
-  equals?: number;
-  @Field(() => [Int], { nullable: true })
-  in?: Array<number>;
-  @Field(() => [Int], { nullable: true })
-  notIn?: Array<number>;
-  @Field(() => Int, { nullable: true })
-  lt?: number;
-  @Field(() => Int, { nullable: true })
-  lte?: number;
-  @Field(() => Int, { nullable: true })
-  gt?: number;
-  @Field(() => Int, { nullable: true })
-  gte?: number;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  not?: InstanceType<typeof NestedIntNullableFilter>;
-}
-
-@InputType()
-export class NestedIntNullableWithAggregatesFilter {
-  @Field(() => Int, { nullable: true })
-  equals?: number;
-  @Field(() => [Int], { nullable: true })
-  in?: Array<number>;
-  @Field(() => [Int], { nullable: true })
-  notIn?: Array<number>;
-  @Field(() => Int, { nullable: true })
-  lt?: number;
-  @Field(() => Int, { nullable: true })
-  lte?: number;
-  @Field(() => Int, { nullable: true })
-  gt?: number;
-  @Field(() => Int, { nullable: true })
-  gte?: number;
-  @Field(() => NestedIntNullableWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedIntNullableWithAggregatesFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntNullableFilter>;
-  @Field(() => NestedFloatNullableFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedFloatNullableFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedIntNullableFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedIntNullableFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedIntNullableFilter>;
-}
-
-@InputType()
-export class NestedIntWithAggregatesFilter {
-  @Field(() => Int, { nullable: true })
-  equals?: number;
-  @Field(() => [Int], { nullable: true })
-  in?: Array<number>;
-  @Field(() => [Int], { nullable: true })
-  notIn?: Array<number>;
-  @Field(() => Int, { nullable: true })
-  lt?: number;
-  @Field(() => Int, { nullable: true })
-  lte?: number;
-  @Field(() => Int, { nullable: true })
-  gt?: number;
-  @Field(() => Int, { nullable: true })
-  gte?: number;
-  @Field(() => NestedIntWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedIntWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedFloatFilter, { nullable: true })
-  _avg?: InstanceType<typeof NestedFloatFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _sum?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedIntFilter>;
-}
-
-@InputType()
-export class NestedJsonFilter {
-  @Field(() => GraphQLJSON, { nullable: true })
-  equals?: any;
-  @Field(() => [String], { nullable: true })
-  path?: Array<string>;
-  @Field(() => String, { nullable: true })
-  string_contains?: string;
-  @Field(() => String, { nullable: true })
-  string_starts_with?: string;
-  @Field(() => String, { nullable: true })
-  string_ends_with?: string;
-  @Field(() => GraphQLJSON, { nullable: true })
-  array_contains?: any;
-  @Field(() => GraphQLJSON, { nullable: true })
-  array_starts_with?: any;
-  @Field(() => GraphQLJSON, { nullable: true })
-  array_ends_with?: any;
-  @Field(() => GraphQLJSON, { nullable: true })
-  lt?: any;
-  @Field(() => GraphQLJSON, { nullable: true })
-  lte?: any;
-  @Field(() => GraphQLJSON, { nullable: true })
-  gt?: any;
-  @Field(() => GraphQLJSON, { nullable: true })
-  gte?: any;
-  @Field(() => GraphQLJSON, { nullable: true })
-  not?: any;
-}
-
-@InputType()
-export class NestedStringFilter {
-  @Field(() => String, { nullable: true })
-  equals?: string;
-  @Field(() => [String], { nullable: true })
-  in?: Array<string>;
-  @Field(() => [String], { nullable: true })
-  notIn?: Array<string>;
-  @Field(() => String, { nullable: true })
-  lt?: string;
-  @Field(() => String, { nullable: true })
-  lte?: string;
-  @Field(() => String, { nullable: true })
-  gt?: string;
-  @Field(() => String, { nullable: true })
-  gte?: string;
-  @Field(() => String, { nullable: true })
-  contains?: string;
-  @Field(() => String, { nullable: true })
-  startsWith?: string;
-  @Field(() => String, { nullable: true })
-  endsWith?: string;
-  @Field(() => NestedStringFilter, { nullable: true })
-  not?: InstanceType<typeof NestedStringFilter>;
-}
-
-@InputType()
-export class NestedStringNullableFilter {
-  @Field(() => String, { nullable: true })
-  equals?: string;
-  @Field(() => [String], { nullable: true })
-  in?: Array<string>;
-  @Field(() => [String], { nullable: true })
-  notIn?: Array<string>;
-  @Field(() => String, { nullable: true })
-  lt?: string;
-  @Field(() => String, { nullable: true })
-  lte?: string;
-  @Field(() => String, { nullable: true })
-  gt?: string;
-  @Field(() => String, { nullable: true })
-  gte?: string;
-  @Field(() => String, { nullable: true })
-  contains?: string;
-  @Field(() => String, { nullable: true })
-  startsWith?: string;
-  @Field(() => String, { nullable: true })
-  endsWith?: string;
-  @Field(() => NestedStringNullableFilter, { nullable: true })
-  not?: InstanceType<typeof NestedStringNullableFilter>;
-}
-
-@InputType()
-export class NestedStringNullableWithAggregatesFilter {
-  @Field(() => String, { nullable: true })
-  equals?: string;
-  @Field(() => [String], { nullable: true })
-  in?: Array<string>;
-  @Field(() => [String], { nullable: true })
-  notIn?: Array<string>;
-  @Field(() => String, { nullable: true })
-  lt?: string;
-  @Field(() => String, { nullable: true })
-  lte?: string;
-  @Field(() => String, { nullable: true })
-  gt?: string;
-  @Field(() => String, { nullable: true })
-  gte?: string;
-  @Field(() => String, { nullable: true })
-  contains?: string;
-  @Field(() => String, { nullable: true })
-  startsWith?: string;
-  @Field(() => String, { nullable: true })
-  endsWith?: string;
-  @Field(() => NestedStringNullableWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedStringNullableWithAggregatesFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntNullableFilter>;
-  @Field(() => NestedStringNullableFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedStringNullableFilter>;
-  @Field(() => NestedStringNullableFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedStringNullableFilter>;
-}
-
-@InputType()
-export class NestedStringWithAggregatesFilter {
-  @Field(() => String, { nullable: true })
-  equals?: string;
-  @Field(() => [String], { nullable: true })
-  in?: Array<string>;
-  @Field(() => [String], { nullable: true })
-  notIn?: Array<string>;
-  @Field(() => String, { nullable: true })
-  lt?: string;
-  @Field(() => String, { nullable: true })
-  lte?: string;
-  @Field(() => String, { nullable: true })
-  gt?: string;
-  @Field(() => String, { nullable: true })
-  gte?: string;
-  @Field(() => String, { nullable: true })
-  contains?: string;
-  @Field(() => String, { nullable: true })
-  startsWith?: string;
-  @Field(() => String, { nullable: true })
-  endsWith?: string;
-  @Field(() => NestedStringWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedStringWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedStringFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedStringFilter>;
-  @Field(() => NestedStringFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedStringFilter>;
-}
-
-@InputType()
-export class ProfileNullableScalarRelationFilter {
-  @Field(() => ProfileWhereInput, { nullable: true })
-  is?: InstanceType<typeof ProfileWhereInput>;
-  @Field(() => ProfileWhereInput, { nullable: true })
-  isNot?: InstanceType<typeof ProfileWhereInput>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => JsonFilter, { nullable: true })
+  _min?: InstanceType<typeof JsonFilter>;
+  @Field(() => JsonFilter, { nullable: true })
+  _max?: InstanceType<typeof JsonFilter>;
 }
 
 @InputType()
 export class SortOrderInput {
   @Field(() => SortOrder, { nullable: false })
-  sort!: keyof typeof SortOrder;
+  sort!: `${SortOrder}`;
   @Field(() => NullsOrder, { nullable: true })
-  nulls?: keyof typeof NullsOrder;
+  nulls?: `${NullsOrder}`;
 }
 
 @InputType()
@@ -6769,41 +6109,13 @@ export class StringFilter {
   @Field(() => String, { nullable: true })
   endsWith?: string;
   @Field(() => QueryMode, { nullable: true })
-  mode?: keyof typeof QueryMode;
-  @Field(() => NestedStringFilter, { nullable: true })
-  not?: InstanceType<typeof NestedStringFilter>;
+  mode?: `${QueryMode}`;
+  @Field(() => StringFilter, { nullable: true })
+  not?: InstanceType<typeof StringFilter>;
 }
 
 @InputType()
-export class StringNullableFilter {
-  @Field(() => String, { nullable: true })
-  equals?: string;
-  @Field(() => [String], { nullable: true })
-  in?: Array<string>;
-  @Field(() => [String], { nullable: true })
-  notIn?: Array<string>;
-  @Field(() => String, { nullable: true })
-  lt?: string;
-  @Field(() => String, { nullable: true })
-  lte?: string;
-  @Field(() => String, { nullable: true })
-  gt?: string;
-  @Field(() => String, { nullable: true })
-  gte?: string;
-  @Field(() => String, { nullable: true })
-  contains?: string;
-  @Field(() => String, { nullable: true })
-  startsWith?: string;
-  @Field(() => String, { nullable: true })
-  endsWith?: string;
-  @Field(() => QueryMode, { nullable: true })
-  mode?: keyof typeof QueryMode;
-  @Field(() => NestedStringNullableFilter, { nullable: true })
-  not?: InstanceType<typeof NestedStringNullableFilter>;
-}
-
-@InputType()
-export class StringNullableListFilter {
+export class StringListFilter {
   @Field(() => [String], { nullable: true })
   equals?: Array<string>;
   @Field(() => String, { nullable: true })
@@ -6814,40 +6126,6 @@ export class StringNullableListFilter {
   hasSome?: Array<string>;
   @Field(() => Boolean, { nullable: true })
   isEmpty?: boolean;
-}
-
-@InputType()
-export class StringNullableWithAggregatesFilter {
-  @Field(() => String, { nullable: true })
-  equals?: string;
-  @Field(() => [String], { nullable: true })
-  in?: Array<string>;
-  @Field(() => [String], { nullable: true })
-  notIn?: Array<string>;
-  @Field(() => String, { nullable: true })
-  lt?: string;
-  @Field(() => String, { nullable: true })
-  lte?: string;
-  @Field(() => String, { nullable: true })
-  gt?: string;
-  @Field(() => String, { nullable: true })
-  gte?: string;
-  @Field(() => String, { nullable: true })
-  contains?: string;
-  @Field(() => String, { nullable: true })
-  startsWith?: string;
-  @Field(() => String, { nullable: true })
-  endsWith?: string;
-  @Field(() => QueryMode, { nullable: true })
-  mode?: keyof typeof QueryMode;
-  @Field(() => NestedStringNullableWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedStringNullableWithAggregatesFilter>;
-  @Field(() => NestedIntNullableFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntNullableFilter>;
-  @Field(() => NestedStringNullableFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedStringNullableFilter>;
-  @Field(() => NestedStringNullableFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedStringNullableFilter>;
 }
 
 @InputType()
@@ -6873,31 +6151,15 @@ export class StringWithAggregatesFilter {
   @Field(() => String, { nullable: true })
   endsWith?: string;
   @Field(() => QueryMode, { nullable: true })
-  mode?: keyof typeof QueryMode;
-  @Field(() => NestedStringWithAggregatesFilter, { nullable: true })
-  not?: InstanceType<typeof NestedStringWithAggregatesFilter>;
-  @Field(() => NestedIntFilter, { nullable: true })
-  _count?: InstanceType<typeof NestedIntFilter>;
-  @Field(() => NestedStringFilter, { nullable: true })
-  _min?: InstanceType<typeof NestedStringFilter>;
-  @Field(() => NestedStringFilter, { nullable: true })
-  _max?: InstanceType<typeof NestedStringFilter>;
-}
-
-@InputType()
-export class UserNullableScalarRelationFilter {
-  @Field(() => UserWhereInput, { nullable: true })
-  is?: InstanceType<typeof UserWhereInput>;
-  @Field(() => UserWhereInput, { nullable: true })
-  isNot?: InstanceType<typeof UserWhereInput>;
-}
-
-@InputType()
-export class UserScalarRelationFilter {
-  @Field(() => UserWhereInput, { nullable: true })
-  is?: InstanceType<typeof UserWhereInput>;
-  @Field(() => UserWhereInput, { nullable: true })
-  isNot?: InstanceType<typeof UserWhereInput>;
+  mode?: `${QueryMode}`;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  not?: InstanceType<typeof StringWithAggregatesFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  _count?: InstanceType<typeof IntFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  _min?: InstanceType<typeof StringFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  _max?: InstanceType<typeof StringFilter>;
 }
 
 @ObjectType()
@@ -6958,7 +6220,7 @@ export class FindFirstProfileOrThrowArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [ProfileScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof ProfileScalarFieldEnum>;
+  distinct?: Array<`${ProfileScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -6975,7 +6237,7 @@ export class FindFirstProfileArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [ProfileScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof ProfileScalarFieldEnum>;
+  distinct?: Array<`${ProfileScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -6992,7 +6254,7 @@ export class FindManyProfileArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [ProfileScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof ProfileScalarFieldEnum>;
+  distinct?: Array<`${ProfileScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -7053,9 +6315,9 @@ export class ProfileAvgAggregate {
 @InputType()
 export class ProfileAvgOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  userId?: keyof typeof SortOrder;
+  userId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -7093,15 +6355,15 @@ export class ProfileCountAggregate {
 @InputType()
 export class ProfileCountOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bio?: keyof typeof SortOrder;
+  bio?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  userId?: keyof typeof SortOrder;
+  userId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -7171,7 +6433,7 @@ export class ProfileGroupByArgs {
   @Field(() => [ProfileOrderByWithAggregationInput], { nullable: true })
   orderBy?: Array<ProfileOrderByWithAggregationInput>;
   @Field(() => [ProfileScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof ProfileScalarFieldEnum>;
+  by!: Array<`${ProfileScalarFieldEnum}`>;
   @Field(() => ProfileScalarWhereWithAggregatesInput, { nullable: true })
   having?: InstanceType<typeof ProfileScalarWhereWithAggregatesInput>;
   @Field(() => Int, { nullable: true })
@@ -7245,15 +6507,15 @@ export class ProfileMaxAggregate {
 @InputType()
 export class ProfileMaxOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bio?: keyof typeof SortOrder;
+  bio?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  userId?: keyof typeof SortOrder;
+  userId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -7287,29 +6549,29 @@ export class ProfileMinAggregate {
 @InputType()
 export class ProfileMinOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  bio?: keyof typeof SortOrder;
+  bio?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  userId?: keyof typeof SortOrder;
+  userId?: `${SortOrder}`;
 }
 
 @InputType()
 export class ProfileOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrderInput, { nullable: true })
   bio?: InstanceType<typeof SortOrderInput>;
   @Field(() => SortOrder, { nullable: true })
-  userId?: keyof typeof SortOrder;
+  userId?: `${SortOrder}`;
   @Field(() => ProfileCountOrderByAggregateInput, { nullable: true })
   _count?: InstanceType<typeof ProfileCountOrderByAggregateInput>;
   @Field(() => ProfileAvgOrderByAggregateInput, { nullable: true })
@@ -7325,17 +6587,25 @@ export class ProfileOrderByWithAggregationInput {
 @InputType()
 export class ProfileOrderByWithRelationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrderInput, { nullable: true })
   bio?: InstanceType<typeof SortOrderInput>;
   @Field(() => SortOrder, { nullable: true })
-  userId?: keyof typeof SortOrder;
+  userId?: `${SortOrder}`;
   @Field(() => UserOrderByWithRelationInput, { nullable: true })
   user?: InstanceType<typeof UserOrderByWithRelationInput>;
+}
+
+@InputType()
+export class ProfileScalarRelationFilter {
+  @Field(() => ProfileWhereInput, { nullable: true })
+  is?: InstanceType<typeof ProfileWhereInput>;
+  @Field(() => ProfileWhereInput, { nullable: true })
+  isNot?: InstanceType<typeof ProfileWhereInput>;
 }
 
 @InputType()
@@ -7352,8 +6622,8 @@ export class ProfileScalarWhereWithAggregatesInput {
   createdAt?: InstanceType<typeof DateTimeWithAggregatesFilter>;
   @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
   updatedAt?: InstanceType<typeof DateTimeWithAggregatesFilter>;
-  @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
-  bio?: InstanceType<typeof StringNullableWithAggregatesFilter>;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  bio?: InstanceType<typeof StringWithAggregatesFilter>;
   @Field(() => IntWithAggregatesFilter, { nullable: true })
   userId?: InstanceType<typeof IntWithAggregatesFilter>;
 }
@@ -7377,9 +6647,9 @@ export class ProfileSumAggregate {
 @InputType()
 export class ProfileSumOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  userId?: keyof typeof SortOrder;
+  userId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -7582,8 +6852,8 @@ export class ProfileWhereUniqueInput {
   createdAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => DateTimeFilter, { nullable: true })
   updatedAt?: InstanceType<typeof DateTimeFilter>;
-  @Field(() => StringNullableFilter, { nullable: true })
-  bio?: InstanceType<typeof StringNullableFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  bio?: InstanceType<typeof StringFilter>;
   @Field(() => UserScalarRelationFilter, { nullable: true })
   user?: InstanceType<typeof UserScalarRelationFilter>;
 }
@@ -7602,8 +6872,8 @@ export class ProfileWhereInput {
   createdAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => DateTimeFilter, { nullable: true })
   updatedAt?: InstanceType<typeof DateTimeFilter>;
-  @Field(() => StringNullableFilter, { nullable: true })
-  bio?: InstanceType<typeof StringNullableFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  bio?: InstanceType<typeof StringFilter>;
   @Field(() => IntFilter, { nullable: true })
   userId?: InstanceType<typeof IntFilter>;
   @Field(() => UserScalarRelationFilter, { nullable: true })
@@ -7612,17 +6882,17 @@ export class ProfileWhereInput {
 
 @ObjectType()
 export class Profile {
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   id!: number;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   createdAt!: Date;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   updatedAt!: Date;
-  @Field(() => String, { nullable: true, description: '' })
+  @Field(() => String, { description: '', nullable: true })
   bio!: string | null;
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   userId!: number;
-  @Field(() => User, { nullable: false, description: '' })
+  @Field(() => User, { description: '', nullable: false })
   user?: InstanceType<typeof User>;
 }
 
@@ -7713,7 +6983,7 @@ export class FindFirstTagOrThrowArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [TagScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof TagScalarFieldEnum>;
+  distinct?: Array<`${TagScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -7730,7 +7000,7 @@ export class FindFirstTagArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [TagScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof TagScalarFieldEnum>;
+  distinct?: Array<`${TagScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -7747,7 +7017,7 @@ export class FindManyTagArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [TagScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof TagScalarFieldEnum>;
+  distinct?: Array<`${TagScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -7804,7 +7074,7 @@ export class TagCountAggregate {
 @InputType()
 export class TagCountOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  key?: keyof typeof SortOrder;
+  key?: `${SortOrder}`;
 }
 
 @ObjectType()
@@ -7864,7 +7134,7 @@ export class TagGroupByArgs {
   @Field(() => [TagOrderByWithAggregationInput], { nullable: true })
   orderBy?: Array<TagOrderByWithAggregationInput>;
   @Field(() => [TagScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof TagScalarFieldEnum>;
+  by!: Array<`${TagScalarFieldEnum}`>;
   @Field(() => TagScalarWhereWithAggregatesInput, { nullable: true })
   having?: InstanceType<typeof TagScalarWhereWithAggregatesInput>;
   @Field(() => Int, { nullable: true })
@@ -7916,7 +7186,7 @@ export class TagMaxAggregate {
 @InputType()
 export class TagMaxOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  key?: keyof typeof SortOrder;
+  key?: `${SortOrder}`;
 }
 
 @InputType()
@@ -7934,19 +7204,19 @@ export class TagMinAggregate {
 @InputType()
 export class TagMinOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  key?: keyof typeof SortOrder;
+  key?: `${SortOrder}`;
 }
 
 @InputType()
 export class TagOrderByRelationAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  _count?: keyof typeof SortOrder;
+  _count?: `${SortOrder}`;
 }
 
 @InputType()
 export class TagOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
-  key?: keyof typeof SortOrder;
+  key?: `${SortOrder}`;
   @Field(() => TagCountOrderByAggregateInput, { nullable: true })
   _count?: InstanceType<typeof TagCountOrderByAggregateInput>;
   @Field(() => TagMaxOrderByAggregateInput, { nullable: true })
@@ -7958,7 +7228,7 @@ export class TagOrderByWithAggregationInput {
 @InputType()
 export class TagOrderByWithRelationInput {
   @Field(() => SortOrder, { nullable: true })
-  key?: keyof typeof SortOrder;
+  key?: `${SortOrder}`;
   @Field(() => UserOrderByRelationAggregateInput, { nullable: true })
   users?: InstanceType<typeof UserOrderByRelationAggregateInput>;
 }
@@ -8187,9 +7457,9 @@ export class TagWhereInput {
 
 @ObjectType()
 export class Tag {
-  @Field(() => String, { nullable: false, description: '' })
+  @Field(() => String, { description: '', nullable: false })
   key!: string;
-  @Field(() => [User], { nullable: true, description: '' })
+  @Field(() => [User], { description: '', nullable: true })
   users?: Array<User>;
 }
 
@@ -8284,7 +7554,7 @@ export class FindFirstUserOrThrowArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [UserScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof UserScalarFieldEnum>;
+  distinct?: Array<`${UserScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -8301,7 +7571,7 @@ export class FindFirstUserArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [UserScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof UserScalarFieldEnum>;
+  distinct?: Array<`${UserScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -8318,7 +7588,7 @@ export class FindManyUserArgs {
   @Field(() => Int, { nullable: true })
   skip?: number;
   @Field(() => [UserScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof UserScalarFieldEnum>;
+  distinct?: Array<`${UserScalarFieldEnum}`>;
 }
 
 @ArgsType()
@@ -8412,9 +7682,9 @@ export class UserAvgAggregate {
 @InputType()
 export class UserAvgOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  parentId?: keyof typeof SortOrder;
+  parentId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -8464,21 +7734,21 @@ export class UserCountAggregate {
 @InputType()
 export class UserCountOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  email?: keyof typeof SortOrder;
+  email?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  role?: keyof typeof SortOrder;
+  role?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  parentId?: keyof typeof SortOrder;
+  parentId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  mappedField?: keyof typeof SortOrder;
+  mappedField?: `${SortOrder}`;
 }
 
 @ObjectType()
@@ -8515,7 +7785,7 @@ export class UserCreateManyParentInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: false })
   mappedField!: string;
 }
@@ -8533,7 +7803,7 @@ export class UserCreateManyInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: false })
@@ -8695,7 +7965,7 @@ export class UserCreateWithoutAnotherPostsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: false })
   mappedField!: string;
   @Field(() => PostCreateNestedManyWithoutAuthorInput, { nullable: true })
@@ -8721,7 +7991,7 @@ export class UserCreateWithoutChildrenInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: false })
   mappedField!: string;
   @Field(() => PostCreateNestedManyWithoutAuthorInput, { nullable: true })
@@ -8751,7 +8021,7 @@ export class UserCreateWithoutParentInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: false })
   mappedField!: string;
   @Field(() => PostCreateNestedManyWithoutAuthorInput, { nullable: true })
@@ -8781,7 +8051,7 @@ export class UserCreateWithoutPostsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: false })
   mappedField!: string;
   @Field(() => UserCreateNestedOneWithoutChildrenInput, { nullable: true })
@@ -8811,7 +8081,7 @@ export class UserCreateWithoutProfileInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: false })
   mappedField!: string;
   @Field(() => PostCreateNestedManyWithoutAuthorInput, { nullable: true })
@@ -8841,7 +8111,7 @@ export class UserCreateWithoutTagsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: false })
   mappedField!: string;
   @Field(() => PostCreateNestedManyWithoutAuthorInput, { nullable: true })
@@ -8871,7 +8141,7 @@ export class UserCreateInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: false })
   mappedField!: string;
   @Field(() => PostCreateNestedManyWithoutAuthorInput, { nullable: true })
@@ -8900,7 +8170,7 @@ export class UserGroupByArgs {
   @Field(() => [UserOrderByWithAggregationInput], { nullable: true })
   orderBy?: Array<UserOrderByWithAggregationInput>;
   @Field(() => [UserScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof UserScalarFieldEnum>;
+  by!: Array<`${UserScalarFieldEnum}`>;
   @Field(() => UserScalarWhereWithAggregatesInput, { nullable: true })
   having?: InstanceType<typeof UserScalarWhereWithAggregatesInput>;
   @Field(() => Int, { nullable: true })
@@ -8932,7 +8202,7 @@ export class UserGroupBy {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: false })
-  role!: keyof typeof UserRole;
+  role!: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: false })
@@ -8992,7 +8262,7 @@ export class UserMaxAggregate {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9002,21 +8272,21 @@ export class UserMaxAggregate {
 @InputType()
 export class UserMaxOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  email?: keyof typeof SortOrder;
+  email?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  role?: keyof typeof SortOrder;
+  role?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  parentId?: keyof typeof SortOrder;
+  parentId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  mappedField?: keyof typeof SortOrder;
+  mappedField?: `${SortOrder}`;
 }
 
 @InputType()
@@ -9052,7 +8322,7 @@ export class UserMinAggregate {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9062,47 +8332,47 @@ export class UserMinAggregate {
 @InputType()
 export class UserMinOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  email?: keyof typeof SortOrder;
+  email?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  name?: keyof typeof SortOrder;
+  name?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  role?: keyof typeof SortOrder;
+  role?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  parentId?: keyof typeof SortOrder;
+  parentId?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  mappedField?: keyof typeof SortOrder;
+  mappedField?: `${SortOrder}`;
 }
 
 @InputType()
 export class UserOrderByRelationAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  _count?: keyof typeof SortOrder;
+  _count?: `${SortOrder}`;
 }
 
 @InputType()
 export class UserOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  email?: keyof typeof SortOrder;
+  email?: `${SortOrder}`;
   @Field(() => SortOrderInput, { nullable: true })
   name?: InstanceType<typeof SortOrderInput>;
   @Field(() => SortOrder, { nullable: true })
-  role?: keyof typeof SortOrder;
+  role?: `${SortOrder}`;
   @Field(() => SortOrderInput, { nullable: true })
   parentId?: InstanceType<typeof SortOrderInput>;
   @Field(() => SortOrder, { nullable: true })
-  mappedField?: keyof typeof SortOrder;
+  mappedField?: `${SortOrder}`;
   @Field(() => UserCountOrderByAggregateInput, { nullable: true })
   _count?: InstanceType<typeof UserCountOrderByAggregateInput>;
   @Field(() => UserAvgOrderByAggregateInput, { nullable: true })
@@ -9118,21 +8388,21 @@ export class UserOrderByWithAggregationInput {
 @InputType()
 export class UserOrderByWithRelationInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+  createdAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  updatedAt?: keyof typeof SortOrder;
+  updatedAt?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  email?: keyof typeof SortOrder;
+  email?: `${SortOrder}`;
   @Field(() => SortOrderInput, { nullable: true })
   name?: InstanceType<typeof SortOrderInput>;
   @Field(() => SortOrder, { nullable: true })
-  role?: keyof typeof SortOrder;
+  role?: `${SortOrder}`;
   @Field(() => SortOrderInput, { nullable: true })
   parentId?: InstanceType<typeof SortOrderInput>;
   @Field(() => SortOrder, { nullable: true })
-  mappedField?: keyof typeof SortOrder;
+  mappedField?: `${SortOrder}`;
   @Field(() => PostOrderByRelationAggregateInput, { nullable: true })
   posts?: InstanceType<typeof PostOrderByRelationAggregateInput>;
   @Field(() => UserOrderByWithRelationInput, { nullable: true })
@@ -9145,6 +8415,14 @@ export class UserOrderByWithRelationInput {
   tags?: InstanceType<typeof TagOrderByRelationAggregateInput>;
   @Field(() => ProfileOrderByWithRelationInput, { nullable: true })
   profile?: InstanceType<typeof ProfileOrderByWithRelationInput>;
+}
+
+@InputType()
+export class UserScalarRelationFilter {
+  @Field(() => UserWhereInput, { nullable: true })
+  is?: InstanceType<typeof UserWhereInput>;
+  @Field(() => UserWhereInput, { nullable: true })
+  isNot?: InstanceType<typeof UserWhereInput>;
 }
 
 @InputType()
@@ -9163,12 +8441,12 @@ export class UserScalarWhereWithAggregatesInput {
   updatedAt?: InstanceType<typeof DateTimeWithAggregatesFilter>;
   @Field(() => StringWithAggregatesFilter, { nullable: true })
   email?: InstanceType<typeof StringWithAggregatesFilter>;
-  @Field(() => StringNullableWithAggregatesFilter, { nullable: true })
-  name?: InstanceType<typeof StringNullableWithAggregatesFilter>;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  name?: InstanceType<typeof StringWithAggregatesFilter>;
   @Field(() => EnumUserRoleWithAggregatesFilter, { nullable: true })
   role?: InstanceType<typeof EnumUserRoleWithAggregatesFilter>;
-  @Field(() => IntNullableWithAggregatesFilter, { nullable: true })
-  parentId?: InstanceType<typeof IntNullableWithAggregatesFilter>;
+  @Field(() => IntWithAggregatesFilter, { nullable: true })
+  parentId?: InstanceType<typeof IntWithAggregatesFilter>;
   @Field(() => StringWithAggregatesFilter, { nullable: true })
   mappedField?: InstanceType<typeof StringWithAggregatesFilter>;
 }
@@ -9189,12 +8467,12 @@ export class UserScalarWhereInput {
   updatedAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => StringFilter, { nullable: true })
   email?: InstanceType<typeof StringFilter>;
-  @Field(() => StringNullableFilter, { nullable: true })
-  name?: InstanceType<typeof StringNullableFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  name?: InstanceType<typeof StringFilter>;
   @Field(() => EnumUserRoleFilter, { nullable: true })
   role?: InstanceType<typeof EnumUserRoleFilter>;
-  @Field(() => IntNullableFilter, { nullable: true })
-  parentId?: InstanceType<typeof IntNullableFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  parentId?: InstanceType<typeof IntFilter>;
   @Field(() => StringFilter, { nullable: true })
   mappedField?: InstanceType<typeof StringFilter>;
 }
@@ -9218,9 +8496,9 @@ export class UserSumAggregate {
 @InputType()
 export class UserSumOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
+  id?: `${SortOrder}`;
   @Field(() => SortOrder, { nullable: true })
-  parentId?: keyof typeof SortOrder;
+  parentId?: `${SortOrder}`;
 }
 
 @InputType()
@@ -9264,7 +8542,7 @@ export class UserUncheckedCreateWithoutAnotherPostsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: false })
@@ -9304,7 +8582,7 @@ export class UserUncheckedCreateWithoutChildrenInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: false })
@@ -9344,7 +8622,7 @@ export class UserUncheckedCreateWithoutParentInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: false })
   mappedField!: string;
   @Field(() => PostUncheckedCreateNestedManyWithoutAuthorInput, {
@@ -9388,7 +8666,7 @@ export class UserUncheckedCreateWithoutPostsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: false })
@@ -9430,7 +8708,7 @@ export class UserUncheckedCreateWithoutProfileInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: false })
@@ -9470,7 +8748,7 @@ export class UserUncheckedCreateWithoutTagsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: false })
@@ -9512,7 +8790,7 @@ export class UserUncheckedCreateInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: false })
@@ -9592,7 +8870,7 @@ export class UserUncheckedUpdateManyWithoutParentInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
 }
@@ -9640,7 +8918,7 @@ export class UserUncheckedUpdateManyWithoutTagsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9660,7 +8938,7 @@ export class UserUncheckedUpdateManyInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9680,7 +8958,7 @@ export class UserUncheckedUpdateWithoutAnotherPostsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9720,7 +8998,7 @@ export class UserUncheckedUpdateWithoutChildrenInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9760,7 +9038,7 @@ export class UserUncheckedUpdateWithoutParentInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
   @Field(() => PostUncheckedUpdateManyWithoutAuthorNestedInput, {
@@ -9804,7 +9082,7 @@ export class UserUncheckedUpdateWithoutPostsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9846,7 +9124,7 @@ export class UserUncheckedUpdateWithoutProfileInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9886,7 +9164,7 @@ export class UserUncheckedUpdateWithoutTagsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9928,7 +9206,7 @@ export class UserUncheckedUpdateInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => Int, { nullable: true })
   parentId?: number;
   @Field(() => String, { nullable: true })
@@ -9972,7 +9250,7 @@ export class UserUpdateManyMutationInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
 }
@@ -10218,7 +9496,7 @@ export class UserUpdateWithoutAnotherPostsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
@@ -10244,7 +9522,7 @@ export class UserUpdateWithoutChildrenInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
@@ -10274,7 +9552,7 @@ export class UserUpdateWithoutParentInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
@@ -10304,7 +9582,7 @@ export class UserUpdateWithoutPostsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
   @Field(() => UserUpdateOneWithoutChildrenNestedInput, { nullable: true })
@@ -10334,7 +9612,7 @@ export class UserUpdateWithoutProfileInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
@@ -10364,7 +9642,7 @@ export class UserUpdateWithoutTagsInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
@@ -10394,7 +9672,7 @@ export class UserUpdateInput {
   @Field(() => String, { nullable: true })
   name?: string;
   @Field(() => UserRole, { nullable: true })
-  role?: keyof typeof UserRole;
+  role?: `${UserRole}`;
   @Field(() => String, { nullable: true })
   mappedField?: string;
   @Field(() => PostUpdateManyWithoutAuthorNestedInput, { nullable: true })
@@ -10509,26 +9787,26 @@ export class UserWhereUniqueInput {
   createdAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => DateTimeFilter, { nullable: true })
   updatedAt?: InstanceType<typeof DateTimeFilter>;
-  @Field(() => StringNullableFilter, { nullable: true })
-  name?: InstanceType<typeof StringNullableFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  name?: InstanceType<typeof StringFilter>;
   @Field(() => EnumUserRoleFilter, { nullable: true })
   role?: InstanceType<typeof EnumUserRoleFilter>;
-  @Field(() => IntNullableFilter, { nullable: true })
-  parentId?: InstanceType<typeof IntNullableFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  parentId?: InstanceType<typeof IntFilter>;
   @Field(() => StringFilter, { nullable: true })
   mappedField?: InstanceType<typeof StringFilter>;
   @Field(() => PostListRelationFilter, { nullable: true })
   posts?: InstanceType<typeof PostListRelationFilter>;
-  @Field(() => UserNullableScalarRelationFilter, { nullable: true })
-  parent?: InstanceType<typeof UserNullableScalarRelationFilter>;
+  @Field(() => UserScalarRelationFilter, { nullable: true })
+  parent?: InstanceType<typeof UserScalarRelationFilter>;
   @Field(() => UserListRelationFilter, { nullable: true })
   children?: InstanceType<typeof UserListRelationFilter>;
   @Field(() => PostListRelationFilter, { nullable: true })
   anotherPosts?: InstanceType<typeof PostListRelationFilter>;
   @Field(() => TagListRelationFilter, { nullable: true })
   tags?: InstanceType<typeof TagListRelationFilter>;
-  @Field(() => ProfileNullableScalarRelationFilter, { nullable: true })
-  profile?: InstanceType<typeof ProfileNullableScalarRelationFilter>;
+  @Field(() => ProfileScalarRelationFilter, { nullable: true })
+  profile?: InstanceType<typeof ProfileScalarRelationFilter>;
 }
 
 @InputType()
@@ -10547,26 +9825,26 @@ export class UserWhereInput {
   updatedAt?: InstanceType<typeof DateTimeFilter>;
   @Field(() => StringFilter, { nullable: true })
   email?: InstanceType<typeof StringFilter>;
-  @Field(() => StringNullableFilter, { nullable: true })
-  name?: InstanceType<typeof StringNullableFilter>;
+  @Field(() => StringFilter, { nullable: true })
+  name?: InstanceType<typeof StringFilter>;
   @Field(() => EnumUserRoleFilter, { nullable: true })
   role?: InstanceType<typeof EnumUserRoleFilter>;
-  @Field(() => IntNullableFilter, { nullable: true })
-  parentId?: InstanceType<typeof IntNullableFilter>;
+  @Field(() => IntFilter, { nullable: true })
+  parentId?: InstanceType<typeof IntFilter>;
   @Field(() => StringFilter, { nullable: true })
   mappedField?: InstanceType<typeof StringFilter>;
   @Field(() => PostListRelationFilter, { nullable: true })
   posts?: InstanceType<typeof PostListRelationFilter>;
-  @Field(() => UserNullableScalarRelationFilter, { nullable: true })
-  parent?: InstanceType<typeof UserNullableScalarRelationFilter>;
+  @Field(() => UserScalarRelationFilter, { nullable: true })
+  parent?: InstanceType<typeof UserScalarRelationFilter>;
   @Field(() => UserListRelationFilter, { nullable: true })
   children?: InstanceType<typeof UserListRelationFilter>;
   @Field(() => PostListRelationFilter, { nullable: true })
   anotherPosts?: InstanceType<typeof PostListRelationFilter>;
   @Field(() => TagListRelationFilter, { nullable: true })
   tags?: InstanceType<typeof TagListRelationFilter>;
-  @Field(() => ProfileNullableScalarRelationFilter, { nullable: true })
-  profile?: InstanceType<typeof ProfileNullableScalarRelationFilter>;
+  @Field(() => ProfileScalarRelationFilter, { nullable: true })
+  profile?: InstanceType<typeof ProfileScalarRelationFilter>;
 }
 
 /**
@@ -10574,18 +9852,18 @@ export class UserWhereInput {
  */
 @ObjectType({ description: 'User model documentation' })
 export class User {
-  @Field(() => Int, { nullable: false, description: '' })
+  @Field(() => Int, { description: '', nullable: false })
   id!: number;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   createdAt!: Date;
-  @Field(() => Date, { nullable: false, description: '' })
+  @Field(() => Date, { description: '', nullable: false })
   updatedAt!: Date;
   /**
    * Email field documentation
    */
   @Field(() => String, {
-    nullable: false,
     description: 'Email field documentation',
+    nullable: false,
   })
   email!: string;
   /**
@@ -10593,51 +9871,51 @@ export class User {
    * documentation
    */
   @Field(() => String, {
-    nullable: true,
     description: 'Multiple line\ndocumentation',
+    nullable: true,
   })
   name!: string | null;
   @Field(() => UserRole, {
-    nullable: false,
     defaultValue: 'USER',
     description: '',
+    nullable: false,
   })
-  role!: keyof typeof UserRole;
-  @Field(() => Int, { nullable: true, description: '' })
+  role!: `${UserRole}`;
+  @Field(() => Int, { description: '', nullable: true })
   parentId!: number | null;
-  @Field(() => String, { nullable: false, description: '' })
+  @Field(() => String, { description: '', nullable: false })
   mappedField!: string;
   /**
    * One to many relation with Post
    */
   @Field(() => [Post], {
-    nullable: true,
     description: 'One to many relation with Post',
+    nullable: true,
   })
   posts?: Array<Post>;
   /**
    * Self relation with User
    */
-  @Field(() => User, { nullable: true, description: 'Self relation with User' })
+  @Field(() => User, { description: 'Self relation with User', nullable: true })
   parent?: InstanceType<typeof User> | null;
   /**
    * Self relation with User
    */
   @Field(() => [User], {
-    nullable: true,
     description: 'Self relation with User',
+    nullable: true,
   })
   children?: Array<User>;
   /**
    * Another Many to many relation with Post
    */
   @Field(() => [Post], {
-    nullable: true,
     description: 'Another Many to many relation with Post',
+    nullable: true,
   })
   anotherPosts?: Array<Post>;
-  @Field(() => [Tag], { nullable: true, description: '' })
+  @Field(() => [Tag], { description: '', nullable: true })
   tags?: Array<Tag>;
-  @Field(() => Profile, { nullable: true, description: '' })
+  @Field(() => Profile, { description: '', nullable: true })
   profile?: InstanceType<typeof Profile> | null;
 }
