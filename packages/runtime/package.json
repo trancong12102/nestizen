@@ -28,7 +28,6 @@
   "peerDependencies": {
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
-    "@prisma/client": "^6.0.0",
     "@zenstackhq/runtime": "^2.3.0"
   }
 }

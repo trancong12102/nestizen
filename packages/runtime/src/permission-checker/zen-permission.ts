@@ -1,20 +1,16 @@
 import { ExecutionContext, SetMetadata } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { Prisma } from '@prisma/client';
 import camelcase from '@stdlib/string-camelcase';
 import { PolicyCrudKind } from '@zenstackhq/runtime';
 
-export const ZenPermission = (
-  model: Prisma.ModelName,
-  operation: PolicyCrudKind,
-) =>
+export const ZenPermission = (model: string, operation: PolicyCrudKind) =>
   SetMetadata<string, ZenPermissionCheck>(METADATA_KEY, {
     model,
     operation,
   });
 
 type ZenPermissionCheck = {
-  model: Prisma.ModelName;
+  model: string;
   operation: PolicyCrudKind;
 };
 
